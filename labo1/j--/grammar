@@ -123,4 +123,7 @@ newArrayDeclarator ::= LBRACK expression RBRACK
                          {LBRACK expression RBRACK} {LBRACK RBRACK}
 
 literal ::= INT_LITERAL | CHAR_LITERAL | STRING_LITERAL
+
           | TRUE        | FALSE        | NULL
+multiplicativeExpression ::= unaryExpression // level 2
+ {(STAR | DIV) unaryExpression}
