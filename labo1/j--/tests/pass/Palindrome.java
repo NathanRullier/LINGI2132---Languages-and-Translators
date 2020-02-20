@@ -1,13 +1,24 @@
 package pass;
 
+import jminusminus.CharReader;
+
 public class Palindrome {
 
 	public String palindrome(String string) {
-
-		for (int i = 0; i < string.length() / 2; i++) {
-			if (string.charAt(i) != string.charAt((string.length() - (i + 1)))) {
+		int i = 0;
+		boolean halfWord = true;
+		while (halfWord) {
+			char[] chList = string.toCharArray();
+			char ch1 = chList[i];
+			char ch2 = chList[(string.length() - (i + 1))];
+			if (!(ch1 == ch2) ) {
 				return "";
 			}
+
+			if (i == string.length() / 2) {
+				halfWord = false;
+			}
+			i = i + 1;
 		}
 		return string;
 	}
