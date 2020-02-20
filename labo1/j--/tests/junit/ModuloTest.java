@@ -20,8 +20,8 @@ public class ModuloTest extends TestCase
 	
 	public void testModulo()
 	{
-		this.assertEquals(modulo.remainder(25, 4), 1);
-		this.assertEquals(modulo.remainder(0, 1), 0);
+		this.assertEquals(modulo.remainder(6, 2), 0);
+		this.assertEquals(modulo.remainder(5, 3), 2);
 		this.assertEquals(modulo.remainder(43, 43), 0);
 	}
 }
