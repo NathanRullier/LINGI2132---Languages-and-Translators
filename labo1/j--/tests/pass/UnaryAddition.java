@@ -4,6 +4,6 @@ public class UnaryAddition
 {
 	public int add(int x) 
 	{
-		return + x;
+		return +x;
 	}
 }
