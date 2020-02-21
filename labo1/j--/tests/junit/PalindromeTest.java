@@ -17,7 +17,7 @@ public class PalindromeTest extends TestCase {
 
 	public void testPalindrome() {
 		this.assertEquals(palindrome.palindrome("malayalam"), "malayalam");
-		//this.assertEquals(palindrome.palindrome("Kayak"), "Kayak");
+		this.assertEquals(palindrome.palindrome("Kayak"), "Kayak");
 		this.assertEquals(palindrome.palindrome("aaaab"), "");
 	}
 }
