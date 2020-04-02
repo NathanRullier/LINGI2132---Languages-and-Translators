@@ -1,5 +1,6 @@
 package lingi2132;
 
+import lingi2132.*;
 public abstract class GlobalGenerator {
 	protected String outputDir;
 	

@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import static jminusminus.CLConstants.*;
 import jminusminus.CLEmitter;
 
+import lingi2132.GlobalGenerator;
 
-
-public class Generator {
+public class Generator extends GlobalGenerator{
 	private String outputDir;
 	public Generator(String outputDir) {
-		this.outputDir = outputDir;
+		super(outputDir);
 	}
 	public void generateClass() {
 		CLEmitter output = new CLEmitter(true);
