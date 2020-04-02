@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" output="classes" path="tests"/>
-	<classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
-	<classpathentry kind="lib" path="C:/MyShit/Ecole/Erasmus/LINGI2132 - Languages and Translators/labos/labo2/j--/lib/junit.jar"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>

@@ -650,10 +650,6 @@ public class Parser {
             JStatement consequent = statement();
             JStatement alternate = have(ELSE) ? statement() : null;
             return new JIfStatement(line, test, consequent, alternate);
-        }else if (have(DO)) {
-            JExpression test = parExpression();
-            JStatement statement = statement();
-            return new JWhileStatement(line, test, statement);
         } else if (have(WHILE)) {
             JExpression test = parExpression();
             JStatement statement = statement();

@@ -7,7 +7,7 @@ import jminusminus.CLEmitter;
 
 
 
-public class Generator extends GlobalGenerator{
+public class Generator {
 	private String outputDir;
 	public Generator(String outputDir) {
 		this.outputDir = outputDir;
