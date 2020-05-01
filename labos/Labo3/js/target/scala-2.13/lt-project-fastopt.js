@@ -2924,28 +2924,6 @@ function $m_sjsr_package$() {
   };
   return $n_sjsr_package$
 }
-class $c_s_util_control_NonFatal$ extends $c_O {
-  apply__jl_Throwable__Z(t) {
-    return (!((t instanceof $c_jl_VirtualMachineError) || ((t instanceof $c_jl_ThreadDeath) || ((t instanceof $c_jl_InterruptedException) || ((t instanceof $c_jl_LinkageError) || (t instanceof $c_s_util_control_ControlThrowable))))))
-  };
-  unapply__jl_Throwable__s_Option(t) {
-    return (this.apply__jl_Throwable__Z(t) ? new $c_s_Some(t) : $m_s_None$())
-  };
-}
-const $d_s_util_control_NonFatal$ = new $TypeData().initClass({
-  s_util_control_NonFatal$: 0
-}, false, "scala.util.control.NonFatal$", {
-  s_util_control_NonFatal$: 1,
-  O: 1
-});
-$c_s_util_control_NonFatal$.prototype.$classData = $d_s_util_control_NonFatal$;
-let $n_s_util_control_NonFatal$ = (void 0);
-function $m_s_util_control_NonFatal$() {
-  if ((!$n_s_util_control_NonFatal$)) {
-    $n_s_util_control_NonFatal$ = new $c_s_util_control_NonFatal$()
-  };
-  return $n_s_util_control_NonFatal$
-}
 class $c_s_util_hashing_MurmurHash3 extends $c_O {
   mix__I__I__I(hash, data) {
     let h = this.mixLast__I__I__I(hash, data);
@@ -3649,8 +3627,9 @@ class $c_Lwebapp_Main$ extends $c_O {
     const anotherSuperGroup = $p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1).$plus$plus__LDSLDemo_ComposedShape__LDSLDemo_ComposedShape($p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array));
     const this$10 = anotherSuperGroup.LDSLDemo_ComposedShape__f_l;
     $as_LDSLDemo_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0));
-    const stabilizer$2 = $p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array);
-    stabilizer$2.change__LDSLDemo_CanvasElementModifier__V(new $c_LDSLDemo_Width(10))
+    const this$11 = array$1.get(0);
+    const property = new $c_LDSLDemo_Radius(10);
+    property.change__LDSLDemo_Shape__V(this$11)
   };
 }
 const $d_Lwebapp_Main$ = new $TypeData().initClass({
@@ -5857,17 +5836,6 @@ const $d_sjsr_AnonFunction1 = new $TypeData().initClass({
   F1: 1
 });
 $c_sjsr_AnonFunction1.prototype.$classData = $d_sjsr_AnonFunction1;
-class $c_s_util_control_ControlThrowable {
-}
-function $as_s_util_control_ControlThrowable(obj) {
-  return (((obj instanceof $c_s_util_control_ControlThrowable) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.control.ControlThrowable"))
-}
-function $isArrayOf_s_util_control_ControlThrowable(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_control_ControlThrowable)))
-}
-function $asArrayOf_s_util_control_ControlThrowable(obj, depth) {
-  return (($isArrayOf_s_util_control_ControlThrowable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.control.ControlThrowable;", depth))
-}
 const $f_jl_Byte__equals__O__Z = (function($thiz, that) {
   return Object.is($thiz, that)
 });
@@ -5955,28 +5923,6 @@ const $d_jl_Integer = new $TypeData().initClass({
   Ljava_io_Serializable: 1,
   jl_Comparable: 1
 }, (void 0), (void 0), ((x) => $isInt(x)));
-class $c_jl_InterruptedException {
-}
-function $as_jl_InterruptedException(obj) {
-  return (((obj instanceof $c_jl_InterruptedException) || (obj === null)) ? obj : $throwClassCastException(obj, "java.lang.InterruptedException"))
-}
-function $isArrayOf_jl_InterruptedException(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_InterruptedException)))
-}
-function $asArrayOf_jl_InterruptedException(obj, depth) {
-  return (($isArrayOf_jl_InterruptedException(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.InterruptedException;", depth))
-}
-class $c_jl_LinkageError {
-}
-function $as_jl_LinkageError(obj) {
-  return (((obj instanceof $c_jl_LinkageError) || (obj === null)) ? obj : $throwClassCastException(obj, "java.lang.LinkageError"))
-}
-function $isArrayOf_jl_LinkageError(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_LinkageError)))
-}
-function $asArrayOf_jl_LinkageError(obj, depth) {
-  return (($isArrayOf_jl_LinkageError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.LinkageError;", depth))
-}
 const $f_jl_Long__equals__O__Z = (function($thiz, that) {
   if ((that instanceof $c_RTLong)) {
     const x2 = $as_jl_Long(that);
@@ -6123,27 +6069,7 @@ const $d_jl_StringBuilder = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_jl_StringBuilder.prototype.$classData = $d_jl_StringBuilder;
-class $c_jl_ThreadDeath {
-}
-function $as_jl_ThreadDeath(obj) {
-  return (((obj instanceof $c_jl_ThreadDeath) || (obj === null)) ? obj : $throwClassCastException(obj, "java.lang.ThreadDeath"))
-}
-function $isArrayOf_jl_ThreadDeath(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_ThreadDeath)))
-}
-function $asArrayOf_jl_ThreadDeath(obj, depth) {
-  return (($isArrayOf_jl_ThreadDeath(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.ThreadDeath;", depth))
-}
 class $c_jl_VirtualMachineError extends $c_jl_Error {
-}
-function $as_jl_VirtualMachineError(obj) {
-  return (((obj instanceof $c_jl_VirtualMachineError) || (obj === null)) ? obj : $throwClassCastException(obj, "java.lang.VirtualMachineError"))
-}
-function $isArrayOf_jl_VirtualMachineError(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.jl_VirtualMachineError)))
-}
-function $asArrayOf_jl_VirtualMachineError(obj, depth) {
-  return (($isArrayOf_jl_VirtualMachineError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.VirtualMachineError;", depth))
 }
 class $c_RTLong extends $c_jl_Number {
   constructor(lo, hi) {
@@ -6696,8 +6622,6 @@ const $d_scm_GrowableBuilder = new $TypeData().initClass({
   scm_Clearable: 1
 });
 $c_scm_GrowableBuilder.prototype.$classData = $d_scm_GrowableBuilder;
-class $c_s_util_Try extends $c_O {
-}
 class $c_LDSLDemo_Color extends $c_O {
   constructor(c) {
     super();
@@ -6900,43 +6824,27 @@ const $d_LDSLDemo_ComposedShape = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_LDSLDemo_ComposedShape.prototype.$classData = $d_LDSLDemo_ComposedShape;
-class $c_LDSLDemo_Width extends $c_O {
-  constructor(w) {
+class $c_LDSLDemo_Radius extends $c_O {
+  constructor(r) {
     super();
-    this.LDSLDemo_Width__f_w = 0;
-    this.LDSLDemo_Width__f_w = w
+    this.LDSLDemo_Radius__f_r = 0;
+    this.LDSLDemo_Radius__f_r = r
   };
   change__LDSLDemo_Shape__V(x) {
-    try {
-      $as_LDSLDemo_Rectangle(x).LDSLDemo_Rectangle__f_width = this.LDSLDemo_Width__f_w;
-      new $c_s_util_Success((void 0))
-    } catch (e) {
-      const e$2 = $m_sjsr_package$().wrapJavaScriptException__O__jl_Throwable(e);
-      if ((e$2 !== null)) {
-        matchEnd8: {
-          if ((e$2 !== null)) {
-            const o11 = $m_s_util_control_NonFatal$().unapply__jl_Throwable__s_Option(e$2);
-            if ((!o11.isEmpty__Z())) {
-              const e$3 = $as_jl_Throwable(o11.get__O());
-              new $c_s_util_Failure(e$3);
-              break matchEnd8
-            }
-          };
-          throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(e$2)
-        }
-      } else {
-        throw e
-      }
+    if ((x instanceof $c_LDSLDemo_Circle)) {
+      $as_LDSLDemo_Circle(x).LDSLDemo_Circle__f_radius = this.LDSLDemo_Radius__f_r
+    } else {
+      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O($ct_jl_Exception__T__(new $c_jl_Exception(), "is not a circle"))
     }
   };
   productPrefix__T() {
-    return "Width"
+    return "Radius"
   };
   productArity__I() {
     return 1
   };
   productElement__I__O(x$1) {
-    return ((x$1 === 0) ? this.LDSLDemo_Width__f_w : $m_sr_Statics$().ioobe__I__O(x$1))
+    return ((x$1 === 0) ? this.LDSLDemo_Radius__f_r : $m_sr_Statics$().ioobe__I__O(x$1))
   };
   productIterator__sc_Iterator() {
     return new $c_sr_ScalaRunTime$$anon$1(this)
@@ -6944,10 +6852,10 @@ class $c_LDSLDemo_Width extends $c_O {
   hashCode__I() {
     let acc = (-889275714);
     const hash = acc;
-    const data = $f_T__hashCode__I("Width");
+    const data = $f_T__hashCode__I("Radius");
     acc = $m_sr_Statics$().mix__I__I__I(hash, data);
     const hash$1 = acc;
-    const data$1 = this.LDSLDemo_Width__f_w;
+    const data$1 = this.LDSLDemo_Radius__f_r;
     acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
     const hash$2 = acc;
     return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
@@ -6958,34 +6866,34 @@ class $c_LDSLDemo_Width extends $c_O {
   equals__O__Z(x$1) {
     if ((this === x$1)) {
       return true
-    } else if ((x$1 instanceof $c_LDSLDemo_Width)) {
-      const Width$1 = $as_LDSLDemo_Width(x$1);
-      return (this.LDSLDemo_Width__f_w === Width$1.LDSLDemo_Width__f_w)
+    } else if ((x$1 instanceof $c_LDSLDemo_Radius)) {
+      const Radius$1 = $as_LDSLDemo_Radius(x$1);
+      return (this.LDSLDemo_Radius__f_r === Radius$1.LDSLDemo_Radius__f_r)
     } else {
       return false
     }
   };
 }
-function $as_LDSLDemo_Width(obj) {
-  return (((obj instanceof $c_LDSLDemo_Width) || (obj === null)) ? obj : $throwClassCastException(obj, "DSLDemo.Width"))
+function $as_LDSLDemo_Radius(obj) {
+  return (((obj instanceof $c_LDSLDemo_Radius) || (obj === null)) ? obj : $throwClassCastException(obj, "DSLDemo.Radius"))
 }
-function $isArrayOf_LDSLDemo_Width(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSLDemo_Width)))
+function $isArrayOf_LDSLDemo_Radius(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSLDemo_Radius)))
 }
-function $asArrayOf_LDSLDemo_Width(obj, depth) {
-  return (($isArrayOf_LDSLDemo_Width(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSLDemo.Width;", depth))
+function $asArrayOf_LDSLDemo_Radius(obj, depth) {
+  return (($isArrayOf_LDSLDemo_Radius(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSLDemo.Radius;", depth))
 }
-const $d_LDSLDemo_Width = new $TypeData().initClass({
-  LDSLDemo_Width: 0
-}, false, "DSLDemo.Width", {
-  LDSLDemo_Width: 1,
+const $d_LDSLDemo_Radius = new $TypeData().initClass({
+  LDSLDemo_Radius: 0
+}, false, "DSLDemo.Radius", {
+  LDSLDemo_Radius: 1,
   O: 1,
   LDSLDemo_CanvasElementModifier: 1,
   s_Product: 1,
   s_Equals: 1,
   Ljava_io_Serializable: 1
 });
-$c_LDSLDemo_Width.prototype.$classData = $d_LDSLDemo_Width;
+$c_LDSLDemo_Radius.prototype.$classData = $d_LDSLDemo_Radius;
 class $c_jl_ArithmeticException extends $c_jl_RuntimeException {
   constructor(s) {
     super();
@@ -7238,13 +7146,7 @@ class $c_s_Option extends $c_O {
     return (this.isEmpty__Z() ? 0 : 1)
   };
   iterator__sc_Iterator() {
-    if (this.isEmpty__Z()) {
-      return $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty
-    } else {
-      $m_sc_Iterator$();
-      const a = this.get__O();
-      return new $c_sc_Iterator$$anon$20(a)
-    }
+    return (this.isEmpty__Z() ? $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty : ($m_sc_Iterator$(), this.get__E()))
   };
 }
 class $c_T2 extends $c_O {
@@ -8494,120 +8396,6 @@ function $m_sjsr_WrappedVarArgs$() {
   };
   return $n_sjsr_WrappedVarArgs$
 }
-class $c_s_util_Failure extends $c_s_util_Try {
-  constructor(exception) {
-    super();
-    this.s_util_Failure__f_exception = null;
-    this.s_util_Failure__f_exception = exception
-  };
-  productPrefix__T() {
-    return "Failure"
-  };
-  productArity__I() {
-    return 1
-  };
-  productElement__I__O(x$1) {
-    return ((x$1 === 0) ? this.s_util_Failure__f_exception : $m_sr_Statics$().ioobe__I__O(x$1))
-  };
-  productIterator__sc_Iterator() {
-    return new $c_sr_ScalaRunTime$$anon$1(this)
-  };
-  hashCode__I() {
-    const this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-  };
-  toString__T() {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-  };
-  equals__O__Z(x$1) {
-    if ((this === x$1)) {
-      return true
-    } else if ((x$1 instanceof $c_s_util_Failure)) {
-      const Failure$1 = $as_s_util_Failure(x$1);
-      const x = this.s_util_Failure__f_exception;
-      const x$2 = Failure$1.s_util_Failure__f_exception;
-      return ((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))
-    } else {
-      return false
-    }
-  };
-}
-function $as_s_util_Failure(obj) {
-  return (((obj instanceof $c_s_util_Failure) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.Failure"))
-}
-function $isArrayOf_s_util_Failure(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_Failure)))
-}
-function $asArrayOf_s_util_Failure(obj, depth) {
-  return (($isArrayOf_s_util_Failure(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.Failure;", depth))
-}
-const $d_s_util_Failure = new $TypeData().initClass({
-  s_util_Failure: 0
-}, false, "scala.util.Failure", {
-  s_util_Failure: 1,
-  s_util_Try: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  Ljava_io_Serializable: 1
-});
-$c_s_util_Failure.prototype.$classData = $d_s_util_Failure;
-class $c_s_util_Success extends $c_s_util_Try {
-  constructor(value) {
-    super();
-    this.s_util_Success__f_value = null;
-    this.s_util_Success__f_value = value
-  };
-  productPrefix__T() {
-    return "Success"
-  };
-  productArity__I() {
-    return 1
-  };
-  productElement__I__O(x$1) {
-    return ((x$1 === 0) ? this.s_util_Success__f_value : $m_sr_Statics$().ioobe__I__O(x$1))
-  };
-  productIterator__sc_Iterator() {
-    return new $c_sr_ScalaRunTime$$anon$1(this)
-  };
-  hashCode__I() {
-    const this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-  };
-  toString__T() {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-  };
-  equals__O__Z(x$1) {
-    if ((this === x$1)) {
-      return true
-    } else if ((x$1 instanceof $c_s_util_Success)) {
-      const Success$1 = $as_s_util_Success(x$1);
-      return $m_sr_BoxesRunTime$().equals__O__O__Z(this.s_util_Success__f_value, Success$1.s_util_Success__f_value)
-    } else {
-      return false
-    }
-  };
-}
-function $as_s_util_Success(obj) {
-  return (((obj instanceof $c_s_util_Success) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.Success"))
-}
-function $isArrayOf_s_util_Success(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_Success)))
-}
-function $asArrayOf_s_util_Success(obj, depth) {
-  return (($isArrayOf_s_util_Success(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.Success;", depth))
-}
-const $d_s_util_Success = new $TypeData().initClass({
-  s_util_Success: 0
-}, false, "scala.util.Success", {
-  s_util_Success: 1,
-  s_util_Try: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  Ljava_io_Serializable: 1
-});
-$c_s_util_Success.prototype.$classData = $d_s_util_Success;
 class $c_LDSLDemo_Circle extends $c_O {
   constructor(x, y, radius) {
     super();
@@ -8922,9 +8710,6 @@ class $c_s_None$ extends $c_s_Option {
   toString__T() {
     return "None"
   };
-  get__O() {
-    this.get__E()
-  };
 }
 const $d_s_None$ = new $TypeData().initClass({
   s_None$: 0
@@ -8945,66 +8730,6 @@ function $m_s_None$() {
   };
   return $n_s_None$
 }
-class $c_s_Some extends $c_s_Option {
-  constructor(value) {
-    super();
-    this.s_Some__f_value = null;
-    this.s_Some__f_value = value
-  };
-  get__O() {
-    return this.s_Some__f_value
-  };
-  productPrefix__T() {
-    return "Some"
-  };
-  productArity__I() {
-    return 1
-  };
-  productElement__I__O(x$1) {
-    return ((x$1 === 0) ? this.s_Some__f_value : $m_sr_Statics$().ioobe__I__O(x$1))
-  };
-  productIterator__sc_Iterator() {
-    return new $c_sr_ScalaRunTime$$anon$1(this)
-  };
-  hashCode__I() {
-    const this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-  };
-  toString__T() {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-  };
-  equals__O__Z(x$1) {
-    if ((this === x$1)) {
-      return true
-    } else if ((x$1 instanceof $c_s_Some)) {
-      const Some$1 = $as_s_Some(x$1);
-      return $m_sr_BoxesRunTime$().equals__O__O__Z(this.s_Some__f_value, Some$1.s_Some__f_value)
-    } else {
-      return false
-    }
-  };
-}
-function $as_s_Some(obj) {
-  return (((obj instanceof $c_s_Some) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.Some"))
-}
-function $isArrayOf_s_Some(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_Some)))
-}
-function $asArrayOf_s_Some(obj, depth) {
-  return (($isArrayOf_s_Some(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.Some;", depth))
-}
-const $d_s_Some = new $TypeData().initClass({
-  s_Some: 0
-}, false, "scala.Some", {
-  s_Some: 1,
-  s_Option: 1,
-  O: 1,
-  sc_IterableOnce: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  Ljava_io_Serializable: 1
-});
-$c_s_Some.prototype.$classData = $d_s_Some;
 class $c_sc_AbstractIterable extends $c_O {
   className__T() {
     return this.stringPrefix__T()

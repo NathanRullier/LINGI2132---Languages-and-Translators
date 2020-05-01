@@ -67,7 +67,7 @@ object Main {
     val anotherSuperGroup = rectangles ++ circles
     // We can get back the elements by their index
     val s = anotherSuperGroup(0)
-    circles change Width(10)
+    rectangles(0) change Radius(10)
     // Take care that some property change should not compile, like this one
     // (rectangles(0) + circles(0)) change Width(30)
     // because Circles have no width
