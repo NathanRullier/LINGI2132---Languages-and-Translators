@@ -1,0 +1,55 @@
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:3:8: not found: object DSLDemo[0m
+[0m[[0m[31merror[0m] [0m[0mimport DSLDemo._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:4:12: object scalajs is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalajs.dom.{html, document}[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:5:12: object scalajs is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalajs.dom[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:11:18: not found: value document[0m
+[0m[[0m[31merror[0m] [0m[0m    val canvas = document.createElement("canvas").asInstanceOf[html.Canvas][0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:11:64: not found: value html[0m
+[0m[[0m[31merror[0m] [0m[0m    val canvas = document.createElement("canvas").asInstanceOf[html.Canvas][0m
+[0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:12:5: not found: value document[0m
+[0m[[0m[31merror[0m] [0m[0m    document.body.appendChild(canvas)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:21:22: not found: value html[0m
+[0m[[0m[31merror[0m] [0m[0m  def scalaJSDemo(c: html.Canvas): Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:22:47: not found: value dom[0m
+[0m[[0m[31merror[0m] [0m[0m    val ctx = c.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D][0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:41:29: not found: value html[0m
+[0m[[0m[31merror[0m] [0m[0m  def useMySuperDSL(canvas: html.Canvas): Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:44:23: not found: type Canvasy[0m
+[0m[[0m[31merror[0m] [0m[0m    val canvasy = new Canvasy(canvas)[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:45:33: not found: value Circle[0m
+[0m[[0m[31merror[0m] [0m[0m    val circles = Array.fill(4)(Circle(50, 0, 0))[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:46:45: not found: value Rectangle[0m
+[0m[[0m[31merror[0m] [0m[0m    val rectangles = Array.tabulate(5)(i => Rectangle(i*10, i*10, 10, 30))[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:51:19: value strokeWidth is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m    rectangles(0) strokeWidth 10[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:52:19: value moveX is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m    rectangles(1) moveX 10[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:55:47: not found: type Circle[0m
+[0m[[0m[31merror[0m] [0m[0m    implicit def arrayCircleToShapes(a: Array[Circle]) = Circles(a)[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:55:58: not found: value Circles[0m
+[0m[[0m[31merror[0m] [0m[0m    implicit def arrayCircleToShapes(a: Array[Circle]) = Circles(a)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:56:50: not found: type Rectangle[0m
+[0m[[0m[31merror[0m] [0m[0m    implicit def arrayRectangleToShapes(a: Array[Rectangle]) = Rectangles(a)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:56:64: not found: value Rectangles[0m
+[0m[[0m[31merror[0m] [0m[0m    implicit def arrayRectangleToShapes(a: Array[Rectangle]) = Rectangles(a)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m18 errors found[0m
