@@ -13,7 +13,6 @@ sealed trait Shape {
     else {
       ComposedShape(List(this))
     }
-
   }
 
   def change(property: CanvasElementModifier[A]): Unit = ???
@@ -66,7 +65,8 @@ case class ComposedShape(var l: List[Shape]) extends Shape {
   }
 
   override def change(property: CanvasElementModifier[A]): Unit = {
-    l.map(x => x.change(property.asInstanceOf[CanvasElementModifier[x.A]]))
+
+   l.map(x => x.change(property.asInstanceOf[CanvasElementModifier[x.A]]))
   }
 
   override def and(s: Shape): ComposedShape = {

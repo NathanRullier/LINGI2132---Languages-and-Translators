@@ -1,7 +1,6 @@
 package DSLDemo
 
 import DSLDemo._
-import scala.util.{Try, Failure, Success}
 
 trait CanvasElementModifier[-ApplyOn <: Shape] {
   def change(x: ApplyOn): Unit
@@ -19,32 +18,20 @@ case class StrokeWidth(s: Int) extends CanvasElementModifier[Shape] {
   }
 }
 
-case class Width(w: Int) extends CanvasElementModifier[Shape] {
-  override def change(x: Shape): Unit = {
-    if (x.isInstanceOf[Rectangle]) {
-      x.asInstanceOf[Rectangle].width = w
-    } else {
-      throw new Exception("is not rectangle")
-    }
+case class Width(w: Int) extends CanvasElementModifier[Rectangle] {
+  override def change(x: Rectangle): Unit = {
+    x.width = w
   }
 }
 
-case class Height(h: Int) extends CanvasElementModifier[Shape] {
-  override def change(x: Shape): Unit = {
-    if (x.isInstanceOf[Rectangle]) {
-      x.asInstanceOf[Rectangle].height = h
-    } else {
-      throw new Exception("is not a rectangle")
-    }
+case class Height(h: Int) extends CanvasElementModifier[Rectangle] {
+  override def change(x: Rectangle): Unit = {
+    x.height = h
   }
 }
 
-case class Radius(r: Int) extends CanvasElementModifier[Shape] {
-  override def change(x: Shape): Unit = {
-    if (x.isInstanceOf[Circle]) {
-      x.asInstanceOf[Circle].radius = r
-    } else {
-      throw new Exception("is not a circle")
-    }
+case class Radius(r: Int) extends CanvasElementModifier[Circle] {
+  override def change(x: Circle): Unit = {
+    x.radius = r
   }
 }
