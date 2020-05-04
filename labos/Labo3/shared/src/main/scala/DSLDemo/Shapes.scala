@@ -40,6 +40,8 @@ sealed trait ShapeAttributes {
 
 case class ComposedShape(var l: List[Shape]) extends Shape {
 
+  //type A = Rectangle
+
   def map(f: Shape => Shape): ComposedShape = {
     ComposedShape(l.map(f))
   }

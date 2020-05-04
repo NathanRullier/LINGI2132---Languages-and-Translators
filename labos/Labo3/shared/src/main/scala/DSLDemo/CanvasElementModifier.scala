@@ -18,20 +18,20 @@ case class StrokeWidth(s: Int) extends CanvasElementModifier[Shape] {
   }
 }
 
-case class Width(w: Int) extends CanvasElementModifier[Rectangle] {
-  override def change(x: Rectangle): Unit = {
-    x.width = w
+case class Width(w: Int) extends CanvasElementModifier[Shape] {
+  override def change(x: Shape): Unit = {
+    x.asInstanceOf[Rectangle].width = w
   }
 }
 
-case class Height(h: Int) extends CanvasElementModifier[Rectangle] {
-  override def change(x: Rectangle): Unit = {
-    x.height = h
+case class Height(h: Int) extends CanvasElementModifier[Shape] {
+  override def change(x: Shape): Unit = {
+    x.asInstanceOf[Rectangle].height = h
   }
 }
 
-case class Radius(r: Int) extends CanvasElementModifier[Circle] {
-  override def change(x: Circle): Unit = {
-    x.radius = r
+case class Radius(r: Int) extends CanvasElementModifier[Shape] {
+  override def change(x: Shape): Unit = {
+    x.asInstanceOf[Circle].radius = r
   }
 }

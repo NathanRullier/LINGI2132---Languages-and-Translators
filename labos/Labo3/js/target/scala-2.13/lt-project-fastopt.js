@@ -3627,7 +3627,7 @@ class $c_Lwebapp_Main$ extends $c_O {
     const anotherSuperGroup = $p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1).$plus$plus__LDSLDemo_ComposedShape__LDSLDemo_ComposedShape($p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array));
     const this$10 = anotherSuperGroup.LDSLDemo_ComposedShape__f_l;
     const s$1 = $as_LDSLDemo_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0));
-    s$1.change__LDSLDemo_CanvasElementModifier__V(new $c_LDSLDemo_Width(10))
+    s$1.change__LDSLDemo_CanvasElementModifier__V(new $c_LDSLDemo_Radius(10))
   };
 }
 const $d_Lwebapp_Main$ = new $TypeData().initClass({
@@ -6822,23 +6822,23 @@ const $d_LDSLDemo_ComposedShape = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_LDSLDemo_ComposedShape.prototype.$classData = $d_LDSLDemo_ComposedShape;
-class $c_LDSLDemo_Width extends $c_O {
-  constructor(w) {
+class $c_LDSLDemo_Radius extends $c_O {
+  constructor(r) {
     super();
-    this.LDSLDemo_Width__f_w = 0;
-    this.LDSLDemo_Width__f_w = w
+    this.LDSLDemo_Radius__f_r = 0;
+    this.LDSLDemo_Radius__f_r = r
   };
   change__LDSLDemo_Shape__V(x) {
-    /*<skip>*/
+    $as_LDSLDemo_Circle(x).LDSLDemo_Circle__f_radius = this.LDSLDemo_Radius__f_r
   };
   productPrefix__T() {
-    return "Width"
+    return "Radius"
   };
   productArity__I() {
     return 1
   };
   productElement__I__O(x$1) {
-    return ((x$1 === 0) ? this.LDSLDemo_Width__f_w : $m_sr_Statics$().ioobe__I__O(x$1))
+    return ((x$1 === 0) ? this.LDSLDemo_Radius__f_r : $m_sr_Statics$().ioobe__I__O(x$1))
   };
   productIterator__sc_Iterator() {
     return new $c_sr_ScalaRunTime$$anon$1(this)
@@ -6846,10 +6846,10 @@ class $c_LDSLDemo_Width extends $c_O {
   hashCode__I() {
     let acc = (-889275714);
     const hash = acc;
-    const data = $f_T__hashCode__I("Width");
+    const data = $f_T__hashCode__I("Radius");
     acc = $m_sr_Statics$().mix__I__I__I(hash, data);
     const hash$1 = acc;
-    const data$1 = this.LDSLDemo_Width__f_w;
+    const data$1 = this.LDSLDemo_Radius__f_r;
     acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
     const hash$2 = acc;
     return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
@@ -6860,34 +6860,34 @@ class $c_LDSLDemo_Width extends $c_O {
   equals__O__Z(x$1) {
     if ((this === x$1)) {
       return true
-    } else if ((x$1 instanceof $c_LDSLDemo_Width)) {
-      const Width$1 = $as_LDSLDemo_Width(x$1);
-      return (this.LDSLDemo_Width__f_w === Width$1.LDSLDemo_Width__f_w)
+    } else if ((x$1 instanceof $c_LDSLDemo_Radius)) {
+      const Radius$1 = $as_LDSLDemo_Radius(x$1);
+      return (this.LDSLDemo_Radius__f_r === Radius$1.LDSLDemo_Radius__f_r)
     } else {
       return false
     }
   };
 }
-function $as_LDSLDemo_Width(obj) {
-  return (((obj instanceof $c_LDSLDemo_Width) || (obj === null)) ? obj : $throwClassCastException(obj, "DSLDemo.Width"))
+function $as_LDSLDemo_Radius(obj) {
+  return (((obj instanceof $c_LDSLDemo_Radius) || (obj === null)) ? obj : $throwClassCastException(obj, "DSLDemo.Radius"))
 }
-function $isArrayOf_LDSLDemo_Width(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSLDemo_Width)))
+function $isArrayOf_LDSLDemo_Radius(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSLDemo_Radius)))
 }
-function $asArrayOf_LDSLDemo_Width(obj, depth) {
-  return (($isArrayOf_LDSLDemo_Width(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSLDemo.Width;", depth))
+function $asArrayOf_LDSLDemo_Radius(obj, depth) {
+  return (($isArrayOf_LDSLDemo_Radius(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSLDemo.Radius;", depth))
 }
-const $d_LDSLDemo_Width = new $TypeData().initClass({
-  LDSLDemo_Width: 0
-}, false, "DSLDemo.Width", {
-  LDSLDemo_Width: 1,
+const $d_LDSLDemo_Radius = new $TypeData().initClass({
+  LDSLDemo_Radius: 0
+}, false, "DSLDemo.Radius", {
+  LDSLDemo_Radius: 1,
   O: 1,
   LDSLDemo_CanvasElementModifier: 1,
   s_Product: 1,
   s_Equals: 1,
   Ljava_io_Serializable: 1
 });
-$c_LDSLDemo_Width.prototype.$classData = $d_LDSLDemo_Width;
+$c_LDSLDemo_Radius.prototype.$classData = $d_LDSLDemo_Radius;
 class $c_jl_ArithmeticException extends $c_jl_RuntimeException {
   constructor(s) {
     super();
