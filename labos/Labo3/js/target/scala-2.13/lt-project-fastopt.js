@@ -3562,7 +3562,7 @@ class $c_Lwebapp_Main$ extends $c_O {
     const ctx = c.getContext("2d");
     c.width = 300;
     c.height = 300;
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = "blue";
     ctx.lineWidth = 3.0;
     ctx.beginPath();
     ctx.moveTo(100.0, 0.0);

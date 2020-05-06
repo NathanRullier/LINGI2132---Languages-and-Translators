@@ -17,3 +17,13 @@ fastOptJS
 run
 fastOptJS
 ~fastOptJS
+fastOptJS
+projectJVM/test
+projectsJVM/test
+fastOptJS
+apeTest.scala:126)
+- Changing attributes of circle in composed shape of Rectangle and circle should not compile *** FAILED ***
+  Expected a type error, but got none for code:
+ 
+e via propertyà
+~fastOptJS

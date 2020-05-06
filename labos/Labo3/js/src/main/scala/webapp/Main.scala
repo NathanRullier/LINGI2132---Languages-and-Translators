@@ -1,5 +1,6 @@
 package webapp
 
+import DSL._
 import DSLDemo._
 import org.scalajs.dom.{html, document}
 import org.scalajs.dom
@@ -24,7 +25,7 @@ object Main {
     c.width = w
     c.height = w
 
-    ctx.strokeStyle = "red"
+    ctx.strokeStyle = "blue"
     ctx.lineWidth = 3
     ctx.beginPath()
     ctx.moveTo(w/3, 0)
@@ -67,9 +68,10 @@ object Main {
     val anotherSuperGroup = rectangles ++ circles
     // We can get back the elements by their index
     val s = anotherSuperGroup(0)
+
     s change Radius(10)
     // Take care that some property change should not compile, like this one
-    // (rectangles(0) + circles(0)) change Width(30)
+    //4ectangles(0) + circles(0)) change Width(30)
     // because Circles have no width
     // You can have a nice draw function to draw all of this on the canvas
     canvasy.draw()

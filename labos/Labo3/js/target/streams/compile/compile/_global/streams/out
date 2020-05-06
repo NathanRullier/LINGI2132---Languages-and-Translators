@@ -1,6 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:70:20: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : DSLDemo.Radius[0m
-[0m[[0m[31merror[0m] [0m[0m required: DSLDemo.CanvasElementModifier[s.A][0m
-[0m[[0m[31merror[0m] [0m[0m    s change Radius(10)[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Desktop\translators\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:114:51: identifier expected but ')' found.[0m
+[0m[[0m[31merror[0m] [0m[0mcase class Tile (var posX: Int, var posY: Int, var) extends Square with ShapeAttributes {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Desktop\translators\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:158:2: ':' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
