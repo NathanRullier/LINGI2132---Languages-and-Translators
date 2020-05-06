@@ -749,25 +749,47 @@ const $d_LDSLDemo_Canvasy = new $TypeData().initClass({
 $c_LDSLDemo_Canvasy.prototype.$classData = $d_LDSLDemo_Canvasy;
 const $f_LDSLDemo_Shape__and__LDSLDemo_Shape__LDSLDemo_ComposedShape = (function($thiz, s) {
   if ((s instanceof $c_LDSLDemo_ComposedShape)) {
-    const this$4 = $m_sci_List$();
+    const this$2 = $m_s_Console$();
+    const this$3 = this$2.out__Ljava_io_PrintStream();
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("1\n");
+    const this$7 = $m_sci_List$();
     const array = [$thiz];
     const elems = new $c_sjsr_WrappedVarArgs(array);
-    const rassoc$1 = this$4.from__sc_IterableOnce__sci_List(elems);
+    const rassoc$1 = this$7.from__sc_IterableOnce__sci_List(elems);
     return new $c_LDSLDemo_ComposedShape($as_LDSLDemo_ComposedShape(s).LDSLDemo_ComposedShape__f_l.$colon$colon$colon__sci_List__sci_List(rassoc$1))
   } else if ((s !== null)) {
-    const this$8 = $m_sci_List$();
+    const this$9 = $m_s_Console$();
+    const this$10 = this$9.out__Ljava_io_PrintStream();
+    this$10.java$lang$JSConsoleBasedPrintStream$$printString__T__V("2\n");
+    const this$14 = $m_sci_List$();
     const array$1 = [$thiz];
     const elems$1 = new $c_sjsr_WrappedVarArgs(array$1);
-    const rassoc$2 = this$8.from__sc_IterableOnce__sci_List(elems$1);
-    const this$12 = $m_sci_List$();
+    const rassoc$2 = this$14.from__sc_IterableOnce__sci_List(elems$1);
+    const this$18 = $m_sci_List$();
     const array$2 = [s];
     const elems$2 = new $c_sjsr_WrappedVarArgs(array$2);
-    return new $c_LDSLDemo_ComposedShape(this$12.from__sc_IterableOnce__sci_List(elems$2).$colon$colon$colon__sci_List__sci_List(rassoc$2))
-  } else {
-    const this$16 = $m_sci_List$();
+    return new $c_LDSLDemo_ComposedShape(this$18.from__sc_IterableOnce__sci_List(elems$2).$colon$colon$colon__sci_List__sci_List(rassoc$2))
+  } else if ((s !== null)) {
+    const this$20 = $m_s_Console$();
+    const this$21 = this$20.out__Ljava_io_PrintStream();
+    this$21.java$lang$JSConsoleBasedPrintStream$$printString__T__V("3\n");
+    const this$25 = $m_sci_List$();
     const array$3 = [$thiz];
     const elems$3 = new $c_sjsr_WrappedVarArgs(array$3);
-    return new $c_LDSLDemo_ComposedShape(this$16.from__sc_IterableOnce__sci_List(elems$3))
+    const rassoc$3 = this$25.from__sc_IterableOnce__sci_List(elems$3);
+    const this$29 = $m_sci_List$();
+    const array$4 = [s];
+    const elems$4 = new $c_sjsr_WrappedVarArgs(array$4);
+    return new $c_LDSLDemo_ComposedShape(this$29.from__sc_IterableOnce__sci_List(elems$4).$colon$colon$colon__sci_List__sci_List(rassoc$3))
+  } else {
+    const this$31 = $m_s_Console$();
+    const this$32 = this$31.out__Ljava_io_PrintStream();
+    this$32.java$lang$JSConsoleBasedPrintStream$$printString__T__V("4\n");
+    const this$36 = $m_sci_List$();
+    const array$5 = [$thiz];
+    const elems$5 = new $c_sjsr_WrappedVarArgs(array$5);
+    const rassoc$4 = this$36.from__sc_IterableOnce__sci_List(elems$5);
+    return new $c_LDSLDemo_ComposedShape($as_LDSLDemo_ComposedShape(s).LDSLDemo_ComposedShape__f_l.$colon$colon$colon__sci_List__sci_List(rassoc$4))
   }
 });
 function $is_LDSLDemo_Shape(obj) {
@@ -904,6 +926,32 @@ function $m_jl_FloatingPointBits$() {
     $n_jl_FloatingPointBits$ = new $c_jl_FloatingPointBits$()
   };
   return $n_jl_FloatingPointBits$
+}
+class $c_jl_System$Streams$ extends $c_O {
+  constructor() {
+    super();
+    this.jl_System$Streams$__f_out = null;
+    this.jl_System$Streams$__f_err = null;
+    this.jl_System$Streams$__f_in = null;
+    $n_jl_System$Streams$ = this;
+    this.jl_System$Streams$__f_out = new $c_jl_JSConsoleBasedPrintStream(false);
+    this.jl_System$Streams$__f_err = new $c_jl_JSConsoleBasedPrintStream(true);
+    this.jl_System$Streams$__f_in = null
+  };
+}
+const $d_jl_System$Streams$ = new $TypeData().initClass({
+  jl_System$Streams$: 0
+}, false, "java.lang.System$Streams$", {
+  jl_System$Streams$: 1,
+  O: 1
+});
+$c_jl_System$Streams$.prototype.$classData = $d_jl_System$Streams$;
+let $n_jl_System$Streams$ = (void 0);
+function $m_jl_System$Streams$() {
+  if ((!$n_jl_System$Streams$)) {
+    $n_jl_System$Streams$ = new $c_jl_System$Streams$()
+  };
+  return $n_jl_System$Streams$
 }
 const $p_jl_System$SystemProperties$__loadSystemProperties__O = (function($thiz) {
   const result = {};
@@ -2924,6 +2972,23 @@ function $m_sjsr_package$() {
   };
   return $n_sjsr_package$
 }
+class $c_s_util_DynamicVariable extends $c_O {
+  constructor(init) {
+    super();
+    this.s_util_DynamicVariable__f_v = null;
+    this.s_util_DynamicVariable__f_v = init
+  };
+  toString__T() {
+    return (("DynamicVariable(" + this.s_util_DynamicVariable__f_v) + ")")
+  };
+}
+const $d_s_util_DynamicVariable = new $TypeData().initClass({
+  s_util_DynamicVariable: 0
+}, false, "scala.util.DynamicVariable", {
+  s_util_DynamicVariable: 1,
+  O: 1
+});
+$c_s_util_DynamicVariable.prototype.$classData = $d_s_util_DynamicVariable;
 class $c_s_util_hashing_MurmurHash3 extends $c_O {
   mix__I__I__I(hash, data) {
     let h = this.mixLast__I__I__I(hash, data);
@@ -3600,22 +3665,30 @@ class $c_Lwebapp_Main$ extends $c_O {
     $p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array).moveX__I__V(20);
     const stabilizer$1 = $p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array);
     stabilizer$1.change__LDSLDemo_CanvasElementModifier__V(new $c_LDSLDemo_Color("blue"));
-    $p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array).and__LDSLDemo_Shape__LDSLDemo_ComposedShape($p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1));
-    const this$7 = array$1.get(0);
+    const superGroupOfShapes = $p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array).and__LDSLDemo_Shape__LDSLDemo_ComposedShape($p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1));
+    const this$8 = $m_s_Console$();
+    const this$9 = this$8.out__Ljava_io_PrintStream();
+    this$9.java$lang$JSConsoleBasedPrintStream$$printString__T__V((superGroupOfShapes + "\n"));
+    const this$10 = superGroupOfShapes.LDSLDemo_ComposedShape__f_l;
+    const x = $as_LDSLDemo_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0));
+    const this$12 = $m_s_Console$();
+    const this$13 = this$12.out__Ljava_io_PrintStream();
+    this$13.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+    const this$14 = array$1.get(0);
     const s = array.get(1);
-    const this$8 = $f_LDSLDemo_Shape__and__LDSLDemo_Shape__LDSLDemo_ComposedShape(this$7, s);
+    const this$15 = $f_LDSLDemo_Shape__and__LDSLDemo_Shape__LDSLDemo_ComposedShape(this$14, s);
     const f = ((this$3$1) => ((x$1$2) => {
       const x$1 = $as_LDSLDemo_Shape(x$1$2);
       x$1.moveY__I__V(30)
     }))(this);
-    const this$9 = this$8.LDSLDemo_ComposedShape__f_l;
-    if ((this$9 === $m_sci_Nil$())) {
+    const this$16 = this$15.LDSLDemo_ComposedShape__f_l;
+    if ((this$16 === $m_sci_Nil$())) {
       $m_sci_Nil$()
     } else {
-      const arg1$1 = this$9.head__O();
+      const arg1$1 = this$16.head__O();
       const h = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
       let t = h;
-      let rest = $as_sci_List(this$9.tail__O());
+      let rest = $as_sci_List(this$16.tail__O());
       while ((rest !== $m_sci_Nil$())) {
         const arg1$2 = rest.head__O();
         const nx = new $c_sci_$colon$colon(f(arg1$2), $m_sci_Nil$());
@@ -3624,10 +3697,11 @@ class $c_Lwebapp_Main$ extends $c_O {
         rest = $as_sci_List(rest.tail__O())
       }
     };
-    const anotherSuperGroup = $p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1).$plus$plus__LDSLDemo_ComposedShape__LDSLDemo_ComposedShape($p_Lwebapp_Main$__arrayCircleToComposedShape$1__ALDSLDemo_Circle__LDSLDemo_ComposedShape(this, array));
-    const this$10 = anotherSuperGroup.LDSLDemo_ComposedShape__f_l;
-    const s$1 = $as_LDSLDemo_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0));
-    s$1.change__LDSLDemo_CanvasElementModifier__V(new $c_LDSLDemo_Radius(10))
+    const $$x2 = $p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1);
+    const this$17 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef(array);
+    $$x2.$plus$plus__LDSLDemo_ComposedShape__LDSLDemo_ComposedShape(new $c_LDSLDemo_ComposedShape($m_sci_List$().from__sc_IterableOnce__sci_List(this$17)));
+    const stabilizer$2 = $p_Lwebapp_Main$__arrayRectangleToComposedShape$1__ALDSLDemo_Rectangle__LDSLDemo_ComposedShape(this, array$1);
+    stabilizer$2.change__LDSLDemo_CanvasElementModifier__V(new $c_LDSLDemo_Width(10))
   };
 }
 const $d_Lwebapp_Main$ = new $TypeData().initClass({
@@ -4295,6 +4369,36 @@ function $m_s_Array$() {
     $n_s_Array$ = new $c_s_Array$()
   };
   return $n_s_Array$
+}
+class $c_s_Console$ extends $c_O {
+  constructor() {
+    super();
+    this.s_Console$__f_outVar = null;
+    this.s_Console$__f_errVar = null;
+    this.s_Console$__f_inVar = null;
+    $n_s_Console$ = this;
+    this.s_Console$__f_outVar = new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_out);
+    this.s_Console$__f_errVar = new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_err);
+    this.s_Console$__f_inVar = new $c_s_util_DynamicVariable(null)
+  };
+  out__Ljava_io_PrintStream() {
+    return $as_Ljava_io_PrintStream(this.s_Console$__f_outVar.s_util_DynamicVariable__f_v)
+  };
+}
+const $d_s_Console$ = new $TypeData().initClass({
+  s_Console$: 0
+}, false, "scala.Console$", {
+  s_Console$: 1,
+  O: 1,
+  s_io_AnsiColor: 1
+});
+$c_s_Console$.prototype.$classData = $d_s_Console$;
+let $n_s_Console$ = (void 0);
+function $m_s_Console$() {
+  if ((!$n_s_Console$)) {
+    $n_s_Console$ = new $c_s_Console$()
+  };
+  return $n_s_Console$
 }
 class $c_s_LowPriorityImplicits extends $c_s_LowPriorityImplicits2 {
   wrapRefArray__AO__scm_ArraySeq$ofRef(xs) {
@@ -5834,6 +5938,8 @@ const $d_sjsr_AnonFunction1 = new $TypeData().initClass({
   F1: 1
 });
 $c_sjsr_AnonFunction1.prototype.$classData = $d_sjsr_AnonFunction1;
+class $c_Ljava_io_OutputStream extends $c_O {
+}
 const $f_jl_Byte__equals__O__Z = (function($thiz, that) {
   return Object.is($thiz, that)
 });
@@ -6751,24 +6857,43 @@ class $c_LDSLDemo_ComposedShape extends $c_O {
       }
     }
   };
-  and__LDSLDemo_Shape__LDSLDemo_ComposedShape(s) {
-    if ((s instanceof $c_LDSLDemo_ComposedShape)) {
-      const rassoc$3 = this.LDSLDemo_ComposedShape__f_l;
-      return new $c_LDSLDemo_ComposedShape($as_LDSLDemo_ComposedShape(s).LDSLDemo_ComposedShape__f_l.$colon$colon$colon__sci_List__sci_List(rassoc$3))
-    } else if ((s !== null)) {
-      const rassoc$4 = this.LDSLDemo_ComposedShape__f_l;
-      const this$4 = $m_sci_List$();
-      const array = [s];
-      const elems = new $c_sjsr_WrappedVarArgs(array);
-      return new $c_LDSLDemo_ComposedShape(this$4.from__sc_IterableOnce__sci_List(elems).$colon$colon$colon__sci_List__sci_List(rassoc$4))
-    } else {
-      return new $c_LDSLDemo_ComposedShape(this.LDSLDemo_ComposedShape__f_l)
-    }
-  };
   $plus$plus__LDSLDemo_ComposedShape__LDSLDemo_ComposedShape(composedShape) {
     const this$1 = this.LDSLDemo_ComposedShape__f_l;
     const suffix = composedShape.LDSLDemo_ComposedShape__f_l;
     return new $c_LDSLDemo_ComposedShape(this$1.appendedAll__sc_IterableOnce__sci_List(suffix))
+  };
+  and__LDSLDemo_Shape__LDSLDemo_ComposedShape(s) {
+    if ((s instanceof $c_LDSLDemo_ComposedShape)) {
+      const this$2 = $m_s_Console$();
+      const this$3 = this$2.out__Ljava_io_PrintStream();
+      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("1\n");
+      const rassoc$5 = this.LDSLDemo_ComposedShape__f_l;
+      return new $c_LDSLDemo_ComposedShape($as_LDSLDemo_ComposedShape(s).LDSLDemo_ComposedShape__f_l.$colon$colon$colon__sci_List__sci_List(rassoc$5))
+    } else if ((s !== null)) {
+      const this$5 = $m_s_Console$();
+      const this$6 = this$5.out__Ljava_io_PrintStream();
+      this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("2\n");
+      const rassoc$6 = this.LDSLDemo_ComposedShape__f_l;
+      const this$10 = $m_sci_List$();
+      const array = [s];
+      const elems = new $c_sjsr_WrappedVarArgs(array);
+      return new $c_LDSLDemo_ComposedShape(this$10.from__sc_IterableOnce__sci_List(elems).$colon$colon$colon__sci_List__sci_List(rassoc$6))
+    } else if ((s !== null)) {
+      const this$12 = $m_s_Console$();
+      const this$13 = this$12.out__Ljava_io_PrintStream();
+      this$13.java$lang$JSConsoleBasedPrintStream$$printString__T__V("3\n");
+      const rassoc$7 = this.LDSLDemo_ComposedShape__f_l;
+      const this$17 = $m_sci_List$();
+      const array$1 = [s];
+      const elems$1 = new $c_sjsr_WrappedVarArgs(array$1);
+      return new $c_LDSLDemo_ComposedShape(this$17.from__sc_IterableOnce__sci_List(elems$1).$colon$colon$colon__sci_List__sci_List(rassoc$7))
+    } else {
+      const this$19 = $m_s_Console$();
+      const this$20 = this$19.out__Ljava_io_PrintStream();
+      this$20.java$lang$JSConsoleBasedPrintStream$$printString__T__V("4\n");
+      const rassoc$8 = this.LDSLDemo_ComposedShape__f_l;
+      return new $c_LDSLDemo_ComposedShape($as_LDSLDemo_ComposedShape(s).LDSLDemo_ComposedShape__f_l.$colon$colon$colon__sci_List__sci_List(rassoc$8))
+    }
   };
   productPrefix__T() {
     return "ComposedShape"
@@ -6822,23 +6947,20 @@ const $d_LDSLDemo_ComposedShape = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_LDSLDemo_ComposedShape.prototype.$classData = $d_LDSLDemo_ComposedShape;
-class $c_LDSLDemo_Radius extends $c_O {
-  constructor(r) {
+class $c_LDSLDemo_Width extends $c_O {
+  constructor(w) {
     super();
-    this.LDSLDemo_Radius__f_r = 0;
-    this.LDSLDemo_Radius__f_r = r
-  };
-  change__LDSLDemo_Shape__V(x) {
-    $as_LDSLDemo_Circle(x).LDSLDemo_Circle__f_radius = this.LDSLDemo_Radius__f_r
+    this.LDSLDemo_Width__f_w = 0;
+    this.LDSLDemo_Width__f_w = w
   };
   productPrefix__T() {
-    return "Radius"
+    return "Width"
   };
   productArity__I() {
     return 1
   };
   productElement__I__O(x$1) {
-    return ((x$1 === 0) ? this.LDSLDemo_Radius__f_r : $m_sr_Statics$().ioobe__I__O(x$1))
+    return ((x$1 === 0) ? this.LDSLDemo_Width__f_w : $m_sr_Statics$().ioobe__I__O(x$1))
   };
   productIterator__sc_Iterator() {
     return new $c_sr_ScalaRunTime$$anon$1(this)
@@ -6846,10 +6968,10 @@ class $c_LDSLDemo_Radius extends $c_O {
   hashCode__I() {
     let acc = (-889275714);
     const hash = acc;
-    const data = $f_T__hashCode__I("Radius");
+    const data = $f_T__hashCode__I("Width");
     acc = $m_sr_Statics$().mix__I__I__I(hash, data);
     const hash$1 = acc;
-    const data$1 = this.LDSLDemo_Radius__f_r;
+    const data$1 = this.LDSLDemo_Width__f_w;
     acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
     const hash$2 = acc;
     return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
@@ -6860,34 +6982,48 @@ class $c_LDSLDemo_Radius extends $c_O {
   equals__O__Z(x$1) {
     if ((this === x$1)) {
       return true
-    } else if ((x$1 instanceof $c_LDSLDemo_Radius)) {
-      const Radius$1 = $as_LDSLDemo_Radius(x$1);
-      return (this.LDSLDemo_Radius__f_r === Radius$1.LDSLDemo_Radius__f_r)
+    } else if ((x$1 instanceof $c_LDSLDemo_Width)) {
+      const Width$1 = $as_LDSLDemo_Width(x$1);
+      return (this.LDSLDemo_Width__f_w === Width$1.LDSLDemo_Width__f_w)
     } else {
       return false
     }
   };
+  change__LDSLDemo_Shape__V(x) {
+    const x$1 = $as_LDSLDemo_Rectangle(x);
+    x$1.LDSLDemo_Rectangle__f_width = this.LDSLDemo_Width__f_w
+  };
 }
-function $as_LDSLDemo_Radius(obj) {
-  return (((obj instanceof $c_LDSLDemo_Radius) || (obj === null)) ? obj : $throwClassCastException(obj, "DSLDemo.Radius"))
+function $as_LDSLDemo_Width(obj) {
+  return (((obj instanceof $c_LDSLDemo_Width) || (obj === null)) ? obj : $throwClassCastException(obj, "DSLDemo.Width"))
 }
-function $isArrayOf_LDSLDemo_Radius(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSLDemo_Radius)))
+function $isArrayOf_LDSLDemo_Width(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSLDemo_Width)))
 }
-function $asArrayOf_LDSLDemo_Radius(obj, depth) {
-  return (($isArrayOf_LDSLDemo_Radius(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSLDemo.Radius;", depth))
+function $asArrayOf_LDSLDemo_Width(obj, depth) {
+  return (($isArrayOf_LDSLDemo_Width(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSLDemo.Width;", depth))
 }
-const $d_LDSLDemo_Radius = new $TypeData().initClass({
-  LDSLDemo_Radius: 0
-}, false, "DSLDemo.Radius", {
-  LDSLDemo_Radius: 1,
+const $d_LDSLDemo_Width = new $TypeData().initClass({
+  LDSLDemo_Width: 0
+}, false, "DSLDemo.Width", {
+  LDSLDemo_Width: 1,
   O: 1,
   LDSLDemo_CanvasElementModifier: 1,
   s_Product: 1,
   s_Equals: 1,
   Ljava_io_Serializable: 1
 });
-$c_LDSLDemo_Radius.prototype.$classData = $d_LDSLDemo_Radius;
+$c_LDSLDemo_Width.prototype.$classData = $d_LDSLDemo_Width;
+const $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__ = (function($thiz, out) {
+  $thiz.Ljava_io_FilterOutputStream__f_out = out;
+  return $thiz
+});
+class $c_Ljava_io_FilterOutputStream extends $c_Ljava_io_OutputStream {
+  constructor() {
+    super();
+    this.Ljava_io_FilterOutputStream__f_out = null
+  };
+}
 class $c_jl_ArithmeticException extends $c_jl_RuntimeException {
   constructor(s) {
     super();
@@ -6977,6 +7113,19 @@ const $d_jl_IndexOutOfBoundsException = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_jl_IndexOutOfBoundsException.prototype.$classData = $d_jl_IndexOutOfBoundsException;
+class $c_jl_JSConsoleBasedPrintStream$DummyOutputStream extends $c_Ljava_io_OutputStream {
+}
+const $d_jl_JSConsoleBasedPrintStream$DummyOutputStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream$DummyOutputStream", {
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1
+});
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream$DummyOutputStream;
 class $c_jl_NegativeArraySizeException extends $c_jl_RuntimeException {
   constructor() {
     super();
@@ -9284,6 +9433,36 @@ const $d_s_reflect_ClassTag$GenericClassTag = new $TypeData().initClass({
   s_Equals: 1
 });
 $c_s_reflect_ClassTag$GenericClassTag.prototype.$classData = $d_s_reflect_ClassTag$GenericClassTag;
+const $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__ = (function($thiz, _out, autoFlush, charset) {
+  $thiz.Ljava_io_PrintStream__f_autoFlush = autoFlush;
+  $thiz.Ljava_io_PrintStream__f_charset = charset;
+  $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__($thiz, _out);
+  $thiz.Ljava_io_PrintStream__f_closing = false;
+  $thiz.Ljava_io_PrintStream__f_java$io$PrintStream$$closed = false;
+  $thiz.Ljava_io_PrintStream__f_errorFlag = false;
+  return $thiz
+});
+class $c_Ljava_io_PrintStream extends $c_Ljava_io_FilterOutputStream {
+  constructor() {
+    super();
+    this.Ljava_io_PrintStream__f_encoder = null;
+    this.Ljava_io_PrintStream__f_autoFlush = false;
+    this.Ljava_io_PrintStream__f_charset = null;
+    this.Ljava_io_PrintStream__f_closing = false;
+    this.Ljava_io_PrintStream__f_java$io$PrintStream$$closed = false;
+    this.Ljava_io_PrintStream__f_errorFlag = false;
+    this.Ljava_io_PrintStream__f_bitmap$0 = false
+  };
+}
+function $as_Ljava_io_PrintStream(obj) {
+  return (((obj instanceof $c_Ljava_io_PrintStream) || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.PrintStream"))
+}
+function $isArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ljava_io_PrintStream)))
+}
+function $asArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (($isArrayOf_Ljava_io_PrintStream(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.io.PrintStream;", depth))
+}
 class $c_sc_ArrayOps$ArrayIterator$mcB$sp extends $c_sc_ArrayOps$ArrayIterator {
   constructor(xs$mcB$sp) {
     super();
@@ -9794,6 +9973,70 @@ const $d_sjs_js_JavaScriptException = new $TypeData().initClass({
   s_Equals: 1
 });
 $c_sjs_js_JavaScriptException.prototype.$classData = $d_sjs_js_JavaScriptException;
+const $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V = (function($thiz, line) {
+  if (($as_T((typeof console)) !== "undefined")) {
+    let $$x1;
+    if ($thiz.jl_JSConsoleBasedPrintStream__f_isErr) {
+      const x = console.error;
+      $$x1 = $uZ((!(!x)))
+    } else {
+      $$x1 = false
+    };
+    if ($$x1) {
+      console.error(line)
+    } else {
+      console.log(line)
+    }
+  }
+});
+class $c_jl_JSConsoleBasedPrintStream extends $c_Ljava_io_PrintStream {
+  constructor(isErr) {
+    super();
+    this.jl_JSConsoleBasedPrintStream__f_isErr = false;
+    this.jl_JSConsoleBasedPrintStream__f_flushed = false;
+    this.jl_JSConsoleBasedPrintStream__f_buffer = null;
+    this.jl_JSConsoleBasedPrintStream__f_isErr = isErr;
+    const out = new $c_jl_JSConsoleBasedPrintStream$DummyOutputStream();
+    $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__(this, out, false, null);
+    this.jl_JSConsoleBasedPrintStream__f_flushed = true;
+    this.jl_JSConsoleBasedPrintStream__f_buffer = ""
+  };
+  java$lang$JSConsoleBasedPrintStream$$printString__T__V(s) {
+    let rest = s;
+    while ((rest !== "")) {
+      const this$1 = rest;
+      const nlPos = $uI(this$1.indexOf("\n"));
+      if ((nlPos < 0)) {
+        this.jl_JSConsoleBasedPrintStream__f_buffer = (("" + this.jl_JSConsoleBasedPrintStream__f_buffer) + rest);
+        this.jl_JSConsoleBasedPrintStream__f_flushed = false;
+        rest = ""
+      } else {
+        const $$x1 = this.jl_JSConsoleBasedPrintStream__f_buffer;
+        const this$3 = rest;
+        $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V(this, (("" + $$x1) + $as_T(this$3.substring(0, nlPos))));
+        this.jl_JSConsoleBasedPrintStream__f_buffer = "";
+        this.jl_JSConsoleBasedPrintStream__f_flushed = true;
+        const this$4 = rest;
+        const beginIndex = ((1 + nlPos) | 0);
+        rest = $as_T(this$4.substring(beginIndex))
+      }
+    }
+  };
+}
+const $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream", {
+  jl_JSConsoleBasedPrintStream: 1,
+  Ljava_io_PrintStream: 1,
+  Ljava_io_FilterOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1,
+  jl_Appendable: 1
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
 const $p_sc_StrictOptimizedLinearSeqOps__loop$2__I__sc_LinearSeq__sc_LinearSeq = (function($thiz, n, s) {
   while (true) {
     if (((n <= 0) || s.isEmpty__Z())) {

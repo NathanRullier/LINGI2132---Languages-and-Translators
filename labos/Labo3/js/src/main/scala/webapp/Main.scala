@@ -43,6 +43,7 @@ object Main {
   def useMySuperDSL(canvas: html.Canvas): Unit = {
     implicit def arrayCircleToComposedShape(a: Array[Circle]) = ComposedShape(a.toList)
     implicit def arrayRectangleToComposedShape(a: Array[Rectangle]) = ComposedShape(a.toList)
+    implicit def arrayShapeToComposedShape(a: Array[Shape]) = ComposedShape(a.toList)
     // After you've done the first part of the project, everything should
     // compile and do the expected behaviour
     val canvasy = new Canvasy(canvas)
@@ -61,13 +62,16 @@ object Main {
     circles change Color("blue")
     // We can group the shapes easily with the keyword and
     val superGroupOfShapes = circles and rectangles
+    println(superGroupOfShapes)
+    println(superGroupOfShapes(0))
     // And of course, we have foreach/map/flatmap available
     (rectangles(0) and circles(1)).foreach(_ moveY 30)
     // We should also be able to use common operators to group shapes
-    val anotherSuperGroup = rectangles ++ circles
+    val anotherSuperGroup = rectangles ++ ComposedShape(circles.toList)
     // We can get back the elements by their index
-    val s = anotherSuperGroup(0)
-    s change Radius(10)
+    //val s = anotherSuperGroup(0)
+    rectangles change Width(10)
+    //s change Width(10)
     // Take care that some property change should not compile, like this one
     // (rectangles(0) + circles(0)) change Width(30)
     // because Circles have no width
