@@ -11,9 +11,9 @@ class Canvasy(canvas: html.Canvas) {
 
   private def renderTiles(tiles: List[Tile]) = {
 
-    for (block <- blocks) {
-      ctx.fillStyle = block.style
-      ctx.fillRect(block.pos.x, block.pos.y, Block.BlockSize, Block.BlockSize)
+    for (tile <- tiles) {
+      //ctx.fillStyle = .style
+      //ctx.fillRect(block.pos.x, block.pos.y, Block.BlockSize, Block.BlockSize)
     }
   }
 
