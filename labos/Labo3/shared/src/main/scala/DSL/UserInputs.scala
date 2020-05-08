@@ -12,9 +12,9 @@ object Direction extends Enumeration {
 
 object UserInputs {
 
-  private val keysDown = HashMap[js.Number, Boolean]()
+  private val keysDown = HashMap[Int, Boolean]()
 
-  def init() = {
+  def initInputsListener() = {
     g.addEventListener("keydown", (e: dom.KeyboardEvent) => {
       keysDown += e.keyCode -> true
     }, false)
@@ -24,9 +24,9 @@ object UserInputs {
     }, false)
   }
 
-  def Left = keysDown.contains(37)
-  def Up = keysDown.contains(38)
-  def Right = keysDown.contains(39)
-  def Down = keysDown.contains(40)
+  def holdLeft = keysDown.contains(37)
+  def holdUp = keysDown.contains(38)
+  def holdRight = keysDown.contains(39)
+  def holdDown = keysDown.contains(40)
 
 }

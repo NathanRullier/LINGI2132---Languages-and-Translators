@@ -1,0 +1,12 @@
+package DSL
+
+import DSL._
+
+
+case class Snake(head: Square, tail: List[Square] = List()) {
+  // val speed: Int = 10 // movement in number of blocks per second
+  val completeSnake = head +: tail
+
+
+
+}

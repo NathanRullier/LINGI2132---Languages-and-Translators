@@ -1,8 +1,10 @@
 package DSL
 
+import DSL._
+//import TileType._
+
 sealed trait Shape {
   type A <: Shape
-
   def and(s: Shape): ComposedShape = {
     if (s.isInstanceOf[ComposedShape]) {
       ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape].l)
@@ -92,12 +94,13 @@ case class ComposedShape(var l: List[Shape]) extends Shape {
     ComposedShape(l ++ composedShape.l)
   }
 
-
 }
 
-case class Square(var x: Int, var y: Int, var size: Int) extends Shape with ShapeAttributes {
+case class Square(var x: Int, var y: Int, var size: Int, var tileType: TileType.Value) extends Shape with ShapeAttributes {
+
   type A = Square
 
+  println("square "+x+" "+y)
   override def moveX(v: Int): Unit = {
     x += v
   }
@@ -106,17 +109,21 @@ case class Square(var x: Int, var y: Int, var size: Int) extends Shape with Shap
     y += v
   }
 
+  override def draw(canvas: html.Canvas): Unit = {
+
+    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    val style =
+      if(square.tileType == TileType.Empty) "blue"
+      else "red"
+
+    ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
+    ctx.fillStyle = style
+
+ }
+
   override def change(property: CanvasElementModifier[Square]): Unit = {
     property.change(this)
   }
-}
-
-case class Tile (var posX: Int, var posY: Int, var) extends Square with ShapeAttributes {
-
-  override def change(property: CanvasElementModifier[Tile]): Unit = {
-    property.change(this)
-  }
-
 }
 
 case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int) extends Shape with ShapeAttributes {
