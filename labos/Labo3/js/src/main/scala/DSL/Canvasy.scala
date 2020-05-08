@@ -13,35 +13,62 @@ class Canvasy(canvas: html.Canvas) {
   def += (squares : Array[Square] ) { shapes = shapes ++ squares }
   var gridHeight = 400
   var gridWidth = 400
-  var game = new Game()
+ // var game = new Game()
+  val boardSquareList =
+    for {
+      //pas sur si cest width/height
+      x <- 0 until 40
+      y <- 0 until 40
+    } Square(x,y,10, TileType.Empty,0)
+
   //private var shapes = Array[Shape]()
 
 
   def initRender(canvas: html.Canvas) = {
+
      canvas.width = gridWidth
      canvas.height = gridHeight
-    // renderTiles(squares)
-    //GameLoop
+    val head = new Square(0,0,40, TileType.Empty,0)
+    renderHead(head)
+     //renderTiles(boardSquareList.toSeq)
      println("initRender")
 
   }
-  private def renderSnakeGame(squares: List[Square]) = {
+  private def renderSnakeGame(squares: Seq[Square]) = {
 
     renderTiles(squares)
 
   }
-  private def renderTiles(squares: List[Square]) = {
+  def renderHead(square: Square) = {
 
+    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+
+      val style =
+        if(square.tileType == TileType.Empty) "#d1d1e0" //gris
+        else if(square.tileType == TileType.Snake) "#3366ff" //bleu
+        else if(square.tileType == TileType.Food) "#ff0000" //rouge
+        else "red" //rouge
+
+      println(style)
+      ctx.fillStyle = style
+      ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
+
+      //ctx.stroke()
+
+  }
+
+  private def renderTiles(squares: Seq[Square]) = {
+    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     for (square <- squares) {
-
+      println("max")
       //square.draw();
 
       val style =
         if(square.tileType == TileType.Empty) "blue"
         else "red"
 
-     // ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
-      // ctx.fillStyle = style
+      ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
+      ctx.fillStyle = style
     }
   }
   initRender(canvas)

@@ -1,6 +1,6 @@
 package DSL
 
-object Game  {
+class Game  {
 
   //var snake = Snake(head = Block(Position(0, 0), Colors.nextColor.rgb))
 
@@ -17,7 +17,7 @@ object Game  {
       //pas sur si cest width/height
       x <- 0 until numberOfSquaresWidth
       y <- 0 until numberOfSquaresHeight
-    } Square(x,y,10, TileType.Empty)
+    } Square(x,y,10, TileType.Empty,0)
 
   UserInputs.initInputsListener()
 
@@ -30,8 +30,7 @@ object Game  {
       else if (UserInputs.holdDown && (direction != Direction.Up)) Direction.Down
       else direction
   }
-
-
+  
   def update(seconds: Int) = {
 
   }

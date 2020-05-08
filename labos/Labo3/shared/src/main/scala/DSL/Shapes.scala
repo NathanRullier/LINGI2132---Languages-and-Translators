@@ -96,11 +96,11 @@ case class ComposedShape(var l: List[Shape]) extends Shape {
 
 }
 
-case class Square(var x: Int, var y: Int, var size: Int, var tileType: TileType.Value) extends Shape with ShapeAttributes {
+case class Square(var x: Int, var y: Int, var size: Int, var tileType: TileType.Value, var timer: Int) extends Shape with ShapeAttributes {
 
   type A = Square
 
-  println("square "+x+" "+y)
+  //println("square "+x+" "+y)
   override def moveX(v: Int): Unit = {
     x += v
   }
@@ -109,17 +109,22 @@ case class Square(var x: Int, var y: Int, var size: Int, var tileType: TileType.
     y += v
   }
 
-  override def draw(canvas: html.Canvas): Unit = {
-
-    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-    val style =
-      if(square.tileType == TileType.Empty) "blue"
-      else "red"
-
-    ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
-    ctx.fillStyle = style
-
- }
+  def reduceTimer: Unit = {
+    timer -= 1
+    val tileType =
+      if (timer == 0) TileType.Empty
+  }
+//  override def draw(canvas: html.Canvas): Unit = {
+//
+//    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+//    val style =
+//      if(tileType == TileType.Empty) "blue"
+//      else "red"
+//
+//    ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
+//    ctx.fillStyle = style
+//
+// }
 
   override def change(property: CanvasElementModifier[Square]): Unit = {
     property.change(this)
