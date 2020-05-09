@@ -14,14 +14,13 @@ object Main {
 
   def initGame(): Unit = {
     val canvas = document.createElement("canvas").asInstanceOf[html.Canvas]
-    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     document.body.appendChild(canvas)
     val canvasy = new Canvasy(canvas)
+    canvasy.initRender()
     val game = new Game(canvasy)
     val loop = new Loop()
-    val head = new Square(0,0,0)
     UserInputs.initInputsListener()
-    loop.start(game.update, () => canvasy.fkall())
+    loop.start(game.update, () => canvasy.draw())
 
     //canvasy.render()
     //canvasy.initRender

@@ -701,86 +701,12 @@ const $d_O = new $TypeData().initClass({
   O: 1
 }, (void 0), (void 0), $is_O, $isArrayOf_O);
 $c_O.prototype.$classData = $d_O;
-const $p_LDSL_Canvasy__renderTiles__AALDSL_Square__V = (function($thiz, squares) {
-  $thiz.LDSL_Canvasy__f_canvas.getContext("2d");
-  const f = ((this$2) => ((square$2) => {
-    $asArrayOf_LDSL_Square(square$2, 1)
-  }))($thiz);
-  const len = squares.u.length;
-  let i = 0;
-  if ((squares !== null)) {
-    while ((i < len)) {
-      const arg1 = squares.get(i);
-      f(arg1);
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_I(squares, 1)) {
-    const x3 = $asArrayOf_I(squares, 1);
-    while ((i < len)) {
-      const arg1$1 = x3.get(i);
-      f(arg1$1);
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_D(squares, 1)) {
-    const x4 = $asArrayOf_D(squares, 1);
-    while ((i < len)) {
-      const arg1$2 = x4.get(i);
-      f(arg1$2);
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_J(squares, 1)) {
-    const x5 = $asArrayOf_J(squares, 1);
-    while ((i < len)) {
-      const t = x5.get(i);
-      const lo = t.RTLong__f_lo;
-      const hi = t.RTLong__f_hi;
-      f(new $c_RTLong(lo, hi));
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_F(squares, 1)) {
-    const x6 = $asArrayOf_F(squares, 1);
-    while ((i < len)) {
-      const arg1$3 = x6.get(i);
-      f(arg1$3);
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_C(squares, 1)) {
-    const x7 = $asArrayOf_C(squares, 1);
-    while ((i < len)) {
-      const arg1$4 = x7.get(i);
-      f($bC(arg1$4));
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_B(squares, 1)) {
-    const x8 = $asArrayOf_B(squares, 1);
-    while ((i < len)) {
-      const arg1$5 = x8.get(i);
-      f(arg1$5);
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_S(squares, 1)) {
-    const x9 = $asArrayOf_S(squares, 1);
-    while ((i < len)) {
-      const arg1$6 = x9.get(i);
-      f(arg1$6);
-      i = ((1 + i) | 0)
-    }
-  } else if ($isArrayOf_Z(squares, 1)) {
-    const x10 = $asArrayOf_Z(squares, 1);
-    while ((i < len)) {
-      const arg1$7 = x10.get(i);
-      f(arg1$7);
-      i = ((1 + i) | 0)
-    }
-  } else {
-    throw new $c_s_MatchError(squares)
-  }
-});
 class $c_LDSL_Canvasy extends $c_O {
   constructor(canvas) {
     super();
     this.LDSL_Canvasy__f_canvas = null;
     this.LDSL_Canvasy__f_shapes = null;
+    this.LDSL_Canvasy__f_ctx = null;
     this.LDSL_Canvasy__f_gridHeight = 0;
     this.LDSL_Canvasy__f_gridWidth = 0;
     this.LDSL_Canvasy__f_boardSquareList = null;
@@ -795,6 +721,7 @@ class $c_LDSL_Canvasy extends $c_O {
       i = ((1 + i) | 0)
     };
     this.LDSL_Canvasy__f_shapes = array;
+    this.LDSL_Canvasy__f_ctx = canvas.getContext("2d");
     this.LDSL_Canvasy__f_gridHeight = 800;
     this.LDSL_Canvasy__f_gridWidth = 800;
     const arr = $newArrayObject($d_LDSL_Square.getArrayOf().getArrayOf(), [20]);
@@ -807,30 +734,141 @@ class $c_LDSL_Canvasy extends $c_O {
       };
       i$1 = ((1 + i$1) | 0)
     };
-    this.LDSL_Canvasy__f_boardSquareList = arr;
-    this.initRender__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas)
+    this.LDSL_Canvasy__f_boardSquareList = arr
   };
-  initRender__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas) {
-    canvas.width = this.LDSL_Canvasy__f_gridWidth;
-    canvas.height = this.LDSL_Canvasy__f_gridHeight;
+  draw__V() {
+    const xs = this.LDSL_Canvasy__f_shapes;
+    const f = ((this$2) => ((x$2) => {
+      const x = $as_LDSL_Shape(x$2);
+      if ((x instanceof $c_LDSL_Square)) {
+        const x2 = $as_LDSL_Square(x);
+        this$2.draw__LDSL_Square__V(x2)
+      } else if ((x === null)) {
+        throw new $c_s_MatchError(x)
+      }
+    }))(this);
+    $m_s_reflect_ManifestFactory$UnitManifest$();
+    const len = xs.u.length;
+    const ys = $newArrayObject($d_jl_Void.getArrayOf(), [len]);
+    if ((len > 0)) {
+      let i = 0;
+      if ((xs !== null)) {
+        while ((i < len)) {
+          const $$x1 = i;
+          const arg1 = xs.get(i);
+          ys.set($$x1, f(arg1));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_I(xs, 1)) {
+        const x3 = $asArrayOf_I(xs, 1);
+        while ((i < len)) {
+          const $$x2 = i;
+          const arg1$1 = x3.get(i);
+          ys.set($$x2, f(arg1$1));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_D(xs, 1)) {
+        const x4 = $asArrayOf_D(xs, 1);
+        while ((i < len)) {
+          const $$x3 = i;
+          const arg1$2 = x4.get(i);
+          ys.set($$x3, f(arg1$2));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_J(xs, 1)) {
+        const x5 = $asArrayOf_J(xs, 1);
+        while ((i < len)) {
+          const $$x4 = i;
+          const t = x5.get(i);
+          const lo = t.RTLong__f_lo;
+          const hi = t.RTLong__f_hi;
+          ys.set($$x4, f(new $c_RTLong(lo, hi)));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_F(xs, 1)) {
+        const x6 = $asArrayOf_F(xs, 1);
+        while ((i < len)) {
+          const $$x5 = i;
+          const arg1$3 = x6.get(i);
+          ys.set($$x5, f(arg1$3));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_C(xs, 1)) {
+        const x7 = $asArrayOf_C(xs, 1);
+        while ((i < len)) {
+          const $$x6 = i;
+          const arg1$4 = x7.get(i);
+          ys.set($$x6, f($bC(arg1$4)));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_B(xs, 1)) {
+        const x8 = $asArrayOf_B(xs, 1);
+        while ((i < len)) {
+          const $$x7 = i;
+          const arg1$5 = x8.get(i);
+          ys.set($$x7, f(arg1$5));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_S(xs, 1)) {
+        const x9 = $asArrayOf_S(xs, 1);
+        while ((i < len)) {
+          const $$x8 = i;
+          const arg1$6 = x9.get(i);
+          ys.set($$x8, f(arg1$6));
+          i = ((1 + i) | 0)
+        }
+      } else if ($isArrayOf_Z(xs, 1)) {
+        const x10 = $asArrayOf_Z(xs, 1);
+        while ((i < len)) {
+          const $$x9 = i;
+          const arg1$7 = x10.get(i);
+          ys.set($$x9, f(arg1$7));
+          i = ((1 + i) | 0)
+        }
+      } else {
+        throw new $c_s_MatchError(xs)
+      }
+    }
+  };
+  draw__LDSL_Square__V(square) {
+    const style = square.LDSL_Square__f_color;
+    this.LDSL_Canvasy__f_ctx.fillStyle = style;
+    this.LDSL_Canvasy__f_ctx.fillRect(square.LDSL_Square__f_x, square.LDSL_Square__f_y, square.LDSL_Square__f_side, square.LDSL_Square__f_side);
+    this.LDSL_Canvasy__f_ctx.stroke()
+  };
+  $plus$eq__ALDSL_Square__V(squares) {
+    const xs = this.LDSL_Canvasy__f_shapes;
+    const this$5 = $m_s_Array$();
+    const newLength = ((xs.u.length + squares.u.length) | 0);
+    let dest$1;
+    if ($d_LDSL_Shape.getClassOf().isAssignableFrom__jl_Class__Z($objectGetClass(xs).getComponentType__jl_Class())) {
+      dest$1 = ($d_LDSL_Shape.getClassOf().isPrimitive__Z() ? this$5.copyOf__O__I__O(xs, newLength) : $m_ju_Arrays$().copyOf__AO__I__jl_Class__AO(xs, newLength, $d_LDSL_Shape.getArrayOf().getClassOf()))
+    } else {
+      const dest = $newArrayObject($d_LDSL_Shape.getArrayOf(), [newLength]);
+      $m_s_Array$().copy__O__I__O__I__I__V(xs, 0, dest, 0, xs.u.length);
+      dest$1 = dest
+    };
+    $m_s_Array$().copy__O__I__O__I__I__V(squares, 0, dest$1, xs.u.length, squares.u.length);
+    this.LDSL_Canvasy__f_shapes = $asArrayOf_LDSL_Shape(dest$1, 1)
+  };
+  initRender__V() {
+    this.LDSL_Canvasy__f_canvas.width = this.LDSL_Canvasy__f_gridWidth;
+    this.LDSL_Canvasy__f_canvas.height = this.LDSL_Canvasy__f_gridHeight;
     new $c_LDSL_Square(0, 0, 0);
-    $p_LDSL_Canvasy__renderTiles__AALDSL_Square__V(this, this.LDSL_Canvasy__f_boardSquareList);
-    const this$2 = $m_s_Console$();
-    const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("initRender\n");
-    const end = this.LDSL_Canvasy__f_boardSquareList.u.length;
+    const end = (((-1) + this.LDSL_Canvasy__f_boardSquareList.u.length) | 0);
     const isEmpty = (end < 0);
     if ((!isEmpty)) {
       let i = 0;
       while (true) {
         const v1 = i;
-        const end$1 = this.LDSL_Canvasy__f_boardSquareList.get(v1).u.length;
+        const end$1 = (((-1) + this.LDSL_Canvasy__f_boardSquareList.get(v1).u.length) | 0);
         const isEmpty$1 = (end$1 < 0);
         if ((!isEmpty$1)) {
           let i$1 = 0;
           while (true) {
             const v1$1 = i$1;
             this.LDSL_Canvasy__f_boardSquareList.get(v1).set(v1$1, new $c_LDSL_Square($imul(40, v1), $imul(40, v1$1), 40));
+            this.$plus$eq__ALDSL_Square__V($makeNativeArrayWrapper($d_LDSL_Square.getArrayOf(), [this.LDSL_Canvasy__f_boardSquareList.get(v1).get(v1$1)]));
             if ((i$1 === end$1)) {
               break
             };
@@ -842,7 +880,8 @@ class $c_LDSL_Canvasy extends $c_O {
         };
         i = ((1 + i) | 0)
       }
-    }
+    };
+    this.draw__V()
   };
   resetGame__V() {
     const ctx = this.LDSL_Canvasy__f_canvas.getContext("2d");
@@ -886,10 +925,22 @@ const $d_LDSL_Loop = new $TypeData().initClass({
 });
 $c_LDSL_Loop.prototype.$classData = $d_LDSL_Loop;
 const $f_LDSL_Settings__$init$__V = (function($thiz) {
-  $thiz.DSL$Settings$_setter_$GameSpeed_$eq__I__V(20);
-  $thiz.DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(20);
-  $thiz.DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(20)
+  $thiz.LDSL_Game__f_GameSpeed = 20;
+  $thiz.LDSL_Game__f_NumberOfSquaresWidth = 20;
+  $thiz.LDSL_Game__f_NumberOfSquaresHeight = 20
 });
+function $is_LDSL_Shape(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.LDSL_Shape)))
+}
+function $as_LDSL_Shape(obj) {
+  return (($is_LDSL_Shape(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "DSL.Shape"))
+}
+function $isArrayOf_LDSL_Shape(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSL_Shape)))
+}
+function $asArrayOf_LDSL_Shape(obj, depth) {
+  return (($isArrayOf_LDSL_Shape(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSL.Shape;", depth))
+}
 const $d_LDSL_Shape = new $TypeData().initClass({
   LDSL_Shape: 0
 }, true, "DSL.Shape", {
@@ -951,6 +1002,9 @@ class $c_jl_Class extends $c_O {
   };
   toString__T() {
     return ((this.isInterface__Z() ? "interface " : (this.isPrimitive__Z() ? "" : "class ")) + this.getName__T())
+  };
+  isAssignableFrom__jl_Class__Z(that) {
+    return $uZ(this.jl_Class__f_data.isAssignableFrom(that.jl_Class__f_data))
   };
   isInterface__Z() {
     return $uZ(this.jl_Class__f_data.isInterface)
@@ -1143,6 +1197,14 @@ function $m_jl_reflect_Array$() {
   return $n_jl_reflect_Array$
 }
 class $c_ju_Arrays$ extends $c_O {
+  fill__AO__O__V(a, value) {
+    const toIndex = a.u.length;
+    let i = 0;
+    while ((i !== toIndex)) {
+      a.set(i, value);
+      i = ((1 + i) | 0)
+    }
+  };
   copyOf__AO__I__AO(original, newLength) {
     const tagT = $m_s_reflect_ClassTag$().apply__jl_Class__s_reflect_ClassTag($objectGetClass(original).getComponentType__jl_Class());
     if ((newLength < 0)) {
@@ -1153,6 +1215,105 @@ class $c_ju_Arrays$ extends $c_O {
     const ret = tagT.newArray__I__O(newLength);
     $systemArraycopy(original, 0, ret, 0, copyLength);
     return $asArrayOf_O(ret, 1)
+  };
+  copyOf__AO__I__jl_Class__AO(original, newLength, newType) {
+    const tag = $m_s_reflect_ClassTag$().apply__jl_Class__s_reflect_ClassTag(newType.getComponentType__jl_Class());
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = tag.newArray__I__O(newLength);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return $asArrayOf_O(ret, 1)
+  };
+  copyOf__AB__I__AB(original, newLength) {
+    $m_s_reflect_ManifestFactory$ByteManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_B.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AS__I__AS(original, newLength) {
+    $m_s_reflect_ManifestFactory$ShortManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_S.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AI__I__AI(original, newLength) {
+    $m_s_reflect_ManifestFactory$IntManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_I.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AJ__I__AJ(original, newLength) {
+    $m_s_reflect_ManifestFactory$LongManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_J.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AC__I__AC(original, newLength) {
+    $m_s_reflect_ManifestFactory$CharManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_C.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AF__I__AF(original, newLength) {
+    $m_s_reflect_ManifestFactory$FloatManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_F.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AD__I__AD(original, newLength) {
+    $m_s_reflect_ManifestFactory$DoubleManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_D.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
+  };
+  copyOf__AZ__I__AZ(original, newLength) {
+    $m_s_reflect_ManifestFactory$BooleanManifest$();
+    if ((newLength < 0)) {
+      throw new $c_jl_NegativeArraySizeException()
+    };
+    const b = original.u.length;
+    const copyLength = ((newLength < b) ? newLength : b);
+    const ret = $newArrayObject($d_Z.getArrayOf(), [newLength]);
+    $systemArraycopy(original, 0, ret, 0, copyLength);
+    return ret
   };
 }
 const $d_ju_Arrays$ = new $TypeData().initClass({
@@ -1537,6 +1698,43 @@ class $c_sr_ScalaRunTime$ extends $c_O {
       throw new $c_s_MatchError(xs)
     }
   };
+  array_update__O__I__O__V(xs, idx, value) {
+    if ($isArrayOf_O(xs, 1)) {
+      const x2 = $asArrayOf_O(xs, 1);
+      x2.set(idx, value)
+    } else if ($isArrayOf_I(xs, 1)) {
+      const x3 = $asArrayOf_I(xs, 1);
+      x3.set(idx, $uI(value))
+    } else if ($isArrayOf_D(xs, 1)) {
+      const x4 = $asArrayOf_D(xs, 1);
+      x4.set(idx, $uD(value))
+    } else if ($isArrayOf_J(xs, 1)) {
+      const x5 = $asArrayOf_J(xs, 1);
+      x5.set(idx, $uJ(value))
+    } else if ($isArrayOf_F(xs, 1)) {
+      const x6 = $asArrayOf_F(xs, 1);
+      x6.set(idx, $uF(value))
+    } else if ($isArrayOf_C(xs, 1)) {
+      const x7 = $asArrayOf_C(xs, 1);
+      x7.set(idx, $uC(value))
+    } else if ($isArrayOf_B(xs, 1)) {
+      const x8 = $asArrayOf_B(xs, 1);
+      x8.set(idx, $uB(value))
+    } else if ($isArrayOf_S(xs, 1)) {
+      const x9 = $asArrayOf_S(xs, 1);
+      x9.set(idx, $uS(value))
+    } else if ($isArrayOf_Z(xs, 1)) {
+      const x10 = $asArrayOf_Z(xs, 1);
+      x10.set(idx, $uZ(value))
+    } else if ($isArrayOf_jl_Void(xs, 1)) {
+      const x11 = $asArrayOf_jl_Void(xs, 1);
+      x11.set(idx, (void 0))
+    } else if ((xs === null)) {
+      throw new $c_jl_NullPointerException()
+    } else {
+      throw new $c_s_MatchError(xs)
+    }
+  };
   array_length__O__I(xs) {
     return $m_jl_reflect_Array$().getLength__O__I(xs)
   };
@@ -1890,17 +2088,18 @@ class $c_Lwebapp_Main$ extends $c_O {
   };
   initGame__V() {
     const canvas = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("canvas");
-    canvas.getContext("2d");
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.appendChild(canvas);
     const canvasy = new $c_LDSL_Canvasy(canvas);
+    canvasy.initRender__V();
     const game = new $c_LDSL_Game(canvasy);
     const loop = new $c_LDSL_Loop();
-    new $c_LDSL_Square(0, 0, 0);
     $m_LDSL_UserInputs$().initInputsListener__sjs_js_Dynamic();
     loop.start__F1__F0__V(new $c_sjsr_AnonFunction1(((this$1, game$1) => ((seconds$2) => {
       const seconds = $uD(seconds$2);
       game$1.update__D__V(seconds)
-    }))(this, game)), new $c_sjsr_AnonFunction0(((this$2, canvasy$1) => (() => (void 0)))(this, canvasy)))
+    }))(this, game)), new $c_sjsr_AnonFunction0(((this$2, canvasy$1) => (() => {
+      canvasy$1.draw__V()
+    }))(this, canvasy)))
   };
 }
 const $d_Lwebapp_Main$ = new $TypeData().initClass({
@@ -1956,15 +2155,6 @@ class $c_LDSL_Game extends $c_O {
     };
     this.LDSL_Game__f_board = arr;
     this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3)
-  };
-  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
-    this.LDSL_Game__f_GameSpeed = x$1
-  };
-  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
-    this.LDSL_Game__f_NumberOfSquaresWidth = x$1
-  };
-  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
-    this.LDSL_Game__f_NumberOfSquaresHeight = x$1
   };
   updateDirection__V() {
     const this$1 = $m_LDSL_UserInputs$();
@@ -2826,6 +3016,80 @@ function $m_RTLong$() {
     $n_RTLong$ = new $c_RTLong$()
   };
   return $n_RTLong$
+}
+const $p_s_Array$__slowcopy__O__I__O__I__I__V = (function($thiz, src, srcPos, dest, destPos, length) {
+  let i = srcPos;
+  let j = destPos;
+  const srcUntil = ((srcPos + length) | 0);
+  while ((i < srcUntil)) {
+    $m_sr_ScalaRunTime$().array_update__O__I__O__V(dest, j, $m_sr_ScalaRunTime$().array_apply__O__I__O(src, i));
+    i = ((1 + i) | 0);
+    j = ((1 + j) | 0)
+  }
+});
+const $p_s_Array$__newUnitArray__I__Ajl_Void = (function($thiz, len) {
+  const result = $newArrayObject($d_jl_Void.getArrayOf(), [len]);
+  $m_ju_Arrays$().fill__AO__O__V(result, (void 0));
+  return result
+});
+class $c_s_Array$ extends $c_O {
+  copy__O__I__O__I__I__V(src, srcPos, dest, destPos, length) {
+    const srcClass = $objectGetClass(src);
+    if ((srcClass.isArray__Z() && $objectGetClass(dest).isAssignableFrom__jl_Class__Z(srcClass))) {
+      $systemArraycopy(src, srcPos, dest, destPos, length)
+    } else {
+      $p_s_Array$__slowcopy__O__I__O__I__I__V(this, src, srcPos, dest, destPos, length)
+    }
+  };
+  copyOf__O__I__O(original, newLength) {
+    if ($isArrayOf_jl_Void(original, 1)) {
+      return $p_s_Array$__newUnitArray__I__Ajl_Void(this, newLength)
+    } else if ($isArrayOf_O(original, 1)) {
+      const x3 = $asArrayOf_O(original, 1);
+      return $m_ju_Arrays$().copyOf__AO__I__AO(x3, newLength)
+    } else if ($isArrayOf_I(original, 1)) {
+      const x4 = $asArrayOf_I(original, 1);
+      return $m_ju_Arrays$().copyOf__AI__I__AI(x4, newLength)
+    } else if ($isArrayOf_D(original, 1)) {
+      const x5 = $asArrayOf_D(original, 1);
+      return $m_ju_Arrays$().copyOf__AD__I__AD(x5, newLength)
+    } else if ($isArrayOf_J(original, 1)) {
+      const x6 = $asArrayOf_J(original, 1);
+      return $m_ju_Arrays$().copyOf__AJ__I__AJ(x6, newLength)
+    } else if ($isArrayOf_F(original, 1)) {
+      const x7 = $asArrayOf_F(original, 1);
+      return $m_ju_Arrays$().copyOf__AF__I__AF(x7, newLength)
+    } else if ($isArrayOf_C(original, 1)) {
+      const x8 = $asArrayOf_C(original, 1);
+      return $m_ju_Arrays$().copyOf__AC__I__AC(x8, newLength)
+    } else if ($isArrayOf_B(original, 1)) {
+      const x9 = $asArrayOf_B(original, 1);
+      return $m_ju_Arrays$().copyOf__AB__I__AB(x9, newLength)
+    } else if ($isArrayOf_S(original, 1)) {
+      const x10 = $asArrayOf_S(original, 1);
+      return $m_ju_Arrays$().copyOf__AS__I__AS(x10, newLength)
+    } else if ($isArrayOf_Z(original, 1)) {
+      const x11 = $asArrayOf_Z(original, 1);
+      return $m_ju_Arrays$().copyOf__AZ__I__AZ(x11, newLength)
+    } else {
+      throw new $c_s_MatchError(original)
+    }
+  };
+}
+const $d_s_Array$ = new $TypeData().initClass({
+  s_Array$: 0
+}, false, "scala.Array$", {
+  s_Array$: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_Array$.prototype.$classData = $d_s_Array$;
+let $n_s_Array$ = (void 0);
+function $m_s_Array$() {
+  if ((!$n_s_Array$)) {
+    $n_s_Array$ = new $c_s_Array$()
+  };
+  return $n_s_Array$
 }
 class $c_s_Console$ extends $c_O {
   constructor() {
