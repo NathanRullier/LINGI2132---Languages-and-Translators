@@ -2390,10 +2390,12 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Snake
   };
   update__D__V(seconds) {
-    this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
-    this.updateDirection__V();
-    if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
-      this.moveSnake__V()
+    if ((!this.LDSL_Game__f_gameOver)) {
+      this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
+      this.updateDirection__V();
+      if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
+        this.moveSnake__V()
+      }
     }
   };
 }

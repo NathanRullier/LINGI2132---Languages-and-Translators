@@ -13,9 +13,9 @@ object TileType extends Enumeration {
 
 class Tile(square: Square){
 
-  var tileType = TileType.Empty
-  var timer = 0
-  
+   var tileType = TileType.Empty
+   var timer = 0
+
 }
 
 class Game(canvasy: Canvasy) extends Settings {
@@ -146,11 +146,10 @@ class Game(canvasy: Canvasy) extends Settings {
 
   def update(seconds: Double) = {
 
-    compteur += 1
-    updateDirection()
-    if(compteur % GameSpeed == 0) moveSnake()
-
-    //canvasy.renderHead(snake.head)
-
+    if (!gameOver) {
+      compteur += 1
+      updateDirection()
+      if (compteur % GameSpeed == 0) moveSnake()
+    }
   }
 }
