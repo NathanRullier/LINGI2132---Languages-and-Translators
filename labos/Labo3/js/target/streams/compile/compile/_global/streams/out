@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 [0m[[0m[31merror[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSL/Food.scala:10:64: ';' expected but ')' found.[0m
 [0m[[0m[31merror[0m] [0m[0m    val randomX = Random.nextInt(Game.numberOfSquaresWidth) + 1)[0m
 [0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
+=======
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:7:23: abstract type A in type DSLDemo.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:11:28: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were three feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
+>>>>>>> master

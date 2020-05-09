@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [0m[[0m[0minfo[0m] [0m[0mFast optimizing /Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/js/target/scala-2.13/lt-project-fastopt.js[0m
 [0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 39544 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 11966 us[0m
@@ -17,3 +18,24 @@
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 1525 -- invalidated: 58[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: 26028 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 65744 us[0m
+=======
+[0m[[0m[0minfo[0m] [0m[0mFast optimizing C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\lt-project-fastopt.js[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 25174 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 4448 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 20530 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: 71954 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 8136 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 107 methods.[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 11989 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 21978 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 13553 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 1535 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 17093 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 15753 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 214 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 730 -- invalidated: 5[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 1354 -- invalidated: 71[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: 19102 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 53727 us[0m
+>>>>>>> master
