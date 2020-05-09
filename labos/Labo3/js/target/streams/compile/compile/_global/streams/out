@@ -1,5 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:102:30: value head is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0mdid you mean headX or headY?[0m
-[0m[[0m[31merror[0m] [0m[0m    canvasy.renderHead(snake.head)[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\Canvasy.scala:86:14: value draw is not a member of Array[DSL.Square][0m
+[0m[[0m[31merror[0m] [0m[0m      square.draw();[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

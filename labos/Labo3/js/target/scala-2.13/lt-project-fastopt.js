@@ -701,6 +701,81 @@ const $d_O = new $TypeData().initClass({
   O: 1
 }, (void 0), (void 0), $is_O, $isArrayOf_O);
 $c_O.prototype.$classData = $d_O;
+const $p_LDSL_Canvasy__renderTiles__AALDSL_Square__V = (function($thiz, squares) {
+  $thiz.LDSL_Canvasy__f_canvas.getContext("2d");
+  const f = ((this$2) => ((square$2) => {
+    $asArrayOf_LDSL_Square(square$2, 1)
+  }))($thiz);
+  const len = squares.u.length;
+  let i = 0;
+  if ((squares !== null)) {
+    while ((i < len)) {
+      const arg1 = squares.get(i);
+      f(arg1);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_I(squares, 1)) {
+    const x3 = $asArrayOf_I(squares, 1);
+    while ((i < len)) {
+      const arg1$1 = x3.get(i);
+      f(arg1$1);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_D(squares, 1)) {
+    const x4 = $asArrayOf_D(squares, 1);
+    while ((i < len)) {
+      const arg1$2 = x4.get(i);
+      f(arg1$2);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_J(squares, 1)) {
+    const x5 = $asArrayOf_J(squares, 1);
+    while ((i < len)) {
+      const t = x5.get(i);
+      const lo = t.RTLong__f_lo;
+      const hi = t.RTLong__f_hi;
+      f(new $c_RTLong(lo, hi));
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_F(squares, 1)) {
+    const x6 = $asArrayOf_F(squares, 1);
+    while ((i < len)) {
+      const arg1$3 = x6.get(i);
+      f(arg1$3);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_C(squares, 1)) {
+    const x7 = $asArrayOf_C(squares, 1);
+    while ((i < len)) {
+      const arg1$4 = x7.get(i);
+      f($bC(arg1$4));
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_B(squares, 1)) {
+    const x8 = $asArrayOf_B(squares, 1);
+    while ((i < len)) {
+      const arg1$5 = x8.get(i);
+      f(arg1$5);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_S(squares, 1)) {
+    const x9 = $asArrayOf_S(squares, 1);
+    while ((i < len)) {
+      const arg1$6 = x9.get(i);
+      f(arg1$6);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_Z(squares, 1)) {
+    const x10 = $asArrayOf_Z(squares, 1);
+    while ((i < len)) {
+      const arg1$7 = x10.get(i);
+      f(arg1$7);
+      i = ((1 + i) | 0)
+    }
+  } else {
+    throw new $c_s_MatchError(squares)
+  }
+});
 class $c_LDSL_Canvasy extends $c_O {
   constructor(canvas) {
     super();
@@ -722,39 +797,52 @@ class $c_LDSL_Canvasy extends $c_O {
     this.LDSL_Canvasy__f_shapes = array;
     this.LDSL_Canvasy__f_gridHeight = 800;
     this.LDSL_Canvasy__f_gridWidth = 800;
+    const arr = $newArrayObject($d_LDSL_Square.getArrayOf().getArrayOf(), [20]);
     let i$1 = 0;
     while (true) {
       const v1 = i$1;
-      let i$2 = 0;
-      while (true) {
-        const arg1 = i$2;
-        new $c_LDSL_Square(v1, arg1, 10);
-        if ((i$2 === 79)) {
-          break
-        };
-        i$2 = ((1 + i$2) | 0)
-      };
-      if ((i$1 === 79)) {
+      arr.set(v1, $newArrayObject($d_LDSL_Square.getArrayOf(), [20]));
+      if ((i$1 === 19)) {
         break
       };
       i$1 = ((1 + i$1) | 0)
     };
-    this.LDSL_Canvasy__f_boardSquareList = (void 0);
+    this.LDSL_Canvasy__f_boardSquareList = arr;
     this.initRender__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas)
   };
   initRender__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas) {
     canvas.width = this.LDSL_Canvasy__f_gridWidth;
     canvas.height = this.LDSL_Canvasy__f_gridHeight;
-    const head = new $c_LDSL_Square(0, 0, 0);
-    this.renderHead__LDSL_Square__V(head);
+    new $c_LDSL_Square(0, 0, 0);
+    $p_LDSL_Canvasy__renderTiles__AALDSL_Square__V(this, this.LDSL_Canvasy__f_boardSquareList);
     const this$2 = $m_s_Console$();
     const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("initRender\n")
-  };
-  renderHead__LDSL_Square__V(square) {
-    const ctx = this.LDSL_Canvasy__f_canvas.getContext("2d");
-    ctx.fillStyle = "#d1d1e0";
-    ctx.fillRect($imul(square.LDSL_Square__f_x, square.LDSL_Square__f_side), $imul(square.LDSL_Square__f_y, square.LDSL_Square__f_side), square.LDSL_Square__f_side, square.LDSL_Square__f_side)
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("initRender\n");
+    const end = this.LDSL_Canvasy__f_boardSquareList.u.length;
+    const isEmpty = (end < 0);
+    if ((!isEmpty)) {
+      let i = 0;
+      while (true) {
+        const v1 = i;
+        const end$1 = this.LDSL_Canvasy__f_boardSquareList.get(v1).u.length;
+        const isEmpty$1 = (end$1 < 0);
+        if ((!isEmpty$1)) {
+          let i$1 = 0;
+          while (true) {
+            const v1$1 = i$1;
+            this.LDSL_Canvasy__f_boardSquareList.get(v1).set(v1$1, new $c_LDSL_Square($imul(40, v1), $imul(40, v1$1), 40));
+            if ((i$1 === end$1)) {
+              break
+            };
+            i$1 = ((1 + i$1) | 0)
+          }
+        };
+        if ((i === end)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    }
   };
   resetGame__V() {
     const ctx = this.LDSL_Canvasy__f_canvas.getContext("2d");

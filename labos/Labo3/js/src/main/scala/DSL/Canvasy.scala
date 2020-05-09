@@ -25,12 +25,7 @@ class Canvasy(canvas: html.Canvas) {
   var gridHeight = 800
   var gridWidth = 800
   // var game = new Game()
-  val boardSquareList =
-    for {
-      //pas sur si cest width/height
-      x <- 0 until 80
-      y <- 0 until 80
-    } Square(x, y, 10)
+  val boardSquareList = Array.ofDim[Square](20, 20)
 
   //private var shapes = Array[Shape]()
 
@@ -39,13 +34,18 @@ class Canvasy(canvas: html.Canvas) {
     canvas.width = gridWidth
     canvas.height = gridHeight
     val head = new Square(0, 0, 0)
-    renderHead(head)
-    //renderTiles(boardSquareList.toSeq)
+    //renderHead(head)
+    renderTiles(boardSquareList)
     println("initRender")
+    for (i <- 0 to boardSquareList.length) {
+      for (j <- 0 to boardSquareList(i).length) {
+        boardSquareList(i)(j) = new Square(i * 40, j * 40, 40)
+      }
+    }
 
   }
 
-  private def renderSnakeGame(squares: Seq[Square]) = {
+  private def renderSnakeGame(squares: Array[Array[Square]]) = {
 
     renderTiles(squares)
 
@@ -79,7 +79,7 @@ class Canvasy(canvas: html.Canvas) {
 
   }
 
-  private def renderTiles(squares: Seq[Square]) = {
+  private def renderTiles(squares: Array[Array[Square]]) = {
     val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     for (square <- squares) {
       // println("max")
