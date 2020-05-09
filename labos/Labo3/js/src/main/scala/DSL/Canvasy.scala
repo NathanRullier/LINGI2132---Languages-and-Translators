@@ -54,14 +54,13 @@ class Canvasy(canvas: html.Canvas) extends Settings {
 
   //private var shapes = Array[Shape]()
 
-  def initRender(canvas: html.Canvas) = {
+  def initRender() = {
 
     val squareSide = 40
     canvas.width = gridWidth
     canvas.height = gridHeight
     val head = new Square(0, 0, 0)
     //renderHead(head)
-    renderTiles(boardSquareList)
     println("initRender")
 
     for (i <- 0 to boardSquareList.length -1 ) {

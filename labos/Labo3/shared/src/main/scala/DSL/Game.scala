@@ -11,9 +11,9 @@ object TileType extends Enumeration {
   val Empty, Snake, Food = Value
 }
 
-class Tile{
-  var Type = TileType.Snake
-  var Timer = 0
+class Tile(val square:Square){
+  var tileType = TileType.Empty
+  var timer = 0
 }
 
 class Game(canvasy: Canvasy) extends Settings {
@@ -27,11 +27,13 @@ class Game(canvasy: Canvasy) extends Settings {
   val board = Array.ofDim[Tile](NumberOfSquaresWidth,NumberOfSquaresWidth)
   for (i <- 0 to board.length -1 ) {
     for (j <- 0 to board(i).length -1) {
-      board(i)(j) = new Tile()
+      val square: Square = new Square(40*i,40*j,40)
+      board(i)(j) = new Tile(square)
+      canvasy+=Array(square)
     }
   }
 
-  println("test tile: "+ board(5)(5).Type)
+  println("test tile: "+ board(5)(5).tileType)
   var snake = new Snake(3,3,3);
 
 
@@ -70,20 +72,23 @@ class Game(canvasy: Canvasy) extends Settings {
 
   def checkCollisions(): Unit ={
 
+    println(snake.headX+" "+snake.headY)
+
+
     //verif collision avec les cotes (probablement devoir update les valeurs)
     if (snake.headX <= -1 || snake.headX >=NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1){
       println("COLLISION AVEC UN MUR")
       gameOver = true
     }
     //verif collision avec une pomme
-    if (board(snake.headX)(snake.headY).Type == TileType.Food){
+    if (board(snake.headX)(snake.headY).tileType == TileType.Food){
       snake = snake.copy(length = snake.length + 1 )
       println("MENOUM UN BON LEGUME")
       generateNewFood()
       //incrementer les timer de chaque tile snake ?
     }
     //verif collision avec sa queue
-    if (board(snake.headX)(snake.headY).Type == TileType.Snake){
+    if (board(snake.headX)(snake.headY).tileType == TileType.Snake){
       println("COLLISION AVEC QUEUE DU SERPENT")
       gameOver = true
       //incrementer les timer de chaque tile snake ?
@@ -97,10 +102,10 @@ class Game(canvasy: Canvasy) extends Settings {
     val newFoodPositionX = Random.nextInt(NumberOfSquaresWidth)
     val newFoodPositionY = Random.nextInt(NumberOfSquaresHeight)
 
-    if(board(newFoodPositionX)(newFoodPositionY).Type != TileType.Empty){
+    if(board(newFoodPositionX)(newFoodPositionY).tileType != TileType.Empty){
       generateNewFood()
     }
-    else board(newFoodPositionX)(newFoodPositionY).Type = TileType.Food
+    else board(newFoodPositionX)(newFoodPositionY).tileType = TileType.Food
   }
 
   //TODO class controller
@@ -132,7 +137,7 @@ class Game(canvasy: Canvasy) extends Settings {
     checkCollisions()
     isGameOver()
     //Si tout est beau, on update le board
-    board(snake.headX)(snake.headY).Type = TileType.Snake
+    board(snake.headX)(snake.headY).tileType = TileType.Snake
 
 
   }
