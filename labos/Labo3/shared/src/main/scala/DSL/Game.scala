@@ -13,8 +13,18 @@ object TileType extends Enumeration {
 
 class Tile(square: Square){
 
-   var tileType = TileType.Empty
+   private var _tileType = TileType.Empty
    var timer = 0
+
+  def tileType(tileType: TileType.Value):Unit={
+    tileType match{
+      case TileType.Empty => square change Color("black")
+      case TileType.Snake => square change Color("blue")
+      case TileType.Food => square change Color("red")
+    }
+  }
+
+  def tileType():TileType.Value = _tileType
 
 }
 
@@ -107,7 +117,7 @@ class Game(canvasy: Canvasy) extends Settings {
     if(board(newFoodPositionX)(newFoodPositionY).tileType != TileType.Empty){
       generateNewFood()
     }
-    else board(newFoodPositionX)(newFoodPositionY).tileType = TileType.Food
+    else board(newFoodPositionX)(newFoodPositionY).tileType( TileType.Food)
   }
 
   //TODO class controller
@@ -139,7 +149,7 @@ class Game(canvasy: Canvasy) extends Settings {
     checkCollisions()
     isGameOver()
     //Si tout est beau, on update le board
-    board(snake.headX)(snake.headY).tileType = TileType.Snake
+    board(snake.headX)(snake.headY).tileType(TileType.Snake)
 
 
   }

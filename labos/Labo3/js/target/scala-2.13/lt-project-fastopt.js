@@ -760,10 +760,36 @@ const $f_LDSL_ShapeAttributes__$init$__V = (function($thiz) {
 class $c_LDSL_Tile extends $c_O {
   constructor(square) {
     super();
-    this.LDSL_Tile__f_tileType = null;
+    this.LDSL_Tile__f_square = null;
+    this.LDSL_Tile__f__tileType = null;
     this.LDSL_Tile__f_timer = 0;
-    this.LDSL_Tile__f_tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
+    this.LDSL_Tile__f_square = square;
+    this.LDSL_Tile__f__tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
     this.LDSL_Tile__f_timer = 0
+  };
+  tileType__s_Enumeration$Value__V(tileType) {
+    const x = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
+    if (((x === null) ? (tileType === null) : x.equals__O__Z(tileType))) {
+      const this$1 = this.LDSL_Tile__f_square;
+      const property = new $c_LDSL_Color("black");
+      this$1.LDSL_Square__f_color = property.LDSL_Color__f_c
+    } else {
+      const x$3 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
+      if (((x$3 === null) ? (tileType === null) : x$3.equals__O__Z(tileType))) {
+        const this$2 = this.LDSL_Tile__f_square;
+        const property$1 = new $c_LDSL_Color("blue");
+        this$2.LDSL_Square__f_color = property$1.LDSL_Color__f_c
+      } else {
+        const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
+        if (((x$5 === null) ? (tileType === null) : x$5.equals__O__Z(tileType))) {
+          const this$3 = this.LDSL_Tile__f_square;
+          const property$2 = new $c_LDSL_Color("red");
+          this$3.LDSL_Square__f_color = property$2.LDSL_Color__f_c
+        } else {
+          throw new $c_s_MatchError(tileType)
+        }
+      }
+    }
   };
 }
 const $d_LDSL_Tile = new $TypeData().initClass({
@@ -2219,10 +2245,11 @@ class $c_LDSL_Game extends $c_O {
         i$1 = ((1 + i$1) | 0)
       }
     };
-    const x = ("test tile: " + this.LDSL_Game__f_board.get(5).get(5).LDSL_Tile__f_tileType);
-    const this$25 = $m_s_Console$();
-    const this$26 = this$25.out__Ljava_io_PrintStream();
-    this$26.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+    const this$24 = this.LDSL_Game__f_board.get(5).get(5);
+    const x = ("test tile: " + this$24.LDSL_Tile__f__tileType);
+    const this$26 = $m_s_Console$();
+    const this$27 = this$26.out__Ljava_io_PrintStream();
+    this$27.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
     this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3)
   };
   DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
@@ -2314,7 +2341,8 @@ class $c_LDSL_Game extends $c_O {
       this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
       this.LDSL_Game__f_gameOver = true
     };
-    const x$1 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_tileType;
+    const this$7 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+    const x$1 = this$7.LDSL_Tile__f__tileType;
     const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
     if (((x$1 === null) ? (x$2 === null) : x$1.equals__O__Z(x$2))) {
       const qual$1 = this.LDSL_Game__f_snake;
@@ -2322,17 +2350,18 @@ class $c_LDSL_Game extends $c_O {
       const x$2$2 = qual$1.LDSL_Snake__f_headX;
       const x$3 = qual$1.LDSL_Snake__f_headY;
       this.LDSL_Game__f_snake = new $c_LDSL_Snake(x$2$2, x$3, x$1$1);
-      const this$8 = $m_s_Console$();
-      const this$9 = this$8.out__Ljava_io_PrintStream();
-      this$9.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
+      const this$9 = $m_s_Console$();
+      const this$10 = this$9.out__Ljava_io_PrintStream();
+      this$10.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
       this.generateNewFood__V()
     };
-    const x$4 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_tileType;
+    const this$11 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+    const x$4 = this$11.LDSL_Tile__f__tileType;
     const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
     if (((x$4 === null) ? (x$5 === null) : x$4.equals__O__Z(x$5))) {
-      const this$11 = $m_s_Console$();
-      const this$12 = this$11.out__Ljava_io_PrintStream();
-      this$12.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC QUEUE DU SERPENT\n");
+      const this$13 = $m_s_Console$();
+      const this$14 = this$13.out__Ljava_io_PrintStream();
+      this$14.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC QUEUE DU SERPENT\n");
       this.LDSL_Game__f_gameOver = true
     }
   };
@@ -2343,12 +2372,13 @@ class $c_LDSL_Game extends $c_O {
     const this$2 = $m_s_util_Random$();
     const n$1 = this.LDSL_Game__f_NumberOfSquaresHeight;
     const newFoodPositionY = this$2.s_util_Random__f_self.nextInt__I__I(n$1);
-    const x = this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).LDSL_Tile__f_tileType;
+    const this$3 = this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY);
+    const x = this$3.LDSL_Tile__f__tileType;
     const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
     if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
       this.generateNewFood__V()
     } else {
-      this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).LDSL_Tile__f_tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Food
+      this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Food)
     }
   };
   moveSnake__V() {
@@ -2387,7 +2417,7 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_snake = new $c_LDSL_Snake(newXHeadPosition, newYHeadPosition, x$3$2);
     this.checkCollisions__V();
     this.isGameOver__V();
-    this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Snake
+    this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Snake)
   };
   update__D__V(seconds) {
     if ((!this.LDSL_Game__f_gameOver)) {
@@ -4426,6 +4456,62 @@ const $f_sc_SeqOps__sameElements__sc_IterableOnce__Z = (function($thiz, that) {
     return false
   }
 });
+class $c_LDSL_Color extends $c_O {
+  constructor(c) {
+    super();
+    this.LDSL_Color__f_c = null;
+    this.LDSL_Color__f_c = c
+  };
+  productPrefix__T() {
+    return "Color"
+  };
+  productArity__I() {
+    return 1
+  };
+  productElement__I__O(x$1) {
+    return ((x$1 === 0) ? this.LDSL_Color__f_c : $m_sr_Statics$().ioobe__I__O(x$1))
+  };
+  productIterator__sc_Iterator() {
+    return new $c_sr_ScalaRunTime$$anon$1(this)
+  };
+  hashCode__I() {
+    const this$2 = $m_s_util_hashing_MurmurHash3$();
+    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  };
+  toString__T() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+  };
+  equals__O__Z(x$1) {
+    if ((this === x$1)) {
+      return true
+    } else if ((x$1 instanceof $c_LDSL_Color)) {
+      const Color$1 = $as_LDSL_Color(x$1);
+      return (this.LDSL_Color__f_c === Color$1.LDSL_Color__f_c)
+    } else {
+      return false
+    }
+  };
+}
+function $as_LDSL_Color(obj) {
+  return (((obj instanceof $c_LDSL_Color) || (obj === null)) ? obj : $throwClassCastException(obj, "DSL.Color"))
+}
+function $isArrayOf_LDSL_Color(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSL_Color)))
+}
+function $asArrayOf_LDSL_Color(obj, depth) {
+  return (($isArrayOf_LDSL_Color(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSL.Color;", depth))
+}
+const $d_LDSL_Color = new $TypeData().initClass({
+  LDSL_Color: 0
+}, false, "DSL.Color", {
+  LDSL_Color: 1,
+  O: 1,
+  LDSL_CanvasElementModifier: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  Ljava_io_Serializable: 1
+});
+$c_LDSL_Color.prototype.$classData = $d_LDSL_Color;
 const $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__ = (function($thiz, out) {
   $thiz.Ljava_io_FilterOutputStream__f_out = out;
   return $thiz
