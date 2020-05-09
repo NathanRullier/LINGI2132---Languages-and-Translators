@@ -1,5 +1,14 @@
 package DSL
 
+object TileType extends Enumeration {
+  val Empty, Snake, Food = Value
+  val Timer = 0
+}
+
+class Tile{
+  var Type = TileType.Empty
+}
+
 class Game(canvasy: Canvasy)  {
 
   var numberOfSquaresWidth = 20
@@ -11,23 +20,11 @@ class Game(canvasy: Canvasy)  {
   var win = false
   var compteur = 0
   var GAMESPEED = 20
-  // val boardSquareList
-  //  val tail = Seq( for{
-  //    x <- 0 until numberOfSquaresWidth
-  //    y <- 0 until numberOfSquaresHeight
-  //  }
-  //    Square(x,y,40, TileType.SnakeTail,0),
-  //  )
- // trouver une implementation pour faire ca avec une boucle for?
-  val tail = Seq(
-    Square(1,0,40, TileType.SnakeTail,0),
-    Square(2,0,40, TileType.SnakeTail,0)
-  )
+  val board = Array.ofDim[Tile](numberOfSquaresWidth,numberOfSquaresWidth)
 
-  var snake = new Snake(head = Square(3,0,40, TileType.SnakeHead,0),tail = tail);
+  var snake = new Snake(3,3,3);
 
-  println(snake.head)
-
+  //TODO class controller
   def updateDirection(): Unit = {
     direction =
       if (UserInputs.holdLeft && (direction != Direction.Right)) Direction.Left
@@ -41,14 +38,14 @@ class Game(canvasy: Canvasy)  {
   def isGameOver(): Unit ={
     if(gameOver) {
       canvasy.resetGame()
-      snake = snake.copy(head = snake.head.copy(x=3,y=0))
+      snake = new Snake(3,3,3)
       newGame()
     }
   }
 
   def newGame(): Unit ={
     direction = Direction.Right
-    snake = snake.copy(head = snake.head.copy(x=3,y=0))
+    snake = new Snake(3,3,3)
     gameOver = false
   }
   // Pas sur comment faire pour que le snake soit une var global en scala... entk a mettre clean plus tard
@@ -63,7 +60,7 @@ class Game(canvasy: Canvasy)  {
   def checkCollisions(): Unit ={
 
     //verif collisions avec les cotes
-    if (snake.head.x <= -1 || snake.head.x >=numberOfSquaresWidth || snake.head.y >= numberOfSquaresHeight || snake.head.y <= -1){
+    if (snake.headX <= -1 || snake.headX >=numberOfSquaresWidth || snake.headY >= numberOfSquaresHeight || snake.headY <= -1){
       gameOver = true
       println("GAME OVER")
     }
@@ -71,6 +68,7 @@ class Game(canvasy: Canvasy)  {
 
   }
 
+  //TODO class controller
   def moveSnake(): Unit = {
 
     val modifWidth: Int =
@@ -79,15 +77,15 @@ class Game(canvasy: Canvasy)  {
     val modifHeight: Int =
       if (direction == Direction.Up) -1 else if (direction == Direction.Down) 1 else 0
 
-    val newYHeadPosition = snake.head.y + modifHeight
-    val newXHeadPosition = snake.head.x + modifWidth
+    val newYHeadPosition = snake.headY + modifHeight
+    val newXHeadPosition = snake.headX + modifWidth
 
     //println("snake x: "+snake.head.x+ " numberOfSquaresWidth " +numberOfSquaresWidth )
     //println("snake y: "+snake.head.y+ " numberOfSquaresHeight " +numberOfSquaresHeight )
     //println("new y " +newYHeadPosition)
     //println("new x " +newXHeadPosition)
 
-    snake = snake.copy(head = snake.head.copy(x=newXHeadPosition,y=newYHeadPosition))
+    //snake = snake.copy(head = snake.head.copy(x=newXHeadPosition,y=newYHeadPosition))
 
   }
 
@@ -101,7 +99,7 @@ class Game(canvasy: Canvasy)  {
     if(compteur%GAMESPEED == 0) moveSnake()
     checkCollisions()
 
-    canvasy.renderHead(snake.head)
+    //canvasy.renderHead(snake.head)
 
   }
 }

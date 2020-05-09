@@ -19,7 +19,7 @@ object Main {
     val canvasy = new Canvasy(canvas)
     val game = new Game(canvasy)
     val loop = new Loop()
-    val head = new Square(0,0,40, TileType.Empty,0)
+    val head = new Square(0,0,0)
     UserInputs.initInputsListener()
     loop.start(game.update, () => canvasy.fkall())
 
