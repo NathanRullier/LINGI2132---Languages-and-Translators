@@ -3,12 +3,13 @@ package DSL
 import DSL._
 import scala.util.Random
 
-object Food {
+object Food extends Settings {
 
-  def newFood(): Unit ={
+  def generateNewFood(): Unit ={
 
-    val randomX = Random.nextInt(20)
-    val randomY = Random.nextInt(20)
+    val foodPositionX = Random.nextInt(NumberOfSquaresWidth)
+    val foodPositionY = Random.nextInt(NumberOfSquaresHeight)
+
   }
 
 }

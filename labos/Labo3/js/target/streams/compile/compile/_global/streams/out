@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSL/Food.scala:10:64: ';' expected but ')' found.[0m
-[0m[[0m[31merror[0m] [0m[0m    val randomX = Random.nextInt(Game.numberOfSquaresWidth) + 1)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSL/Game.scala:107:17: not found: value GAMESPEED[0m
+[0m[[0m[31merror[0m] [0m[0m    if(compteur%GAMESPEED == 0) moveSnake()[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -1,16 +1,22 @@
 package DSL
 
-class Game(canvasy: Canvasy)  {
+import DSL._
 
-  var numberOfSquaresWidth = 20
-  var numberOfSquaresHeight = 20
+object TileType extends Enumeration {
+  val Empty, SnakeHead, SnakeTail, Food = Value
+}
+
+object Direction extends Enumeration {
+  val Left, Right, Up, Down = Value
+}
+
+class Game(canvasy: Canvasy) extends Settings {
+
   var directionDoneInLastSecond = false
-  var blocksEaten = 0
   var direction = Direction.Right
   var gameOver = false
   var win = false
   var compteur = 0
-  var GAMESPEED = 20
   // val boardSquareList
   //  val tail = Seq( for{
   //    x <- 0 until numberOfSquaresWidth
@@ -63,7 +69,7 @@ class Game(canvasy: Canvasy)  {
   def checkCollisions(): Unit ={
 
     //verif collisions avec les cotes
-    if (snake.head.x <= -1 || snake.head.x >=numberOfSquaresWidth || snake.head.y >= numberOfSquaresHeight || snake.head.y <= -1){
+    if (snake.head.x <= -1 || snake.head.x >=NumberOfSquaresWidth || snake.head.y >= NumberOfSquaresHeight || snake.head.y <= -1){
       gameOver = true
       println("GAME OVER")
     }
@@ -98,7 +104,7 @@ class Game(canvasy: Canvasy)  {
     compteur += 1
     updateDirection()
     isGameOver()
-    if(compteur%GAMESPEED == 0) moveSnake()
+    if(compteur % GameSpeed == 0) moveSnake()
     checkCollisions()
 
     canvasy.renderHead(snake.head)

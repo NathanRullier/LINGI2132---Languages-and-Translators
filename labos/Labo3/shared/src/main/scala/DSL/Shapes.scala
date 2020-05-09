@@ -1,7 +1,6 @@
 package DSL
 
 import DSL._
-//import TileType._
 
 sealed trait Shape {
   type A <: Shape
@@ -40,9 +39,6 @@ sealed trait ShapeAttributes {
   // Add more attributes here
 }
  // a bouger dans un autre fichier...
-object TileType extends Enumeration {
-  val Empty, SnakeHead, SnakeTail, Food = Value
-}
 
 case class ComposedShape(var l: List[Shape]) extends Shape {
 
