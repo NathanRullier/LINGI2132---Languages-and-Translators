@@ -40,10 +40,17 @@ class Game(canvasy: Canvasy)  {
   }
   def isGameOver(): Unit ={
     if(gameOver) {
-      canvasy.reset()
+      canvasy.resetGame()
+      snake = snake.copy(head = snake.head.copy(x=3,y=0))
+      newGame()
     }
   }
 
+  def newGame(): Unit ={
+    direction = Direction.Right
+    snake = snake.copy(head = snake.head.copy(x=3,y=0))
+    gameOver = false
+  }
   // Pas sur comment faire pour que le snake soit une var global en scala... entk a mettre clean plus tard
 //  def newSnake(): = {
 //    val tail = Seq(

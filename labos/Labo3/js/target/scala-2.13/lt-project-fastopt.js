@@ -784,6 +784,10 @@ class $c_LDSL_Canvasy extends $c_O {
     ctx.fillStyle = style;
     ctx.fillRect($imul(square.LDSL_Square__f_x, square.LDSL_Square__f_size), $imul(square.LDSL_Square__f_y, square.LDSL_Square__f_size), square.LDSL_Square__f_size, square.LDSL_Square__f_size)
   };
+  resetGame__V() {
+    const ctx = this.LDSL_Canvasy__f_canvas.getContext("2d");
+    ctx.clearRect(0.0, 0.0, 800.0, 800.0)
+  };
 }
 const $d_LDSL_Canvasy = new $TypeData().initClass({
   LDSL_Canvasy: 0
@@ -883,6 +887,32 @@ class $c_LDSL_Game extends $c_O {
     };
     this.LDSL_Game__f_direction = $$x1
   };
+  isGameOver__V() {
+    if (this.LDSL_Game__f_gameOver) {
+      this.LDSL_Game__f_canvasy.resetGame__V();
+      const qual$1 = this.LDSL_Game__f_snake;
+      const qual$2 = this.LDSL_Game__f_snake.LDSL_Snake__f_head;
+      const x$3 = qual$2.LDSL_Square__f_size;
+      const x$4 = qual$2.LDSL_Square__f_tileType;
+      const x$5 = qual$2.LDSL_Square__f_timer;
+      const x$6 = new $c_LDSL_Square(3, 0, x$3, x$4, x$5);
+      const x$7 = qual$1.LDSL_Snake__f_tail;
+      this.LDSL_Game__f_snake = new $c_LDSL_Snake(x$6, x$7);
+      this.newGame__V()
+    }
+  };
+  newGame__V() {
+    this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    const qual$1 = this.LDSL_Game__f_snake;
+    const qual$2 = this.LDSL_Game__f_snake.LDSL_Snake__f_head;
+    const x$3 = qual$2.LDSL_Square__f_size;
+    const x$4 = qual$2.LDSL_Square__f_tileType;
+    const x$5 = qual$2.LDSL_Square__f_timer;
+    const x$6 = new $c_LDSL_Square(3, 0, x$3, x$4, x$5);
+    const x$7 = qual$1.LDSL_Snake__f_tail;
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(x$6, x$7);
+    this.LDSL_Game__f_gameOver = false
+  };
   checkCollisions__V() {
     if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_head.LDSL_Square__f_x <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_head.LDSL_Square__f_x >= this.LDSL_Game__f_numberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_head.LDSL_Square__f_y >= this.LDSL_Game__f_numberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_head.LDSL_Square__f_y <= (-1)))) {
       this.LDSL_Game__f_gameOver = true;
@@ -934,6 +964,7 @@ class $c_LDSL_Game extends $c_O {
   update__D__V(seconds) {
     this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
     this.updateDirection__V();
+    this.isGameOver__V();
     if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GAMESPEED) === 0)) {
       this.moveSnake__V()
     };

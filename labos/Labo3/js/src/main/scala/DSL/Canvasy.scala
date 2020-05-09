@@ -59,8 +59,10 @@ class Canvasy(canvas: html.Canvas) {
 
   }
 
-  private def resetGame(): Unit ={
-    ctx.clearRect(0,0,)
+   def resetGame(): Unit ={
+    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    ctx.clearRect(0,0,800,800)
+
   }
 
   private def renderTiles(squares: Seq[Square]) = {
