@@ -1,10 +1,13 @@
 package DSL
 
+import DSL._
 import javax.swing.Timer
 import org.scalajs.dom.html
+import scala.scalajs.js
+import js.Dynamic.{ global => g }
 import org.scalajs.dom
 
-class Canvasy(canvas: html.Canvas) {
+class Canvasy(canvas: html.Canvas) extends Settings {
 
   private var shapes = Array[Shape]()
 
@@ -22,24 +25,30 @@ class Canvasy(canvas: html.Canvas) {
     shapes = shapes ++ squares
   }
 
-  var gridHeight = 800
-  var gridWidth = 800
+  lazy val windowHeight = g.window.innerHeight
+  lazy val windowWidth= g.window.innerWidth
+
+  //tres temporaire, juste pour faire des tests
+  val gridHeight = 800
+  val gridWidth = 800
   // var game = new Game()
-  val boardSquareList = Array.ofDim[Square](20, 20)
+  val boardSquareList = Array.ofDim[Square](NumberOfSquaresWidth , NumberOfSquaresHeight)
 
   //private var shapes = Array[Shape]()
 
   def initRender(canvas: html.Canvas) = {
 
+    val squareSide = 40
     canvas.width = gridWidth
     canvas.height = gridHeight
     val head = new Square(0, 0, 0)
     //renderHead(head)
     renderTiles(boardSquareList)
     println("initRender")
-    for (i <- 0 to boardSquareList.length) {
-      for (j <- 0 to boardSquareList(i).length) {
-        boardSquareList(i)(j) = new Square(i * 40, j * 40, 40)
+
+    for (i <- 0 to boardSquareList.length -1 ) {
+      for (j <- 0 to boardSquareList(i).length -1) {
+        boardSquareList(i)(j) = new Square(i * squareSide, j * squareSide, squareSide)
       }
     }
 

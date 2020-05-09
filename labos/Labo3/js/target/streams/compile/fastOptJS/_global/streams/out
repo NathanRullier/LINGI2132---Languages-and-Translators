@@ -1,41 +1,19 @@
-<<<<<<< HEAD
-[0m[[0m[0minfo[0m] [0m[0mFast optimizing C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\lt-project-fastopt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 70494 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 9267 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 84925 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: 201697 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 24094 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 80 methods.[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 22781 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 51404 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 14823 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 1181 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: 19740 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 23767 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 359 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 501 -- invalidated: 1[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 513 -- invalidated: 25[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: 32784 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 68081 us[0m
-=======
 [0m[[0m[0minfo[0m] [0m[0mFast optimizing /Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/js/target/scala-2.13/lt-project-fastopt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 76524 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 9201 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 59900 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: 167304 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 50222 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 5522 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 75645 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: 158839 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 38495 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 231 methods.[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 29120 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 70403 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 8666 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 426 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: 11391 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 13522 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 2142 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 484 -- invalidated: 20[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 448 -- invalidated: 94[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: 31840 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 17028 us[0m
->>>>>>> part2
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 22824 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 82 methods.[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 19006 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 43952 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 11007 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 1266 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 14746 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 16593 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 190 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 511 -- invalidated: 4[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 530 -- invalidated: 31[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: 22816 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 64192 us[0m
