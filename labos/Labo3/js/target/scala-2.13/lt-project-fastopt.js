@@ -701,6 +701,7 @@ const $d_O = new $TypeData().initClass({
   O: 1
 }, (void 0), (void 0), $is_O, $isArrayOf_O);
 $c_O.prototype.$classData = $d_O;
+<<<<<<< HEAD
 class $c_LDSL_Canvasy extends $c_O {
   constructor(canvas) {
     super();
@@ -895,6 +896,8 @@ const $d_LDSL_Canvasy = new $TypeData().initClass({
   O: 1
 });
 $c_LDSL_Canvasy.prototype.$classData = $d_LDSL_Canvasy;
+=======
+>>>>>>> part2
 class $c_LDSL_Loop extends $c_O {
   constructor() {
     super();
@@ -951,12 +954,22 @@ const $f_LDSL_ShapeAttributes__$init$__V = (function($thiz) {
   $thiz.LDSL_Square__f_color = "red";
   $thiz.LDSL_Square__f_strokeWidth = 1
 });
+class $c_LDSL_Tile extends $c_O {
+  constructor() {
+    super();
+    this.LDSL_Tile__f_Type = null;
+    this.LDSL_Tile__f_Timer = 0;
+    this.LDSL_Tile__f_Type = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
+    this.LDSL_Tile__f_Timer = 0
+  };
+}
 const $d_LDSL_Tile = new $TypeData().initClass({
   LDSL_Tile: 0
 }, false, "DSL.Tile", {
   LDSL_Tile: 1,
   O: 1
 });
+$c_LDSL_Tile.prototype.$classData = $d_LDSL_Tile;
 class $c_LDSL_UserInputs$ extends $c_O {
   constructor() {
     super();
@@ -2116,6 +2129,184 @@ function $m_Lwebapp_Main$() {
   };
   return $n_Lwebapp_Main$
 }
+const $p_LDSL_Canvasy__renderTiles__AALDSL_Square__V = (function($thiz, squares) {
+  $thiz.LDSL_Canvasy__f_canvas.getContext("2d");
+  const f = ((this$2) => ((square$2) => {
+    $asArrayOf_LDSL_Square(square$2, 1)
+  }))($thiz);
+  const len = squares.u.length;
+  let i = 0;
+  if ((squares !== null)) {
+    while ((i < len)) {
+      const arg1 = squares.get(i);
+      f(arg1);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_I(squares, 1)) {
+    const x3 = $asArrayOf_I(squares, 1);
+    while ((i < len)) {
+      const arg1$1 = x3.get(i);
+      f(arg1$1);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_D(squares, 1)) {
+    const x4 = $asArrayOf_D(squares, 1);
+    while ((i < len)) {
+      const arg1$2 = x4.get(i);
+      f(arg1$2);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_J(squares, 1)) {
+    const x5 = $asArrayOf_J(squares, 1);
+    while ((i < len)) {
+      const t = x5.get(i);
+      const lo = t.RTLong__f_lo;
+      const hi = t.RTLong__f_hi;
+      f(new $c_RTLong(lo, hi));
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_F(squares, 1)) {
+    const x6 = $asArrayOf_F(squares, 1);
+    while ((i < len)) {
+      const arg1$3 = x6.get(i);
+      f(arg1$3);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_C(squares, 1)) {
+    const x7 = $asArrayOf_C(squares, 1);
+    while ((i < len)) {
+      const arg1$4 = x7.get(i);
+      f($bC(arg1$4));
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_B(squares, 1)) {
+    const x8 = $asArrayOf_B(squares, 1);
+    while ((i < len)) {
+      const arg1$5 = x8.get(i);
+      f(arg1$5);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_S(squares, 1)) {
+    const x9 = $asArrayOf_S(squares, 1);
+    while ((i < len)) {
+      const arg1$6 = x9.get(i);
+      f(arg1$6);
+      i = ((1 + i) | 0)
+    }
+  } else if ($isArrayOf_Z(squares, 1)) {
+    const x10 = $asArrayOf_Z(squares, 1);
+    while ((i < len)) {
+      const arg1$7 = x10.get(i);
+      f(arg1$7);
+      i = ((1 + i) | 0)
+    }
+  } else {
+    throw new $c_s_MatchError(squares)
+  }
+});
+class $c_LDSL_Canvasy extends $c_O {
+  constructor(canvas) {
+    super();
+    this.LDSL_Canvasy__f_windowHeight = null;
+    this.LDSL_Canvasy__f_windowWidth = null;
+    this.LDSL_Canvasy__f_canvas = null;
+    this.LDSL_Canvasy__f_shapes = null;
+    this.LDSL_Canvasy__f_gridHeight = 0;
+    this.LDSL_Canvasy__f_gridWidth = 0;
+    this.LDSL_Canvasy__f_boardSquareList = null;
+    this.LDSL_Canvasy__f_GameSpeed = 0;
+    this.LDSL_Canvasy__f_NumberOfSquaresWidth = 0;
+    this.LDSL_Canvasy__f_NumberOfSquaresHeight = 0;
+    this.LDSL_Canvasy__f_bitmap$0 = 0;
+    this.LDSL_Canvasy__f_canvas = canvas;
+    $f_LDSL_Settings__$init$__V(this);
+    const xs = $m_sci_Nil$();
+    const len = xs.length__I();
+    const array = $newArrayObject($d_LDSL_Shape.getArrayOf(), [len]);
+    const iterator = $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty;
+    let i = 0;
+    while (iterator.hasNext__Z()) {
+      array.set(i, iterator.next__O());
+      i = ((1 + i) | 0)
+    };
+    this.LDSL_Canvasy__f_shapes = array;
+    this.LDSL_Canvasy__f_gridHeight = 800;
+    this.LDSL_Canvasy__f_gridWidth = 800;
+    const n1 = this.LDSL_Canvasy__f_NumberOfSquaresWidth;
+    const n2 = this.LDSL_Canvasy__f_NumberOfSquaresHeight;
+    const arr = $newArrayObject($d_LDSL_Square.getArrayOf().getArrayOf(), [n1]);
+    const isEmpty = (n1 <= 0);
+    const scala$collection$immutable$Range$$lastElement = (((-1) + n1) | 0);
+    if ((!isEmpty)) {
+      let i$1 = 0;
+      while (true) {
+        const v1 = i$1;
+        arr.set(v1, $newArrayObject($d_LDSL_Square.getArrayOf(), [n2]));
+        if ((i$1 === scala$collection$immutable$Range$$lastElement)) {
+          break
+        };
+        i$1 = ((1 + i$1) | 0)
+      }
+    };
+    this.LDSL_Canvasy__f_boardSquareList = arr;
+    this.initRender__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas)
+  };
+  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_GameSpeed = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_NumberOfSquaresWidth = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_NumberOfSquaresHeight = x$1
+  };
+  initRender__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas) {
+    canvas.width = this.LDSL_Canvasy__f_gridWidth;
+    canvas.height = this.LDSL_Canvasy__f_gridHeight;
+    new $c_LDSL_Square(0, 0, 0);
+    $p_LDSL_Canvasy__renderTiles__AALDSL_Square__V(this, this.LDSL_Canvasy__f_boardSquareList);
+    const this$2 = $m_s_Console$();
+    const this$3 = this$2.out__Ljava_io_PrintStream();
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("initRender\n");
+    const end = (((-1) + this.LDSL_Canvasy__f_boardSquareList.u.length) | 0);
+    const isEmpty = (end < 0);
+    if ((!isEmpty)) {
+      let i = 0;
+      while (true) {
+        const v1 = i;
+        const end$1 = (((-1) + this.LDSL_Canvasy__f_boardSquareList.get(v1).u.length) | 0);
+        const isEmpty$1 = (end$1 < 0);
+        if ((!isEmpty$1)) {
+          let i$1 = 0;
+          while (true) {
+            const v1$1 = i$1;
+            this.LDSL_Canvasy__f_boardSquareList.get(v1).set(v1$1, new $c_LDSL_Square($imul(40, v1), $imul(40, v1$1), 40));
+            if ((i$1 === end$1)) {
+              break
+            };
+            i$1 = ((1 + i$1) | 0)
+          }
+        };
+        if ((i === end)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    }
+  };
+  resetGame__V() {
+    const ctx = this.LDSL_Canvasy__f_canvas.getContext("2d");
+    ctx.clearRect(0.0, 0.0, 800.0, 800.0)
+  };
+}
+const $d_LDSL_Canvasy = new $TypeData().initClass({
+  LDSL_Canvasy: 0
+}, false, "DSL.Canvasy", {
+  LDSL_Canvasy: 1,
+  O: 1,
+  LDSL_Settings: 1
+});
+$c_LDSL_Canvasy.prototype.$classData = $d_LDSL_Canvasy;
 class $c_LDSL_Game extends $c_O {
   constructor(canvasy) {
     super();
@@ -2132,6 +2323,9 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_NumberOfSquaresHeight = 0;
     this.LDSL_Game__f_canvasy = canvasy;
     $f_LDSL_Settings__$init$__V(this);
+    const this$2 = $m_s_Console$();
+    const this$3 = this$2.out__Ljava_io_PrintStream();
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("GAME\n");
     this.LDSL_Game__f_directionDoneInLastSecond = false;
     this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
     this.LDSL_Game__f_gameOver = false;
@@ -2154,6 +2348,35 @@ class $c_LDSL_Game extends $c_O {
       }
     };
     this.LDSL_Game__f_board = arr;
+    const end = (((-1) + this.LDSL_Game__f_board.u.length) | 0);
+    const isEmpty$1 = (end < 0);
+    if ((!isEmpty$1)) {
+      let i$1 = 0;
+      while (true) {
+        const v1$1 = i$1;
+        const end$1 = (((-1) + this.LDSL_Game__f_board.get(v1$1).u.length) | 0);
+        const isEmpty$2 = (end$1 < 0);
+        if ((!isEmpty$2)) {
+          let i$2 = 0;
+          while (true) {
+            const v1$2 = i$2;
+            this.LDSL_Game__f_board.get(v1$1).set(v1$2, new $c_LDSL_Tile());
+            if ((i$2 === end$1)) {
+              break
+            };
+            i$2 = ((1 + i$2) | 0)
+          }
+        };
+        if ((i$1 === end)) {
+          break
+        };
+        i$1 = ((1 + i$1) | 0)
+      }
+    };
+    const x = ("test tile: " + this.LDSL_Game__f_board.get(5).get(5).LDSL_Tile__f_Type);
+    const this$25 = $m_s_Console$();
+    const this$26 = this$25.out__Ljava_io_PrintStream();
+    this$26.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
     this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3)
   };
   updateDirection__V() {
@@ -2227,48 +2450,92 @@ class $c_LDSL_Game extends $c_O {
   };
   checkCollisions__V() {
     if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_headX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headX >= this.LDSL_Game__f_NumberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY >= this.LDSL_Game__f_NumberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY <= (-1)))) {
-      this.LDSL_Game__f_gameOver = true;
       const this$2 = $m_s_Console$();
       const this$3 = this$2.out__Ljava_io_PrintStream();
-      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("GAME OVER\n")
+      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
+      this.LDSL_Game__f_gameOver = true
+    };
+    const x = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_Type;
+    const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
+    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+      const qual$1 = this.LDSL_Game__f_snake;
+      const x$1 = ((1 + this.LDSL_Game__f_snake.LDSL_Snake__f_length) | 0);
+      const x$2$2 = qual$1.LDSL_Snake__f_headX;
+      const x$3 = qual$1.LDSL_Snake__f_headY;
+      this.LDSL_Game__f_snake = new $c_LDSL_Snake(x$2$2, x$3, x$1);
+      const this$5 = $m_s_Console$();
+      const this$6 = this$5.out__Ljava_io_PrintStream();
+      this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
+      this.generateNewFood__V()
+    };
+    const x$4 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_Type;
+    const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
+    if (((x$4 === null) ? (x$5 === null) : x$4.equals__O__Z(x$5))) {
+      const this$8 = $m_s_Console$();
+      const this$9 = this$8.out__Ljava_io_PrintStream();
+      this$9.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC QUEUE DU SERPENT\n");
+      this.LDSL_Game__f_gameOver = true
+    }
+  };
+  generateNewFood__V() {
+    const this$1 = $m_s_util_Random$();
+    const n = this.LDSL_Game__f_NumberOfSquaresWidth;
+    const newFoodPositionX = this$1.s_util_Random__f_self.nextInt__I__I(n);
+    const this$2 = $m_s_util_Random$();
+    const n$1 = this.LDSL_Game__f_NumberOfSquaresHeight;
+    const newFoodPositionY = this$2.s_util_Random__f_self.nextInt__I__I(n$1);
+    const x = this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).LDSL_Tile__f_Type;
+    const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
+    if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
+      this.generateNewFood__V()
+    } else {
+      this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).LDSL_Tile__f_Type = $m_LDSL_TileType$().LDSL_TileType$__f_Food
     }
   };
   moveSnake__V() {
     const x = this.LDSL_Game__f_direction;
     const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    let modifWidth;
     if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
-      /*<skip>*/
+      modifWidth = 1
     } else {
       const x$3 = this.LDSL_Game__f_direction;
       const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-      if ((x$3 === null)) {
-        (x$4 === null)
+      if (((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))) {
+        modifWidth = (-1)
       } else {
-        x$3.equals__O__Z(x$4)
+        modifWidth = 0
       }
     };
     const x$5 = this.LDSL_Game__f_direction;
     const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+    let modifHeight;
     if (((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6))) {
-      /*<skip>*/
+      modifHeight = (-1)
     } else {
       const x$7 = this.LDSL_Game__f_direction;
       const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-      if ((x$7 === null)) {
-        (x$8 === null)
+      if (((x$7 === null) ? (x$8 === null) : x$7.equals__O__Z(x$8))) {
+        modifHeight = 1
       } else {
-        x$7.equals__O__Z(x$8)
+        modifHeight = 0
       }
-    }
+    };
+    const newYHeadPosition = ((this.LDSL_Game__f_snake.LDSL_Snake__f_headY + modifHeight) | 0);
+    const newXHeadPosition = ((this.LDSL_Game__f_snake.LDSL_Snake__f_headX + modifWidth) | 0);
+    const qual$1 = this.LDSL_Game__f_snake;
+    const x$3$2 = qual$1.LDSL_Snake__f_length;
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(newXHeadPosition, newYHeadPosition, x$3$2);
+    this.checkCollisions__V();
+    this.isGameOver__V();
+    this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).LDSL_Tile__f_Type = $m_LDSL_TileType$().LDSL_TileType$__f_Snake
   };
   update__D__V(seconds) {
     this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
     this.updateDirection__V();
-    this.isGameOver__V();
     if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
       this.moveSnake__V()
-    };
-    this.checkCollisions__V()
+    }
   };
 }
 const $d_LDSL_Game = new $TypeData().initClass({
@@ -2369,6 +2636,98 @@ function $isArrayOf_jl_Throwable(obj, depth) {
 }
 function $asArrayOf_jl_Throwable(obj, depth) {
   return (($isArrayOf_jl_Throwable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.Throwable;", depth))
+}
+const $p_ju_Random__loop$1__I__I = (function($thiz, n$1) {
+  while (true) {
+    const bits = $thiz.next__I__I(31);
+    const value = $intMod(bits, n$1);
+    if ((((((bits - value) | 0) + (((-1) + n$1) | 0)) | 0) < 0)) {
+      /*<skip>*/
+    } else {
+      return value
+    }
+  }
+});
+const $ct_ju_Random__J__ = (function($thiz, seed_in) {
+  $thiz.ju_Random__f_haveNextNextGaussian = false;
+  $thiz.setSeed__J__V(seed_in);
+  return $thiz
+});
+const $ct_ju_Random__ = (function($thiz) {
+  $ct_ju_Random__J__($thiz, $m_ju_Random$().java$util$Random$$randomSeed__J());
+  return $thiz
+});
+class $c_ju_Random extends $c_O {
+  constructor() {
+    super();
+    this.ju_Random__f_seedHi = 0;
+    this.ju_Random__f_seedLo = 0;
+    this.ju_Random__f_nextNextGaussian = 0.0;
+    this.ju_Random__f_haveNextNextGaussian = false
+  };
+  setSeed__J__V(seed_in) {
+    const lo = ((-554899859) ^ seed_in.RTLong__f_lo);
+    const hi = (5 ^ seed_in.RTLong__f_hi);
+    const hi$1 = (65535 & hi);
+    const lo$1 = (((lo >>> 24) | 0) | (hi$1 << 8));
+    this.ju_Random__f_seedHi = lo$1;
+    this.ju_Random__f_seedLo = (16777215 & lo);
+    this.ju_Random__f_haveNextNextGaussian = false
+  };
+  next__I__I(bits) {
+    const oldSeedHi = this.ju_Random__f_seedHi;
+    const oldSeedLo = this.ju_Random__f_seedLo;
+    const loProd = (11.0 + (1.5525485E7 * oldSeedLo));
+    const hiProd = ((1502.0 * oldSeedLo) + (1.5525485E7 * oldSeedHi));
+    const x = (loProd / 1.6777216E7);
+    const newSeedHi = (16777215 & (($uI((x | 0)) + (16777215 & $uI((hiProd | 0)))) | 0));
+    const newSeedLo = (16777215 & $uI((loProd | 0)));
+    this.ju_Random__f_seedHi = newSeedHi;
+    this.ju_Random__f_seedLo = newSeedLo;
+    const result32 = ((newSeedHi << 8) | (newSeedLo >> 16));
+    return ((result32 >>> ((32 - bits) | 0)) | 0)
+  };
+  nextInt__I__I(n) {
+    if ((n <= 0)) {
+      throw new $c_jl_IllegalArgumentException("n must be positive")
+    } else {
+      return (((n & ((-n) | 0)) === n) ? (this.next__I__I(31) >> $clz32(n)) : $p_ju_Random__loop$1__I__I(this, n))
+    }
+  };
+}
+const $d_ju_Random = new $TypeData().initClass({
+  ju_Random: 0
+}, false, "java.util.Random", {
+  ju_Random: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_ju_Random.prototype.$classData = $d_ju_Random;
+const $p_ju_Random$__randomInt__I = (function($thiz) {
+  const a = (4.294967296E9 * $uD(Math.random()));
+  return $doubleToInt(((-2.147483648E9) + $uD(Math.floor(a))))
+});
+class $c_ju_Random$ extends $c_O {
+  java$util$Random$$randomSeed__J() {
+    const value = $p_ju_Random$__randomInt__I(this);
+    const value$1 = $p_ju_Random$__randomInt__I(this);
+    return new $c_RTLong(value$1, value)
+  };
+}
+const $d_ju_Random$ = new $TypeData().initClass({
+  ju_Random$: 0
+}, false, "java.util.Random$", {
+  ju_Random$: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_ju_Random$.prototype.$classData = $d_ju_Random$;
+let $n_ju_Random$ = (void 0);
+function $m_ju_Random$() {
+  if ((!$n_ju_Random$)) {
+    $n_ju_Random$ = new $c_ju_Random$()
+  };
+  return $n_ju_Random$
 }
 const $p_ju_regex_Matcher__ensureLastMatch__sjs_js_RegExp$ExecResult = (function($thiz) {
   if (($thiz.ju_regex_Matcher__f_lastMatch === null)) {
@@ -3201,6 +3560,16 @@ class $c_sr_AbstractFunction3 extends $c_O {
     return "<function3>"
   };
 }
+const $ct_s_util_Random__ju_Random__ = (function($thiz, self) {
+  $thiz.s_util_Random__f_self = self;
+  return $thiz
+});
+class $c_s_util_Random extends $c_O {
+  constructor() {
+    super();
+    this.s_util_Random__f_self = null
+  };
+}
 class $c_s_util_hashing_MurmurHash3$ extends $c_s_util_hashing_MurmurHash3 {
   constructor() {
     super();
@@ -3277,6 +3646,41 @@ function $m_LDSL_Direction$() {
     $n_LDSL_Direction$ = new $c_LDSL_Direction$()
   };
   return $n_LDSL_Direction$
+}
+class $c_LDSL_TileType$ extends $c_s_Enumeration {
+  constructor() {
+    super();
+    this.LDSL_TileType$__f_Empty = null;
+    this.LDSL_TileType$__f_Snake = null;
+    this.LDSL_TileType$__f_Food = null;
+    $ct_s_Enumeration__I__(this, 0);
+    $n_LDSL_TileType$ = this;
+    const name = (((this.s_Enumeration__f_nextName !== null) && this.s_Enumeration__f_nextName.hasNext__Z()) ? $as_T(this.s_Enumeration__f_nextName.next__O()) : "Empty");
+    const i = this.s_Enumeration__f_nextId;
+    this.LDSL_TileType$__f_Empty = new $c_s_Enumeration$Val(this, i, name);
+    const name$1 = (((this.s_Enumeration__f_nextName !== null) && this.s_Enumeration__f_nextName.hasNext__Z()) ? $as_T(this.s_Enumeration__f_nextName.next__O()) : "Snake");
+    const i$1 = this.s_Enumeration__f_nextId;
+    this.LDSL_TileType$__f_Snake = new $c_s_Enumeration$Val(this, i$1, name$1);
+    const name$2 = (((this.s_Enumeration__f_nextName !== null) && this.s_Enumeration__f_nextName.hasNext__Z()) ? $as_T(this.s_Enumeration__f_nextName.next__O()) : "Food");
+    const i$2 = this.s_Enumeration__f_nextId;
+    this.LDSL_TileType$__f_Food = new $c_s_Enumeration$Val(this, i$2, name$2)
+  };
+}
+const $d_LDSL_TileType$ = new $TypeData().initClass({
+  LDSL_TileType$: 0
+}, false, "DSL.TileType$", {
+  LDSL_TileType$: 1,
+  s_Enumeration: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_LDSL_TileType$.prototype.$classData = $d_LDSL_TileType$;
+let $n_LDSL_TileType$ = (void 0);
+function $m_LDSL_TileType$() {
+  if ((!$n_LDSL_TileType$)) {
+    $n_LDSL_TileType$ = new $c_LDSL_TileType$()
+  };
+  return $n_LDSL_TileType$
 }
 const $f_jl_Boolean__equals__O__Z = (function($thiz, that) {
   return ($thiz === that)
@@ -3529,6 +3933,28 @@ const $d_sjsr_AnonFunction3 = new $TypeData().initClass({
   F3: 1
 });
 $c_sjsr_AnonFunction3.prototype.$classData = $d_sjsr_AnonFunction3;
+class $c_s_util_Random$ extends $c_s_util_Random {
+  constructor() {
+    super();
+    $ct_s_util_Random__ju_Random__(this, $ct_ju_Random__(new $c_ju_Random()))
+  };
+}
+const $d_s_util_Random$ = new $TypeData().initClass({
+  s_util_Random$: 0
+}, false, "scala.util.Random$", {
+  s_util_Random$: 1,
+  s_util_Random: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_util_Random$.prototype.$classData = $d_s_util_Random$;
+let $n_s_util_Random$ = (void 0);
+function $m_s_util_Random$() {
+  if ((!$n_s_util_Random$)) {
+    $n_s_util_Random$ = new $c_s_util_Random$()
+  };
+  return $n_s_util_Random$
+}
 class $c_LDSL_Snake extends $c_O {
   constructor(headX, headY, length) {
     super();

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [0m[[0m[0minfo[0m] [0m[0mFast optimizing C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\lt-project-fastopt.js[0m
 [0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 33095 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 8687 us[0m
@@ -17,3 +18,24 @@
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 528 -- invalidated: 30[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: 10340 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 40501 us[0m
+=======
+[0m[[0m[0minfo[0m] [0m[0mFast optimizing /Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/js/target/scala-2.13/lt-project-fastopt.js[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 50222 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 5522 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 75645 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: 158839 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 22824 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 82 methods.[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 19006 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 43952 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 11007 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 1266 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 14746 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 16593 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 190 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 511 -- invalidated: 4[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 530 -- invalidated: 31[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: 22816 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 64192 us[0m
+>>>>>>> part2
