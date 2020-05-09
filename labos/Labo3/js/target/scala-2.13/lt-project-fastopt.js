@@ -731,9 +731,9 @@ const $d_LDSL_Loop = new $TypeData().initClass({
 });
 $c_LDSL_Loop.prototype.$classData = $d_LDSL_Loop;
 const $f_LDSL_Settings__$init$__V = (function($thiz) {
-  $thiz.LDSL_Game__f_GameSpeed = 20;
-  $thiz.LDSL_Game__f_NumberOfSquaresWidth = 20;
-  $thiz.LDSL_Game__f_NumberOfSquaresHeight = 20
+  $thiz.DSL$Settings$_setter_$GameSpeed_$eq__I__V(20);
+  $thiz.DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(20);
+  $thiz.DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(20)
 });
 function $is_LDSL_Shape(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.LDSL_Shape)))
@@ -760,10 +760,8 @@ const $f_LDSL_ShapeAttributes__$init$__V = (function($thiz) {
 class $c_LDSL_Tile extends $c_O {
   constructor(square) {
     super();
-    this.LDSL_Tile__f_square = null;
     this.LDSL_Tile__f_tileType = null;
     this.LDSL_Tile__f_timer = 0;
-    this.LDSL_Tile__f_square = square;
     this.LDSL_Tile__f_tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
     this.LDSL_Tile__f_timer = 0
   };
@@ -1982,6 +1980,15 @@ class $c_LDSL_Canvasy extends $c_O {
     };
     this.LDSL_Canvasy__f_boardSquareList = arr
   };
+  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_GameSpeed = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_NumberOfSquaresWidth = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_NumberOfSquaresHeight = x$1
+  };
   draw__V() {
     const xs = this.LDSL_Canvasy__f_shapes;
     const f = ((this$2) => ((x$2) => {
@@ -2217,6 +2224,15 @@ class $c_LDSL_Game extends $c_O {
     const this$26 = this$25.out__Ljava_io_PrintStream();
     this$26.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
     this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3)
+  };
+  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
+    this.LDSL_Game__f_GameSpeed = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
+    this.LDSL_Game__f_NumberOfSquaresWidth = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
+    this.LDSL_Game__f_NumberOfSquaresHeight = x$1
   };
   updateDirection__V() {
     const this$1 = $m_LDSL_UserInputs$();

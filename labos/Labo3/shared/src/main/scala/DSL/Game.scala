@@ -11,9 +11,11 @@ object TileType extends Enumeration {
   val Empty, Snake, Food = Value
 }
 
-class Tile(val square:Square){
+class Tile(square: Square){
+
   var tileType = TileType.Empty
   var timer = 0
+  
 }
 
 class Game(canvasy: Canvasy) extends Settings {
