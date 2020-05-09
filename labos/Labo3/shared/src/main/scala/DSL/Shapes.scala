@@ -4,15 +4,23 @@ import DSL._
 
 sealed trait Shape {
   type A <: Shape
-  def and(s: Shape): ComposedShape = {
-    if (s.isInstanceOf[ComposedShape]) {
-      ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape].l)
+
+  def and(s: Shape): ComposedShape[Shape] = {
+    if (s.isInstanceOf[ComposedShape[A]]) {
+      println(1)
+      ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape[A]].l)
+    }
+    else if (s.isInstanceOf[A]) {
+      println(2)
+      ComposedShape[Shape](List(this) ::: List(s))
     }
     else if (s.isInstanceOf[Shape]) {
+      println(3)
       ComposedShape(List(this) ::: List(s))
     }
     else {
-      ComposedShape(List(this))
+      println(4)
+      ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape[A]].l)
     }
   }
 
@@ -38,25 +46,26 @@ sealed trait ShapeAttributes {
 
   // Add more attributes here
 }
+
  // a bouger dans un autre fichier...
 
-case class ComposedShape(var l: List[Shape]) extends Shape {
+case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
-  //type A = Rectangle
+  type A = T
 
-  def map(f: Shape => Shape): ComposedShape = {
-    ComposedShape(l.map(f))
+  def map(f: Shape => Shape): ComposedShape[Shape] = {
+    ComposedShape(l.map(f).asInstanceOf[List[Shape]])
   }
 
-  def flatMap(f: Shape => Iterable[Shape]): ComposedShape = {
-    ComposedShape(l.flatMap(f))
+  def flatMap(f: Shape => Iterable[Shape]): ComposedShape[Shape] = {
+    ComposedShape(l.flatMap(f).asInstanceOf[List[Shape]])
   }
 
   def foreach[B](f: Shape => B): Unit = {
     l.map(f)
   }
 
-  def apply(i: Int): Shape = {
+  def apply(i: Int): T = {
     l(i)
   }
 
@@ -69,62 +78,32 @@ case class ComposedShape(var l: List[Shape]) extends Shape {
   }
 
   override def change(property: CanvasElementModifier[A]): Unit = {
-
     l.map(x => x.change(property.asInstanceOf[CanvasElementModifier[x.A]]))
   }
 
-  override def and(s: Shape): ComposedShape = {
-    if (s.isInstanceOf[ComposedShape]) {
-      ComposedShape(l ::: s.asInstanceOf[ComposedShape].l)
-    }
-    else if (s.isInstanceOf[Shape]) {
-      ComposedShape(l ::: List(s))
-    }
-    else {
-      ComposedShape(l)
-    }
-
-  }
-
-  def ++(composedShape: ComposedShape): ComposedShape = {
+  def ++(composedShape: ComposedShape[Shape]): ComposedShape[Shape] = {
     ComposedShape(l ++ composedShape.l)
   }
 
-}
-
-case class Square(var x: Int, var y: Int, var size: Int, var tileType: TileType.Value, var timer: Int) extends Shape with ShapeAttributes {
-
-  type A = Square
-
-  //println("square "+x+" "+y)
-  override def moveX(v: Int): Unit = {
-    x += v
+  override def and(s: Shape): ComposedShape[Shape] = {
+    if (s.isInstanceOf[ComposedShape[A]]) {
+      println(1)
+      ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
+    }
+    else if (s.isInstanceOf[A]) {
+      println(2)
+      ComposedShape[Shape](l ::: List(s))
+    }
+    else if (s.isInstanceOf[Shape]) {
+      println(3)
+      ComposedShape(l ::: List(s))
+    }
+    else {
+      println(4)
+      ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
+    }
   }
 
-  override def moveY(v: Int): Unit = {
-    y += v
-  }
-
-  def reduceTimer: Unit = {
-    timer -= 1
-    val tileType =
-      if (timer == 0) TileType.Empty
-  }
-//  override def draw(canvas: html.Canvas): Unit = {
-//
-//    val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-//    val style =
-//      if(tileType == TileType.Empty) "blue"
-//      else "red"
-//
-//    ctx.fillRect(square.x * square.size, square.y * square.size, square.size, square.size)
-//    ctx.fillStyle = style
-//
-// }
-
-  override def change(property: CanvasElementModifier[Square]): Unit = {
-    property.change(this)
-  }
 }
 
 case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int) extends Shape with ShapeAttributes {
@@ -138,7 +117,23 @@ case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int) ex
     y += v
   }
 
-  override def change(property: CanvasElementModifier[Rectangle]): Unit = {
+  override def change(property: CanvasElementModifier[A]): Unit = {
+    property.change(this)
+  }
+}
+
+case class Square(var x: Int, var y: Int, var side:Int) extends Shape with ShapeAttributes {
+  type A = Square
+
+  override def moveX(v: Int): Unit = {
+    x += v
+  }
+
+  override def moveY(v: Int): Unit = {
+    y += v
+  }
+
+  override def change(property: CanvasElementModifier[A]): Unit = {
     property.change(this)
   }
 }
@@ -154,13 +149,17 @@ case class Circle(var x: Int, var y: Int, var radius: Int) extends Shape with Sh
     y += v
   }
 
-  override def change(property: CanvasElementModifier[Circle]): Unit = {
+  override def change(property: CanvasElementModifier[A]): Unit = {
     property.change(this)
   }
 }
 
 object ComposedShapeImplicits {
+
   implicit def arrayCircleToComposedShape(a: Array[Circle]) = ComposedShape(a.toList)
 
   implicit def arrayRectangleToComposedShape(a: Array[Rectangle]) = ComposedShape(a.toList)
+
+  implicit def arrayShapeToComposedShape(a: Array[Shape]) = ComposedShape(a.toList)
+
 }
