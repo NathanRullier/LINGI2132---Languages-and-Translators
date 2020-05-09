@@ -41,7 +41,7 @@ sealed trait ShapeAttributes {
 }
  // a bouger dans un autre fichier...
 object TileType extends Enumeration {
-  val Empty, Snake, Food = Value
+  val Empty, SnakeHead, SnakeTail, Food = Value
 }
 
 case class ComposedShape(var l: List[Shape]) extends Shape {

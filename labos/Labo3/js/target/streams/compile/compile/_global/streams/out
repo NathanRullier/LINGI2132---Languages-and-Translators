@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/js/src/main/scala/webapp/Main.scala:21:20: not found: type Loop[0m
-[0m[[0m[31merror[0m] [0m[0m    val loop = new Loop()[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/js/src/main/scala/DSL/Canvasy.scala:63:23: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m    ctx.clearRect(0,0,)[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/js/src/main/scala/DSL/Canvasy.scala:64:3: ')' expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
