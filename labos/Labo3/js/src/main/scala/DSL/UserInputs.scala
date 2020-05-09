@@ -6,10 +6,6 @@ import js.Dynamic.{ global => g }
 import org.scalajs.dom
 import scala.collection.mutable.HashMap
 
-object Direction extends Enumeration {
-  val Left, Right, Up, Down = Value
-}
-
 object UserInputs {
 
   private val keysDown = HashMap[Int, Boolean]()

@@ -856,172 +856,6 @@ const $d_LDSL_Canvasy = new $TypeData().initClass({
   O: 1
 });
 $c_LDSL_Canvasy.prototype.$classData = $d_LDSL_Canvasy;
-class $c_LDSL_Game extends $c_O {
-  constructor(canvasy) {
-    super();
-    this.LDSL_Game__f_canvasy = null;
-    this.LDSL_Game__f_numberOfSquaresWidth = 0;
-    this.LDSL_Game__f_numberOfSquaresHeight = 0;
-    this.LDSL_Game__f_directionDoneInLastSecond = false;
-    this.LDSL_Game__f_blocksEaten = 0;
-    this.LDSL_Game__f_direction = null;
-    this.LDSL_Game__f_gameOver = false;
-    this.LDSL_Game__f_win = false;
-    this.LDSL_Game__f_compteur = 0;
-    this.LDSL_Game__f_GAMESPEED = 0;
-    this.LDSL_Game__f_board = null;
-    this.LDSL_Game__f_snake = null;
-    this.LDSL_Game__f_canvasy = canvasy;
-    this.LDSL_Game__f_numberOfSquaresWidth = 20;
-    this.LDSL_Game__f_numberOfSquaresHeight = 20;
-    this.LDSL_Game__f_directionDoneInLastSecond = false;
-    this.LDSL_Game__f_blocksEaten = 0;
-    this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-    this.LDSL_Game__f_gameOver = false;
-    this.LDSL_Game__f_win = false;
-    this.LDSL_Game__f_compteur = 0;
-    this.LDSL_Game__f_GAMESPEED = 20;
-    const n1 = this.LDSL_Game__f_numberOfSquaresWidth;
-    const n2 = this.LDSL_Game__f_numberOfSquaresWidth;
-    const arr = $newArrayObject($d_LDSL_Tile.getArrayOf().getArrayOf(), [n1]);
-    const isEmpty = (n1 <= 0);
-    const scala$collection$immutable$Range$$lastElement = (((-1) + n1) | 0);
-    if ((!isEmpty)) {
-      let i = 0;
-      while (true) {
-        const v1 = i;
-        arr.set(v1, $newArrayObject($d_LDSL_Tile.getArrayOf(), [n2]));
-        if ((i === scala$collection$immutable$Range$$lastElement)) {
-          break
-        };
-        i = ((1 + i) | 0)
-      }
-    };
-    this.LDSL_Game__f_board = arr;
-    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3)
-  };
-  updateDirection__V() {
-    const this$1 = $m_LDSL_UserInputs$();
-    let $$x2;
-    if (this$1.LDSL_UserInputs$__f_keysDown.contains__O__Z(37)) {
-      const x = this.LDSL_Game__f_direction;
-      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-      $$x2 = (!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))
-    } else {
-      $$x2 = false
-    };
-    let $$x1;
-    if ($$x2) {
-      $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Left
-    } else {
-      const this$2 = $m_LDSL_UserInputs$();
-      let $$x3;
-      if (this$2.LDSL_UserInputs$__f_keysDown.contains__O__Z(39)) {
-        const x$3 = this.LDSL_Game__f_direction;
-        const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-        $$x3 = (!((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4)))
-      } else {
-        $$x3 = false
-      };
-      if ($$x3) {
-        $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right
-      } else {
-        const this$3 = $m_LDSL_UserInputs$();
-        let $$x4;
-        if (this$3.LDSL_UserInputs$__f_keysDown.contains__O__Z(38)) {
-          const x$5 = this.LDSL_Game__f_direction;
-          const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-          $$x4 = (!((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6)))
-        } else {
-          $$x4 = false
-        };
-        if ($$x4) {
-          $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Up
-        } else {
-          const this$4 = $m_LDSL_UserInputs$();
-          let $$x5;
-          if (this$4.LDSL_UserInputs$__f_keysDown.contains__O__Z(40)) {
-            const x$7 = this.LDSL_Game__f_direction;
-            const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
-            $$x5 = (!((x$7 === null) ? (x$8 === null) : x$7.equals__O__Z(x$8)))
-          } else {
-            $$x5 = false
-          };
-          if ($$x5) {
-            $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Down
-          } else {
-            $$x1 = this.LDSL_Game__f_direction
-          }
-        }
-      }
-    };
-    this.LDSL_Game__f_direction = $$x1
-  };
-  isGameOver__V() {
-    if (this.LDSL_Game__f_gameOver) {
-      this.LDSL_Game__f_canvasy.resetGame__V();
-      this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
-      this.newGame__V()
-    }
-  };
-  newGame__V() {
-    this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
-    this.LDSL_Game__f_gameOver = false
-  };
-  checkCollisions__V() {
-    if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_headX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headX >= this.LDSL_Game__f_numberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY >= this.LDSL_Game__f_numberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY <= (-1)))) {
-      this.LDSL_Game__f_gameOver = true;
-      const this$2 = $m_s_Console$();
-      const this$3 = this$2.out__Ljava_io_PrintStream();
-      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("GAME OVER\n")
-    }
-  };
-  moveSnake__V() {
-    const x = this.LDSL_Game__f_direction;
-    const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
-      /*<skip>*/
-    } else {
-      const x$3 = this.LDSL_Game__f_direction;
-      const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-      if ((x$3 === null)) {
-        (x$4 === null)
-      } else {
-        x$3.equals__O__Z(x$4)
-      }
-    };
-    const x$5 = this.LDSL_Game__f_direction;
-    const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
-    if (((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6))) {
-      /*<skip>*/
-    } else {
-      const x$7 = this.LDSL_Game__f_direction;
-      const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-      if ((x$7 === null)) {
-        (x$8 === null)
-      } else {
-        x$7.equals__O__Z(x$8)
-      }
-    }
-  };
-  update__D__V(seconds) {
-    this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
-    this.updateDirection__V();
-    this.isGameOver__V();
-    if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GAMESPEED) === 0)) {
-      this.moveSnake__V()
-    };
-    this.checkCollisions__V()
-  };
-}
-const $d_LDSL_Game = new $TypeData().initClass({
-  LDSL_Game: 0
-}, false, "DSL.Game", {
-  LDSL_Game: 1,
-  O: 1
-});
-$c_LDSL_Game.prototype.$classData = $d_LDSL_Game;
 class $c_LDSL_Loop extends $c_O {
   constructor() {
     super();
@@ -1051,6 +885,11 @@ const $d_LDSL_Loop = new $TypeData().initClass({
   O: 1
 });
 $c_LDSL_Loop.prototype.$classData = $d_LDSL_Loop;
+const $f_LDSL_Settings__$init$__V = (function($thiz) {
+  $thiz.DSL$Settings$_setter_$GameSpeed_$eq__I__V(20);
+  $thiz.DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(20);
+  $thiz.DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(20)
+});
 const $d_LDSL_Shape = new $TypeData().initClass({
   LDSL_Shape: 0
 }, true, "DSL.Shape", {
@@ -2078,6 +1917,178 @@ function $m_Lwebapp_Main$() {
   };
   return $n_Lwebapp_Main$
 }
+class $c_LDSL_Game extends $c_O {
+  constructor(canvasy) {
+    super();
+    this.LDSL_Game__f_canvasy = null;
+    this.LDSL_Game__f_directionDoneInLastSecond = false;
+    this.LDSL_Game__f_direction = null;
+    this.LDSL_Game__f_gameOver = false;
+    this.LDSL_Game__f_win = false;
+    this.LDSL_Game__f_compteur = 0;
+    this.LDSL_Game__f_board = null;
+    this.LDSL_Game__f_snake = null;
+    this.LDSL_Game__f_GameSpeed = 0;
+    this.LDSL_Game__f_NumberOfSquaresWidth = 0;
+    this.LDSL_Game__f_NumberOfSquaresHeight = 0;
+    this.LDSL_Game__f_canvasy = canvasy;
+    $f_LDSL_Settings__$init$__V(this);
+    this.LDSL_Game__f_directionDoneInLastSecond = false;
+    this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    this.LDSL_Game__f_gameOver = false;
+    this.LDSL_Game__f_win = false;
+    this.LDSL_Game__f_compteur = 0;
+    const n1 = this.LDSL_Game__f_NumberOfSquaresWidth;
+    const n2 = this.LDSL_Game__f_NumberOfSquaresWidth;
+    const arr = $newArrayObject($d_LDSL_Tile.getArrayOf().getArrayOf(), [n1]);
+    const isEmpty = (n1 <= 0);
+    const scala$collection$immutable$Range$$lastElement = (((-1) + n1) | 0);
+    if ((!isEmpty)) {
+      let i = 0;
+      while (true) {
+        const v1 = i;
+        arr.set(v1, $newArrayObject($d_LDSL_Tile.getArrayOf(), [n2]));
+        if ((i === scala$collection$immutable$Range$$lastElement)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    };
+    this.LDSL_Game__f_board = arr;
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3)
+  };
+  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
+    this.LDSL_Game__f_GameSpeed = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
+    this.LDSL_Game__f_NumberOfSquaresWidth = x$1
+  };
+  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
+    this.LDSL_Game__f_NumberOfSquaresHeight = x$1
+  };
+  updateDirection__V() {
+    const this$1 = $m_LDSL_UserInputs$();
+    let $$x2;
+    if (this$1.LDSL_UserInputs$__f_keysDown.contains__O__Z(37)) {
+      const x = this.LDSL_Game__f_direction;
+      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+      $$x2 = (!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))
+    } else {
+      $$x2 = false
+    };
+    let $$x1;
+    if ($$x2) {
+      $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Left
+    } else {
+      const this$2 = $m_LDSL_UserInputs$();
+      let $$x3;
+      if (this$2.LDSL_UserInputs$__f_keysDown.contains__O__Z(39)) {
+        const x$3 = this.LDSL_Game__f_direction;
+        const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+        $$x3 = (!((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4)))
+      } else {
+        $$x3 = false
+      };
+      if ($$x3) {
+        $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+      } else {
+        const this$3 = $m_LDSL_UserInputs$();
+        let $$x4;
+        if (this$3.LDSL_UserInputs$__f_keysDown.contains__O__Z(38)) {
+          const x$5 = this.LDSL_Game__f_direction;
+          const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+          $$x4 = (!((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6)))
+        } else {
+          $$x4 = false
+        };
+        if ($$x4) {
+          $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Up
+        } else {
+          const this$4 = $m_LDSL_UserInputs$();
+          let $$x5;
+          if (this$4.LDSL_UserInputs$__f_keysDown.contains__O__Z(40)) {
+            const x$7 = this.LDSL_Game__f_direction;
+            const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+            $$x5 = (!((x$7 === null) ? (x$8 === null) : x$7.equals__O__Z(x$8)))
+          } else {
+            $$x5 = false
+          };
+          if ($$x5) {
+            $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Down
+          } else {
+            $$x1 = this.LDSL_Game__f_direction
+          }
+        }
+      }
+    };
+    this.LDSL_Game__f_direction = $$x1
+  };
+  isGameOver__V() {
+    if (this.LDSL_Game__f_gameOver) {
+      this.LDSL_Game__f_canvasy.resetGame__V();
+      this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
+      this.newGame__V()
+    }
+  };
+  newGame__V() {
+    this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
+    this.LDSL_Game__f_gameOver = false
+  };
+  checkCollisions__V() {
+    if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_headX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headX >= this.LDSL_Game__f_NumberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY >= this.LDSL_Game__f_NumberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY <= (-1)))) {
+      this.LDSL_Game__f_gameOver = true;
+      const this$2 = $m_s_Console$();
+      const this$3 = this$2.out__Ljava_io_PrintStream();
+      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("GAME OVER\n")
+    }
+  };
+  moveSnake__V() {
+    const x = this.LDSL_Game__f_direction;
+    const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+      /*<skip>*/
+    } else {
+      const x$3 = this.LDSL_Game__f_direction;
+      const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if ((x$3 === null)) {
+        (x$4 === null)
+      } else {
+        x$3.equals__O__Z(x$4)
+      }
+    };
+    const x$5 = this.LDSL_Game__f_direction;
+    const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+    if (((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6))) {
+      /*<skip>*/
+    } else {
+      const x$7 = this.LDSL_Game__f_direction;
+      const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+      if ((x$7 === null)) {
+        (x$8 === null)
+      } else {
+        x$7.equals__O__Z(x$8)
+      }
+    }
+  };
+  update__D__V(seconds) {
+    this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
+    this.updateDirection__V();
+    this.isGameOver__V();
+    if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
+      this.moveSnake__V()
+    };
+    this.checkCollisions__V()
+  };
+}
+const $d_LDSL_Game = new $TypeData().initClass({
+  LDSL_Game: 0
+}, false, "DSL.Game", {
+  LDSL_Game: 1,
+  O: 1,
+  LDSL_Settings: 1
+});
+$c_LDSL_Game.prototype.$classData = $d_LDSL_Game;
 class $c_jl_Number extends $c_O {
 }
 function $is_jl_Number(obj) {

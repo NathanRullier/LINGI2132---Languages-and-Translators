@@ -1,5 +1,7 @@
 package DSL
 
+import DSL._
+
 sealed trait Shape {
   type A <: Shape
 
@@ -44,6 +46,8 @@ sealed trait ShapeAttributes {
 
   // Add more attributes here
 }
+
+ // a bouger dans un autre fichier...
 
 case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
