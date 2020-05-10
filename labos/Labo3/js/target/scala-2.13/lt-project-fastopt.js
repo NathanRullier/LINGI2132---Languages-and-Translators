@@ -3651,13 +3651,115 @@ class $c_LDSL_Game extends $c_O {
   };
   isGameOver__V() {
     if (this.LDSL_Game__f_gameOver) {
-      this.newGame__V()
+      this.resetGameBoard__V();
+      this.LDSL_Game__f_gameOver = false
     }
   };
-  newGame__V() {
-    this.resetGameBoard__V();
-    this.LDSL_Game__f_gameOver = false
+}
+class $c_LDSL_MovementHandler$ extends $c_O {
+  constructor() {
+    super();
+    this.LDSL_MovementHandler$__f_GameSpeed = 0;
+    this.LDSL_MovementHandler$__f_NumberOfSquaresWidthSnake = 0;
+    this.LDSL_MovementHandler$__f_NumberOfSquaresHeightSnake = 0;
+    this.LDSL_MovementHandler$__f_BasicSnakeLength = 0;
+    this.LDSL_MovementHandler$__f_pixelSize = 0;
+    this.LDSL_MovementHandler$__f_SnakeLengthToWin = 0;
+    $n_LDSL_MovementHandler$ = this;
+    $f_LDSL_Settings__$init$__V(this)
   };
+  GameSpeed_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_GameSpeed = x$1
+  };
+  NumberOfSquaresWidthSnake__I() {
+    return this.LDSL_MovementHandler$__f_NumberOfSquaresWidthSnake
+  };
+  NumberOfSquaresWidthSnake_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_NumberOfSquaresWidthSnake = x$1
+  };
+  NumberOfSquaresHeightSnake__I() {
+    return this.LDSL_MovementHandler$__f_NumberOfSquaresHeightSnake
+  };
+  NumberOfSquaresHeightSnake_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_NumberOfSquaresHeightSnake = x$1
+  };
+  BasicSnakeLength_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_BasicSnakeLength = x$1
+  };
+  pixelSize_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_pixelSize = x$1
+  };
+  SnakeLengthToWin_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_SnakeLengthToWin = x$1
+  };
+  updateDirection__s_Enumeration$Value__s_Enumeration$Value(lastDirection) {
+    const this$1 = $m_LDSL_UserInputs$();
+    let $$x1;
+    if (this$1.LDSL_UserInputs$__f_keysDown.contains__O__Z(37)) {
+      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+      $$x1 = (!((lastDirection === null) ? (x$2 === null) : lastDirection.equals__O__Z(x$2)))
+    } else {
+      $$x1 = false
+    };
+    let direction;
+    if ($$x1) {
+      direction = $m_LDSL_Direction$().LDSL_Direction$__f_Left
+    } else {
+      const this$2 = $m_LDSL_UserInputs$();
+      let $$x2;
+      if (this$2.LDSL_UserInputs$__f_keysDown.contains__O__Z(39)) {
+        const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+        $$x2 = (!((lastDirection === null) ? (x$4 === null) : lastDirection.equals__O__Z(x$4)))
+      } else {
+        $$x2 = false
+      };
+      if ($$x2) {
+        direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+      } else {
+        const this$3 = $m_LDSL_UserInputs$();
+        let $$x3;
+        if (this$3.LDSL_UserInputs$__f_keysDown.contains__O__Z(38)) {
+          const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+          $$x3 = (!((lastDirection === null) ? (x$6 === null) : lastDirection.equals__O__Z(x$6)))
+        } else {
+          $$x3 = false
+        };
+        if ($$x3) {
+          direction = $m_LDSL_Direction$().LDSL_Direction$__f_Up
+        } else {
+          const this$4 = $m_LDSL_UserInputs$();
+          let $$x4;
+          if (this$4.LDSL_UserInputs$__f_keysDown.contains__O__Z(40)) {
+            const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+            $$x4 = (!((lastDirection === null) ? (x$8 === null) : lastDirection.equals__O__Z(x$8)))
+          } else {
+            $$x4 = false
+          };
+          if ($$x4) {
+            direction = $m_LDSL_Direction$().LDSL_Direction$__f_Down
+          } else {
+            direction = lastDirection
+          }
+        }
+      }
+    };
+    return direction
+  };
+}
+const $d_LDSL_MovementHandler$ = new $TypeData().initClass({
+  LDSL_MovementHandler$: 0
+}, false, "DSL.MovementHandler$", {
+  LDSL_MovementHandler$: 1,
+  O: 1,
+  LDSL_Settings: 1
+});
+$c_LDSL_MovementHandler$.prototype.$classData = $d_LDSL_MovementHandler$;
+let $n_LDSL_MovementHandler$ = (void 0);
+function $m_LDSL_MovementHandler$() {
+  if ((!$n_LDSL_MovementHandler$)) {
+    $n_LDSL_MovementHandler$ = new $c_LDSL_MovementHandler$()
+  };
+  return $n_LDSL_MovementHandler$
 }
 class $c_LDSL_Snake extends $c_LDSL_GameObject {
   constructor(posX, posY, length) {
@@ -5403,9 +5505,6 @@ class $c_LDSL_SnakeGame extends $c_LDSL_Game {
     this.LDSL_SnakeGame__f_gameHeight = gameHeight;
     this.LDSL_SnakeGame__f_gameWidth = gameWidth;
     $ct_LDSL_Game__LDSL_Canvasy__I__I__(this, canvasy, gameHeight, gameWidth);
-    const this$2 = $m_s_Console$();
-    const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("GAME\n");
     this.LDSL_SnakeGame__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
     this.LDSL_SnakeGame__f_lastDirection = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
     this.LDSL_SnakeGame__f_snake = new $c_LDSL_Snake(3, 3, this.LDSL_Game__f_BasicSnakeLength)
@@ -5414,75 +5513,13 @@ class $c_LDSL_SnakeGame extends $c_LDSL_Game {
     $c_LDSL_Game.prototype.initGame__V.call(this);
     this.generateNewFood__V()
   };
-  updateDirection__V() {
-    const this$1 = $m_LDSL_UserInputs$();
-    let $$x2;
-    if (this$1.LDSL_UserInputs$__f_keysDown.contains__O__Z(37)) {
-      const x = this.LDSL_SnakeGame__f_lastDirection;
-      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-      $$x2 = (!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))
-    } else {
-      $$x2 = false
-    };
-    let $$x1;
-    if ($$x2) {
-      $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Left
-    } else {
-      const this$2 = $m_LDSL_UserInputs$();
-      let $$x3;
-      if (this$2.LDSL_UserInputs$__f_keysDown.contains__O__Z(39)) {
-        const x$3 = this.LDSL_SnakeGame__f_lastDirection;
-        const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-        $$x3 = (!((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4)))
-      } else {
-        $$x3 = false
-      };
-      if ($$x3) {
-        $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right
-      } else {
-        const this$3 = $m_LDSL_UserInputs$();
-        let $$x4;
-        if (this$3.LDSL_UserInputs$__f_keysDown.contains__O__Z(38)) {
-          const x$5 = this.LDSL_SnakeGame__f_lastDirection;
-          const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-          $$x4 = (!((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6)))
-        } else {
-          $$x4 = false
-        };
-        if ($$x4) {
-          $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Up
-        } else {
-          const this$4 = $m_LDSL_UserInputs$();
-          let $$x5;
-          if (this$4.LDSL_UserInputs$__f_keysDown.contains__O__Z(40)) {
-            const x$7 = this.LDSL_SnakeGame__f_lastDirection;
-            const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
-            $$x5 = (!((x$7 === null) ? (x$8 === null) : x$7.equals__O__Z(x$8)))
-          } else {
-            $$x5 = false
-          };
-          if ($$x5) {
-            $$x1 = $m_LDSL_Direction$().LDSL_Direction$__f_Down
-          } else {
-            $$x1 = this.LDSL_SnakeGame__f_direction
-          }
-        }
-      }
-    };
-    this.LDSL_SnakeGame__f_direction = $$x1
-  };
-  isGameOver__V() {
-    if (this.LDSL_Game__f_gameOver) {
-      this.LDSL_SnakeGame__f_snake = new $c_LDSL_Snake(3, 3, this.LDSL_Game__f_BasicSnakeLength);
-      $c_LDSL_Game.prototype.isGameOver__V.call(this)
-    }
-  };
   newGame__V() {
+    this.resetGameBoard__V();
     this.LDSL_SnakeGame__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
     this.LDSL_SnakeGame__f_lastDirection = this.LDSL_SnakeGame__f_direction;
     this.LDSL_SnakeGame__f_snake = new $c_LDSL_Snake(3, 3, this.LDSL_Game__f_BasicSnakeLength);
     this.generateNewFood__V();
-    $c_LDSL_Game.prototype.newGame__V.call(this)
+    this.LDSL_Game__f_gameOver = false
   };
   checkCollisions__V() {
     if (((((this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posX <= (-1)) || (this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posX >= this.LDSL_SnakeGame__f_gameHeight)) || (this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posY >= this.LDSL_SnakeGame__f_gameHeight)) || (this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posY <= (-1)))) {
@@ -5572,7 +5609,7 @@ class $c_LDSL_SnakeGame extends $c_LDSL_Game {
     }
   };
   update__V() {
-    this.updateDirection__V();
+    this.LDSL_SnakeGame__f_direction = $m_LDSL_MovementHandler$().updateDirection__s_Enumeration$Value__s_Enumeration$Value(this.LDSL_SnakeGame__f_lastDirection);
     if ((!this.LDSL_Game__f_gameOver)) {
       this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
       if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {

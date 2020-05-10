@@ -3,54 +3,23 @@ package DSL
 import DSL._
 import scala.util.Random
 
-object Direction extends Enumeration {
-  val Left, Right, Up, Down = Value
-}
-
-object TileType extends Enumeration {
-  val Empty, Snake, Food = Value
-}
-
 class SnakeGame(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends Game(canvasy, gameHeight, gameWidth) {
-  println("GAME")
   var direction = Direction.Right
   var lastDirection = Direction.Right
   var snake = new Snake(3, 3, BasicSnakeLength)
 
   override def initGame(): Unit = {
-
     super.initGame()
     generateNewFood()
   }
 
-  //TODO class controller
-  def updateDirection(): Unit = {
-    direction =
-      if (UserInputs.holdLeft && (lastDirection != Direction.Right)) Direction.Left
-      else if (UserInputs.holdRight && (lastDirection != Direction.Left))
-        Direction.Right
-      else if (UserInputs.holdUp && (lastDirection != Direction.Down)) Direction.Up
-      else if (UserInputs.holdDown && (lastDirection != Direction.Up))
-        Direction.Down
-      else direction
-
-    //println("direction: " +direction)
-  }
-
-  override def isGameOver(): Unit = {
-
-    if (gameOver) {
+  def newGame(): Unit = {
+    super.newGame(() => {
+      direction = Direction.Right
+      lastDirection = direction
       snake = new Snake(3, 3, BasicSnakeLength)
-      super.isGameOver()
-    }
-  }
-
-  override def newGame(): Unit = {
-    direction = Direction.Right
-    lastDirection = direction
-    snake = new Snake(3, 3, BasicSnakeLength)
-    generateNewFood()
-    super.newGame()
+      generateNewFood()
+    })
   }
 
   def checkCollisions(): Unit = {
@@ -110,7 +79,7 @@ class SnakeGame(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends Game(
   }
 
   def update(): Unit = {
-    updateDirection()
+    direction = MovementHandler.updateDirection(lastDirection)
     super.update(() => {
       snake.update()
       moveSnake()

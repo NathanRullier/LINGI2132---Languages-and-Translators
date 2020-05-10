@@ -2,9 +2,13 @@ package DSL
 
 import DSL._
 
+object Direction extends Enumeration {
+  val Left, Right, Up, Down = Value
+}
+
 object MovementHandler extends Settings {
 
-  def updateSnakeDirection(lastDirection: Direction.Value): Direction.Value = {
+  def updateDirection(lastDirection: Direction.Value): Direction.Value = {
 
    val direction =
       if (UserInputs.holdLeft && (lastDirection != Direction.Right)) Direction.Left

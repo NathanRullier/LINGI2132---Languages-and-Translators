@@ -2,6 +2,10 @@ package DSL
 
 import DSL._
 
+object TileType extends Enumeration {
+  val Empty, Snake, Food = Value
+}
+
 class Tile(square: Square) {
 
   private var _tileType = TileType.Empty
