@@ -13,10 +13,10 @@ object TileType extends Enumeration {
 
 class Game(canvasy: Canvasy) extends Settings {
   println("GAME")
-  var directionDoneInLastSecond = false
   var direction = Direction.Right
   var gameOver = false
   var win = false
+  var lastDirection = Direction.Right
   var compteur = 0
   var snake = new Snake(3, 3, BasicSnakeLength)
 
@@ -38,7 +38,6 @@ class Game(canvasy: Canvasy) extends Settings {
   def resetGameBoard(): Unit = {
     for (i <- 0 to board.length - 1) {
       for (j <- 0 to board(i).length - 1) {
-        board(i)(j).timer(0)
         board(i)(j).tileType(TileType.Empty)
       }
     }
@@ -48,11 +47,11 @@ class Game(canvasy: Canvasy) extends Settings {
   //TODO class controller
   def updateDirection(): Unit = {
     direction =
-      if (UserInputs.holdLeft && (direction != Direction.Right)) Direction.Left
-      else if (UserInputs.holdRight && (direction != Direction.Left))
+      if (UserInputs.holdLeft && (lastDirection != Direction.Right)) Direction.Left
+      else if (UserInputs.holdRight && (lastDirection != Direction.Left))
         Direction.Right
-      else if (UserInputs.holdUp && (direction != Direction.Down)) Direction.Up
-      else if (UserInputs.holdDown && (direction != Direction.Up))
+      else if (UserInputs.holdUp && (lastDirection != Direction.Down)) Direction.Up
+      else if (UserInputs.holdDown && (lastDirection != Direction.Up))
         Direction.Down
       else direction
 
@@ -70,6 +69,7 @@ class Game(canvasy: Canvasy) extends Settings {
 
   def newGame(): Unit = {
     direction = Direction.Right
+    lastDirection = direction
     resetGameBoard()
     snake = new Snake(3, 3, BasicSnakeLength)
     generateNewFood()
@@ -78,7 +78,7 @@ class Game(canvasy: Canvasy) extends Settings {
 
   def checkCollisions(): Unit = {
 
-    //verif collision avec les cotes (probablement devoir update les valeurs)
+    //verif collision avec les cotes
     if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {
       println("COLLISION AVEC UN MUR")
       newGame()
@@ -89,7 +89,6 @@ class Game(canvasy: Canvasy) extends Settings {
       println("MENOUM UN BON LEGUME")
       generateNewFood()
       board.map(x => x.map(y => y.incrementTimer()))
-      //incrementer les timer de chaque tile snake ?
     }
     //verif collision avec sa queue
     else if (board(snake.headX)(snake.headY).tileType == TileType.Snake) {
@@ -98,7 +97,6 @@ class Game(canvasy: Canvasy) extends Settings {
     }
   }
 
-  // Cette fonction pourrait etre dans un autre fichier appele food, a revoir...
   def generateNewFood(): Unit = {
 
     val newFoodPositionX = Random.nextInt(NumberOfSquaresWidth)
@@ -109,7 +107,7 @@ class Game(canvasy: Canvasy) extends Settings {
   }
   //TODO class controller
   def moveSnake(): Unit = {
-
+    lastDirection = direction
     val modifWidth: Int =
       if (direction == Direction.Right) 1
       else if (direction == Direction.Left) -1
@@ -122,16 +120,6 @@ class Game(canvasy: Canvasy) extends Settings {
 
     var newYHeadPosition = snake.headY + modifHeight
     var newXHeadPosition = snake.headX + modifWidth
-
-    //println("snake x: "+snake.head.x+ " numberOfSquaresWidth " +numberOfSquaresWidth )
-    //println("snake y: "+snake.head.y+ " numberOfSquaresHeight " +numberOfSquaresHeight )
-    //println("new y " +newYHeadPosition)
-    //println("new x " +newXHeadPosition)
-
-    //Les 2 lignes sous dessous ne fonctionnent pas car les attributs de snake sont immutable.. je crois quon est oblige de copy
-
-    //snake.headX = newXHeadPosition
-    //snake.headY = newYHeadPosition
 
     //Nouveau Serpent
     snake.headX = newXHeadPosition
@@ -146,7 +134,6 @@ class Game(canvasy: Canvasy) extends Settings {
 
   def gameWon() = {
     if (snake.length >= SnakeLengthToWin) gameOver = true
-
   }
 
   def update(seconds: Double) = {
@@ -160,7 +147,6 @@ class Game(canvasy: Canvasy) extends Settings {
         moveSnake()
         gameWon()
       }
-
     }
   }
 }

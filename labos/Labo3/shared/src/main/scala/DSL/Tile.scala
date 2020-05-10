@@ -12,6 +12,7 @@ class Tile(square: Square) {
 
     tileType match {
       case TileType.Empty => square change Color("black")
+        _timer = 0
       case TileType.Snake => square change Color("blue")
       case TileType.Food  => square change Color("red")
     }
