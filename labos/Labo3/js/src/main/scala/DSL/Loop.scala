@@ -7,16 +7,16 @@ import js.Dynamic.{global => g}
 class Loop() {
 
   var then = js.Date.now()
-  def loop(update: Double => Unit, render: () => Unit): () => Unit = () => {
+  def loop(update: () => Unit, render: () => Unit): () => Unit = () => {
     g.window.requestAnimationFrame(loop(update, render))
     val now = js.Date.now()
     val delta: Double = now - then
-    update(delta / 1000)
+    update()
     render()
     then = now
   }
 
-  def start(update: Double => Unit, render: () => Unit) = {
+  def start(update: () => Unit, render: () => Unit) = {
     loop(update, render)()
   }
 

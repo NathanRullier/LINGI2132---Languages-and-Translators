@@ -7,9 +7,10 @@ trait Settings {
 
   // 60 / Game speed = X images per seconds
   var GameSpeed = 8
-  var NumberOfSquaresWidth = 20
-  var NumberOfSquaresHeight = 20
+  var NumberOfSquaresWidthSnake = 20
+  var NumberOfSquaresHeightSnake = 20
   var BasicSnakeLength = 3
-  var SnakeLengthToWin = (NumberOfSquaresWidth * NumberOfSquaresHeight) / 2
+  var pixelSize = 40
+  var SnakeLengthToWin = (NumberOfSquaresWidthSnake * NumberOfSquaresHeightSnake) / 2
 
 }

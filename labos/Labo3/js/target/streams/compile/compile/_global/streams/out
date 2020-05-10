@@ -1,37 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:82:15: value headX is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {[0m
-[0m[[0m[31merror[0m] [0m[0m              ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:82:36: value headX is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:82:75: value headY is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:82:115: value headY is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:87:26: value headX is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    else if (board(snake.headX)(snake.headY).tileType == TileType.Food) {[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:87:39: value headY is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    else if (board(snake.headX)(snake.headY).tileType == TileType.Food) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:93:26: value headX is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    else if (board(snake.headX)(snake.headY).tileType == TileType.Snake) {[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:93:39: value headY is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    else if (board(snake.headX)(snake.headY).tileType == TileType.Snake) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:122:11: value headX is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    snake.headX += modifWidth[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:123:11: value headY is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    snake.headY += modifHeight[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:125:31: value headX is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    snake.addBody(board(snake.headX)(snake.headY))[0m
-[0m[[0m[31merror[0m] [0m[0m                              ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:125:44: value headY is not a member of DSL.Snake[0m
-[0m[[0m[31merror[0m] [0m[0m    snake.addBody(board(snake.headX)(snake.headY))[0m
-[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m12 errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:121:9: value moveSnake is not a member of Unit[0m
+[0m[[0m[31merror[0m] [0m[0mpossible cause: maybe a semicolon is missing before `value moveSnake`?[0m
+[0m[[0m[31merror[0m] [0m[0m        moveSnake()[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

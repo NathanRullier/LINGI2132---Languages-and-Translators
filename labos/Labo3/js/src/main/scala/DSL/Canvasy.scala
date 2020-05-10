@@ -53,7 +53,7 @@ class Canvasy(canvas: html.Canvas) extends Settings {
   val gridWidth = 800
   // var game = new Game()
   val boardSquareList =
-    Array.ofDim[Square](NumberOfSquaresWidth, NumberOfSquaresHeight)
+    Array.ofDim[Square](NumberOfSquaresWidthSnake, NumberOfSquaresHeightSnake)
 
   //private var shapes = Array[Shape]()
 

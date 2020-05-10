@@ -17,11 +17,11 @@ object Main {
     document.body.appendChild(canvas)
     val canvasy = new Canvasy(canvas)
     canvasy.initRender()
-    val game = new Game(canvasy)
-    game.initGame()
+    val snakeGame = new SnakeGame(canvasy,20,20)
+    snakeGame.initGame()
     val loop = new Loop()
     UserInputs.initInputsListener()
-    loop.start(game.update, () => canvasy.draw())
+    loop.start(snakeGame.update, () => canvasy.draw())
 
     //canvasy.render()
     //canvasy.initRender
