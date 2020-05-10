@@ -9,16 +9,13 @@ sealed trait Shape {
     if (s.isInstanceOf[ComposedShape[A]]) {
       println(1)
       ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape[A]].l)
-    }
-    else if (s.isInstanceOf[A]) {
+    } else if (s.isInstanceOf[A]) {
       println(2)
       ComposedShape[Shape](List(this) ::: List(s))
-    }
-    else if (s.isInstanceOf[Shape]) {
+    } else if (s.isInstanceOf[Shape]) {
       println(3)
       ComposedShape(List(this) ::: List(s))
-    }
-    else {
+    } else {
       println(4)
       ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape[A]].l)
     }
@@ -47,7 +44,7 @@ sealed trait ShapeAttributes {
   // Add more attributes here
 }
 
- // a bouger dans un autre fichier...
+// a bouger dans un autre fichier...
 
 case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
@@ -89,16 +86,13 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
     if (s.isInstanceOf[ComposedShape[A]]) {
       println(1)
       ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
-    }
-    else if (s.isInstanceOf[A]) {
+    } else if (s.isInstanceOf[A]) {
       println(2)
       ComposedShape[Shape](l ::: List(s))
-    }
-    else if (s.isInstanceOf[Shape]) {
+    } else if (s.isInstanceOf[Shape]) {
       println(3)
       ComposedShape(l ::: List(s))
-    }
-    else {
+    } else {
       println(4)
       ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
     }
@@ -106,7 +100,9 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
 }
 
-case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int) extends Shape with ShapeAttributes {
+case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int)
+    extends Shape
+    with ShapeAttributes {
   type A = Rectangle
 
   override def moveX(v: Int): Unit = {
@@ -122,7 +118,9 @@ case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int) ex
   }
 }
 
-case class Square(var x: Int, var y: Int, var side:Int) extends Shape with ShapeAttributes {
+case class Square(var x: Int, var y: Int, var side: Int)
+    extends Shape
+    with ShapeAttributes {
   type A = Square
 
   override def moveX(v: Int): Unit = {
@@ -138,7 +136,9 @@ case class Square(var x: Int, var y: Int, var side:Int) extends Shape with Shape
   }
 }
 
-case class Circle(var x: Int, var y: Int, var radius: Int) extends Shape with ShapeAttributes {
+case class Circle(var x: Int, var y: Int, var radius: Int)
+    extends Shape
+    with ShapeAttributes {
   type A = Circle
 
   override def moveX(v: Int): Unit = {
@@ -156,10 +156,13 @@ case class Circle(var x: Int, var y: Int, var radius: Int) extends Shape with Sh
 
 object ComposedShapeImplicits {
 
-  implicit def arrayCircleToComposedShape(a: Array[Circle]) = ComposedShape(a.toList)
+  implicit def arrayCircleToComposedShape(a: Array[Circle]) =
+    ComposedShape(a.toList)
 
-  implicit def arrayRectangleToComposedShape(a: Array[Rectangle]) = ComposedShape(a.toList)
+  implicit def arrayRectangleToComposedShape(a: Array[Rectangle]) =
+    ComposedShape(a.toList)
 
-  implicit def arrayShapeToComposedShape(a: Array[Shape]) = ComposedShape(a.toList)
+  implicit def arrayShapeToComposedShape(a: Array[Shape]) =
+    ComposedShape(a.toList)
 
 }
