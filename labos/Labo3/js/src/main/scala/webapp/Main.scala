@@ -18,6 +18,7 @@ object Main {
     val canvasy = new Canvasy(canvas)
     canvasy.initRender()
     val game = new Game(canvasy)
+    game.initGame()
     val loop = new Loop()
     UserInputs.initInputsListener()
     loop.start(game.update, () => canvasy.draw())
