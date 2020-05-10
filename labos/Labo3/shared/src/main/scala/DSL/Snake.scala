@@ -3,7 +3,21 @@ package DSL
 import DSL._
 
 case class Snake(var headX: Int, var headY: Int, var length: Int) {
+  private var snakeBody: List[Tile] = List()
 
-  //var snakeTiles: Array[Tile]
+  def addBody(tile: Tile): Unit = {
+    tile.tileType(TileType.Snake)
+    tile.timer(length)
+    snakeBody = snakeBody :+ tile
+  }
 
+  def update(): Unit = {
+    snakeBody.map(x => x.decrementTimer())
+    snakeBody.filter(_.timer()>0)
+  }
+
+  def eatFood(): Unit = {
+    snakeBody.map(x => x.incrementTimer())
+    length += 1
+  }
 }

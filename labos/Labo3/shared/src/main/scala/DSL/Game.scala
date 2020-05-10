@@ -85,10 +85,9 @@ class Game(canvasy: Canvasy) extends Settings {
     }
     //verif collision avec une pomme
     else if (board(snake.headX)(snake.headY).tileType == TileType.Food) {
-      snake.length += 1
+      snake.eatFood()
       println("MENOUM UN BON LEGUME")
       generateNewFood()
-      board.map(x => x.map(y => y.incrementTimer()))
     }
     //verif collision avec sa queue
     else if (board(snake.headX)(snake.headY).tileType == TileType.Snake) {
@@ -105,6 +104,7 @@ class Game(canvasy: Canvasy) extends Settings {
       generateNewFood()
     } else board(newFoodPositionX)(newFoodPositionY).tileType(TileType.Food)
   }
+
   //TODO class controller
   def moveSnake(): Unit = {
     lastDirection = direction
@@ -118,18 +118,14 @@ class Game(canvasy: Canvasy) extends Settings {
       else if (direction == Direction.Down) 1
       else 0
 
-    var newYHeadPosition = snake.headY + modifHeight
-    var newXHeadPosition = snake.headX + modifWidth
-
     //Nouveau Serpent
-    snake.headX = newXHeadPosition
-    snake.headY = newYHeadPosition
+    snake.headX += modifWidth
+    snake.headY += modifHeight
     checkCollisions()
+    snake.addBody(board(snake.headX)(snake.headY))
     //Verif si le nouveau serpent entre en collision avec quelquechose sur le board ou les cotes
     // isGameOver()
     //Si tout est beau, on update le board
-    board(snake.headX)(snake.headY).tileType(TileType.Snake)
-    board(snake.headX)(snake.headY).timer(snake.length)
   }
 
   def gameWon() = {
@@ -143,7 +139,7 @@ class Game(canvasy: Canvasy) extends Settings {
       updateDirection()
       if (compteur % GameSpeed == 0) {
         //updateDirection()
-        board.map(x => x.map(y => y.decrementTimer()))
+        snake.update()
         moveSnake()
         gameWon()
       }
