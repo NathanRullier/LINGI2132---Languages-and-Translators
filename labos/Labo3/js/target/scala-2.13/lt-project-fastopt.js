@@ -701,6 +701,8 @@ const $d_O = new $TypeData().initClass({
   O: 1
 }, (void 0), (void 0), $is_O, $isArrayOf_O);
 $c_O.prototype.$classData = $d_O;
+class $c_LDSL_GameObject extends $c_O {
+}
 class $c_LDSL_Loop extends $c_O {
   constructor() {
     super();
@@ -3713,13 +3715,13 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_gameOver = false
   };
   checkCollisions__V() {
-    if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_headX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headX >= this.LDSL_Game__f_NumberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY >= this.LDSL_Game__f_NumberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY <= (-1)))) {
+    if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_posX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_posX >= this.LDSL_Game__f_NumberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_posY >= this.LDSL_Game__f_NumberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_posY <= (-1)))) {
       const this$2 = $m_s_Console$();
       const this$3 = this$2.out__Ljava_io_PrintStream();
       this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
       this.newGame__V()
     } else {
-      const this$4 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+      const this$4 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_posX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_posY);
       const x = this$4.LDSL_Tile__f__tileType;
       const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
       if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
@@ -3729,7 +3731,7 @@ class $c_LDSL_Game extends $c_O {
         this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
         this.generateNewFood__V()
       } else {
-        const this$8 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+        const this$8 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_posX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_posY);
         const x$3 = this$8.LDSL_Tile__f__tileType;
         const x$4 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
         if (((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))) {
@@ -3788,11 +3790,11 @@ class $c_LDSL_Game extends $c_O {
       }
     };
     const ev$1 = this.LDSL_Game__f_snake;
-    ev$1.LDSL_Snake__f_headX = ((ev$1.LDSL_Snake__f_headX + modifWidth) | 0);
+    ev$1.LDSL_Snake__f_posX = ((ev$1.LDSL_Snake__f_posX + modifWidth) | 0);
     const ev$2 = this.LDSL_Game__f_snake;
-    ev$2.LDSL_Snake__f_headY = ((ev$2.LDSL_Snake__f_headY + modifHeight) | 0);
+    ev$2.LDSL_Snake__f_posY = ((ev$2.LDSL_Snake__f_posY + modifHeight) | 0);
     this.checkCollisions__V();
-    this.LDSL_Game__f_snake.addBody__LDSL_Tile__V(this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY))
+    this.LDSL_Game__f_snake.addBody__LDSL_Tile__V(this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_posX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_posY))
   };
   gameWon__V() {
     if ((this.LDSL_Game__f_snake.LDSL_Snake__f_length >= this.LDSL_Game__f_SnakeLengthToWin)) {
@@ -3819,6 +3821,148 @@ const $d_LDSL_Game = new $TypeData().initClass({
   LDSL_Settings: 1
 });
 $c_LDSL_Game.prototype.$classData = $d_LDSL_Game;
+class $c_LDSL_Snake extends $c_LDSL_GameObject {
+  constructor(posX, posY, length) {
+    super();
+    this.LDSL_Snake__f_posX = 0;
+    this.LDSL_Snake__f_posY = 0;
+    this.LDSL_Snake__f_length = 0;
+    this.LDSL_Snake__f_snakeBody = null;
+    this.LDSL_Snake__f_posX = posX;
+    this.LDSL_Snake__f_posY = posY;
+    this.LDSL_Snake__f_length = length;
+    this.LDSL_Snake__f_snakeBody = $m_sci_Nil$()
+  };
+  addBody__LDSL_Tile__V(tile) {
+    tile.tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Snake);
+    const timer = this.LDSL_Snake__f_length;
+    tile.LDSL_Tile__f__timer = timer;
+    const this$1 = this.LDSL_Snake__f_snakeBody;
+    this.LDSL_Snake__f_snakeBody = $as_sci_List($f_sc_StrictOptimizedSeqOps__appended__O__O(this$1, tile))
+  };
+  update__V() {
+    const this$2 = this.LDSL_Snake__f_snakeBody;
+    const f = ((this$1) => ((x$2) => {
+      const x = $as_LDSL_Tile(x$2);
+      x.decrementTimer__V()
+    }))(this);
+    if ((this$2 === $m_sci_Nil$())) {
+      $m_sci_Nil$()
+    } else {
+      const arg1 = this$2.head__O();
+      const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+      let t = h;
+      let rest = $as_sci_List(this$2.tail__O());
+      while ((rest !== $m_sci_Nil$())) {
+        const arg1$1 = rest.head__O();
+        const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+        t.sci_$colon$colon__f_next = nx;
+        t = nx;
+        rest = $as_sci_List(rest.tail__O())
+      }
+    };
+    const this$3 = this.LDSL_Snake__f_snakeBody;
+    const f$1 = ((this$2$1) => ((x$1$2) => {
+      const x$1 = $as_LDSL_Tile(x$1$2);
+      return (x$1.LDSL_Tile__f__timer > 0)
+    }))(this);
+    let l = this$3;
+    let result;
+    block: {
+      while (true) {
+        if (l.isEmpty__Z()) {
+          result = $m_sci_Nil$();
+          break
+        } else {
+          const h$1 = l.head__O();
+          const t$1 = $as_sci_List(l.tail__O());
+          if (($uZ(f$1(h$1)) === false)) {
+            l = t$1;
+            continue
+          };
+          const start = l;
+          let remaining = t$1;
+          while (true) {
+            if (remaining.isEmpty__Z()) {
+              result = start;
+              break block
+            } else {
+              const x$3 = remaining.head__O();
+              if (($uZ(f$1(x$3)) !== false)) {
+                remaining = $as_sci_List(remaining.tail__O());
+                continue
+              };
+              const firstMiss = remaining;
+              const newHead = new $c_sci_$colon$colon(start.head__O(), $m_sci_Nil$());
+              let toProcess = $as_sci_List(start.tail__O());
+              let currentLast = newHead;
+              while ((toProcess !== firstMiss)) {
+                const newElem = new $c_sci_$colon$colon(toProcess.head__O(), $m_sci_Nil$());
+                currentLast.sci_$colon$colon__f_next = newElem;
+                currentLast = newElem;
+                toProcess = $as_sci_List(toProcess.tail__O())
+              };
+              let next = $as_sci_List(firstMiss.tail__O());
+              let nextToCopy = next;
+              while ((!next.isEmpty__Z())) {
+                const head = next.head__O();
+                if (($uZ(f$1(head)) !== false)) {
+                  next = $as_sci_List(next.tail__O())
+                } else {
+                  while ((nextToCopy !== next)) {
+                    const newElem$2 = new $c_sci_$colon$colon(nextToCopy.head__O(), $m_sci_Nil$());
+                    currentLast.sci_$colon$colon__f_next = newElem$2;
+                    currentLast = newElem$2;
+                    nextToCopy = $as_sci_List(nextToCopy.tail__O())
+                  };
+                  nextToCopy = $as_sci_List(next.tail__O());
+                  next = $as_sci_List(next.tail__O())
+                }
+              };
+              if ((!nextToCopy.isEmpty__Z())) {
+                currentLast.sci_$colon$colon__f_next = nextToCopy
+              };
+              result = newHead;
+              break block
+            }
+          }
+        }
+      }
+    };
+    this.LDSL_Snake__f_snakeBody = result
+  };
+  eatFood__V() {
+    const this$2 = this.LDSL_Snake__f_snakeBody;
+    const f = ((this$1) => ((x$2) => {
+      const x = $as_LDSL_Tile(x$2);
+      x.incrementTimer__V()
+    }))(this);
+    if ((this$2 === $m_sci_Nil$())) {
+      $m_sci_Nil$()
+    } else {
+      const arg1 = this$2.head__O();
+      const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+      let t = h;
+      let rest = $as_sci_List(this$2.tail__O());
+      while ((rest !== $m_sci_Nil$())) {
+        const arg1$1 = rest.head__O();
+        const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+        t.sci_$colon$colon__f_next = nx;
+        t = nx;
+        rest = $as_sci_List(rest.tail__O())
+      }
+    };
+    this.LDSL_Snake__f_length = ((1 + this.LDSL_Snake__f_length) | 0)
+  };
+}
+const $d_LDSL_Snake = new $TypeData().initClass({
+  LDSL_Snake: 0
+}, false, "DSL.Snake", {
+  LDSL_Snake: 1,
+  LDSL_GameObject: 1,
+  O: 1
+});
+$c_LDSL_Snake.prototype.$classData = $d_LDSL_Snake;
 const $p_jl_Character$__nonASCIIZeroDigitCodePoints$lzycompute__AI = (function($thiz) {
   if (((((16 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0)) {
     $thiz.jl_Character$__f_nonASCIIZeroDigitCodePoints = $makeNativeArrayWrapper($d_I.getArrayOf(), [1632, 1776, 1984, 2406, 2534, 2662, 2790, 2918, 3046, 3174, 3302, 3430, 3664, 3792, 3872, 4160, 4240, 6112, 6160, 6470, 6608, 6784, 6800, 6992, 7088, 7232, 7248, 42528, 43216, 43264, 43472, 43600, 44016, 65296, 66720, 69734, 69872, 69942, 70096, 71360, 120782, 120792, 120802, 120812, 120822]);
@@ -7375,221 +7519,6 @@ function $m_s_util_Random$() {
   };
   return $n_s_util_Random$
 }
-class $c_LDSL_Snake extends $c_O {
-  constructor(headX, headY, length) {
-    super();
-    this.LDSL_Snake__f_headX = 0;
-    this.LDSL_Snake__f_headY = 0;
-    this.LDSL_Snake__f_length = 0;
-    this.LDSL_Snake__f_snakeBody = null;
-    this.LDSL_Snake__f_headX = headX;
-    this.LDSL_Snake__f_headY = headY;
-    this.LDSL_Snake__f_length = length;
-    this.LDSL_Snake__f_snakeBody = $m_sci_Nil$()
-  };
-  addBody__LDSL_Tile__V(tile) {
-    tile.tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Snake);
-    const timer = this.LDSL_Snake__f_length;
-    tile.LDSL_Tile__f__timer = timer;
-    const this$1 = this.LDSL_Snake__f_snakeBody;
-    this.LDSL_Snake__f_snakeBody = $as_sci_List($f_sc_StrictOptimizedSeqOps__appended__O__O(this$1, tile))
-  };
-  update__V() {
-    const x = this.LDSL_Snake__f_snakeBody.length__I();
-    const this$2 = $m_s_Console$();
-    const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-    const this$5 = this.LDSL_Snake__f_snakeBody;
-    const f = ((this$4) => ((x$2) => {
-      const x$1 = $as_LDSL_Tile(x$2);
-      x$1.decrementTimer__V()
-    }))(this);
-    if ((this$5 === $m_sci_Nil$())) {
-      $m_sci_Nil$()
-    } else {
-      const arg1 = this$5.head__O();
-      const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-      let t = h;
-      let rest = $as_sci_List(this$5.tail__O());
-      while ((rest !== $m_sci_Nil$())) {
-        const arg1$1 = rest.head__O();
-        const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-        t.sci_$colon$colon__f_next = nx;
-        t = nx;
-        rest = $as_sci_List(rest.tail__O())
-      }
-    };
-    const this$6 = this.LDSL_Snake__f_snakeBody;
-    const f$1 = ((this$2$1) => ((x$1$2) => {
-      const x$1$1 = $as_LDSL_Tile(x$1$2);
-      return (x$1$1.LDSL_Tile__f__timer > 0)
-    }))(this);
-    let l = this$6;
-    let result;
-    block: {
-      while (true) {
-        if (l.isEmpty__Z()) {
-          result = $m_sci_Nil$();
-          break
-        } else {
-          const h$1 = l.head__O();
-          const t$1 = $as_sci_List(l.tail__O());
-          if (($uZ(f$1(h$1)) === false)) {
-            l = t$1;
-            continue
-          };
-          const start = l;
-          let remaining = t$1;
-          while (true) {
-            if (remaining.isEmpty__Z()) {
-              result = start;
-              break block
-            } else {
-              const x$3 = remaining.head__O();
-              if (($uZ(f$1(x$3)) !== false)) {
-                remaining = $as_sci_List(remaining.tail__O());
-                continue
-              };
-              const firstMiss = remaining;
-              const newHead = new $c_sci_$colon$colon(start.head__O(), $m_sci_Nil$());
-              let toProcess = $as_sci_List(start.tail__O());
-              let currentLast = newHead;
-              while ((toProcess !== firstMiss)) {
-                const newElem = new $c_sci_$colon$colon(toProcess.head__O(), $m_sci_Nil$());
-                currentLast.sci_$colon$colon__f_next = newElem;
-                currentLast = newElem;
-                toProcess = $as_sci_List(toProcess.tail__O())
-              };
-              let next = $as_sci_List(firstMiss.tail__O());
-              let nextToCopy = next;
-              while ((!next.isEmpty__Z())) {
-                const head = next.head__O();
-                if (($uZ(f$1(head)) !== false)) {
-                  next = $as_sci_List(next.tail__O())
-                } else {
-                  while ((nextToCopy !== next)) {
-                    const newElem$2 = new $c_sci_$colon$colon(nextToCopy.head__O(), $m_sci_Nil$());
-                    currentLast.sci_$colon$colon__f_next = newElem$2;
-                    currentLast = newElem$2;
-                    nextToCopy = $as_sci_List(nextToCopy.tail__O())
-                  };
-                  nextToCopy = $as_sci_List(next.tail__O());
-                  next = $as_sci_List(next.tail__O())
-                }
-              };
-              if ((!nextToCopy.isEmpty__Z())) {
-                currentLast.sci_$colon$colon__f_next = nextToCopy
-              };
-              result = newHead;
-              break block
-            }
-          }
-        }
-      }
-    };
-    this.LDSL_Snake__f_snakeBody = result
-  };
-  eatFood__V() {
-    const this$2 = this.LDSL_Snake__f_snakeBody;
-    const f = ((this$1) => ((x$2) => {
-      const x = $as_LDSL_Tile(x$2);
-      x.incrementTimer__V()
-    }))(this);
-    if ((this$2 === $m_sci_Nil$())) {
-      $m_sci_Nil$()
-    } else {
-      const arg1 = this$2.head__O();
-      const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-      let t = h;
-      let rest = $as_sci_List(this$2.tail__O());
-      while ((rest !== $m_sci_Nil$())) {
-        const arg1$1 = rest.head__O();
-        const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-        t.sci_$colon$colon__f_next = nx;
-        t = nx;
-        rest = $as_sci_List(rest.tail__O())
-      }
-    };
-    this.LDSL_Snake__f_length = ((1 + this.LDSL_Snake__f_length) | 0)
-  };
-  productPrefix__T() {
-    return "Snake"
-  };
-  productArity__I() {
-    return 3
-  };
-  productElement__I__O(x$1) {
-    switch (x$1) {
-      case 0: {
-        return this.LDSL_Snake__f_headX;
-        break
-      }
-      case 1: {
-        return this.LDSL_Snake__f_headY;
-        break
-      }
-      case 2: {
-        return this.LDSL_Snake__f_length;
-        break
-      }
-      default: {
-        return $m_sr_Statics$().ioobe__I__O(x$1)
-      }
-    }
-  };
-  productIterator__sc_Iterator() {
-    return new $c_sr_ScalaRunTime$$anon$1(this)
-  };
-  hashCode__I() {
-    let acc = (-889275714);
-    const hash = acc;
-    const data = $f_T__hashCode__I("Snake");
-    acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-    const hash$1 = acc;
-    const data$1 = this.LDSL_Snake__f_headX;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-    const hash$2 = acc;
-    const data$2 = this.LDSL_Snake__f_headY;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
-    const hash$3 = acc;
-    const data$3 = this.LDSL_Snake__f_length;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
-    const hash$4 = acc;
-    return $m_sr_Statics$().finalizeHash__I__I__I(hash$4, 3)
-  };
-  toString__T() {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-  };
-  equals__O__Z(x$1) {
-    if ((this === x$1)) {
-      return true
-    } else if ((x$1 instanceof $c_LDSL_Snake)) {
-      const Snake$1 = $as_LDSL_Snake(x$1);
-      return (((this.LDSL_Snake__f_headX === Snake$1.LDSL_Snake__f_headX) && (this.LDSL_Snake__f_headY === Snake$1.LDSL_Snake__f_headY)) && (this.LDSL_Snake__f_length === Snake$1.LDSL_Snake__f_length))
-    } else {
-      return false
-    }
-  };
-}
-function $as_LDSL_Snake(obj) {
-  return (((obj instanceof $c_LDSL_Snake) || (obj === null)) ? obj : $throwClassCastException(obj, "DSL.Snake"))
-}
-function $isArrayOf_LDSL_Snake(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.LDSL_Snake)))
-}
-function $asArrayOf_LDSL_Snake(obj, depth) {
-  return (($isArrayOf_LDSL_Snake(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "LDSL.Snake;", depth))
-}
-const $d_LDSL_Snake = new $TypeData().initClass({
-  LDSL_Snake: 0
-}, false, "DSL.Snake", {
-  LDSL_Snake: 1,
-  O: 1,
-  s_Product: 1,
-  s_Equals: 1,
-  Ljava_io_Serializable: 1
-});
-$c_LDSL_Snake.prototype.$classData = $d_LDSL_Snake;
 class $c_Ljava_io_OutputStream extends $c_O {
 }
 class $c_jl_AssertionError extends $c_jl_Error {

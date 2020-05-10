@@ -25,7 +25,6 @@ class Tile(square: Square) {
   def tileType(): TileType.Value = _tileType
 
   def decrementTimer(): Unit = {
-    //println(_timer)
     if (_tileType == TileType.Snake) {
       _timer -= 1
       if (_timer == 0) {
