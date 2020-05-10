@@ -768,6 +768,7 @@ class $c_LDSL_Tile extends $c_O {
     this.LDSL_Tile__f_timer = 0
   };
   tileType__s_Enumeration$Value__V(tileType) {
+    this.LDSL_Tile__f__tileType = tileType;
     const x = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
     if (((x === null) ? (tileType === null) : x.equals__O__Z(tileType))) {
       const this$1 = this.LDSL_Tile__f_square;
@@ -779,13 +780,17 @@ class $c_LDSL_Tile extends $c_O {
         const this$2 = this.LDSL_Tile__f_square;
         const property$1 = new $c_LDSL_Color("blue");
         this$2.LDSL_Square__f_color = property$1.LDSL_Color__f_c;
-        this.LDSL_Tile__f_timer = 3
+        this.LDSL_Tile__f_timer = 3;
+        const x$1 = this.LDSL_Tile__f__tileType;
+        const this$4 = $m_s_Console$();
+        const this$5 = this$4.out__Ljava_io_PrintStream();
+        this$5.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"))
       } else {
         const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
         if (((x$5 === null) ? (tileType === null) : x$5.equals__O__Z(tileType))) {
-          const this$3 = this.LDSL_Tile__f_square;
+          const this$6 = this.LDSL_Tile__f_square;
           const property$2 = new $c_LDSL_Color("red");
-          this$3.LDSL_Square__f_color = property$2.LDSL_Color__f_c
+          this$6.LDSL_Square__f_color = property$2.LDSL_Color__f_c
         } else {
           throw new $c_s_MatchError(tileType)
         }
@@ -798,7 +803,7 @@ class $c_LDSL_Tile extends $c_O {
     if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
       this.LDSL_Tile__f_timer = (((-1) + this.LDSL_Tile__f_timer) | 0);
       if ((this.LDSL_Tile__f_timer === 0)) {
-        this.LDSL_Tile__f__tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Empty
+        this.tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Empty)
       }
     }
   };
@@ -1959,7 +1964,7 @@ class $c_Lwebapp_Main$ extends $c_O {
     $m_LDSL_UserInputs$().initInputsListener__sjs_js_Dynamic();
     loop.start__F1__F0__V(new $c_sjsr_AnonFunction1(((this$1, game$1) => ((seconds$2) => {
       const seconds = $uD(seconds$2);
-      game$1.update__D__AAjl_Void(seconds)
+      game$1.update__D__V(seconds)
     }))(this, game)), new $c_sjsr_AnonFunction0(((this$2, canvasy$1) => (() => {
       canvasy$1.draw__V()
     }))(this, canvasy)))
@@ -2441,194 +2446,192 @@ class $c_LDSL_Game extends $c_O {
     };
     const newYHeadPosition = ((this.LDSL_Game__f_snake.LDSL_Snake__f_headY + modifHeight) | 0);
     const newXHeadPosition = ((this.LDSL_Game__f_snake.LDSL_Snake__f_headX + modifWidth) | 0);
-    const qual$1 = this.LDSL_Game__f_snake;
-    const x$3$2 = qual$1.LDSL_Snake__f_length;
-    this.LDSL_Game__f_snake = new $c_LDSL_Snake(newXHeadPosition, newYHeadPosition, x$3$2);
+    this.LDSL_Game__f_snake.LDSL_Snake__f_headX = newXHeadPosition;
+    this.LDSL_Game__f_snake.LDSL_Snake__f_headY = newYHeadPosition;
     this.checkCollisions__V();
-    this.isGameOver__V();
-    this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Snake)
+    this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Snake);
+    this.isGameOver__V()
   };
-  update__D__AAjl_Void(seconds) {
+  update__D__V(seconds) {
     if ((!this.LDSL_Game__f_gameOver)) {
       this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
       this.updateDirection__V();
       if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
+        const xs = this.LDSL_Game__f_board;
+        const f$1 = ((this$2) => ((x$2) => {
+          const x = $asArrayOf_LDSL_Tile(x$2, 1);
+          const f = ((this$4) => ((y$2) => {
+            const y = $as_LDSL_Tile(y$2);
+            y.decrementTimer__V()
+          }))(this$2);
+          $m_s_reflect_ManifestFactory$UnitManifest$();
+          const len = x.u.length;
+          const ys = $newArrayObject($d_jl_Void.getArrayOf(), [len]);
+          if ((len > 0)) {
+            let i = 0;
+            if ((x !== null)) {
+              while ((i < len)) {
+                const $$x1 = i;
+                const arg1 = x.get(i);
+                ys.set($$x1, f(arg1));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_I(x, 1)) {
+              const x3 = $asArrayOf_I(x, 1);
+              while ((i < len)) {
+                const $$x2 = i;
+                const arg1$1 = x3.get(i);
+                ys.set($$x2, f(arg1$1));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_D(x, 1)) {
+              const x4 = $asArrayOf_D(x, 1);
+              while ((i < len)) {
+                const $$x3 = i;
+                const arg1$2 = x4.get(i);
+                ys.set($$x3, f(arg1$2));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_J(x, 1)) {
+              const x5 = $asArrayOf_J(x, 1);
+              while ((i < len)) {
+                const $$x4 = i;
+                const t = x5.get(i);
+                const lo = t.RTLong__f_lo;
+                const hi = t.RTLong__f_hi;
+                ys.set($$x4, f(new $c_RTLong(lo, hi)));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_F(x, 1)) {
+              const x6 = $asArrayOf_F(x, 1);
+              while ((i < len)) {
+                const $$x5 = i;
+                const arg1$3 = x6.get(i);
+                ys.set($$x5, f(arg1$3));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_C(x, 1)) {
+              const x7 = $asArrayOf_C(x, 1);
+              while ((i < len)) {
+                const $$x6 = i;
+                const arg1$4 = x7.get(i);
+                ys.set($$x6, f($bC(arg1$4)));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_B(x, 1)) {
+              const x8 = $asArrayOf_B(x, 1);
+              while ((i < len)) {
+                const $$x7 = i;
+                const arg1$5 = x8.get(i);
+                ys.set($$x7, f(arg1$5));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_S(x, 1)) {
+              const x9 = $asArrayOf_S(x, 1);
+              while ((i < len)) {
+                const $$x8 = i;
+                const arg1$6 = x9.get(i);
+                ys.set($$x8, f(arg1$6));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_Z(x, 1)) {
+              const x10 = $asArrayOf_Z(x, 1);
+              while ((i < len)) {
+                const $$x9 = i;
+                const arg1$7 = x10.get(i);
+                ys.set($$x9, f(arg1$7));
+                i = ((1 + i) | 0)
+              }
+            } else {
+              throw new $c_s_MatchError(x)
+            }
+          };
+          return ys
+        }))(this);
+        const len$1 = xs.u.length;
+        const ys$1 = $newArrayObject($d_jl_Void.getArrayOf().getArrayOf(), [len$1]);
+        if ((len$1 > 0)) {
+          let i$1 = 0;
+          if ((xs !== null)) {
+            while ((i$1 < len$1)) {
+              const $$x10 = i$1;
+              const arg1$8 = xs.get(i$1);
+              ys$1.set($$x10, f$1(arg1$8));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_I(xs, 1)) {
+            const x3$1 = $asArrayOf_I(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x11 = i$1;
+              const arg1$9 = x3$1.get(i$1);
+              ys$1.set($$x11, f$1(arg1$9));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_D(xs, 1)) {
+            const x4$1 = $asArrayOf_D(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x12 = i$1;
+              const arg1$10 = x4$1.get(i$1);
+              ys$1.set($$x12, f$1(arg1$10));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_J(xs, 1)) {
+            const x5$1 = $asArrayOf_J(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x13 = i$1;
+              const t$1 = x5$1.get(i$1);
+              const lo$1 = t$1.RTLong__f_lo;
+              const hi$1 = t$1.RTLong__f_hi;
+              ys$1.set($$x13, f$1(new $c_RTLong(lo$1, hi$1)));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_F(xs, 1)) {
+            const x6$1 = $asArrayOf_F(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x14 = i$1;
+              const arg1$11 = x6$1.get(i$1);
+              ys$1.set($$x14, f$1(arg1$11));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_C(xs, 1)) {
+            const x7$1 = $asArrayOf_C(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x15 = i$1;
+              const arg1$12 = x7$1.get(i$1);
+              ys$1.set($$x15, f$1($bC(arg1$12)));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_B(xs, 1)) {
+            const x8$1 = $asArrayOf_B(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x16 = i$1;
+              const arg1$13 = x8$1.get(i$1);
+              ys$1.set($$x16, f$1(arg1$13));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_S(xs, 1)) {
+            const x9$1 = $asArrayOf_S(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x17 = i$1;
+              const arg1$14 = x9$1.get(i$1);
+              ys$1.set($$x17, f$1(arg1$14));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_Z(xs, 1)) {
+            const x10$1 = $asArrayOf_Z(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x18 = i$1;
+              const arg1$15 = x10$1.get(i$1);
+              ys$1.set($$x18, f$1(arg1$15));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else {
+            throw new $c_s_MatchError(xs)
+          }
+        };
         this.moveSnake__V()
       }
-    };
-    const xs = this.LDSL_Game__f_board;
-    const f$1 = ((this$2) => ((x$2) => {
-      const x = $asArrayOf_LDSL_Tile(x$2, 1);
-      const f = ((this$4) => ((y$2) => {
-        const y = $as_LDSL_Tile(y$2);
-        y.decrementTimer__V()
-      }))(this$2);
-      $m_s_reflect_ManifestFactory$UnitManifest$();
-      const len = x.u.length;
-      const ys = $newArrayObject($d_jl_Void.getArrayOf(), [len]);
-      if ((len > 0)) {
-        let i = 0;
-        if ((x !== null)) {
-          while ((i < len)) {
-            const $$x1 = i;
-            const arg1 = x.get(i);
-            ys.set($$x1, f(arg1));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_I(x, 1)) {
-          const x3 = $asArrayOf_I(x, 1);
-          while ((i < len)) {
-            const $$x2 = i;
-            const arg1$1 = x3.get(i);
-            ys.set($$x2, f(arg1$1));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_D(x, 1)) {
-          const x4 = $asArrayOf_D(x, 1);
-          while ((i < len)) {
-            const $$x3 = i;
-            const arg1$2 = x4.get(i);
-            ys.set($$x3, f(arg1$2));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_J(x, 1)) {
-          const x5 = $asArrayOf_J(x, 1);
-          while ((i < len)) {
-            const $$x4 = i;
-            const t = x5.get(i);
-            const lo = t.RTLong__f_lo;
-            const hi = t.RTLong__f_hi;
-            ys.set($$x4, f(new $c_RTLong(lo, hi)));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_F(x, 1)) {
-          const x6 = $asArrayOf_F(x, 1);
-          while ((i < len)) {
-            const $$x5 = i;
-            const arg1$3 = x6.get(i);
-            ys.set($$x5, f(arg1$3));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_C(x, 1)) {
-          const x7 = $asArrayOf_C(x, 1);
-          while ((i < len)) {
-            const $$x6 = i;
-            const arg1$4 = x7.get(i);
-            ys.set($$x6, f($bC(arg1$4)));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_B(x, 1)) {
-          const x8 = $asArrayOf_B(x, 1);
-          while ((i < len)) {
-            const $$x7 = i;
-            const arg1$5 = x8.get(i);
-            ys.set($$x7, f(arg1$5));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_S(x, 1)) {
-          const x9 = $asArrayOf_S(x, 1);
-          while ((i < len)) {
-            const $$x8 = i;
-            const arg1$6 = x9.get(i);
-            ys.set($$x8, f(arg1$6));
-            i = ((1 + i) | 0)
-          }
-        } else if ($isArrayOf_Z(x, 1)) {
-          const x10 = $asArrayOf_Z(x, 1);
-          while ((i < len)) {
-            const $$x9 = i;
-            const arg1$7 = x10.get(i);
-            ys.set($$x9, f(arg1$7));
-            i = ((1 + i) | 0)
-          }
-        } else {
-          throw new $c_s_MatchError(x)
-        }
-      };
-      return ys
-    }))(this);
-    const len$1 = xs.u.length;
-    const ys$1 = $newArrayObject($d_jl_Void.getArrayOf().getArrayOf(), [len$1]);
-    if ((len$1 > 0)) {
-      let i$1 = 0;
-      if ((xs !== null)) {
-        while ((i$1 < len$1)) {
-          const $$x10 = i$1;
-          const arg1$8 = xs.get(i$1);
-          ys$1.set($$x10, f$1(arg1$8));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_I(xs, 1)) {
-        const x3$1 = $asArrayOf_I(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x11 = i$1;
-          const arg1$9 = x3$1.get(i$1);
-          ys$1.set($$x11, f$1(arg1$9));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_D(xs, 1)) {
-        const x4$1 = $asArrayOf_D(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x12 = i$1;
-          const arg1$10 = x4$1.get(i$1);
-          ys$1.set($$x12, f$1(arg1$10));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_J(xs, 1)) {
-        const x5$1 = $asArrayOf_J(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x13 = i$1;
-          const t$1 = x5$1.get(i$1);
-          const lo$1 = t$1.RTLong__f_lo;
-          const hi$1 = t$1.RTLong__f_hi;
-          ys$1.set($$x13, f$1(new $c_RTLong(lo$1, hi$1)));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_F(xs, 1)) {
-        const x6$1 = $asArrayOf_F(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x14 = i$1;
-          const arg1$11 = x6$1.get(i$1);
-          ys$1.set($$x14, f$1(arg1$11));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_C(xs, 1)) {
-        const x7$1 = $asArrayOf_C(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x15 = i$1;
-          const arg1$12 = x7$1.get(i$1);
-          ys$1.set($$x15, f$1($bC(arg1$12)));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_B(xs, 1)) {
-        const x8$1 = $asArrayOf_B(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x16 = i$1;
-          const arg1$13 = x8$1.get(i$1);
-          ys$1.set($$x16, f$1(arg1$13));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_S(xs, 1)) {
-        const x9$1 = $asArrayOf_S(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x17 = i$1;
-          const arg1$14 = x9$1.get(i$1);
-          ys$1.set($$x17, f$1(arg1$14));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else if ($isArrayOf_Z(xs, 1)) {
-        const x10$1 = $asArrayOf_Z(xs, 1);
-        while ((i$1 < len$1)) {
-          const $$x18 = i$1;
-          const arg1$15 = x10$1.get(i$1);
-          ys$1.set($$x18, f$1(arg1$15));
-          i$1 = ((1 + i$1) | 0)
-        }
-      } else {
-        throw new $c_s_MatchError(xs)
-      }
-    };
-    return ys$1
+    }
   };
 }
 const $d_LDSL_Game = new $TypeData().initClass({

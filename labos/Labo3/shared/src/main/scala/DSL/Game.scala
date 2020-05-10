@@ -17,10 +17,13 @@ class Tile(square: Square) {
   var timer = 0
 
   def tileType(tileType: TileType.Value): Unit = {
+    _tileType = tileType
+
     tileType match {
       case TileType.Empty => square change Color("black")
       case TileType.Snake => square change Color("blue")
         timer = 3
+        println(_tileType)
       case TileType.Food => square change Color("red")
     }
   }
@@ -31,7 +34,7 @@ class Tile(square: Square) {
     if (_tileType == TileType.Snake) {
       timer -= 1
       if (timer == 0) {
-        _tileType = TileType.Empty
+        tileType(TileType.Empty)
       }
     }
   }
@@ -165,12 +168,13 @@ class Game(canvasy: Canvasy) extends Settings {
     //snake.headY = newYHeadPosition
 
     //Nouveau Serpent
-    snake = snake.copy(headX = newXHeadPosition, headY = newYHeadPosition)
-    //Verif si le nouveau serpent entre en collision avec quelquechose sur le board ou les cotes
+    snake.headX = newXHeadPosition
+    snake.headY = newYHeadPosition
     checkCollisions()
+    board(snake.headX)(snake.headY).tileType(TileType.Snake)
+    //Verif si le nouveau serpent entre en collision avec quelquechose sur le board ou les cotes
     isGameOver()
     //Si tout est beau, on update le board
-    board(snake.headX)(snake.headY).tileType(TileType.Snake)
 
 
   }
@@ -180,8 +184,10 @@ class Game(canvasy: Canvasy) extends Settings {
     if (!gameOver) {
       compteur += 1
       updateDirection()
-      if (compteur % GameSpeed == 0) moveSnake()
+      if (compteur % GameSpeed == 0){
+        board.map(x => x.map(y => y.decrementTimer()))
+        moveSnake()
+      }
     }
-    board.map(x => x.map(y => y.decrementTimer()))
   }
 }
