@@ -1,19 +1,19 @@
 [0m[[0m[0minfo[0m] [0m[0mFast optimizing C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\lt-project-fastopt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 26187 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 4695 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 26761 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: 80620 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 31563 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 5273 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 45447 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: 109858 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 7587 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 274 methods.[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 11227 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 20235 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 13908 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 1022 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: 16682 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 76025 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 1003 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 680 -- invalidated: 155[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 566 -- invalidated: 1041[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: 80173 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 58475 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 5146 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 97 methods.[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 4478 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 13767 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 17818 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 863 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 20632 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 13316 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 190 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 834 -- invalidated: 1[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 1542 -- invalidated: 65[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: 16292 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 64759 us[0m

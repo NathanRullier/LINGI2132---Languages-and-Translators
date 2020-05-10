@@ -796,13 +796,9 @@ class $c_LDSL_Tile extends $c_O {
     }
   };
   decrementTimer__V() {
-    const x = this.LDSL_Tile__f__timer;
-    const this$2 = $m_s_Console$();
-    const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-    const x$1 = this.LDSL_Tile__f__tileType;
+    const x = this.LDSL_Tile__f__tileType;
     const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
-    if (((x$1 === null) ? (x$2 === null) : x$1.equals__O__Z(x$2))) {
+    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
       this.LDSL_Tile__f__timer = (((-1) + this.LDSL_Tile__f__timer) | 0);
       if ((this.LDSL_Tile__f__timer === 0)) {
         this.tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Empty)
@@ -7399,18 +7395,22 @@ class $c_LDSL_Snake extends $c_O {
     this.LDSL_Snake__f_snakeBody = $as_sci_List($f_sc_StrictOptimizedSeqOps__appended__O__O(this$1, tile))
   };
   update__V() {
-    const this$2 = this.LDSL_Snake__f_snakeBody;
-    const f = ((this$1) => ((x$2) => {
-      const x = $as_LDSL_Tile(x$2);
-      x.decrementTimer__V()
+    const x = this.LDSL_Snake__f_snakeBody.length__I();
+    const this$2 = $m_s_Console$();
+    const this$3 = this$2.out__Ljava_io_PrintStream();
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+    const this$5 = this.LDSL_Snake__f_snakeBody;
+    const f = ((this$4) => ((x$2) => {
+      const x$1 = $as_LDSL_Tile(x$2);
+      x$1.decrementTimer__V()
     }))(this);
-    if ((this$2 === $m_sci_Nil$())) {
+    if ((this$5 === $m_sci_Nil$())) {
       $m_sci_Nil$()
     } else {
-      const arg1 = this$2.head__O();
+      const arg1 = this$5.head__O();
       const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
       let t = h;
-      let rest = $as_sci_List(this$2.tail__O());
+      let rest = $as_sci_List(this$5.tail__O());
       while ((rest !== $m_sci_Nil$())) {
         const arg1$1 = rest.head__O();
         const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -7419,16 +7419,17 @@ class $c_LDSL_Snake extends $c_O {
         rest = $as_sci_List(rest.tail__O())
       }
     };
-    const this$3 = this.LDSL_Snake__f_snakeBody;
+    const this$6 = this.LDSL_Snake__f_snakeBody;
     const f$1 = ((this$2$1) => ((x$1$2) => {
-      const x$1 = $as_LDSL_Tile(x$1$2);
-      return (x$1.LDSL_Tile__f__timer > 0)
+      const x$1$1 = $as_LDSL_Tile(x$1$2);
+      return (x$1$1.LDSL_Tile__f__timer > 0)
     }))(this);
-    let l = this$3;
+    let l = this$6;
+    let result;
     block: {
       while (true) {
         if (l.isEmpty__Z()) {
-          $m_sci_Nil$();
+          result = $m_sci_Nil$();
           break
         } else {
           const h$1 = l.head__O();
@@ -7441,6 +7442,7 @@ class $c_LDSL_Snake extends $c_O {
           let remaining = t$1;
           while (true) {
             if (remaining.isEmpty__Z()) {
+              result = start;
               break block
             } else {
               const x$3 = remaining.head__O();
@@ -7478,12 +7480,14 @@ class $c_LDSL_Snake extends $c_O {
               if ((!nextToCopy.isEmpty__Z())) {
                 currentLast.sci_$colon$colon__f_next = nextToCopy
               };
+              result = newHead;
               break block
             }
           }
         }
       }
-    }
+    };
+    this.LDSL_Snake__f_snakeBody = result
   };
   eatFood__V() {
     const this$2 = this.LDSL_Snake__f_snakeBody;

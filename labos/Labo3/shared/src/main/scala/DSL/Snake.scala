@@ -12,8 +12,9 @@ case class Snake(var headX: Int, var headY: Int, var length: Int) {
   }
 
   def update(): Unit = {
+    println(snakeBody.length)
     snakeBody.map(x => x.decrementTimer())
-    snakeBody.filter(_.timer()>0)
+    snakeBody = snakeBody.filter(_.timer()>0)
   }
 
   def eatFood(): Unit = {
