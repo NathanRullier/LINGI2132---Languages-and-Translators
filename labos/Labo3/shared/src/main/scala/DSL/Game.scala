@@ -65,6 +65,15 @@ class Game(canvasy: Canvasy) extends Settings {
     generateNewFood()
   }
 
+  def resetGameBoard(): Unit ={
+    for (i <- 0 to board.length -1 ) {
+      for (j <- 0 to board(i).length -1) {
+        board(i)(j).timer = 0
+        board(i)(j).tileType(TileType.Empty)
+      }
+    }
+    canvasy.resetGame()
+  }
 
   //TODO class controller
   def updateDirection(): Unit = {
@@ -79,8 +88,9 @@ class Game(canvasy: Canvasy) extends Settings {
   }
 
   def isGameOver(): Unit = {
+    println("Maxime")
     if (gameOver) {
-      canvasy.resetGame()
+      resetGameBoard()
       snake = new Snake(3, 3, 3)
       newGame()
     }
@@ -88,7 +98,9 @@ class Game(canvasy: Canvasy) extends Settings {
 
   def newGame(): Unit = {
     direction = Direction.Right
+    resetGameBoard()
     snake = new Snake(3, 3, 3)
+    generateNewFood()
     gameOver = false
   }
 
@@ -101,49 +113,54 @@ class Game(canvasy: Canvasy) extends Settings {
   //    val snake = new Snake(Square(3,0,40, TileType.SnakeHead,0),tail)
   //  }
 
-  def checkCollisions(): Unit = {
-
-    println(snake.headX + " " + snake.headY)
-
-
+  def checkCollisions(): Unit ={
+    println(snake.headX+" "+snake.headY)
     //verif collision avec les cotes (probablement devoir update les valeurs)
-    if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {
+    if (snake.headX <= -1 || snake.headX >=NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1){
       println("COLLISION AVEC UN MUR")
-      gameOver = true
+      newGame()
     }
     //verif collision avec une pomme
-    if (board(snake.headX)(snake.headY).tileType == TileType.Food) {
-      snake = snake.copy(length = snake.length + 1)
+    else if (board(snake.headX)(snake.headY).tileType == TileType.Food){
+      snake.length += 1
       println("MENOUM UN BON LEGUME")
       generateNewFood()
       //incrementer les timer de chaque tile snake ?
     }
     //verif collision avec sa queue
-    if (board(snake.headX)(snake.headY).tileType == TileType.Snake) {
+    else if (board(snake.headX)(snake.headY).tileType == TileType.Snake){
       println("COLLISION AVEC QUEUE DU SERPENT")
-      gameOver = true
-      //incrementer les timer de chaque tile snake ?
+      newGame()
     }
-
   }
 
   // Cette fonction pourrait etre dans un autre fichier appele food, a revoir...
-  def generateNewFood(): Unit = {
-    var r: Int = scala.util.Random.nextInt((board.length * board.length) - 1)
-    var foodPlaced = false
-    while (!foodPlaced) {
-      val tile = board(r % board.length)((r - r % board.length) / board.length)
-      println(tile.tileType())
-      println(r)
-      if (tile.tileType() == TileType.Empty) {
-        tile.tileType(TileType.Food)
-        foodPlaced = true
-      }
-      r = (r + 1) % ((board.length * board.length) - 1)
+//  def generateNewFood(): Unit = {
+//    var r: Int = scala.util.Random.nextInt((board.length * board.length) - 1)
+//    var foodPlaced = false
+//    while (!foodPlaced) {
+//      val tile = board(r % board.length)((r - r % board.length) / board.length)
+//      println(tile.tileType())
+//      println(r)
+//      if (tile.tileType() == TileType.Empty) {
+//        tile.tileType(TileType.Food)
+//        foodPlaced = true
+//      }
+//      r = (r + 1) % ((board.length * board.length) - 1)
+//
+//    }
+//  }
 
+  // Cette fonction pourrait etre dans un autre fichier appele food, a revoir...
+  def generateNewFood(): Unit ={
+
+    val newFoodPositionX = Random.nextInt(NumberOfSquaresWidth)
+    val newFoodPositionY = Random.nextInt(NumberOfSquaresHeight)
+    if(board(newFoodPositionX)(newFoodPositionY).tileType != TileType.Empty){
+      generateNewFood()
     }
+    else board(newFoodPositionX)(newFoodPositionY).tileType( TileType.Food)
   }
-
   //TODO class controller
   def moveSnake(): Unit = {
 
@@ -171,11 +188,10 @@ class Game(canvasy: Canvasy) extends Settings {
     snake.headX = newXHeadPosition
     snake.headY = newYHeadPosition
     checkCollisions()
-    board(snake.headX)(snake.headY).tileType(TileType.Snake)
     //Verif si le nouveau serpent entre en collision avec quelquechose sur le board ou les cotes
-    isGameOver()
+   // isGameOver()
     //Si tout est beau, on update le board
-
+    board(snake.headX)(snake.headY).tileType(TileType.Snake)
 
   }
 
