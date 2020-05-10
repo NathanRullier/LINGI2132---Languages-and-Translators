@@ -4,25 +4,27 @@ import DSL._
 import javax.swing.Timer
 import org.scalajs.dom.html
 import scala.scalajs.js
-import js.Dynamic.{ global => g }
+import js.Dynamic.{global => g}
 import org.scalajs.dom
 
 class Canvasy(canvas: html.Canvas) extends Settings {
 
   private var shapes = Array[Shape]()
 
-  private val ctx: dom.CanvasRenderingContext2D = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+  private val ctx: dom.CanvasRenderingContext2D =
+    canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
 
   def draw(): Unit = {
-    shapes.map(x => x match {
-      case square: Square => draw(square)
-      case shape: Shape => draw(shape)
-    })
+    shapes.map(
+      x =>
+        x match {
+          case square: Square => draw(square)
+          case shape: Shape   => draw(shape)
+      }
+    )
   }
 
-  def draw(s: Shape): Unit = {
-
-  }
+  def draw(s: Shape): Unit = {}
 
   def draw(square: Square): Unit = {
     val style = square.color
@@ -44,13 +46,14 @@ class Canvasy(canvas: html.Canvas) extends Settings {
   }
 
   lazy val windowHeight = g.window.innerHeight
-  lazy val windowWidth= g.window.innerWidth
+  lazy val windowWidth = g.window.innerWidth
 
   //tres temporaire, juste pour faire des tests
   val gridHeight = 800
   val gridWidth = 800
   // var game = new Game()
-  val boardSquareList = Array.ofDim[Square](NumberOfSquaresWidth , NumberOfSquaresHeight)
+  val boardSquareList =
+    Array.ofDim[Square](NumberOfSquaresWidth, NumberOfSquaresHeight)
 
   //private var shapes = Array[Shape]()
 
@@ -63,9 +66,10 @@ class Canvasy(canvas: html.Canvas) extends Settings {
     //renderHead(head)
     println("initRender")
 
-    for (i <- 0 to boardSquareList.length -1 ) {
-      for (j <- 0 to boardSquareList(i).length -1) {
-        boardSquareList(i)(j) = new Square(i * squareSide, j * squareSide, squareSide)
+    for (i <- 0 to boardSquareList.length - 1) {
+      for (j <- 0 to boardSquareList(i).length - 1) {
+        boardSquareList(i)(j) =
+          new Square(i * squareSide, j * squareSide, squareSide)
       }
     }
     draw()
@@ -78,4 +82,3 @@ class Canvasy(canvas: html.Canvas) extends Settings {
 
   }
 }
-

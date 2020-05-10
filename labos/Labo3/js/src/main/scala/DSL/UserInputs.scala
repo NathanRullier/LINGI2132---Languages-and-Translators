@@ -2,7 +2,7 @@ package DSL
 
 import DSL._
 import scala.scalajs.js
-import js.Dynamic.{ global => g }
+import js.Dynamic.{global => g}
 import org.scalajs.dom
 import scala.collection.mutable.HashMap
 
@@ -25,7 +25,5 @@ object UserInputs {
   def holdUp = keysDown.contains(38)
   def holdRight = keysDown.contains(39)
   def holdDown = keysDown.contains(40)
-
-
 
 }
