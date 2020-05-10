@@ -1,2 +1,23 @@
-[0m[[0m[33mwarn[0m] [0m[0mthere was one deprecation warning (since 2.13.0); re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSL/Shapes.scala:9:23: abstract type A in type DSL.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSL/Shapes.scala:12:30: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    } else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSL/Shapes.scala:89:30: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    } else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSLDemo/Shapes.scala:7:23: abstract type A in type DSLDemo.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSLDemo/Shapes.scala:11:28: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/vincenttessier/Desktop/transitors/LINGI2132---Languages-and-Translators/labos/Labo3/shared/src/main/scala/DSLDemo/Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were three deprecation warnings (since 2.10.0)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 5 deprecation warnings (since 2.13.0)[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 8 deprecation warnings in total; re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 6 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m10 warnings found[0m

@@ -731,9 +731,11 @@ const $d_LDSL_Loop = new $TypeData().initClass({
 });
 $c_LDSL_Loop.prototype.$classData = $d_LDSL_Loop;
 const $f_LDSL_Settings__$init$__V = (function($thiz) {
-  $thiz.DSL$Settings$_setter_$GameSpeed_$eq__I__V(20);
-  $thiz.DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(20);
-  $thiz.DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(20)
+  $thiz.GameSpeed_$eq__I__V(8);
+  $thiz.NumberOfSquaresWidth_$eq__I__V(20);
+  $thiz.NumberOfSquaresHeight_$eq__I__V(20);
+  $thiz.BasicSnakeLength_$eq__I__V(3);
+  $thiz.SnakeLengthToWin_$eq__I__V((($imul($thiz.NumberOfSquaresWidth__I(), $thiz.NumberOfSquaresHeight__I()) / 2) | 0))
 });
 function $is_LDSL_Shape(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.LDSL_Shape)))
@@ -762,10 +764,10 @@ class $c_LDSL_Tile extends $c_O {
     super();
     this.LDSL_Tile__f_square = null;
     this.LDSL_Tile__f__tileType = null;
-    this.LDSL_Tile__f_timer = 0;
+    this.LDSL_Tile__f__timer = 0;
     this.LDSL_Tile__f_square = square;
     this.LDSL_Tile__f__tileType = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
-    this.LDSL_Tile__f_timer = 0
+    this.LDSL_Tile__f__timer = 0
   };
   tileType__s_Enumeration$Value__V(tileType) {
     this.LDSL_Tile__f__tileType = tileType;
@@ -779,18 +781,13 @@ class $c_LDSL_Tile extends $c_O {
       if (((x$3 === null) ? (tileType === null) : x$3.equals__O__Z(tileType))) {
         const this$2 = this.LDSL_Tile__f_square;
         const property$1 = new $c_LDSL_Color("blue");
-        this$2.LDSL_Square__f_color = property$1.LDSL_Color__f_c;
-        this.LDSL_Tile__f_timer = 3;
-        const x$1 = this.LDSL_Tile__f__tileType;
-        const this$4 = $m_s_Console$();
-        const this$5 = this$4.out__Ljava_io_PrintStream();
-        this$5.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"))
+        this$2.LDSL_Square__f_color = property$1.LDSL_Color__f_c
       } else {
         const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
         if (((x$5 === null) ? (tileType === null) : x$5.equals__O__Z(tileType))) {
-          const this$6 = this.LDSL_Tile__f_square;
+          const this$3 = this.LDSL_Tile__f_square;
           const property$2 = new $c_LDSL_Color("red");
-          this$6.LDSL_Square__f_color = property$2.LDSL_Color__f_c
+          this$3.LDSL_Square__f_color = property$2.LDSL_Color__f_c
         } else {
           throw new $c_s_MatchError(tileType)
         }
@@ -801,10 +798,17 @@ class $c_LDSL_Tile extends $c_O {
     const x = this.LDSL_Tile__f__tileType;
     const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
     if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
-      this.LDSL_Tile__f_timer = (((-1) + this.LDSL_Tile__f_timer) | 0);
-      if ((this.LDSL_Tile__f_timer === 0)) {
+      this.LDSL_Tile__f__timer = (((-1) + this.LDSL_Tile__f__timer) | 0);
+      if ((this.LDSL_Tile__f__timer === 0)) {
         this.tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Empty)
       }
+    }
+  };
+  incrementTimer__V() {
+    const x = this.LDSL_Tile__f__tileType;
+    const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
+    if ((((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)) && (this.LDSL_Tile__f__timer !== 0))) {
+      this.LDSL_Tile__f__timer = ((1 + this.LDSL_Tile__f__timer) | 0)
     }
   };
 }
@@ -1998,6 +2002,8 @@ class $c_LDSL_Canvasy extends $c_O {
     this.LDSL_Canvasy__f_GameSpeed = 0;
     this.LDSL_Canvasy__f_NumberOfSquaresWidth = 0;
     this.LDSL_Canvasy__f_NumberOfSquaresHeight = 0;
+    this.LDSL_Canvasy__f_BasicSnakeLength = 0;
+    this.LDSL_Canvasy__f_SnakeLengthToWin = 0;
     this.LDSL_Canvasy__f_bitmap$0 = 0;
     this.LDSL_Canvasy__f_canvas = canvas;
     $f_LDSL_Settings__$init$__V(this);
@@ -2032,14 +2038,26 @@ class $c_LDSL_Canvasy extends $c_O {
     };
     this.LDSL_Canvasy__f_boardSquareList = arr
   };
-  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
+  GameSpeed_$eq__I__V(x$1) {
     this.LDSL_Canvasy__f_GameSpeed = x$1
   };
-  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
+  NumberOfSquaresWidth__I() {
+    return this.LDSL_Canvasy__f_NumberOfSquaresWidth
+  };
+  NumberOfSquaresWidth_$eq__I__V(x$1) {
     this.LDSL_Canvasy__f_NumberOfSquaresWidth = x$1
   };
-  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
+  NumberOfSquaresHeight__I() {
+    return this.LDSL_Canvasy__f_NumberOfSquaresHeight
+  };
+  NumberOfSquaresHeight_$eq__I__V(x$1) {
     this.LDSL_Canvasy__f_NumberOfSquaresHeight = x$1
+  };
+  BasicSnakeLength_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_BasicSnakeLength = x$1
+  };
+  SnakeLengthToWin_$eq__I__V(x$1) {
+    this.LDSL_Canvasy__f_SnakeLengthToWin = x$1
   };
   draw__V() {
     const xs = this.LDSL_Canvasy__f_shapes;
@@ -2217,6 +2235,8 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_GameSpeed = 0;
     this.LDSL_Game__f_NumberOfSquaresWidth = 0;
     this.LDSL_Game__f_NumberOfSquaresHeight = 0;
+    this.LDSL_Game__f_BasicSnakeLength = 0;
+    this.LDSL_Game__f_SnakeLengthToWin = 0;
     this.LDSL_Game__f_canvasy = canvasy;
     $f_LDSL_Settings__$init$__V(this);
     const this$2 = $m_s_Console$();
@@ -2227,7 +2247,7 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_gameOver = false;
     this.LDSL_Game__f_win = false;
     this.LDSL_Game__f_compteur = 0;
-    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, this.LDSL_Game__f_BasicSnakeLength);
     const n1 = this.LDSL_Game__f_NumberOfSquaresWidth;
     const n2 = this.LDSL_Game__f_NumberOfSquaresWidth;
     const arr = $newArrayObject($d_LDSL_Tile.getArrayOf().getArrayOf(), [n1]);
@@ -2246,14 +2266,26 @@ class $c_LDSL_Game extends $c_O {
     };
     this.LDSL_Game__f_board = arr
   };
-  DSL$Settings$_setter_$GameSpeed_$eq__I__V(x$1) {
+  GameSpeed_$eq__I__V(x$1) {
     this.LDSL_Game__f_GameSpeed = x$1
   };
-  DSL$Settings$_setter_$NumberOfSquaresWidth_$eq__I__V(x$1) {
+  NumberOfSquaresWidth__I() {
+    return this.LDSL_Game__f_NumberOfSquaresWidth
+  };
+  NumberOfSquaresWidth_$eq__I__V(x$1) {
     this.LDSL_Game__f_NumberOfSquaresWidth = x$1
   };
-  DSL$Settings$_setter_$NumberOfSquaresHeight_$eq__I__V(x$1) {
+  NumberOfSquaresHeight__I() {
+    return this.LDSL_Game__f_NumberOfSquaresHeight
+  };
+  NumberOfSquaresHeight_$eq__I__V(x$1) {
     this.LDSL_Game__f_NumberOfSquaresHeight = x$1
+  };
+  BasicSnakeLength_$eq__I__V(x$1) {
+    this.LDSL_Game__f_BasicSnakeLength = x$1
+  };
+  SnakeLengthToWin_$eq__I__V(x$1) {
+    this.LDSL_Game__f_SnakeLengthToWin = x$1
   };
   initGame__V() {
     const end = (((-1) + this.LDSL_Game__f_board.u.length) | 0);
@@ -2286,6 +2318,36 @@ class $c_LDSL_Game extends $c_O {
       }
     };
     this.generateNewFood__V()
+  };
+  resetGameBoard__V() {
+    const end = (((-1) + this.LDSL_Game__f_board.u.length) | 0);
+    const isEmpty = (end < 0);
+    if ((!isEmpty)) {
+      let i = 0;
+      while (true) {
+        const v1 = i;
+        const end$1 = (((-1) + this.LDSL_Game__f_board.get(v1).u.length) | 0);
+        const isEmpty$1 = (end$1 < 0);
+        if ((!isEmpty$1)) {
+          let i$1 = 0;
+          while (true) {
+            const v1$1 = i$1;
+            const this$11 = this.LDSL_Game__f_board.get(v1).get(v1$1);
+            this$11.LDSL_Tile__f__timer = 0;
+            this.LDSL_Game__f_board.get(v1).get(v1$1).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Empty);
+            if ((i$1 === end$1)) {
+              break
+            };
+            i$1 = ((1 + i$1) | 0)
+          }
+        };
+        if ((i === end)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    };
+    this.LDSL_Game__f_canvasy.resetGame__V()
   };
   updateDirection__V() {
     const this$1 = $m_LDSL_UserInputs$();
@@ -2344,75 +2406,229 @@ class $c_LDSL_Game extends $c_O {
     };
     this.LDSL_Game__f_direction = $$x1
   };
-  isGameOver__V() {
-    if (this.LDSL_Game__f_gameOver) {
-      this.LDSL_Game__f_canvasy.resetGame__V();
-      this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
-      this.newGame__V()
-    }
-  };
   newGame__V() {
     this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, 3);
+    this.resetGameBoard__V();
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, this.LDSL_Game__f_BasicSnakeLength);
+    this.generateNewFood__V();
     this.LDSL_Game__f_gameOver = false
   };
   checkCollisions__V() {
-    const x = ((this.LDSL_Game__f_snake.LDSL_Snake__f_headX + " ") + this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
-    const this$2 = $m_s_Console$();
-    const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
     if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_headX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headX >= this.LDSL_Game__f_NumberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY >= this.LDSL_Game__f_NumberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_headY <= (-1)))) {
-      const this$5 = $m_s_Console$();
-      const this$6 = this$5.out__Ljava_io_PrintStream();
-      this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
-      this.LDSL_Game__f_gameOver = true
-    };
-    const this$7 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
-    const x$1 = this$7.LDSL_Tile__f__tileType;
-    const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
-    if (((x$1 === null) ? (x$2 === null) : x$1.equals__O__Z(x$2))) {
-      const qual$1 = this.LDSL_Game__f_snake;
-      const x$1$1 = ((1 + this.LDSL_Game__f_snake.LDSL_Snake__f_length) | 0);
-      const x$2$2 = qual$1.LDSL_Snake__f_headX;
-      const x$3 = qual$1.LDSL_Snake__f_headY;
-      this.LDSL_Game__f_snake = new $c_LDSL_Snake(x$2$2, x$3, x$1$1);
-      const this$9 = $m_s_Console$();
-      const this$10 = this$9.out__Ljava_io_PrintStream();
-      this$10.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
-      this.generateNewFood__V()
-    };
-    const this$11 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
-    const x$4 = this$11.LDSL_Tile__f__tileType;
-    const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
-    if (((x$4 === null) ? (x$5 === null) : x$4.equals__O__Z(x$5))) {
-      const this$13 = $m_s_Console$();
-      const this$14 = this$13.out__Ljava_io_PrintStream();
-      this$14.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC QUEUE DU SERPENT\n");
-      this.LDSL_Game__f_gameOver = true
+      const this$2 = $m_s_Console$();
+      const this$3 = this$2.out__Ljava_io_PrintStream();
+      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
+      this.newGame__V()
+    } else {
+      const this$4 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+      const x = this$4.LDSL_Tile__f__tileType;
+      const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
+      if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+        const ev$1 = this.LDSL_Game__f_snake;
+        ev$1.LDSL_Snake__f_length = ((1 + ev$1.LDSL_Snake__f_length) | 0);
+        const this$6 = $m_s_Console$();
+        const this$7 = this$6.out__Ljava_io_PrintStream();
+        this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
+        this.generateNewFood__V();
+        const xs = this.LDSL_Game__f_board;
+        const f$1 = ((this$9) => ((x$3$2) => {
+          const x$3 = $asArrayOf_LDSL_Tile(x$3$2, 1);
+          const f = ((this$11) => ((y$2) => {
+            const y = $as_LDSL_Tile(y$2);
+            y.incrementTimer__V()
+          }))(this$9);
+          $m_s_reflect_ManifestFactory$UnitManifest$();
+          const len = x$3.u.length;
+          const ys = $newArrayObject($d_jl_Void.getArrayOf(), [len]);
+          if ((len > 0)) {
+            let i = 0;
+            if ((x$3 !== null)) {
+              while ((i < len)) {
+                const $$x1 = i;
+                const arg1 = x$3.get(i);
+                ys.set($$x1, f(arg1));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_I(x$3, 1)) {
+              const x3 = $asArrayOf_I(x$3, 1);
+              while ((i < len)) {
+                const $$x2 = i;
+                const arg1$1 = x3.get(i);
+                ys.set($$x2, f(arg1$1));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_D(x$3, 1)) {
+              const x4 = $asArrayOf_D(x$3, 1);
+              while ((i < len)) {
+                const $$x3 = i;
+                const arg1$2 = x4.get(i);
+                ys.set($$x3, f(arg1$2));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_J(x$3, 1)) {
+              const x5 = $asArrayOf_J(x$3, 1);
+              while ((i < len)) {
+                const $$x4 = i;
+                const t = x5.get(i);
+                const lo = t.RTLong__f_lo;
+                const hi = t.RTLong__f_hi;
+                ys.set($$x4, f(new $c_RTLong(lo, hi)));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_F(x$3, 1)) {
+              const x6 = $asArrayOf_F(x$3, 1);
+              while ((i < len)) {
+                const $$x5 = i;
+                const arg1$3 = x6.get(i);
+                ys.set($$x5, f(arg1$3));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_C(x$3, 1)) {
+              const x7 = $asArrayOf_C(x$3, 1);
+              while ((i < len)) {
+                const $$x6 = i;
+                const arg1$4 = x7.get(i);
+                ys.set($$x6, f($bC(arg1$4)));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_B(x$3, 1)) {
+              const x8 = $asArrayOf_B(x$3, 1);
+              while ((i < len)) {
+                const $$x7 = i;
+                const arg1$5 = x8.get(i);
+                ys.set($$x7, f(arg1$5));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_S(x$3, 1)) {
+              const x9 = $asArrayOf_S(x$3, 1);
+              while ((i < len)) {
+                const $$x8 = i;
+                const arg1$6 = x9.get(i);
+                ys.set($$x8, f(arg1$6));
+                i = ((1 + i) | 0)
+              }
+            } else if ($isArrayOf_Z(x$3, 1)) {
+              const x10 = $asArrayOf_Z(x$3, 1);
+              while ((i < len)) {
+                const $$x9 = i;
+                const arg1$7 = x10.get(i);
+                ys.set($$x9, f(arg1$7));
+                i = ((1 + i) | 0)
+              }
+            } else {
+              throw new $c_s_MatchError(x$3)
+            }
+          };
+          return ys
+        }))(this);
+        const len$1 = xs.u.length;
+        const ys$1 = $newArrayObject($d_jl_Void.getArrayOf().getArrayOf(), [len$1]);
+        if ((len$1 > 0)) {
+          let i$1 = 0;
+          if ((xs !== null)) {
+            while ((i$1 < len$1)) {
+              const $$x10 = i$1;
+              const arg1$8 = xs.get(i$1);
+              ys$1.set($$x10, f$1(arg1$8));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_I(xs, 1)) {
+            const x3$1 = $asArrayOf_I(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x11 = i$1;
+              const arg1$9 = x3$1.get(i$1);
+              ys$1.set($$x11, f$1(arg1$9));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_D(xs, 1)) {
+            const x4$1 = $asArrayOf_D(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x12 = i$1;
+              const arg1$10 = x4$1.get(i$1);
+              ys$1.set($$x12, f$1(arg1$10));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_J(xs, 1)) {
+            const x5$1 = $asArrayOf_J(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x13 = i$1;
+              const t$1 = x5$1.get(i$1);
+              const lo$1 = t$1.RTLong__f_lo;
+              const hi$1 = t$1.RTLong__f_hi;
+              ys$1.set($$x13, f$1(new $c_RTLong(lo$1, hi$1)));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_F(xs, 1)) {
+            const x6$1 = $asArrayOf_F(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x14 = i$1;
+              const arg1$11 = x6$1.get(i$1);
+              ys$1.set($$x14, f$1(arg1$11));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_C(xs, 1)) {
+            const x7$1 = $asArrayOf_C(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x15 = i$1;
+              const arg1$12 = x7$1.get(i$1);
+              ys$1.set($$x15, f$1($bC(arg1$12)));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_B(xs, 1)) {
+            const x8$1 = $asArrayOf_B(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x16 = i$1;
+              const arg1$13 = x8$1.get(i$1);
+              ys$1.set($$x16, f$1(arg1$13));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_S(xs, 1)) {
+            const x9$1 = $asArrayOf_S(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x17 = i$1;
+              const arg1$14 = x9$1.get(i$1);
+              ys$1.set($$x17, f$1(arg1$14));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else if ($isArrayOf_Z(xs, 1)) {
+            const x10$1 = $asArrayOf_Z(xs, 1);
+            while ((i$1 < len$1)) {
+              const $$x18 = i$1;
+              const arg1$15 = x10$1.get(i$1);
+              ys$1.set($$x18, f$1(arg1$15));
+              i$1 = ((1 + i$1) | 0)
+            }
+          } else {
+            throw new $c_s_MatchError(xs)
+          }
+        }
+      } else {
+        const this$18 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+        const x$4 = this$18.LDSL_Tile__f__tileType;
+        const x$5 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
+        if (((x$4 === null) ? (x$5 === null) : x$4.equals__O__Z(x$5))) {
+          const this$20 = $m_s_Console$();
+          const this$21 = this$20.out__Ljava_io_PrintStream();
+          this$21.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC QUEUE DU SERPENT\n");
+          this.newGame__V()
+        }
+      }
     }
   };
   generateNewFood__V() {
     const this$1 = $m_s_util_Random$();
-    const n = (((-1) + $imul(this.LDSL_Game__f_board.u.length, this.LDSL_Game__f_board.u.length)) | 0);
-    let r = this$1.s_util_Random__f_self.nextInt__I__I(n);
-    let foodPlaced = false;
-    while ((!foodPlaced)) {
-      const tile = this.LDSL_Game__f_board.get($intMod(r, this.LDSL_Game__f_board.u.length)).get($intDiv(((r - $intMod(r, this.LDSL_Game__f_board.u.length)) | 0), this.LDSL_Game__f_board.u.length));
-      const x = tile.LDSL_Tile__f__tileType;
-      const this$3 = $m_s_Console$();
-      const this$4 = this$3.out__Ljava_io_PrintStream();
-      this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-      const x$1 = r;
-      const this$6 = $m_s_Console$();
-      const this$7 = this$6.out__Ljava_io_PrintStream();
-      this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"));
-      const x$2 = tile.LDSL_Tile__f__tileType;
-      const x$2$1 = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
-      if (((x$2 === null) ? (x$2$1 === null) : x$2.equals__O__Z(x$2$1))) {
-        tile.tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Food);
-        foodPlaced = true
-      };
-      r = $intMod(((1 + r) | 0), (((-1) + $imul(this.LDSL_Game__f_board.u.length, this.LDSL_Game__f_board.u.length)) | 0))
+    const n = this.LDSL_Game__f_NumberOfSquaresWidth;
+    const newFoodPositionX = this$1.s_util_Random__f_self.nextInt__I__I(n);
+    const this$2 = $m_s_util_Random$();
+    const n$1 = this.LDSL_Game__f_NumberOfSquaresHeight;
+    const newFoodPositionY = this$2.s_util_Random__f_self.nextInt__I__I(n$1);
+    const this$3 = this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY);
+    const x = this$3.LDSL_Tile__f__tileType;
+    const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
+    if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
+      this.generateNewFood__V()
+    } else {
+      this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Food)
     }
   };
   moveSnake__V() {
@@ -2450,7 +2666,14 @@ class $c_LDSL_Game extends $c_O {
     this.LDSL_Game__f_snake.LDSL_Snake__f_headY = newYHeadPosition;
     this.checkCollisions__V();
     this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Snake);
-    this.isGameOver__V()
+    const this$1 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_headX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_headY);
+    const timer = this.LDSL_Game__f_snake.LDSL_Snake__f_length;
+    this$1.LDSL_Tile__f__timer = timer
+  };
+  gameWon__V() {
+    if ((this.LDSL_Game__f_snake.LDSL_Snake__f_length >= this.LDSL_Game__f_SnakeLengthToWin)) {
+      this.LDSL_Game__f_gameOver = true
+    }
   };
   update__D__V(seconds) {
     if ((!this.LDSL_Game__f_gameOver)) {
@@ -2629,7 +2852,8 @@ class $c_LDSL_Game extends $c_O {
             throw new $c_s_MatchError(xs)
           }
         };
-        this.moveSnake__V()
+        this.moveSnake__V();
+        this.gameWon__V()
       }
     }
   };
