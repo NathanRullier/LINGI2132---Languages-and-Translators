@@ -2,7 +2,7 @@ package DSL
 
 import DSL._
 
-case class Snake(var headX: Int, var headY: Int, var length: Int) {
+class Snake(var posX: Int, var posY: Int, var length: Int) extends GameObject(posX,posY) {
   private var snakeBody: List[Tile] = List()
 
   def addBody(tile: Tile): Unit = {
@@ -12,9 +12,8 @@ case class Snake(var headX: Int, var headY: Int, var length: Int) {
   }
 
   def update(): Unit = {
-    println(snakeBody.length)
     snakeBody.map(x => x.decrementTimer())
-    snakeBody = snakeBody.filter(_.timer()>0)
+    snakeBody = snakeBody.filter(_.timer() > 0)
   }
 
   def eatFood(): Unit = {

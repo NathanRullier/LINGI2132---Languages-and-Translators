@@ -79,18 +79,18 @@ class Game(canvasy: Canvasy) extends Settings {
   def checkCollisions(): Unit = {
 
     //verif collision avec les cotes
-    if (snake.headX <= -1 || snake.headX >= NumberOfSquaresWidth || snake.headY >= NumberOfSquaresHeight || snake.headY <= -1) {
+    if (snake.posX <= -1 || snake.posX >= NumberOfSquaresWidth || snake.posY >= NumberOfSquaresHeight || snake.posY <= -1) {
       println("COLLISION AVEC UN MUR")
       newGame()
     }
     //verif collision avec une pomme
-    else if (board(snake.headX)(snake.headY).tileType == TileType.Food) {
+    else if (board(snake.posX)(snake.posY).tileType == TileType.Food) {
       snake.eatFood()
       println("MENOUM UN BON LEGUME")
       generateNewFood()
     }
     //verif collision avec sa queue
-    else if (board(snake.headX)(snake.headY).tileType == TileType.Snake) {
+    else if (board(snake.posX)(snake.posY).tileType == TileType.Snake) {
       println("COLLISION AVEC QUEUE DU SERPENT")
       newGame()
     }
@@ -119,10 +119,10 @@ class Game(canvasy: Canvasy) extends Settings {
       else 0
 
     //Nouveau Serpent
-    snake.headX += modifWidth
-    snake.headY += modifHeight
+    snake.posX += modifWidth
+    snake.posY += modifHeight
     checkCollisions()
-    snake.addBody(board(snake.headX)(snake.headY))
+    snake.addBody(board(snake.posX)(snake.posY))
     //Verif si le nouveau serpent entre en collision avec quelquechose sur le board ou les cotes
     // isGameOver()
     //Si tout est beau, on update le board
