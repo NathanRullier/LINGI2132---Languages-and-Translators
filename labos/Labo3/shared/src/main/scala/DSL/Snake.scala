@@ -3,6 +3,7 @@ package DSL
 import DSL._
 
 case class Snake(var headX: Int, var headY: Int, var length: Int) {
+
   private var snakeBody: List[Tile] = List()
 
   def addBody(tile: Tile): Unit = {
