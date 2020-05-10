@@ -44,20 +44,6 @@ class Game(canvasy: Canvasy) extends Settings {
     canvasy.resetGame()
   }
 
-  //TODO class controller
-  def updateDirection(): Unit = {
-    direction =
-      if (UserInputs.holdLeft && (lastDirection != Direction.Right)) Direction.Left
-      else if (UserInputs.holdRight && (lastDirection != Direction.Left))
-        Direction.Right
-      else if (UserInputs.holdUp && (lastDirection != Direction.Down)) Direction.Up
-      else if (UserInputs.holdDown && (lastDirection != Direction.Up))
-        Direction.Down
-      else direction
-
-    //println("direction: " +direction)
-  }
-
   def isGameOver(): Unit = {
     println("Maxime")
     if (gameOver) {
@@ -108,17 +94,8 @@ class Game(canvasy: Canvasy) extends Settings {
   //TODO class controller
   def moveSnake(): Unit = {
     lastDirection = direction
-    val modifWidth: Int =
-      if (direction == Direction.Right) 1
-      else if (direction == Direction.Left) -1
-      else 0
-
-    val modifHeight: Int =
-      if (direction == Direction.Up) -1
-      else if (direction == Direction.Down) 1
-      else 0
-
-    //Nouveau Serpent
+    val modifWidth = MovementHandler.getWidthVariation(direction)
+    val modifHeight = MovementHandler.getHeightVariation(direction)
     snake.posX += modifWidth
     snake.posY += modifHeight
     checkCollisions()
@@ -136,7 +113,7 @@ class Game(canvasy: Canvasy) extends Settings {
 
     if (!gameOver) {
       compteur += 1
-      updateDirection()
+      direction = MovementHandler.updateSnakeDirection(lastDirection)
       if (compteur % GameSpeed == 0) {
         //updateDirection()
         snake.update()
