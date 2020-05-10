@@ -59,6 +59,7 @@ abstract class Game(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends S
 
     if (!gameOver) {
       compteur += 1
+      direction = MovementHandler.updateSnakeDirection(lastDirection)
       if (compteur % GameSpeed == 0) {
         //put your update here
         function()
