@@ -54,17 +54,9 @@ class SnakeGame(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends Game(
   //TODO class controller
   def moveSnake(): Unit = {
     lastDirection = direction
-    val modifWidth: Int =
-      if (direction == Direction.Right) 1
-      else if (direction == Direction.Left) -1
-      else 0
-
-    val modifHeight: Int =
-      if (direction == Direction.Up) -1
-      else if (direction == Direction.Down) 1
-      else 0
-
-    //Nouveau Serpent
+    val modifWidth = MovementHandler.getWidthVariation(direction)
+    val modifHeight = MovementHandler.getHeightVariation(direction)
+    //Modif position de la tete du serpent
     snake.posX += modifWidth
     snake.posY += modifHeight
     checkCollisions()
