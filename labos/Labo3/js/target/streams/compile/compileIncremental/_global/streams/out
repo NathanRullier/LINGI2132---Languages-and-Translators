@@ -1,0 +1,119 @@
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+<<<<<<< HEAD
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala, C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala, C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala, C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\GameCanvasy.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(webapp.Main, DSL.SnakeGame, DSL.Game, DSL.GameCanvasy)[0m
+=======
+<<<<<<< Updated upstream
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(DSL.SnakeGame)[0m
+=======
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(DSL.Game, DSL.TileType, DSL.Direction)[0m
+>>>>>>> Stashed changes
+>>>>>>> part2
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+<<<<<<< HEAD
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(webapp.Main, DSL.SnakeGame, DSL.Game, DSL.GameCanvasy)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala, C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala, C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala, C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\GameCanvasy.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: webapp.Main, DSL.SnakeGame, DSL.Game, DSL.GameCanvasy[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 4 Scala sources to C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.3.5:compile for Scala 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.3.5:compile for Scala 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 26a92e10 for Scala compiler version 2.13.1[0m
+=======
+<<<<<<< Updated upstream
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(DSL.SnakeGame)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: DSL.SnakeGame[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.3.5:compile for Scala 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.3.5:compile for Scala 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 3cdb3ad for Scala compiler version 2.13.1[0m
+=======
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(DSL.Game, DSL.TileType, DSL.Direction)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: DSL.Game, DSL.TileType, DSL.Direction[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\js\target\scala-2.13\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.3.5:compile for Scala 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.3.5:compile for Scala 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 407b62a0 for Scala compiler version 2.13.1[0m
+>>>>>>> Stashed changes
+>>>>>>> part2
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-Xplugin:C:\Users\natha\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-compiler_2.13.1\1.0.1\scalajs-compiler_2.13.1-1.0.1.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\natha\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.1\scala-library-2.13.1.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+<<<<<<< Updated upstream
+[0m[[0m[0mdebug[0m] [0m[0m	C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\classes;C:\Users\natha\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-library_2.13\1.0.1\scalajs-library_2.13-1.0.1.jar;C:\Users\natha\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-dom_sjs1_2.13\1.0.0\scalajs-dom_sjs1_2.13-1.0.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 2.4604043 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from DSL.Game...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: DSL.Game[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding DSL.SnakeGame by DSL.Game[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(DSL.SnakeGame, DSL.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of webapp.Main. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of DSL.SnakeGame: Set(UsedName(DSL;Game;init;,[Default]))[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(DSL.Game,ModifiedNames(changes = UsedName(DSL;Game;init;,[Default]))) invalidates 2 classes due to The DSL.Game has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(DSL;Game;init;,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(DSL.SnakeGame, DSL.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by member reference: Set(DSL.SnakeGame)[0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from DSL.SnakeGame...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: DSL.SnakeGame[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(DSL.SnakeGame)[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of webapp.Main: Set(UsedName(DSL;SnakeGame;init;,[Default]))[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(DSL.SnakeGame,ModifiedNames(changes = UsedName(DSL;SnakeGame;init;,[Default]))) invalidates 2 classes due to The DSL.SnakeGame has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(DSL;SnakeGame;init;,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(DSL.SnakeGame)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by member reference: Set(webapp.Main)[0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from DSL.GridCanvasy...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: DSL.GridCanvasy[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(DSL.GridCanvasy)[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of webapp.Main: Set(UsedName(DSL;GridCanvasy;init;,[Default]), UsedName(initRender,[Default]), UsedName(asInstanceOf,[Default]), UsedName(draw,[Default]), UsedName(GridCanvasy,[Default]))[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of DSL.SnakeGame: Set(UsedName(==,[Default]), UsedName(BasicSnakeLength,[Default]), UsedName(SnakeLengthToWin,[Default]), UsedName(GridCanvasy,[Default]), UsedName(!=,[Default]))[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(DSL.GridCanvasy,ModifiedNames(changes = UsedName(finalize,[Default]), UsedName($init$,[Default]), UsedName($isInstanceOf,[Default]), UsedName(hashCode,[Default]), UsedName(ne,[Default]), UsedName(+=,[Default]), UsedName(GameSpeed,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(resetGame,[Default]), UsedName(BasicSnakeLength,[Default]), UsedName(pixelSize,[Default]), UsedName(equals,[Default]), UsedName(##,[Default]), UsedName(NumberOfSquaresHeightSnake,[Default]), UsedName(DSL;GridCanvasy;init;,[Default]), UsedName(notify,[Default]), UsedName(wait,[Default]), UsedName(eq,[Default]), UsedName(initRender,[Default]), UsedName($asInstanceOf,[Default]), UsedName(windowHeight,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(NumberOfSquaresWidthSnake,[Default]), UsedName(boardSquareList,[Default]), UsedName(windowWidth,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(asInstanceOf,[Default]), UsedName(SnakeLengthToWin,[Default]), UsedName(draw,[Default]), UsedName(GridCanvasy,[Default]), UsedName(!=,[Default]), UsedName(synchronized,[Default]))) invalidates 3 classes due to The DSL.GridCanvasy has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(finalize,[Default]), UsedName($init$,[Default]), UsedName($isInstanceOf,[Default]), UsedName(hashCode,[Default]), UsedName(ne,[Default]), UsedName(+=,[Default]), UsedName(GameSpeed,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(resetGame,[Default]), UsedName(BasicSnakeLength,[Default]), UsedName(pixelSize,[Default]), UsedName(equals,[Default]), UsedName(##,[Default]), UsedName(NumberOfSquaresHeightSnake,[Default]), UsedName(DSL;GridCanvasy;init;,[Default]), UsedName(notify,[Default]), UsedName(wait,[Default]), UsedName(eq,[Default]), UsedName(initRender,[Default]), UsedName($asInstanceOf,[Default]), UsedName(windowHeight,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(NumberOfSquaresWidthSnake,[Default]), UsedName(boardSquareList,[Default]), UsedName(windowWidth,[Default]), UsedName(getClass,[Default]), UsedName(clone,[Default]), UsedName(asInstanceOf,[Default]), UsedName(SnakeLengthToWin,[Default]), UsedName(draw,[Default]), UsedName(GridCanvasy,[Default]), UsedName(!=,[Default]), UsedName(synchronized,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(DSL.GridCanvasy)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by member reference: Set(webapp.Main, DSL.SnakeGame)[0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from DSL.GameCanvasy...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: DSL.GameCanvasy[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(DSL.GameCanvasy)[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(DSL.GameCanvasy,ModifiedNames(changes = UsedName(DSL;GameCanvasy;init;,[Default]), UsedName(finalize,[Default]), UsedName($init$,[Default]), UsedName($isInstanceOf,[Default]), UsedName(hashCode,[Default]), UsedName(ne,[Default]), UsedName(+=,[Default]), UsedName(GameSpeed,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(resetGame,[Default]), UsedName(BasicSnakeLength,[Default]), UsedName(pixelSize,[Default]), UsedName(equals,[Default]), UsedName(##,[Default]), UsedName(NumberOfSquaresHeightSnake,[Default]), UsedName(notify,[Default]), UsedName(wait,[Default]), UsedName(eq,[Default]), UsedName(GameCanvasy,[Default]), UsedName(initRender,[Default]), UsedName($asInstanceOf,[Default]), UsedName(windowHeight,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(NumberOfSquaresWidthSnake,[Default]), UsedName(boardSquareList,[Default]), UsedName(windowWidth,[Default]), UsedName(getClass,[Default]), UsedName(gridWidth,[Default]), UsedName(clone,[Default]), UsedName(asInstanceOf,[Default]), UsedName(SnakeLengthToWin,[Default]), UsedName(draw,[Default]), UsedName(!=,[Default]), UsedName(gridHeight,[Default]), UsedName(synchronized,[Default]))) invalidates 1 classes due to The DSL.GameCanvasy has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(DSL;GameCanvasy;init;,[Default]), UsedName(finalize,[Default]), UsedName($init$,[Default]), UsedName($isInstanceOf,[Default]), UsedName(hashCode,[Default]), UsedName(ne,[Default]), UsedName(+=,[Default]), UsedName(GameSpeed,[Default]), UsedName(isInstanceOf,[Default]), UsedName(==,[Default]), UsedName(resetGame,[Default]), UsedName(BasicSnakeLength,[Default]), UsedName(pixelSize,[Default]), UsedName(equals,[Default]), UsedName(##,[Default]), UsedName(NumberOfSquaresHeightSnake,[Default]), UsedName(notify,[Default]), UsedName(wait,[Default]), UsedName(eq,[Default]), UsedName(GameCanvasy,[Default]), UsedName(initRender,[Default]), UsedName($asInstanceOf,[Default]), UsedName(windowHeight,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(NumberOfSquaresWidthSnake,[Default]), UsedName(boardSquareList,[Default]), UsedName(windowWidth,[Default]), UsedName(getClass,[Default]), UsedName(gridWidth,[Default]), UsedName(clone,[Default]), UsedName(asInstanceOf,[Default]), UsedName(SnakeLengthToWin,[Default]), UsedName(draw,[Default]), UsedName(!=,[Default]), UsedName(gridHeight,[Default]), UsedName(synchronized,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(DSL.GameCanvasy)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+=======
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\js\target\scala-2.13\classes;C:\Users\User\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-library_2.13\1.0.1\scalajs-library_2.13-1.0.1.jar;C:\Users\User\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-dom_sjs1_2.13\1.0.0\scalajs-dom_sjs1_2.13-1.0.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.499613301 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone compiling.[0m
+>>>>>>> Stashed changes
+[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set(webapp.Main)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: webapp.Main[0m
+[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
