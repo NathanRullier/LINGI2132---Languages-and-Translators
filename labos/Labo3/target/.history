@@ -63,4 +63,15 @@ exit
 >>>>>>> master
 ~fastOptJS 
 :
+<<<<<<< HEAD
 ~fastOptJS
+=======
+fastOptJS
+projectsJVM/test
+~fastOptJS
+projectsJVM/test
+~fastOptJS
+projectsJVM/test
+~fastOptJS
+projectsJVM/test
+>>>>>>> part2

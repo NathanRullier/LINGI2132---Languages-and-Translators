@@ -1,31 +1,4 @@
-<<<<<<< HEAD
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\GameCanvasy.scala:24:7: `override` modifier required to override concrete member:[0m
-[0m[[0m[31merror[0m] [0m[0mdef resetGame(): Unit (defined in class Canvasy)[0m
-[0m[[0m[31merror[0m] [0m[0m  def resetGame(): Unit = {[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:6:86: too many arguments (3) for constructor Game: (gameHeight: Int, gameWidth: Int)DSL.Game[0m
+[0m[[0m[31merror[0m] [0m[0m  class SnakeGame(gameHeight: Int, gameWidth: Int) extends Game(canvasy, gameHeight, gameWidth) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                     ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
-=======
-<<<<<<< Updated upstream
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:8:19: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m  var direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:9:23: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m  var lastDirection = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:19:19: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m      direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
-=======
-[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:100:16: value += is not a member of Int[0m
-[0m[[0m[31merror[0m] [0m[0m  Expression does not convert to assignment because:[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value modifHeight[0m
-[0m[[0m[31merror[0m] [0m[0m    expansion: {[0m
-[0m[[0m[31merror[0m] [0m[0m  <synthetic> val ev$2: DSL.Snake = Game.this.snake;[0m
-[0m[[0m[31merror[0m] [0m[0m  ev$2.posY = ev$2.posY.+(<modifHeight: error>)[0m
-[0m[[0m[31merror[0m] [0m[0m}[0m
-[0m[[0m[31merror[0m] [0m[0m    snake.posY += modifHeight[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
->>>>>>> Stashed changes
->>>>>>> part2
