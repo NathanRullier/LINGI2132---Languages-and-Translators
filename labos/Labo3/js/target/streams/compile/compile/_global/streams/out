@@ -1,10 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:8:19: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m  var direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:9:23: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m  var lastDirection = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\SnakeGame.scala:19:19: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m      direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\GameCanvasy.scala:24:7: `override` modifier required to override concrete member:[0m
+[0m[[0m[31merror[0m] [0m[0mdef resetGame(): Unit (defined in class Canvasy)[0m
+[0m[[0m[31merror[0m] [0m[0m  def resetGame(): Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

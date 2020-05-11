@@ -3,7 +3,7 @@ package DSL
 import DSL._
 import scala.util.Random
 
-class SnakeGame(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends Game(canvasy, gameHeight, gameWidth) {
+class SnakeGame(canvasy: GridCanvasy, gameHeight: Int, gameWidth: Int) extends Game(canvasy, gameHeight, gameWidth) {
   var direction = Direction.Right
   var lastDirection = Direction.Right
   var snake = new Snake(3, 3, BasicSnakeLength)

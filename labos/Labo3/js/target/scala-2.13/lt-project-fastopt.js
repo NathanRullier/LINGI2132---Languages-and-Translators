@@ -3261,7 +3261,7 @@ class $c_Lwebapp_Main$ extends $c_O {
   initGame__V() {
     const canvas = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("canvas");
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.appendChild(canvas);
-    const canvasy = new $c_LDSL_Canvasy(canvas);
+    const canvasy = new $c_LDSL_GridCanvasy(canvas, 20, 20, 40);
     canvasy.initRender__V();
     const snakeGame = new $c_LDSL_SnakeGame(canvasy, 20, 20);
     snakeGame.initGame__V();
@@ -3288,56 +3288,41 @@ function $m_Lwebapp_Main$() {
   };
   return $n_Lwebapp_Main$
 }
+const $ct_LDSL_Canvasy__Lorg_scalajs_dom_raw_HTMLCanvasElement__I__I__ = (function($thiz, canvas, height, width) {
+  $thiz.LDSL_Canvasy__f_canvas = canvas;
+  $thiz.LDSL_Canvasy__f_height = height;
+  $thiz.LDSL_Canvasy__f_width = width;
+  $f_LDSL_Settings__$init$__V($thiz);
+  const xs = $m_sci_Nil$();
+  const len = xs.length__I();
+  const array = $newArrayObject($d_LDSL_Shape.getArrayOf(), [len]);
+  const iterator = $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty;
+  let i = 0;
+  while (iterator.hasNext__Z()) {
+    array.set(i, iterator.next__O());
+    i = ((1 + i) | 0)
+  };
+  $thiz.LDSL_Canvasy__f_shapes = array;
+  $thiz.LDSL_Canvasy__f_ctx = canvas.getContext("2d");
+  return $thiz
+});
 class $c_LDSL_Canvasy extends $c_O {
-  constructor(canvas) {
+  constructor() {
     super();
     this.LDSL_Canvasy__f_windowHeight = null;
     this.LDSL_Canvasy__f_windowWidth = null;
     this.LDSL_Canvasy__f_canvas = null;
+    this.LDSL_Canvasy__f_height = 0;
+    this.LDSL_Canvasy__f_width = 0;
     this.LDSL_Canvasy__f_shapes = null;
     this.LDSL_Canvasy__f_ctx = null;
-    this.LDSL_Canvasy__f_gridHeight = 0;
-    this.LDSL_Canvasy__f_gridWidth = 0;
-    this.LDSL_Canvasy__f_boardSquareList = null;
     this.LDSL_Canvasy__f_GameSpeed = 0;
     this.LDSL_Canvasy__f_NumberOfSquaresWidthSnake = 0;
     this.LDSL_Canvasy__f_NumberOfSquaresHeightSnake = 0;
     this.LDSL_Canvasy__f_BasicSnakeLength = 0;
     this.LDSL_Canvasy__f_pixelSize = 0;
     this.LDSL_Canvasy__f_SnakeLengthToWin = 0;
-    this.LDSL_Canvasy__f_bitmap$0 = 0;
-    this.LDSL_Canvasy__f_canvas = canvas;
-    $f_LDSL_Settings__$init$__V(this);
-    const xs = $m_sci_Nil$();
-    const len = xs.length__I();
-    const array = $newArrayObject($d_LDSL_Shape.getArrayOf(), [len]);
-    const iterator = $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty;
-    let i = 0;
-    while (iterator.hasNext__Z()) {
-      array.set(i, iterator.next__O());
-      i = ((1 + i) | 0)
-    };
-    this.LDSL_Canvasy__f_shapes = array;
-    this.LDSL_Canvasy__f_ctx = canvas.getContext("2d");
-    this.LDSL_Canvasy__f_gridHeight = 800;
-    this.LDSL_Canvasy__f_gridWidth = 800;
-    const n1 = this.LDSL_Canvasy__f_NumberOfSquaresWidthSnake;
-    const n2 = this.LDSL_Canvasy__f_NumberOfSquaresHeightSnake;
-    const arr = $newArrayObject($d_LDSL_Square.getArrayOf().getArrayOf(), [n1]);
-    const isEmpty = (n1 <= 0);
-    const scala$collection$immutable$Range$$lastElement = (((-1) + n1) | 0);
-    if ((!isEmpty)) {
-      let i$1 = 0;
-      while (true) {
-        const v1 = i$1;
-        arr.set(v1, $newArrayObject($d_LDSL_Square.getArrayOf(), [n2]));
-        if ((i$1 === scala$collection$immutable$Range$$lastElement)) {
-          break
-        };
-        i$1 = ((1 + i$1) | 0)
-      }
-    };
-    this.LDSL_Canvasy__f_boardSquareList = arr
+    this.LDSL_Canvasy__f_bitmap$0 = 0
   };
   GameSpeed_$eq__I__V(x$1) {
     this.LDSL_Canvasy__f_GameSpeed = x$1
@@ -3479,52 +3464,15 @@ class $c_LDSL_Canvasy extends $c_O {
     this.LDSL_Canvasy__f_shapes = $asArrayOf_LDSL_Shape(dest$1, 1)
   };
   initRender__V() {
-    this.LDSL_Canvasy__f_canvas.width = this.LDSL_Canvasy__f_gridWidth;
-    this.LDSL_Canvasy__f_canvas.height = this.LDSL_Canvasy__f_gridHeight;
-    new $c_LDSL_Square(0, 0, 0);
-    const this$2 = $m_s_Console$();
-    const this$3 = this$2.out__Ljava_io_PrintStream();
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("initRender\n");
-    const end = (((-1) + this.LDSL_Canvasy__f_boardSquareList.u.length) | 0);
-    const isEmpty = (end < 0);
-    if ((!isEmpty)) {
-      let i = 0;
-      while (true) {
-        const v1 = i;
-        const end$1 = (((-1) + this.LDSL_Canvasy__f_boardSquareList.get(v1).u.length) | 0);
-        const isEmpty$1 = (end$1 < 0);
-        if ((!isEmpty$1)) {
-          let i$1 = 0;
-          while (true) {
-            const v1$1 = i$1;
-            this.LDSL_Canvasy__f_boardSquareList.get(v1).set(v1$1, new $c_LDSL_Square($imul(40, v1), $imul(40, v1$1), 40));
-            if ((i$1 === end$1)) {
-              break
-            };
-            i$1 = ((1 + i$1) | 0)
-          }
-        };
-        if ((i === end)) {
-          break
-        };
-        i = ((1 + i) | 0)
-      }
-    };
+    this.LDSL_Canvasy__f_canvas.width = this.LDSL_Canvasy__f_width;
+    this.LDSL_Canvasy__f_canvas.height = this.LDSL_Canvasy__f_height;
     this.draw__V()
   };
   resetGame__V() {
     const ctx = this.LDSL_Canvasy__f_canvas.getContext("2d");
-    ctx.clearRect(0.0, 0.0, 800.0, 800.0)
+    ctx.clearRect(0.0, 0.0, this.LDSL_Canvasy__f_width, this.LDSL_Canvasy__f_height)
   };
 }
-const $d_LDSL_Canvasy = new $TypeData().initClass({
-  LDSL_Canvasy: 0
-}, false, "DSL.Canvasy", {
-  LDSL_Canvasy: 1,
-  O: 1,
-  LDSL_Settings: 1
-});
-$c_LDSL_Canvasy.prototype.$classData = $d_LDSL_Canvasy;
 const $ct_LDSL_Game__LDSL_Canvasy__I__I__ = (function($thiz, canvasy, gameHeight, gameWidth) {
   $thiz.LDSL_Game__f_canvasy = canvasy;
   $f_LDSL_Settings__$init$__V($thiz);
@@ -5494,6 +5442,69 @@ function $m_LDSL_Direction$() {
   };
   return $n_LDSL_Direction$
 }
+class $c_LDSL_GridCanvasy extends $c_LDSL_Canvasy {
+  constructor(canvas, gridHeight, gridWidth, pixelSize) {
+    super();
+    this.LDSL_GridCanvasy__f_pixelSize = 0;
+    this.LDSL_GridCanvasy__f_boardSquareList = null;
+    this.LDSL_GridCanvasy__f_pixelSize = pixelSize;
+    $ct_LDSL_Canvasy__Lorg_scalajs_dom_raw_HTMLCanvasElement__I__I__(this, canvas, $imul(gridHeight, pixelSize), $imul(gridWidth, pixelSize));
+    const n1 = this.LDSL_Canvasy__f_NumberOfSquaresWidthSnake;
+    const n2 = this.LDSL_Canvasy__f_NumberOfSquaresHeightSnake;
+    const arr = $newArrayObject($d_LDSL_Square.getArrayOf().getArrayOf(), [n1]);
+    const isEmpty = (n1 <= 0);
+    const scala$collection$immutable$Range$$lastElement = (((-1) + n1) | 0);
+    if ((!isEmpty)) {
+      let i = 0;
+      while (true) {
+        const v1 = i;
+        arr.set(v1, $newArrayObject($d_LDSL_Square.getArrayOf(), [n2]));
+        if ((i === scala$collection$immutable$Range$$lastElement)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    };
+    this.LDSL_GridCanvasy__f_boardSquareList = arr
+  };
+  initRender__V() {
+    const end = (((-1) + this.LDSL_GridCanvasy__f_boardSquareList.u.length) | 0);
+    const isEmpty = (end < 0);
+    if ((!isEmpty)) {
+      let i = 0;
+      while (true) {
+        const v1 = i;
+        const end$1 = (((-1) + this.LDSL_GridCanvasy__f_boardSquareList.get(v1).u.length) | 0);
+        const isEmpty$1 = (end$1 < 0);
+        if ((!isEmpty$1)) {
+          let i$1 = 0;
+          while (true) {
+            const v1$1 = i$1;
+            this.LDSL_GridCanvasy__f_boardSquareList.get(v1).set(v1$1, new $c_LDSL_Square($imul(v1, this.LDSL_GridCanvasy__f_pixelSize), $imul(v1$1, this.LDSL_GridCanvasy__f_pixelSize), this.LDSL_GridCanvasy__f_pixelSize));
+            if ((i$1 === end$1)) {
+              break
+            };
+            i$1 = ((1 + i$1) | 0)
+          }
+        };
+        if ((i === end)) {
+          break
+        };
+        i = ((1 + i) | 0)
+      }
+    };
+    $c_LDSL_Canvasy.prototype.initRender__V.call(this)
+  };
+}
+const $d_LDSL_GridCanvasy = new $TypeData().initClass({
+  LDSL_GridCanvasy: 0
+}, false, "DSL.GridCanvasy", {
+  LDSL_GridCanvasy: 1,
+  LDSL_Canvasy: 1,
+  O: 1,
+  LDSL_Settings: 1
+});
+$c_LDSL_GridCanvasy.prototype.$classData = $d_LDSL_GridCanvasy;
 class $c_LDSL_SnakeGame extends $c_LDSL_Game {
   constructor(canvasy, gameHeight, gameWidth) {
     super();
