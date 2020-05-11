@@ -1,10 +1,8 @@
 package DSL
 
 import DSL._
-import javax.swing.Timer
 import org.scalajs.dom.html
 import scala.scalajs.js
-import js.Dynamic.{global => g}
 import org.scalajs.dom
 
 class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
@@ -44,9 +42,6 @@ class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
   def +=(squares: Array[Square]) {
     shapes = shapes ++ squares
   }
-
-  lazy val windowHeight = g.window.innerHeight
-  lazy val windowWidth = g.window.innerWidth
 
   def initRender() = {
     canvas.width = width

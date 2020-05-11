@@ -1,23 +1,20 @@
 package DSL
 
 import scala.scalajs.js
-import js.Dynamic.{global => g}
+import org.scalajs.dom.window
 
 //aucune caliss didee comme thread avec scala c rough, c du copy paste ce code la
 class Loop() {
 
-  var then = js.Date.now()
-  def loop(update: () => Unit, render: () => Unit): () => Unit = () => {
-    g.window.requestAnimationFrame(loop(update, render))
-    val now = js.Date.now()
-    val delta: Double = now - then
-    update()
-    render()
-    then = now
+  def loop (update: () => Unit, render: () => Unit): Unit ={
+        window.requestAnimationFrame((deltaTime: Double) => {
+          loop(update, render)
+        })
+      update()
+      render()
   }
-
   def start(update: () => Unit, render: () => Unit) = {
-    loop(update, render)()
+    loop(update, render)
   }
 
 }
