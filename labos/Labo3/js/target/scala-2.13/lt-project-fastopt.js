@@ -3597,6 +3597,7 @@ class $c_LDSL_Game extends $c_O {
     };
     this.LDSL_Game__f_canvasy.resetGame__V()
   };
+<<<<<<< Updated upstream
   isGameOver__V() {
     if (this.LDSL_Game__f_gameOver) {
       this.resetGameBoard__V();
@@ -3692,6 +3693,87 @@ class $c_LDSL_MovementHandler$ extends $c_O {
       }
     };
     return direction
+=======
+  newGame__V() {
+    this.LDSL_Game__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    this.LDSL_Game__f_lastDirection = this.LDSL_Game__f_direction;
+    this.resetGameBoard__V();
+    this.LDSL_Game__f_snake = new $c_LDSL_Snake(3, 3, this.LDSL_Game__f_BasicSnakeLength);
+    this.generateNewFood__V();
+    this.LDSL_Game__f_gameOver = false
+  };
+  checkCollisions__V() {
+    if (((((this.LDSL_Game__f_snake.LDSL_Snake__f_posX <= (-1)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_posX >= this.LDSL_Game__f_NumberOfSquaresWidth)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_posY >= this.LDSL_Game__f_NumberOfSquaresHeight)) || (this.LDSL_Game__f_snake.LDSL_Snake__f_posY <= (-1)))) {
+      const this$2 = $m_s_Console$();
+      const this$3 = this$2.out__Ljava_io_PrintStream();
+      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
+      this.newGame__V()
+    } else {
+      const this$4 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_posX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_posY);
+      const x = this$4.LDSL_Tile__f__tileType;
+      const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Food;
+      if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+        this.LDSL_Game__f_snake.eatFood__V();
+        const this$6 = $m_s_Console$();
+        const this$7 = this$6.out__Ljava_io_PrintStream();
+        this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V("MENOUM UN BON LEGUME\n");
+        this.generateNewFood__V()
+      } else {
+        const this$8 = this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_posX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_posY);
+        const x$3 = this$8.LDSL_Tile__f__tileType;
+        const x$4 = $m_LDSL_TileType$().LDSL_TileType$__f_Snake;
+        if (((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))) {
+          const this$10 = $m_s_Console$();
+          const this$11 = this$10.out__Ljava_io_PrintStream();
+          this$11.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC QUEUE DU SERPENT\n");
+          this.newGame__V()
+        }
+      }
+    }
+  };
+  generateNewFood__V() {
+    const this$1 = $m_s_util_Random$();
+    const n = this.LDSL_Game__f_NumberOfSquaresWidth;
+    const newFoodPositionX = this$1.s_util_Random__f_self.nextInt__I__I(n);
+    const this$2 = $m_s_util_Random$();
+    const n$1 = this.LDSL_Game__f_NumberOfSquaresHeight;
+    const newFoodPositionY = this$2.s_util_Random__f_self.nextInt__I__I(n$1);
+    const this$3 = this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY);
+    const x = this$3.LDSL_Tile__f__tileType;
+    const x$2 = $m_LDSL_TileType$().LDSL_TileType$__f_Empty;
+    if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
+      this.generateNewFood__V()
+    } else {
+      this.LDSL_Game__f_board.get(newFoodPositionX).get(newFoodPositionY).tileType__s_Enumeration$Value__V($m_LDSL_TileType$().LDSL_TileType$__f_Food)
+    }
+  };
+  moveSnake__V() {
+    this.LDSL_Game__f_lastDirection = this.LDSL_Game__f_direction;
+    const modifWidth = $m_LDSL_MovementHandler$().getWidthVariation__s_Enumeration$Value__I(this.LDSL_Game__f_direction);
+    const modifHeight = $m_LDSL_MovementHandler$().getHeightVariation__s_Enumeration$Value__I(this.LDSL_Game__f_direction);
+    const ev$1 = this.LDSL_Game__f_snake;
+    ev$1.LDSL_Snake__f_posX = ((ev$1.LDSL_Snake__f_posX + modifWidth) | 0);
+    const ev$2 = this.LDSL_Game__f_snake;
+    ev$2.LDSL_Snake__f_posY = ((ev$2.LDSL_Snake__f_posY + modifHeight) | 0);
+    this.checkCollisions__V();
+    this.LDSL_Game__f_snake.addBody__LDSL_Tile__V(this.LDSL_Game__f_board.get(this.LDSL_Game__f_snake.LDSL_Snake__f_posX).get(this.LDSL_Game__f_snake.LDSL_Snake__f_posY))
+  };
+  gameWon__V() {
+    if ((this.LDSL_Game__f_snake.LDSL_Snake__f_length >= this.LDSL_Game__f_SnakeLengthToWin)) {
+      this.LDSL_Game__f_gameOver = true
+    }
+  };
+  update__D__V(seconds) {
+    if ((!this.LDSL_Game__f_gameOver)) {
+      this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
+      this.LDSL_Game__f_direction = $m_LDSL_MovementHandler$().updateSnakeDirection__s_Enumeration$Value__s_Enumeration$Value(this.LDSL_Game__f_lastDirection);
+      if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
+        this.LDSL_Game__f_snake.update__V();
+        this.moveSnake__V();
+        this.gameWon__V()
+      }
+    }
+>>>>>>> Stashed changes
   };
 }
 const $d_LDSL_MovementHandler$ = new $TypeData().initClass({
@@ -3701,6 +3783,133 @@ const $d_LDSL_MovementHandler$ = new $TypeData().initClass({
   O: 1,
   LDSL_Settings: 1
 });
+<<<<<<< Updated upstream
+=======
+$c_LDSL_Game.prototype.$classData = $d_LDSL_Game;
+class $c_LDSL_MovementHandler$ extends $c_O {
+  constructor() {
+    super();
+    this.LDSL_MovementHandler$__f_GameSpeed = 0;
+    this.LDSL_MovementHandler$__f_NumberOfSquaresWidth = 0;
+    this.LDSL_MovementHandler$__f_NumberOfSquaresHeight = 0;
+    this.LDSL_MovementHandler$__f_BasicSnakeLength = 0;
+    this.LDSL_MovementHandler$__f_SnakeLengthToWin = 0;
+    $n_LDSL_MovementHandler$ = this;
+    $f_LDSL_Settings__$init$__V(this)
+  };
+  GameSpeed_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_GameSpeed = x$1
+  };
+  NumberOfSquaresWidth__I() {
+    return this.LDSL_MovementHandler$__f_NumberOfSquaresWidth
+  };
+  NumberOfSquaresWidth_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_NumberOfSquaresWidth = x$1
+  };
+  NumberOfSquaresHeight__I() {
+    return this.LDSL_MovementHandler$__f_NumberOfSquaresHeight
+  };
+  NumberOfSquaresHeight_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_NumberOfSquaresHeight = x$1
+  };
+  BasicSnakeLength_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_BasicSnakeLength = x$1
+  };
+  SnakeLengthToWin_$eq__I__V(x$1) {
+    this.LDSL_MovementHandler$__f_SnakeLengthToWin = x$1
+  };
+  updateSnakeDirection__s_Enumeration$Value__s_Enumeration$Value(lastDirection) {
+    const this$1 = $m_LDSL_UserInputs$();
+    let $$x1;
+    if (this$1.LDSL_UserInputs$__f_keysDown.contains__O__Z(37)) {
+      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+      $$x1 = (!((lastDirection === null) ? (x$2 === null) : lastDirection.equals__O__Z(x$2)))
+    } else {
+      $$x1 = false
+    };
+    let direction;
+    if ($$x1) {
+      direction = $m_LDSL_Direction$().LDSL_Direction$__f_Left
+    } else {
+      const this$2 = $m_LDSL_UserInputs$();
+      let $$x2;
+      if (this$2.LDSL_UserInputs$__f_keysDown.contains__O__Z(39)) {
+        const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+        $$x2 = (!((lastDirection === null) ? (x$4 === null) : lastDirection.equals__O__Z(x$4)))
+      } else {
+        $$x2 = false
+      };
+      if ($$x2) {
+        direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+      } else {
+        const this$3 = $m_LDSL_UserInputs$();
+        let $$x3;
+        if (this$3.LDSL_UserInputs$__f_keysDown.contains__O__Z(38)) {
+          const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+          $$x3 = (!((lastDirection === null) ? (x$6 === null) : lastDirection.equals__O__Z(x$6)))
+        } else {
+          $$x3 = false
+        };
+        if ($$x3) {
+          direction = $m_LDSL_Direction$().LDSL_Direction$__f_Up
+        } else {
+          const this$4 = $m_LDSL_UserInputs$();
+          let $$x4;
+          if (this$4.LDSL_UserInputs$__f_keysDown.contains__O__Z(40)) {
+            const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+            $$x4 = (!((lastDirection === null) ? (x$8 === null) : lastDirection.equals__O__Z(x$8)))
+          } else {
+            $$x4 = false
+          };
+          if ($$x4) {
+            direction = $m_LDSL_Direction$().LDSL_Direction$__f_Down
+          } else {
+            direction = lastDirection
+          }
+        }
+      }
+    };
+    return direction
+  };
+  getWidthVariation__s_Enumeration$Value__I(direction) {
+    const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    let modifWidth;
+    if (((direction === null) ? (x$2 === null) : direction.equals__O__Z(x$2))) {
+      modifWidth = 1
+    } else {
+      const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if (((direction === null) ? (x$4 === null) : direction.equals__O__Z(x$4))) {
+        modifWidth = (-1)
+      } else {
+        modifWidth = 0
+      }
+    };
+    return modifWidth
+  };
+  getHeightVariation__s_Enumeration$Value__I(direction) {
+    const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+    let modifHeight;
+    if (((direction === null) ? (x$2 === null) : direction.equals__O__Z(x$2))) {
+      modifHeight = (-1)
+    } else {
+      const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+      if (((direction === null) ? (x$4 === null) : direction.equals__O__Z(x$4))) {
+        modifHeight = 1
+      } else {
+        modifHeight = 0
+      }
+    };
+    return modifHeight
+  };
+}
+const $d_LDSL_MovementHandler$ = new $TypeData().initClass({
+  LDSL_MovementHandler$: 0
+}, false, "DSL.MovementHandler$", {
+  LDSL_MovementHandler$: 1,
+  O: 1,
+  LDSL_Settings: 1
+});
+>>>>>>> Stashed changes
 $c_LDSL_MovementHandler$.prototype.$classData = $d_LDSL_MovementHandler$;
 let $n_LDSL_MovementHandler$ = (void 0);
 function $m_LDSL_MovementHandler$() {
