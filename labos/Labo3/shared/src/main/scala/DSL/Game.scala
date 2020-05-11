@@ -3,7 +3,7 @@ package DSL
 import DSL._
 import scala.util.Random
 
-abstract class Game(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends Settings {
+abstract class Game( gameHeight: Int, gameWidth: Int) extends Settings {
   println("GAME")
   var gameOver = false
   var win = false
@@ -19,7 +19,6 @@ abstract class Game(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends S
         val square: Square = new Square(pixelSize * i, pixelSize * j, pixelSize)
         square change Color("black")
         board(i)(j) = new Tile(square)
-        canvasy += Array(square)
       }
     }
   }
@@ -30,7 +29,6 @@ abstract class Game(canvasy: Canvasy, gameHeight: Int, gameWidth: Int) extends S
         board(i)(j).tileType(TileType.Empty)
       }
     }
-    canvasy.resetGame()
   }
 
   def checkCollisions(x: Int, y: Int, top: Int, bottom: Int, left: Int, right: Int): Boolean = {

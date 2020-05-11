@@ -1,0 +1,70 @@
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:5:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.funsuite.AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:6:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.matchers.should.Matchers[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:10:33: not found: type AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0mclass ComposedShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:10:50: not found: type Matchers[0m
+[0m[[0m[31merror[0m] [0m[0mclass ComposedShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:14:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Moving a group of shapes up") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:21:38: value shouldBe is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m      g(i).asInstanceOf[Rectangle].y shouldBe expected(i)[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:24:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("foreach simple") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:30:13: value shouldBe is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    counter shouldBe rl.length + cl.length[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:33:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("map") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:39:12: value shouldBe is not a member of DSLDemo.Rectangle[0m
+[0m[[0m[31merror[0m] [0m[0m      g(i) shouldBe rl(i)[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:40:15: value shouldBe is not a member of DSLDemo.Shape[0m
+[0m[[0m[31merror[0m] [0m[0m      newG(i) shouldBe expected(i)[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:5:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.funsuite.AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:6:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.matchers.should.Matchers[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:10:35: not found: type AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0mclass ElementaryShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:10:52: not found: type Matchers[0m
+[0m[[0m[31merror[0m] [0m[0mclass ElementaryShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:14:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Move rectangle up") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:19:17: value shouldBe is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    rectangle.y shouldBe expected[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:22:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Move circle left") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:27:14: value shouldBe is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    circle.x shouldBe expected[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:30:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Change color of rectangle via keyword") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:34:21: value shouldBe is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m    rectangle.color shouldBe newColor[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:37:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Change color of circle via property") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:41:18: value shouldBe is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m    circle.color shouldBe newColor[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m23 errors found[0m

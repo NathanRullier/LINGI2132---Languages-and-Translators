@@ -17,10 +17,11 @@ object Main {
     val snakeGridWidth: Int = 20
     val canvas = document.createElement("canvas").asInstanceOf[html.Canvas]
     document.body.appendChild(canvas)
-    val canvasy = new GridCanvasy(canvas, snakeGridHeight, snakeGridWidth, 40)
-    canvasy.initRender()
-    val snakeGame = new SnakeGame(canvasy, snakeGridHeight, snakeGridWidth)
+    val snakeGame = new SnakeGame(snakeGridHeight, snakeGridWidth)
     snakeGame.initGame()
+    val canvasy = new GridCanvasy(canvas, snakeGridHeight, snakeGridWidth, 40)
+    snakeGame.board.map(x => canvasy += x.map(y => y.getSquare()))
+    canvasy.initRender()
     val loop = new Loop()
     UserInputs.initInputsListener()
     loop.start(snakeGame.update, () => canvasy.draw())

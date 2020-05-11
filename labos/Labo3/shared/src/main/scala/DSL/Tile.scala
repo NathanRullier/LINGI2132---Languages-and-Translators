@@ -22,6 +22,8 @@ class Tile(square: Square) {
     }
   }
 
+  def getSquare():Square = square
+
   def timer(timer: Int): Unit = {
     _timer = timer
   }

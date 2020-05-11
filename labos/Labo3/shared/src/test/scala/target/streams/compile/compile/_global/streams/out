@@ -1,0 +1,94 @@
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:1:8: not found: object DSLDemo[0m
+[0m[[0m[31merror[0m] [0m[0mimport DSLDemo._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:3:8: not found: object common[0m
+[0m[[0m[31merror[0m] [0m[0mimport common.Common._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:5:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.funsuite.AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:6:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.matchers.should.Matchers[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:10:33: not found: type AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0mclass ComposedShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:10:50: not found: type Matchers[0m
+[0m[[0m[31merror[0m] [0m[0mclass ComposedShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:14:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Moving a group of shapes up") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:15:13: not found: value newRectangleList[0m
+[0m[[0m[31merror[0m] [0m[0m    val l = newRectangleList()[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:16:13: not found: value ComposedShape[0m
+[0m[[0m[31merror[0m] [0m[0m    val g = ComposedShape(l)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:24:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("foreach simple") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:25:14: not found: value newRectangleList[0m
+[0m[[0m[31merror[0m] [0m[0m    val rl = newRectangleList()[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:26:14: not found: value newCircleList[0m
+[0m[[0m[31merror[0m] [0m[0m    val cl = newCircleList()[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:27:13: not found: value ComposedShape[0m
+[0m[[0m[31merror[0m] [0m[0m    val g = ComposedShape(rl ++ cl)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:30:13: value shouldBe is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    counter shouldBe rl.length + cl.length[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:33:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("map") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:34:14: not found: value newRectangleList[0m
+[0m[[0m[31merror[0m] [0m[0m    val rl = newRectangleList(10)[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ComposedShapeTest.scala:36:13: not found: value ComposedShape[0m
+[0m[[0m[31merror[0m] [0m[0m    val g = ComposedShape(rl)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:1:8: not found: object DSLDemo[0m
+[0m[[0m[31merror[0m] [0m[0mimport DSLDemo._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:3:8: not found: object common[0m
+[0m[[0m[31merror[0m] [0m[0mimport common.Common._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:5:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.funsuite.AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:6:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.matchers.should.Matchers[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:10:35: not found: type AnyFunSuite[0m
+[0m[[0m[31merror[0m] [0m[0mclass ElementaryShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:10:52: not found: type Matchers[0m
+[0m[[0m[31merror[0m] [0m[0mclass ElementaryShapeTest extends AnyFunSuite with Matchers {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:14:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Move rectangle up") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:16:21: not found: value newRectangle[0m
+[0m[[0m[31merror[0m] [0m[0m    val rectangle = newRectangle()[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:22:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Move circle left") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:24:18: not found: value newCircle[0m
+[0m[[0m[31merror[0m] [0m[0m    val circle = newCircle()[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:30:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Change color of rectangle via keyword") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:31:21: not found: value newRectangle[0m
+[0m[[0m[31merror[0m] [0m[0m    val rectangle = newRectangle()[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:37:3: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m  test("Change color of circle via property") {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\test\scala\ElementaryShapeTest.scala:38:18: not found: value newCircle[0m
+[0m[[0m[31merror[0m] [0m[0m    val circle = newCircle()[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m31 errors found[0m
