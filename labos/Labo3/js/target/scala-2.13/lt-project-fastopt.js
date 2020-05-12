@@ -704,13 +704,29 @@ $c_O.prototype.$classData = $d_O;
 class $c_LDSL_GameObject extends $c_O {
 }
 class $c_LDSL_Loop extends $c_O {
+  constructor(timeBetweenLoopMS) {
+    super();
+    this.LDSL_Loop__f_timeBetweenLoopMS = 0;
+    this.LDSL_Loop__f_timer = 0;
+    this.LDSL_Loop__f_timeBetweenLoopMS = timeBetweenLoopMS;
+    this.LDSL_Loop__f_timeBetweenLoopMS = ((this.LDSL_Loop__f_timeBetweenLoopMS / 60) | 0);
+    this.LDSL_Loop__f_timer = 0
+  };
   loop__F0__F0__V(update, render) {
+    const x = ("timer " + this.LDSL_Loop__f_timer);
+    const this$2 = $m_s_Console$();
+    const this$3 = this$2.out__Ljava_io_PrintStream();
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
     $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().requestAnimationFrame(((arg$outer, update$1, render$1) => ((arg1$2) => {
       $uD(arg1$2);
       arg$outer.loop__F0__F0__V(update$1, render$1)
     }))(this, update, render));
-    update.apply__O();
-    render.apply__O()
+    if ((this.LDSL_Loop__f_timer === this.LDSL_Loop__f_timeBetweenLoopMS)) {
+      update.apply__O();
+      render.apply__O()
+    } else {
+      this.LDSL_Loop__f_timer = ((1 + this.LDSL_Loop__f_timer) | 0)
+    }
   };
 }
 const $d_LDSL_Loop = new $TypeData().initClass({
@@ -3455,7 +3471,7 @@ class $c_Lwebapp_Main$ extends $c_O {
       }
     };
     canvasy.initRender__V();
-    const loop = new $c_LDSL_Loop();
+    const loop = new $c_LDSL_Loop(0);
     const update = new $c_sjsr_AnonFunction0(((this$2$1, snakeGame$1) => (() => {
       snakeGame$1.update__V()
     }))(this, snakeGame));
