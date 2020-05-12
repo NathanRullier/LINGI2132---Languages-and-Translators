@@ -76,7 +76,7 @@ object Main {
       if (compteur % GameSpeed == 0) {
         movement()
 
-        if (CollisionHandler.collisionObjxObj(snake.x, snake.y, food.x, food.y)) {
+        if (CollisionHandler.perfectCollisionObjxObj(snake.x, snake.y, food.x, food.y)) {
           println("menoum")
           food.x = Random.nextInt(snakeGridWidth) * pixelSize
           food.y = Random.nextInt(snakeGridHeight) * pixelSize
