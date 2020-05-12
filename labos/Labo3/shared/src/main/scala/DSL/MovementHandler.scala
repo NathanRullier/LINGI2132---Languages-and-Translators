@@ -8,26 +8,32 @@ object Direction extends Enumeration {
 
 object MovementHandler extends Settings {
 
-  def updateDirection(lastDirection: Direction.Value): Direction.Value = {
+  var direction: Direction.Value = Direction.Right
 
-   val direction = Direction.Down
-      //if (UserInputs.holdLeftKey && (lastDirection != Direction.Right)) Direction.Left
-      //else if (UserInputs.holdRightKey && (lastDirection != Direction.Left))
-      //  Direction.Right
-      //else if (UserInputs.holdUpKey && (lastDirection != Direction.Down)) Direction.Up
-      //else if (UserInputs.holdDownKey && (lastDirection != Direction.Up))
-      //  Direction.Down
-      //else lastDirection
-
-    direction
+  def updateDirection(lastDirection: Direction.Value): Unit = {
+    UserInputs.onLeftKeyPressed = () => {
+      direction = Direction.Left
+    }
+    UserInputs.onRightKeyPressed = () => {
+      direction = Direction.Right
+    }
+    UserInputs.onUpKeyPressed = () => {
+      direction = Direction.Up
+    }
+    UserInputs.onDownKeyPressed = () => {
+      direction = Direction.Down
+    }
+    UserInputs.initInputsListener2()
   }
+
   def getWidthVariation(direction: Direction.Value): Int = {
-      val modifWidth: Int =
-        if (direction == Direction.Right) 1
-        else if (direction == Direction.Left) -1
-        else 0
+    val modifWidth: Int =
+      if (direction == Direction.Right) 1
+      else if (direction == Direction.Left) -1
+      else 0
     modifWidth
   }
+
   def getHeightVariation(direction: Direction.Value): Int = {
     val modifHeight: Int =
       if (direction == Direction.Up) -1

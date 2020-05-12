@@ -10,6 +10,7 @@ class SnakeGame(gameHeight: Int, gameWidth: Int) extends Game(gameHeight, gameWi
 
   override def initGame(): Unit = {
     super.initGame()
+    MovementHandler.updateDirection(lastDirection)
     generateNewFood()
   }
 
@@ -71,7 +72,7 @@ class SnakeGame(gameHeight: Int, gameWidth: Int) extends Game(gameHeight, gameWi
   }
 
   def update(): Unit = {
-    direction = MovementHandler.updateDirection(lastDirection)
+    direction = MovementHandler.direction
     super.update(() => {
       snake.update()
       moveSnake()

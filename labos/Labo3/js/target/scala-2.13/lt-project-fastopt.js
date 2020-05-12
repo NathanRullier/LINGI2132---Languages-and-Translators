@@ -824,25 +824,51 @@ class $c_LDSL_UserInputs$ extends $c_O {
   constructor() {
     super();
     this.LDSL_UserInputs$__f_keysDown = null;
+    this.LDSL_UserInputs$__f_onLeftKeyPressed = null;
+    this.LDSL_UserInputs$__f_onUpKeyPressed = null;
+    this.LDSL_UserInputs$__f_onRightKeyPressed = null;
+    this.LDSL_UserInputs$__f_onDownKeyPressed = null;
     $n_LDSL_UserInputs$ = this;
     const this$1 = $m_scm_HashMap$();
     const elems = $m_sci_Nil$();
-    this.LDSL_UserInputs$__f_keysDown = this$1.from__sc_IterableOnce__scm_HashMap(elems)
+    this.LDSL_UserInputs$__f_keysDown = this$1.from__sc_IterableOnce__scm_HashMap(elems);
+    this.LDSL_UserInputs$__f_onLeftKeyPressed = new $c_sjsr_AnonFunction0(((this$2) => (() => (void 0)))(this));
+    this.LDSL_UserInputs$__f_onUpKeyPressed = new $c_sjsr_AnonFunction0(((this$2$1) => (() => (void 0)))(this));
+    this.LDSL_UserInputs$__f_onRightKeyPressed = new $c_sjsr_AnonFunction0(((this$3) => (() => (void 0)))(this));
+    this.LDSL_UserInputs$__f_onDownKeyPressed = new $c_sjsr_AnonFunction0(((this$4) => (() => (void 0)))(this))
   };
-  initInputsListener__V() {
-    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("keydown", ((arg1$2) => $m_LDSL_UserInputs$().DSL$UserInputs$$$anonfun$initInputsListener$1__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(arg1$2)), false);
-    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("keyup", ((arg1$2$1) => $m_LDSL_UserInputs$().DSL$UserInputs$$$anonfun$initInputsListener$3__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(arg1$2$1)), false)
+  initInputsListener2__V() {
+    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("keydown", ((arg1$2) => {
+      $m_LDSL_UserInputs$().DSL$UserInputs$$$anonfun$initInputsListener2$1__Lorg_scalajs_dom_raw_KeyboardEvent__V(arg1$2)
+    }), false)
   };
-  DSL$UserInputs$$$anonfun$initInputsListener$1__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(e) {
-    const this$3 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_keysDown;
-    const self = $uI(e.keyCode);
-    $p_scm_HashMap__put0__O__O__Z__s_Some(this$3, self, true, false);
-    return this$3
-  };
-  DSL$UserInputs$$$anonfun$initInputsListener$3__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(e) {
-    const this$1 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_keysDown;
-    const elem = $uI(e.keyCode);
-    return this$1.subtractOne__O__scm_HashMap(elem)
+  DSL$UserInputs$$$anonfun$initInputsListener2$1__Lorg_scalajs_dom_raw_KeyboardEvent__V(e) {
+    const x1 = $uI(e.keyCode);
+    switch (x1) {
+      case 37: {
+        const this$1 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onLeftKeyPressed;
+        this$1.apply__O();
+        break
+      }
+      case 38: {
+        const this$2 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onUpKeyPressed;
+        this$2.apply__O();
+        break
+      }
+      case 39: {
+        const this$3 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onRightKeyPressed;
+        this$3.apply__O();
+        break
+      }
+      case 40: {
+        const this$4 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onDownKeyPressed;
+        this$4.apply__O();
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(x1)
+      }
+    }
   };
 }
 const $d_LDSL_UserInputs$ = new $TypeData().initClass({
@@ -3430,7 +3456,6 @@ class $c_Lwebapp_Main$ extends $c_O {
     };
     canvasy.initRender__V();
     const loop = new $c_LDSL_Loop();
-    $m_LDSL_UserInputs$().initInputsListener__V();
     const update = new $c_sjsr_AnonFunction0(((this$2$1, snakeGame$1) => (() => {
       snakeGame$1.update__V()
     }))(this, snakeGame));
@@ -3762,6 +3787,7 @@ class $c_LDSL_Game extends $c_O {
 class $c_LDSL_MovementHandler$ extends $c_O {
   constructor() {
     super();
+    this.LDSL_MovementHandler$__f_direction = null;
     this.LDSL_MovementHandler$__f_GameSpeed = 0;
     this.LDSL_MovementHandler$__f_NumberOfSquaresWidthSnake = 0;
     this.LDSL_MovementHandler$__f_NumberOfSquaresHeightSnake = 0;
@@ -3769,7 +3795,8 @@ class $c_LDSL_MovementHandler$ extends $c_O {
     this.LDSL_MovementHandler$__f_pixelSize = 0;
     this.LDSL_MovementHandler$__f_SnakeLengthToWin = 0;
     $n_LDSL_MovementHandler$ = this;
-    $f_LDSL_Settings__$init$__V(this)
+    $f_LDSL_Settings__$init$__V(this);
+    this.LDSL_MovementHandler$__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right
   };
   GameSpeed_$eq__I__V(x$1) {
     this.LDSL_MovementHandler$__f_GameSpeed = x$1
@@ -3795,9 +3822,20 @@ class $c_LDSL_MovementHandler$ extends $c_O {
   SnakeLengthToWin_$eq__I__V(x$1) {
     this.LDSL_MovementHandler$__f_SnakeLengthToWin = x$1
   };
-  updateDirection__s_Enumeration$Value__s_Enumeration$Value(lastDirection) {
-    const direction = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-    return direction
+  updateDirection__s_Enumeration$Value__V(lastDirection) {
+    $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onLeftKeyPressed = new $c_sjsr_AnonFunction0(((this$1) => (() => {
+      $m_LDSL_MovementHandler$().LDSL_MovementHandler$__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Left
+    }))(this));
+    $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onRightKeyPressed = new $c_sjsr_AnonFunction0(((this$2) => (() => {
+      $m_LDSL_MovementHandler$().LDSL_MovementHandler$__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+    }))(this));
+    $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onUpKeyPressed = new $c_sjsr_AnonFunction0(((this$3) => (() => {
+      $m_LDSL_MovementHandler$().LDSL_MovementHandler$__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Up
+    }))(this));
+    $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onDownKeyPressed = new $c_sjsr_AnonFunction0(((this$4) => (() => {
+      $m_LDSL_MovementHandler$().LDSL_MovementHandler$__f_direction = $m_LDSL_Direction$().LDSL_Direction$__f_Down
+    }))(this));
+    $m_LDSL_UserInputs$().initInputsListener2__V()
   };
   getWidthVariation__s_Enumeration$Value__I(direction) {
     const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
@@ -5658,6 +5696,7 @@ class $c_LDSL_SnakeGame extends $c_LDSL_Game {
   };
   initGame__V() {
     $c_LDSL_Game.prototype.initGame__V.call(this);
+    $m_LDSL_MovementHandler$().updateDirection__s_Enumeration$Value__V(this.LDSL_SnakeGame__f_lastDirection);
     this.generateNewFood__V()
   };
   newGame__V() {
@@ -5672,7 +5711,7 @@ class $c_LDSL_SnakeGame extends $c_LDSL_Game {
     if (((((this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posX <= (-1)) || (this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posX >= this.LDSL_SnakeGame__f_gameHeight)) || (this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posY >= this.LDSL_SnakeGame__f_gameHeight)) || (this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posY <= (-1)))) {
       const this$2 = $m_s_Console$();
       const this$3 = this$2.out__Ljava_io_PrintStream();
-      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC UN MUR\n");
+      this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("COLLISION AVEC U N MUR\n");
       this.newGame__V()
     } else {
       const this$4 = this.LDSL_Game__f_board.get(this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posX).get(this.LDSL_SnakeGame__f_snake.LDSL_Snake__f_posY);
@@ -5730,7 +5769,7 @@ class $c_LDSL_SnakeGame extends $c_LDSL_Game {
     }
   };
   update__V() {
-    this.LDSL_SnakeGame__f_direction = $m_LDSL_MovementHandler$().updateDirection__s_Enumeration$Value__s_Enumeration$Value(this.LDSL_SnakeGame__f_lastDirection);
+    this.LDSL_SnakeGame__f_direction = $m_LDSL_MovementHandler$().LDSL_MovementHandler$__f_direction;
     if ((!this.LDSL_Game__f_gameOver)) {
       this.LDSL_Game__f_compteur = ((1 + this.LDSL_Game__f_compteur) | 0);
       if (($intMod(this.LDSL_Game__f_compteur, this.LDSL_Game__f_GameSpeed) === 0)) {
@@ -15520,34 +15559,6 @@ const $p_scm_HashMap__put0__O__O__Z__I__I__s_Some = (function($thiz, key, value,
   $thiz.scm_HashMap__f_contentSize = ((1 + $thiz.scm_HashMap__f_contentSize) | 0);
   return null
 });
-const $p_scm_HashMap__remove0__O__scm_HashMap$Node = (function($thiz, elem) {
-  const originalHash = $m_sr_Statics$().anyHash__O__I(elem);
-  return $p_scm_HashMap__remove0__O__I__scm_HashMap$Node($thiz, elem, (originalHash ^ ((originalHash >>> 16) | 0)))
-});
-const $p_scm_HashMap__remove0__O__I__scm_HashMap$Node = (function($thiz, elem, hash) {
-  const idx = (hash & (((-1) + $thiz.scm_HashMap__f_scala$collection$mutable$HashMap$$table.u.length) | 0));
-  const x1 = $thiz.scm_HashMap__f_scala$collection$mutable$HashMap$$table.get(idx);
-  if ((x1 === null)) {
-    return null
-  } else if (((x1.scm_HashMap$Node__f__hash === hash) && $m_sr_BoxesRunTime$().equals__O__O__Z(x1.scm_HashMap$Node__f__key, elem))) {
-    $thiz.scm_HashMap__f_scala$collection$mutable$HashMap$$table.set(idx, x1.scm_HashMap$Node__f__next);
-    $thiz.scm_HashMap__f_contentSize = (((-1) + $thiz.scm_HashMap__f_contentSize) | 0);
-    return x1
-  } else {
-    let prev = x1;
-    let next = x1.scm_HashMap$Node__f__next;
-    while (((next !== null) && (next.scm_HashMap$Node__f__hash <= hash))) {
-      if (((next.scm_HashMap$Node__f__hash === hash) && $m_sr_BoxesRunTime$().equals__O__O__Z(next.scm_HashMap$Node__f__key, elem))) {
-        prev.scm_HashMap$Node__f__next = next.scm_HashMap$Node__f__next;
-        $thiz.scm_HashMap__f_contentSize = (((-1) + $thiz.scm_HashMap__f_contentSize) | 0);
-        return next
-      };
-      prev = next;
-      next = next.scm_HashMap$Node__f__next
-    };
-    return null
-  }
-});
 const $p_scm_HashMap__growTable__I__V = (function($thiz, newlen) {
   let oldlen = $thiz.scm_HashMap__f_scala$collection$mutable$HashMap$$table.u.length;
   $thiz.scm_HashMap__f_threshold = $p_scm_HashMap__newThreshold__I__I($thiz, newlen);
@@ -15693,10 +15704,6 @@ class $c_scm_HashMap extends $c_scm_AbstractMap {
   };
   addOne__T2__scm_HashMap(elem) {
     $p_scm_HashMap__put0__O__O__Z__s_Some(this, elem.T2__f__1, elem.T2__f__2, false);
-    return this
-  };
-  subtractOne__O__scm_HashMap(elem) {
-    $p_scm_HashMap__remove0__O__scm_HashMap$Node(this, elem);
     return this
   };
   knownSize__I() {

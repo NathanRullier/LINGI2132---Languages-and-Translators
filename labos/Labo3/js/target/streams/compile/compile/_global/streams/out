@@ -1,23 +1,6 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:7:23: abstract type A in type DSLDemo.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:11:28: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were three feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:7:23: abstract type A in type DSLDemo.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:11:28: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were two deprecation warnings (since 2.13.0); re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were three feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\MovementHandler.scala:26:35: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: DSL.Direction.Value[0m
+[0m[[0m[31merror[0m] [0m[0m    UserInputs.initInputsListener2()[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
