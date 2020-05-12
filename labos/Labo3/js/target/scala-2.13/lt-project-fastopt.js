@@ -3338,20 +3338,27 @@ class $c_Lwebapp_Main$ extends $c_O {
           const this$21 = $m_s_util_Random$();
           food$1.LDSL_Square__f_x = $imul(this$21.s_util_Random__f_self.nextInt__I__I(snakeGridWidth), pixelSize$1);
           const this$22 = $m_s_util_Random$();
-          food$1.LDSL_Square__f_y = $imul(this$22.s_util_Random__f_self.nextInt__I__I(snakeGridHeight), pixelSize$1)
+          food$1.LDSL_Square__f_y = $imul(this$22.s_util_Random__f_self.nextInt__I__I(snakeGridHeight), pixelSize$1);
+          const this$23 = snake$2.LDSL_ComposedShape__f_l;
+          const $$x5 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$23, 0))).LDSL_Square__f_x;
+          const this$24 = snake$2.LDSL_ComposedShape__f_l;
+          const tail = new $c_LDSL_Square($$x5, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$24, 0))).LDSL_Square__f_y, pixelSize$1);
+          const property$3 = new $c_LDSL_Color("blue");
+          tail.LDSL_Square__f_color = property$3.LDSL_Color__f_c;
+          snake$2.addFirst__LDSL_Shape__V(tail)
         };
-        const $$x6 = $m_LDSL_CollisionHandler$();
-        const this$23 = snake$2.LDSL_ComposedShape__f_l;
-        const $$x5 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$23, 0))).LDSL_Square__f_x;
-        const this$24 = snake$2.LDSL_ComposedShape__f_l;
-        if ($$x6.collisionObjxBorders__I__I__I__I__I__I__Z($$x5, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$24, 0))).LDSL_Square__f_y, 0, 0, $imul(snakeGridWidth, pixelSize$1), $imul(snakeGridWidth, pixelSize$1))) {
-          const this$26 = $m_s_Console$();
-          const this$27 = this$26.out__Ljava_io_PrintStream();
-          this$27.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
-          const this$28 = snake$2.LDSL_ComposedShape__f_l;
-          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$28, 0))).LDSL_Square__f_x = 0;
-          const this$29 = snake$2.LDSL_ComposedShape__f_l;
-          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$29, 0))).LDSL_Square__f_y = 0;
+        const $$x7 = $m_LDSL_CollisionHandler$();
+        const this$25 = snake$2.LDSL_ComposedShape__f_l;
+        const $$x6 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$25, 0))).LDSL_Square__f_x;
+        const this$26 = snake$2.LDSL_ComposedShape__f_l;
+        if ($$x7.collisionObjxBorders__I__I__I__I__I__I__Z($$x6, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$26, 0))).LDSL_Square__f_y, 0, 0, $imul(snakeGridWidth, pixelSize$1), $imul(snakeGridWidth, pixelSize$1))) {
+          const this$28 = $m_s_Console$();
+          const this$29 = this$28.out__Ljava_io_PrintStream();
+          this$29.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
+          const this$30 = snake$2.LDSL_ComposedShape__f_l;
+          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$30, 0))).LDSL_Square__f_x = 0;
+          const this$31 = snake$2.LDSL_ComposedShape__f_l;
+          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$31, 0))).LDSL_Square__f_y = 0;
           direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
         }
       }
