@@ -27,8 +27,9 @@ object Main {
     background change Color("black")
     canvasy += Array(background)
 
-    val snake = new Square(0, 0, pixelSize)
+    var snake = ComposedShape(List.fill(30)(new Square(0, 0, pixelSize)))
     snake change Color("blue")
+
     canvasy += Array(snake)
 
     var direction = Direction.Right
@@ -44,15 +45,20 @@ object Main {
     UserInputs.onDownKeyPressed = () => {
       direction = Direction.Down
     }
+
     UserInputs.initInputsListener()
 
     val movement = () => {
+      val head = new Square(snake(0).x, snake(0).y, snake(0).side)
+      head change Color("blue")
       direction match {
-        case Direction.Left => snake moveX -pixelSize
-        case Direction.Right => snake moveX pixelSize
-        case Direction.Up => snake moveY -pixelSize
-        case Direction.Down => snake moveY pixelSize
+        case Direction.Left => head moveX -pixelSize
+        case Direction.Right => head moveX pixelSize
+        case Direction.Up => head moveY -pixelSize
+        case Direction.Down => head moveY pixelSize
       }
+      snake.addFirst(head)
+      snake.removeLast()
     }
 
     //snakeGame.board.map(x => canvasy += x.map(y => y.getSquare()))

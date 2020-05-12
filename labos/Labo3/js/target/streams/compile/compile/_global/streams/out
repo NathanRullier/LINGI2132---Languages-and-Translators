@@ -1,4 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:27:22: not found: value square[0m
-[0m[[0m[31merror[0m] [0m[0m    canvasy += Array(square)[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:59:21: not enough arguments for method addFirst: (shape: DSL.Square)Unit.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter shape.[0m
+[0m[[0m[31merror[0m] [0m[0m      snake.addFirst()[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -49,6 +49,18 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
   type A = T
 
+  def size():Int={
+    l.size
+  }
+
+  def removeLast():Unit={
+    l = l.take(size()-1)
+  }
+
+  def addFirst(shape:T):Unit={
+    l = List(shape) ++ l
+  }
+
   def map(f: Shape => Shape): ComposedShape[Shape] = {
     ComposedShape(l.map(f).asInstanceOf[List[Shape]])
   }
@@ -83,19 +95,15 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
   override def and(s: Shape): ComposedShape[Shape] = {
     if (s.isInstanceOf[ComposedShape[A]]) {
-      println(1)
       ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
     }
     else if (s.isInstanceOf[A]) {
-      println(2)
-      ComposedShape[Shape](l ::: List(s))
+      ComposedShape(l ::: List(s))
     }
     else if(s.isInstanceOf[Shape]){
-      println(3)
       ComposedShape(l::: List(s))
     }
     else{
-      println(4)
       ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
     }
   }
@@ -158,6 +166,9 @@ object ComposedShapeImplicits {
 
   implicit def arrayRectangleToComposedShape(a: Array[Rectangle]) = ComposedShape(a.toList)
 
+  implicit def arrayShapeToComposedShape(a: Array[Square]) = ComposedShape(a.toList)
+
   implicit def arrayShapeToComposedShape(a: Array[Shape]) = ComposedShape(a.toList)
+
 
 }

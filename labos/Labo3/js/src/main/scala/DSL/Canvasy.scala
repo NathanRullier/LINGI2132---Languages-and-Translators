@@ -14,11 +14,13 @@ class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
 
   def draw(): Unit = {
     shapes.map(
-      x =>
-        x match {
-          case square: Square => draw(square)
-          case shape: Shape => draw(shape)
-        }
+        x =>
+            x match {
+              case square: Square => draw(square)
+              case composedShape: ComposedShape[Shape] => draw(composedShape)
+              case shape: Shape => draw(shape)
+            }
+
     )
   }
 
@@ -31,6 +33,18 @@ class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
     ctx.stroke()
   }
 
+  def draw(composedShapes: ComposedShape[Shape]): Unit = {
+    composedShapes.foreach(
+      x =>
+        x match {
+          case square: Square => draw(square)
+          case shape: Shape => draw(shape)
+          case composedShape: ComposedShape[Shape] => draw(composedShape)
+        }
+
+    )
+  }
+
   def +=(circles: Array[Circle]) {
     shapes = shapes ++ circles
   }
@@ -41,6 +55,11 @@ class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
 
   def +=(squares: Array[Square]) {
     shapes = shapes ++ squares
+  }
+
+  def +=(composedShapes: Array[ComposedShape[Square]]): Unit = {
+    shapes = shapes ++ composedShapes
+
   }
 
   def initRender() = {
