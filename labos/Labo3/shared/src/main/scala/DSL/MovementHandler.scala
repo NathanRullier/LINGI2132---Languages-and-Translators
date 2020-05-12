@@ -23,7 +23,7 @@ object MovementHandler extends Settings {
     UserInputs.onDownKeyPressed = () => {
       direction = Direction.Down
     }
-    UserInputs.initInputsListener2()
+    UserInputs.initInputsListener()
   }
 
   def getWidthVariation(direction: Direction.Value): Int = {

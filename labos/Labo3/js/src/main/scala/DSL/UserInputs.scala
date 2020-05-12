@@ -16,15 +16,6 @@ object UserInputs {
 
   def initInputsListener(): Unit = {
     dom.document.addEventListener("keydown", (e: dom.KeyboardEvent) => {
-      keysDown += e.keyCode -> true
-    }, false)
-    dom.document.addEventListener("keyup", (e: dom.KeyboardEvent) => {
-      keysDown -= e.keyCode
-    }, false)
-  }
-
-  def initInputsListener2(): Unit = {
-    dom.document.addEventListener("keydown", (e: dom.KeyboardEvent) => {
       e.keyCode match {
         case 37 => onLeftKeyPressed()
         case 38 => onUpKeyPressed()
@@ -33,13 +24,4 @@ object UserInputs {
       }
     }, false)
   }
-
-  def holdLeftKey = keysDown.contains(37)
-
-  def holdUpKey = keysDown.contains(38)
-
-  def holdRightKey = keysDown.contains(39)
-
-  def holdDownKey = keysDown.contains(40)
-
 }
