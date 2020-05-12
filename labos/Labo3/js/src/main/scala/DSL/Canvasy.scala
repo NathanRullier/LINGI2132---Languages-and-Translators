@@ -24,6 +24,10 @@ class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
     )
   }
 
+  def getShapes(): Array[Shape] ={
+    shapes
+  }
+
   def draw(s: Shape): Unit = {}
 
   def draw(square: Square): Unit = {

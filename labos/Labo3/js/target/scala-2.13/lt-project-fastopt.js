@@ -701,6 +701,28 @@ const $d_O = new $TypeData().initClass({
   O: 1
 }, (void 0), (void 0), $is_O, $isArrayOf_O);
 $c_O.prototype.$classData = $d_O;
+class $c_LDSL_CollisionHandler$ extends $c_O {
+  perfectCollisionObjxObj__I__I__I__I__Z(obj1X, obj1Y, obj2X, obj2Y) {
+    return ((obj1X === obj2X) && (obj1Y === obj2Y))
+  };
+  collisionObjxBorders__I__I__I__I__I__I__Z(objX, objY, borderMinX, borderMinY, borderMaxX, borderMaxY) {
+    return ((((objX < borderMinX) || (objX >= borderMaxX)) || (objY < borderMinY)) || (objY >= borderMaxY))
+  };
+}
+const $d_LDSL_CollisionHandler$ = new $TypeData().initClass({
+  LDSL_CollisionHandler$: 0
+}, false, "DSL.CollisionHandler$", {
+  LDSL_CollisionHandler$: 1,
+  O: 1
+});
+$c_LDSL_CollisionHandler$.prototype.$classData = $d_LDSL_CollisionHandler$;
+let $n_LDSL_CollisionHandler$ = (void 0);
+function $m_LDSL_CollisionHandler$() {
+  if ((!$n_LDSL_CollisionHandler$)) {
+    $n_LDSL_CollisionHandler$ = new $c_LDSL_CollisionHandler$()
+  };
+  return $n_LDSL_CollisionHandler$
+}
 class $c_LDSL_Loop extends $c_O {
   constructor(timeBetweenLoopMS) {
     super();
@@ -925,6 +947,32 @@ function $m_jl_FloatingPointBits$() {
     $n_jl_FloatingPointBits$ = new $c_jl_FloatingPointBits$()
   };
   return $n_jl_FloatingPointBits$
+}
+class $c_jl_System$Streams$ extends $c_O {
+  constructor() {
+    super();
+    this.jl_System$Streams$__f_out = null;
+    this.jl_System$Streams$__f_err = null;
+    this.jl_System$Streams$__f_in = null;
+    $n_jl_System$Streams$ = this;
+    this.jl_System$Streams$__f_out = new $c_jl_JSConsoleBasedPrintStream(false);
+    this.jl_System$Streams$__f_err = new $c_jl_JSConsoleBasedPrintStream(true);
+    this.jl_System$Streams$__f_in = null
+  };
+}
+const $d_jl_System$Streams$ = new $TypeData().initClass({
+  jl_System$Streams$: 0
+}, false, "java.lang.System$Streams$", {
+  jl_System$Streams$: 1,
+  O: 1
+});
+$c_jl_System$Streams$.prototype.$classData = $d_jl_System$Streams$;
+let $n_jl_System$Streams$ = (void 0);
+function $m_jl_System$Streams$() {
+  if ((!$n_jl_System$Streams$)) {
+    $n_jl_System$Streams$ = new $c_jl_System$Streams$()
+  };
+  return $n_jl_System$Streams$
 }
 const $p_jl_System$SystemProperties$__loadSystemProperties__O = (function($thiz) {
   const result = {};
@@ -2971,6 +3019,23 @@ function $m_sjsr_package$() {
   };
   return $n_sjsr_package$
 }
+class $c_s_util_DynamicVariable extends $c_O {
+  constructor(init) {
+    super();
+    this.s_util_DynamicVariable__f_v = null;
+    this.s_util_DynamicVariable__f_v = init
+  };
+  toString__T() {
+    return (("DynamicVariable(" + this.s_util_DynamicVariable__f_v) + ")")
+  };
+}
+const $d_s_util_DynamicVariable = new $TypeData().initClass({
+  s_util_DynamicVariable: 0
+}, false, "scala.util.DynamicVariable", {
+  s_util_DynamicVariable: 1,
+  O: 1
+});
+$c_s_util_DynamicVariable.prototype.$classData = $d_s_util_DynamicVariable;
 class $c_s_util_hashing_MurmurHash3 extends $c_O {
   mix__I__I__I(hash, data) {
     let h = this.mixLast__I__I__I(hash, data);
@@ -3183,18 +3248,32 @@ class $c_Lwebapp_Main$ extends $c_O {
     $m_sci_List$();
     const b = new $c_scm_ListBuffer();
     let i = 0;
-    while ((i < 30)) {
+    while ((i < 3)) {
       const elem = new $c_LDSL_Square(0, 0, 40);
       b.addOne__O__scm_ListBuffer(elem);
       i = ((1 + i) | 0)
     };
-    const elem$1 = new $c_LDSL_ComposedShape(b.toList__sci_List());
-    const snake = new $c_sr_ObjectRef(elem$1);
-    const stabilizer$1 = $as_LDSL_ComposedShape(snake.sr_ObjectRef__f_elem);
-    stabilizer$1.change__LDSL_CanvasElementModifier__V(new $c_LDSL_Color("blue"));
-    canvasy.$plus$eq__ALDSL_ComposedShape__V($makeNativeArrayWrapper($d_LDSL_ComposedShape.getArrayOf(), [$as_LDSL_ComposedShape(snake.sr_ObjectRef__f_elem)]));
-    const elem$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-    const direction = new $c_sr_ObjectRef(elem$2);
+    const snake = new $c_LDSL_ComposedShape(b.toList__sci_List());
+    const this$3 = $m_s_util_Random$();
+    const newFoodPositionX = $imul(40, this$3.s_util_Random__f_self.nextInt__I__I(20));
+    const this$4 = $m_s_util_Random$();
+    const newFoodPositionY = $imul(40, this$4.s_util_Random__f_self.nextInt__I__I(20));
+    const x = ("x: " + newFoodPositionX);
+    const this$6 = $m_s_Console$();
+    const this$7 = this$6.out__Ljava_io_PrintStream();
+    this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+    const x$1 = ("y: " + newFoodPositionY);
+    const this$9 = $m_s_Console$();
+    const this$10 = this$9.out__Ljava_io_PrintStream();
+    this$10.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"));
+    const food = new $c_LDSL_Square(newFoodPositionX, newFoodPositionY, 40);
+    const property$1 = new $c_LDSL_Color("red");
+    food.LDSL_Square__f_color = property$1.LDSL_Color__f_c;
+    snake.change__LDSL_CanvasElementModifier__V(new $c_LDSL_Color("blue"));
+    canvasy.$plus$eq__ALDSL_ComposedShape__V($makeNativeArrayWrapper($d_LDSL_ComposedShape.getArrayOf(), [snake]));
+    canvasy.$plus$eq__ALDSL_Square__V($makeNativeArrayWrapper($d_LDSL_Square.getArrayOf(), [food]));
+    const elem$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+    const direction = new $c_sr_ObjectRef(elem$1);
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onLeftKeyPressed = new $c_sjsr_AnonFunction0(((this$2$1, direction$1) => (() => {
       direction$1.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Left
     }))(this, direction));
@@ -3204,25 +3283,22 @@ class $c_Lwebapp_Main$ extends $c_O {
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onUpKeyPressed = new $c_sjsr_AnonFunction0(((this$4$1, direction$3) => (() => {
       direction$3.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Up
     }))(this, direction));
-    $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onDownKeyPressed = new $c_sjsr_AnonFunction0(((this$5, direction$4) => (() => {
+    $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onDownKeyPressed = new $c_sjsr_AnonFunction0(((this$5$1, direction$4) => (() => {
       direction$4.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Down
     }))(this, direction));
     $m_LDSL_UserInputs$().initInputsListener__V();
-    const movement = new $c_sjsr_AnonFunction0(((this$6, snake$1, direction$5, pixelSize) => (() => {
-      const this$7 = $as_LDSL_ComposedShape(snake$1.sr_ObjectRef__f_elem);
-      const this$8 = this$7.LDSL_ComposedShape__f_l;
-      const $$x2 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$8, 0))).LDSL_Square__f_x;
-      const this$9 = $as_LDSL_ComposedShape(snake$1.sr_ObjectRef__f_elem);
-      const this$10 = this$9.LDSL_ComposedShape__f_l;
-      const $$x1 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0))).LDSL_Square__f_y;
-      const this$11 = $as_LDSL_ComposedShape(snake$1.sr_ObjectRef__f_elem);
-      const this$12 = this$11.LDSL_ComposedShape__f_l;
-      const head = new $c_LDSL_Square($$x2, $$x1, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$12, 0))).LDSL_Square__f_side);
-      const property$1 = new $c_LDSL_Color("blue");
-      head.LDSL_Square__f_color = property$1.LDSL_Color__f_c;
+    const movement = new $c_sjsr_AnonFunction0(((this$6$1, snake$1, direction$5, pixelSize) => (() => {
+      const this$12 = snake$1.LDSL_ComposedShape__f_l;
+      const $$x2 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$12, 0))).LDSL_Square__f_x;
+      const this$13 = snake$1.LDSL_ComposedShape__f_l;
+      const $$x1 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$13, 0))).LDSL_Square__f_y;
+      const this$14 = snake$1.LDSL_ComposedShape__f_l;
+      const head = new $c_LDSL_Square($$x2, $$x1, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$14, 0))).LDSL_Square__f_side);
+      const property$2 = new $c_LDSL_Color("blue");
+      head.LDSL_Square__f_color = property$2.LDSL_Color__f_c;
       const x1 = $as_s_Enumeration$Value(direction$5.sr_ObjectRef__f_elem);
-      const x = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-      if (((x === null) ? (x1 === null) : x.equals__O__Z(x1))) {
+      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if (((x$2 === null) ? (x1 === null) : x$2.equals__O__Z(x1))) {
         head.moveX__I__V(((-pixelSize) | 0))
       } else {
         const x$3 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
@@ -3242,17 +3318,44 @@ class $c_Lwebapp_Main$ extends $c_O {
           }
         }
       };
-      $as_LDSL_ComposedShape(snake$1.sr_ObjectRef__f_elem).addFirst__LDSL_Shape__V(head);
-      $as_LDSL_ComposedShape(snake$1.sr_ObjectRef__f_elem).removeLast__V()
+      snake$1.addFirst__LDSL_Shape__V(head);
+      snake$1.removeLast__V()
     }))(this, snake, direction, 40));
     const loop = new $c_LDSL_Loop(0);
     const compteur = new $c_sr_IntRef(0);
-    const update = new $c_sjsr_AnonFunction0(((this$7$1, compteur$1, GameSpeed$1, movement$1) => (() => {
+    const update = new $c_sjsr_AnonFunction0(((this$7$1, compteur$1, GameSpeed$1, movement$1, snake$2, food$1, snakeGridWidth, pixelSize$1, snakeGridHeight, direction$6) => (() => {
       compteur$1.sr_IntRef__f_elem = ((1 + compteur$1.sr_IntRef__f_elem) | 0);
       if (($intMod(compteur$1.sr_IntRef__f_elem, GameSpeed$1.sr_IntRef__f_elem) === 0)) {
-        movement$1.apply__O()
+        movement$1.apply__O();
+        const $$x4 = $m_LDSL_CollisionHandler$();
+        const this$16 = snake$2.LDSL_ComposedShape__f_l;
+        const $$x3 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$16, 0))).LDSL_Square__f_x;
+        const this$17 = snake$2.LDSL_ComposedShape__f_l;
+        if ($$x4.perfectCollisionObjxObj__I__I__I__I__Z($$x3, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$17, 0))).LDSL_Square__f_y, food$1.LDSL_Square__f_x, food$1.LDSL_Square__f_y)) {
+          const this$19 = $m_s_Console$();
+          const this$20 = this$19.out__Ljava_io_PrintStream();
+          this$20.java$lang$JSConsoleBasedPrintStream$$printString__T__V("menoum\n");
+          const this$21 = $m_s_util_Random$();
+          food$1.LDSL_Square__f_x = $imul(this$21.s_util_Random__f_self.nextInt__I__I(snakeGridWidth), pixelSize$1);
+          const this$22 = $m_s_util_Random$();
+          food$1.LDSL_Square__f_y = $imul(this$22.s_util_Random__f_self.nextInt__I__I(snakeGridHeight), pixelSize$1)
+        };
+        const $$x6 = $m_LDSL_CollisionHandler$();
+        const this$23 = snake$2.LDSL_ComposedShape__f_l;
+        const $$x5 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$23, 0))).LDSL_Square__f_x;
+        const this$24 = snake$2.LDSL_ComposedShape__f_l;
+        if ($$x6.collisionObjxBorders__I__I__I__I__I__I__Z($$x5, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$24, 0))).LDSL_Square__f_y, 0, 0, $imul(snakeGridWidth, pixelSize$1), $imul(snakeGridWidth, pixelSize$1))) {
+          const this$26 = $m_s_Console$();
+          const this$27 = this$26.out__Ljava_io_PrintStream();
+          this$27.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
+          const this$28 = snake$2.LDSL_ComposedShape__f_l;
+          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$28, 0))).LDSL_Square__f_x = 3;
+          const this$29 = snake$2.LDSL_ComposedShape__f_l;
+          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$29, 0))).LDSL_Square__f_y = 3;
+          direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+        }
       }
-    }))(this, compteur, GameSpeed, movement));
+    }))(this, compteur, GameSpeed, movement, snake, food, 20, 40, 20, direction));
     const render = new $c_sjsr_AnonFunction0(((this$8$1, canvasy$1) => (() => {
       canvasy$1.draw__V()
     }))(this, canvasy));
@@ -3717,6 +3820,98 @@ function $isArrayOf_jl_Throwable(obj, depth) {
 }
 function $asArrayOf_jl_Throwable(obj, depth) {
   return (($isArrayOf_jl_Throwable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.lang.Throwable;", depth))
+}
+const $p_ju_Random__loop$1__I__I = (function($thiz, n$1) {
+  while (true) {
+    const bits = $thiz.next__I__I(31);
+    const value = $intMod(bits, n$1);
+    if ((((((bits - value) | 0) + (((-1) + n$1) | 0)) | 0) < 0)) {
+      /*<skip>*/
+    } else {
+      return value
+    }
+  }
+});
+const $ct_ju_Random__J__ = (function($thiz, seed_in) {
+  $thiz.ju_Random__f_haveNextNextGaussian = false;
+  $thiz.setSeed__J__V(seed_in);
+  return $thiz
+});
+const $ct_ju_Random__ = (function($thiz) {
+  $ct_ju_Random__J__($thiz, $m_ju_Random$().java$util$Random$$randomSeed__J());
+  return $thiz
+});
+class $c_ju_Random extends $c_O {
+  constructor() {
+    super();
+    this.ju_Random__f_seedHi = 0;
+    this.ju_Random__f_seedLo = 0;
+    this.ju_Random__f_nextNextGaussian = 0.0;
+    this.ju_Random__f_haveNextNextGaussian = false
+  };
+  setSeed__J__V(seed_in) {
+    const lo = ((-554899859) ^ seed_in.RTLong__f_lo);
+    const hi = (5 ^ seed_in.RTLong__f_hi);
+    const hi$1 = (65535 & hi);
+    const lo$1 = (((lo >>> 24) | 0) | (hi$1 << 8));
+    this.ju_Random__f_seedHi = lo$1;
+    this.ju_Random__f_seedLo = (16777215 & lo);
+    this.ju_Random__f_haveNextNextGaussian = false
+  };
+  next__I__I(bits) {
+    const oldSeedHi = this.ju_Random__f_seedHi;
+    const oldSeedLo = this.ju_Random__f_seedLo;
+    const loProd = (11.0 + (1.5525485E7 * oldSeedLo));
+    const hiProd = ((1502.0 * oldSeedLo) + (1.5525485E7 * oldSeedHi));
+    const x = (loProd / 1.6777216E7);
+    const newSeedHi = (16777215 & (($uI((x | 0)) + (16777215 & $uI((hiProd | 0)))) | 0));
+    const newSeedLo = (16777215 & $uI((loProd | 0)));
+    this.ju_Random__f_seedHi = newSeedHi;
+    this.ju_Random__f_seedLo = newSeedLo;
+    const result32 = ((newSeedHi << 8) | (newSeedLo >> 16));
+    return ((result32 >>> ((32 - bits) | 0)) | 0)
+  };
+  nextInt__I__I(n) {
+    if ((n <= 0)) {
+      throw $ct_jl_IllegalArgumentException__T__(new $c_jl_IllegalArgumentException(), "n must be positive")
+    } else {
+      return (((n & ((-n) | 0)) === n) ? (this.next__I__I(31) >> $clz32(n)) : $p_ju_Random__loop$1__I__I(this, n))
+    }
+  };
+}
+const $d_ju_Random = new $TypeData().initClass({
+  ju_Random: 0
+}, false, "java.util.Random", {
+  ju_Random: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_ju_Random.prototype.$classData = $d_ju_Random;
+const $p_ju_Random$__randomInt__I = (function($thiz) {
+  const a = (4.294967296E9 * $uD(Math.random()));
+  return $doubleToInt(((-2.147483648E9) + $uD(Math.floor(a))))
+});
+class $c_ju_Random$ extends $c_O {
+  java$util$Random$$randomSeed__J() {
+    const value = $p_ju_Random$__randomInt__I(this);
+    const value$1 = $p_ju_Random$__randomInt__I(this);
+    return new $c_RTLong(value$1, value)
+  };
+}
+const $d_ju_Random$ = new $TypeData().initClass({
+  ju_Random$: 0
+}, false, "java.util.Random$", {
+  ju_Random$: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_ju_Random$.prototype.$classData = $d_ju_Random$;
+let $n_ju_Random$ = (void 0);
+function $m_ju_Random$() {
+  if ((!$n_ju_Random$)) {
+    $n_ju_Random$ = new $c_ju_Random$()
+  };
+  return $n_ju_Random$
 }
 const $p_ju_regex_Matcher__ensureLastMatch__sjs_js_RegExp$ExecResult = (function($thiz) {
   if (($thiz.ju_regex_Matcher__f_lastMatch === null)) {
@@ -4439,6 +4634,36 @@ function $m_s_Array$() {
   };
   return $n_s_Array$
 }
+class $c_s_Console$ extends $c_O {
+  constructor() {
+    super();
+    this.s_Console$__f_outVar = null;
+    this.s_Console$__f_errVar = null;
+    this.s_Console$__f_inVar = null;
+    $n_s_Console$ = this;
+    this.s_Console$__f_outVar = new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_out);
+    this.s_Console$__f_errVar = new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_err);
+    this.s_Console$__f_inVar = new $c_s_util_DynamicVariable(null)
+  };
+  out__Ljava_io_PrintStream() {
+    return $as_Ljava_io_PrintStream(this.s_Console$__f_outVar.s_util_DynamicVariable__f_v)
+  };
+}
+const $d_s_Console$ = new $TypeData().initClass({
+  s_Console$: 0
+}, false, "scala.Console$", {
+  s_Console$: 1,
+  O: 1,
+  s_io_AnsiColor: 1
+});
+$c_s_Console$.prototype.$classData = $d_s_Console$;
+let $n_s_Console$ = (void 0);
+function $m_s_Console$() {
+  if ((!$n_s_Console$)) {
+    $n_s_Console$ = new $c_s_Console$()
+  };
+  return $n_s_Console$
+}
 const $ct_s_Enumeration__I__ = (function($thiz, initial) {
   $thiz.s_Enumeration__f_scala$Enumeration$$vmap = $ct_scm_HashMap__(new $c_scm_HashMap());
   $thiz.s_Enumeration__f_vset = null;
@@ -4838,6 +5063,16 @@ function $m_s_util_Left$() {
     $n_s_util_Left$ = new $c_s_util_Left$()
   };
   return $n_s_util_Left$
+}
+const $ct_s_util_Random__ju_Random__ = (function($thiz, self) {
+  $thiz.s_util_Random__f_self = self;
+  return $thiz
+});
+class $c_s_util_Random extends $c_O {
+  constructor() {
+    super();
+    this.s_util_Random__f_self = null
+  };
 }
 class $c_s_util_Right$ extends $c_O {
   toString__T() {
@@ -6883,6 +7118,30 @@ const $d_sjsr_AnonFunction3 = new $TypeData().initClass({
   F3: 1
 });
 $c_sjsr_AnonFunction3.prototype.$classData = $d_sjsr_AnonFunction3;
+class $c_s_util_Random$ extends $c_s_util_Random {
+  constructor() {
+    super();
+    $ct_s_util_Random__ju_Random__(this, $ct_ju_Random__(new $c_ju_Random()))
+  };
+}
+const $d_s_util_Random$ = new $TypeData().initClass({
+  s_util_Random$: 0
+}, false, "scala.util.Random$", {
+  s_util_Random$: 1,
+  s_util_Random: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_util_Random$.prototype.$classData = $d_s_util_Random$;
+let $n_s_util_Random$ = (void 0);
+function $m_s_util_Random$() {
+  if ((!$n_s_util_Random$)) {
+    $n_s_util_Random$ = new $c_s_util_Random$()
+  };
+  return $n_s_util_Random$
+}
+class $c_Ljava_io_OutputStream extends $c_O {
+}
 class $c_jl_AssertionError extends $c_jl_Error {
   constructor(detailMessage) {
     super();
@@ -7944,6 +8203,16 @@ const $d_LDSL_ComposedShape = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_LDSL_ComposedShape.prototype.$classData = $d_LDSL_ComposedShape;
+const $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__ = (function($thiz, out) {
+  $thiz.Ljava_io_FilterOutputStream__f_out = out;
+  return $thiz
+});
+class $c_Ljava_io_FilterOutputStream extends $c_Ljava_io_OutputStream {
+  constructor() {
+    super();
+    this.Ljava_io_FilterOutputStream__f_out = null
+  };
+}
 class $c_jl_ArithmeticException extends $c_jl_RuntimeException {
   constructor(s) {
     super();
@@ -8042,6 +8311,19 @@ const $d_jl_IndexOutOfBoundsException = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_jl_IndexOutOfBoundsException.prototype.$classData = $d_jl_IndexOutOfBoundsException;
+class $c_jl_JSConsoleBasedPrintStream$DummyOutputStream extends $c_Ljava_io_OutputStream {
+}
+const $d_jl_JSConsoleBasedPrintStream$DummyOutputStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream$DummyOutputStream", {
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1
+});
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream$DummyOutputStream;
 class $c_jl_NegativeArraySizeException extends $c_jl_RuntimeException {
   constructor() {
     super();
@@ -10854,6 +11136,36 @@ const $d_s_reflect_ClassTag$GenericClassTag = new $TypeData().initClass({
   s_Equals: 1
 });
 $c_s_reflect_ClassTag$GenericClassTag.prototype.$classData = $d_s_reflect_ClassTag$GenericClassTag;
+const $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__ = (function($thiz, _out, autoFlush, charset) {
+  $thiz.Ljava_io_PrintStream__f_autoFlush = autoFlush;
+  $thiz.Ljava_io_PrintStream__f_charset = charset;
+  $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__($thiz, _out);
+  $thiz.Ljava_io_PrintStream__f_closing = false;
+  $thiz.Ljava_io_PrintStream__f_java$io$PrintStream$$closed = false;
+  $thiz.Ljava_io_PrintStream__f_errorFlag = false;
+  return $thiz
+});
+class $c_Ljava_io_PrintStream extends $c_Ljava_io_FilterOutputStream {
+  constructor() {
+    super();
+    this.Ljava_io_PrintStream__f_encoder = null;
+    this.Ljava_io_PrintStream__f_autoFlush = false;
+    this.Ljava_io_PrintStream__f_charset = null;
+    this.Ljava_io_PrintStream__f_closing = false;
+    this.Ljava_io_PrintStream__f_java$io$PrintStream$$closed = false;
+    this.Ljava_io_PrintStream__f_errorFlag = false;
+    this.Ljava_io_PrintStream__f_bitmap$0 = false
+  };
+}
+function $as_Ljava_io_PrintStream(obj) {
+  return (((obj instanceof $c_Ljava_io_PrintStream) || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.PrintStream"))
+}
+function $isArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ljava_io_PrintStream)))
+}
+function $asArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (($isArrayOf_Ljava_io_PrintStream(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.io.PrintStream;", depth))
+}
 const $f_sc_View__toString__T = (function($thiz) {
   return ($thiz.className__T() + "(<not computed>)")
 });
@@ -10961,6 +11273,70 @@ const $d_sjs_js_JavaScriptException = new $TypeData().initClass({
   s_Equals: 1
 });
 $c_sjs_js_JavaScriptException.prototype.$classData = $d_sjs_js_JavaScriptException;
+const $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V = (function($thiz, line) {
+  if (($as_T((typeof console)) !== "undefined")) {
+    let $$x1;
+    if ($thiz.jl_JSConsoleBasedPrintStream__f_isErr) {
+      const x = console.error;
+      $$x1 = $uZ((!(!x)))
+    } else {
+      $$x1 = false
+    };
+    if ($$x1) {
+      console.error(line)
+    } else {
+      console.log(line)
+    }
+  }
+});
+class $c_jl_JSConsoleBasedPrintStream extends $c_Ljava_io_PrintStream {
+  constructor(isErr) {
+    super();
+    this.jl_JSConsoleBasedPrintStream__f_isErr = false;
+    this.jl_JSConsoleBasedPrintStream__f_flushed = false;
+    this.jl_JSConsoleBasedPrintStream__f_buffer = null;
+    this.jl_JSConsoleBasedPrintStream__f_isErr = isErr;
+    const out = new $c_jl_JSConsoleBasedPrintStream$DummyOutputStream();
+    $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__(this, out, false, null);
+    this.jl_JSConsoleBasedPrintStream__f_flushed = true;
+    this.jl_JSConsoleBasedPrintStream__f_buffer = ""
+  };
+  java$lang$JSConsoleBasedPrintStream$$printString__T__V(s) {
+    let rest = s;
+    while ((rest !== "")) {
+      const this$1 = rest;
+      const nlPos = $uI(this$1.indexOf("\n"));
+      if ((nlPos < 0)) {
+        this.jl_JSConsoleBasedPrintStream__f_buffer = (("" + this.jl_JSConsoleBasedPrintStream__f_buffer) + rest);
+        this.jl_JSConsoleBasedPrintStream__f_flushed = false;
+        rest = ""
+      } else {
+        const $$x1 = this.jl_JSConsoleBasedPrintStream__f_buffer;
+        const this$3 = rest;
+        $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V(this, (("" + $$x1) + $as_T(this$3.substring(0, nlPos))));
+        this.jl_JSConsoleBasedPrintStream__f_buffer = "";
+        this.jl_JSConsoleBasedPrintStream__f_flushed = true;
+        const this$4 = rest;
+        const beginIndex = ((1 + nlPos) | 0);
+        rest = $as_T(this$4.substring(beginIndex))
+      }
+    }
+  };
+}
+const $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream", {
+  jl_JSConsoleBasedPrintStream: 1,
+  Ljava_io_PrintStream: 1,
+  Ljava_io_FilterOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1,
+  jl_Appendable: 1
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
 const $p_sc_StrictOptimizedLinearSeqOps__loop$2__I__sc_LinearSeq__sc_LinearSeq = (function($thiz, n, s) {
   while (true) {
     if (((n <= 0) || s.isEmpty__Z())) {
