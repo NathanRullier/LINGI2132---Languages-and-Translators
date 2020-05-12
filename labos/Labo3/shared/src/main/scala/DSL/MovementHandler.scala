@@ -10,18 +10,18 @@ object MovementHandler extends Settings {
 
   var direction: Direction.Value = Direction.Right
 
-  def updateDirection(lastDirection: Direction.Value): Unit = {
+  def updateDirection(): Unit = {
     UserInputs.onLeftKeyPressed = () => {
-      direction = Direction.Left
+      if(direction != Direction.Right) direction = Direction.Left
     }
     UserInputs.onRightKeyPressed = () => {
-      direction = Direction.Right
+      if(direction != Direction.Left) direction = Direction.Right
     }
     UserInputs.onUpKeyPressed = () => {
-      direction = Direction.Up
+      if(direction != Direction.Down) direction = Direction.Up
     }
     UserInputs.onDownKeyPressed = () => {
-      direction = Direction.Down
+      if(direction != Direction.Up) direction = Direction.Down
     }
     UserInputs.initInputsListener2()
   }

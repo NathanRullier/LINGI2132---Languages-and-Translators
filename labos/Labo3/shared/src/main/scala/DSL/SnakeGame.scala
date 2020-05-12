@@ -5,20 +5,19 @@ import scala.util.Random
 
 class SnakeGame(gameHeight: Int, gameWidth: Int) extends Game(gameHeight, gameWidth) {
   var direction = Direction.Right
-  var lastDirection = Direction.Right
   var snake = new Snake(3, 3, BasicSnakeLength)
 
   override def initGame(): Unit = {
     super.initGame()
-    MovementHandler.updateDirection(lastDirection)
+    MovementHandler.updateDirection()
     generateNewFood()
   }
 
   def newGame(): Unit = {
     super.newGame(() => {
-      direction = Direction.Right
-      lastDirection = direction
+      MovementHandler.direction = Direction.Right
       snake = new Snake(3, 3, BasicSnakeLength)
+      //MovementHandler.updateDirection(Direction.Right)
       generateNewFood()
     })
   }
@@ -54,7 +53,6 @@ class SnakeGame(gameHeight: Int, gameWidth: Int) extends Game(gameHeight, gameWi
 
   //TODO class controller
   def moveSnake(): Unit = {
-    lastDirection = direction
     val modifWidth = MovementHandler.getWidthVariation(direction)
     val modifHeight = MovementHandler.getHeightVariation(direction)
     //Modif position de la tete du serpent
