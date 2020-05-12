@@ -88,8 +88,8 @@ object Main {
         }
         if (CollisionHandler.collisionObjxBorders(snake(0).x,snake(0).y,0,0,snakeGridWidth*pixelSize,snakeGridWidth*pixelSize)) {
           println("pouf")
-          snake(0).x = 3
-          snake(0).y = 3
+          snake(0).x = 0
+          snake(0).y = 0
            direction = Direction.Right
         }
       }

@@ -3349,9 +3349,9 @@ class $c_Lwebapp_Main$ extends $c_O {
           const this$27 = this$26.out__Ljava_io_PrintStream();
           this$27.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
           const this$28 = snake$2.LDSL_ComposedShape__f_l;
-          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$28, 0))).LDSL_Square__f_x = 3;
+          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$28, 0))).LDSL_Square__f_x = 0;
           const this$29 = snake$2.LDSL_ComposedShape__f_l;
-          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$29, 0))).LDSL_Square__f_y = 3;
+          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$29, 0))).LDSL_Square__f_y = 0;
           direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
         }
       }

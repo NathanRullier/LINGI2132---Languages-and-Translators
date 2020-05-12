@@ -1,19 +1,19 @@
 [0m[[0m[0minfo[0m] [0m[0mFast optimizing C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\lt-project-fastopt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 106080 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 11402 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 141748 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: 300356 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 40620 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 8375 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 38517 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: 110959 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 17057 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 97 methods.[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 28458 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 51539 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 50018 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 4831 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: 60442 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 54055 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 613 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 10065 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 99 methods.[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 13454 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 29272 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 22314 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 2255 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 29871 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 20099 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 746 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 827 -- invalidated: 2[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 1519 -- invalidated: 66[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter: 68543 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 240323 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: 26322 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 85274 us[0m
