@@ -7,26 +7,14 @@
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\MovementHandler.scala:14:11: not found: value UserInputs[0m
-[0m[[0m[31merror[0m] [0m[0m      if (UserInputs.holdLeft && (lastDirection != Direction.Right)) Direction.Left[0m
-[0m[[0m[31merror[0m] [0m[0m          ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\MovementHandler.scala:15:16: not found: value UserInputs[0m
-[0m[[0m[31merror[0m] [0m[0m      else if (UserInputs.holdRight && (lastDirection != Direction.Left))[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\MovementHandler.scala:17:16: not found: value UserInputs[0m
-[0m[[0m[31merror[0m] [0m[0m      else if (UserInputs.holdUp && (lastDirection != Direction.Down)) Direction.Up[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\MovementHandler.scala:18:16: not found: value UserInputs[0m
-[0m[[0m[31merror[0m] [0m[0m      else if (UserInputs.holdDown && (lastDirection != Direction.Up))[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:9:23: abstract type A in type DSL.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:7:23: abstract type A in type DSL.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:12:30: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    } else if (s.isInstanceOf[A]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:89:30: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
-[0m[[0m[33mwarn[0m] [0m[0m    } else if (s.isInstanceOf[A]) {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m6 warnings found[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:11:28: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 6 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m7 warnings found[0m

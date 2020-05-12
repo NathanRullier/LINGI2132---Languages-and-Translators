@@ -134,6 +134,24 @@ case class Circle(var x: Int, var y: Int, var radius: Int) extends Shape with Sh
   }
 }
 
+case class Square(var x: Int, var y: Int, var side: Int)
+  extends Shape
+    with ShapeAttributes {
+  type A = Square
+
+  override def moveX(v: Int): Unit = {
+    x += v
+  }
+
+  override def moveY(v: Int): Unit = {
+    y += v
+  }
+
+  override def change(property: CanvasElementModifier[A]): Unit = {
+    property.change(this)
+  }
+}
+
 object ComposedShapeImplicits {
 
   implicit def arrayCircleToComposedShape(a: Array[Circle]) = ComposedShape(a.toList)

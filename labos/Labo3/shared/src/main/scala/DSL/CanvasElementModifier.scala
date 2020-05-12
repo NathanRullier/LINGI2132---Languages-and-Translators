@@ -1,5 +1,4 @@
 package DSL
-
 import DSL._
 
 trait CanvasElementModifier[-ApplyOn <: Shape] {
@@ -33,11 +32,5 @@ case class Height(h: Int) extends CanvasElementModifier[Rectangle] {
 case class Radius(r: Int) extends CanvasElementModifier[Circle] {
   override def change(x: Circle): Unit = {
     x.radius = r
-  }
-}
-
-case class Side(s: Int) extends CanvasElementModifier[Square] {
-  override def change(x: Square): Unit = {
-    x.side = s
   }
 }

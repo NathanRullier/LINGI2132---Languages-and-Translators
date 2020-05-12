@@ -1,4 +1,4 @@
-import DSLDemo._
+import DSL._
 
 import common.Common._
 
@@ -39,6 +39,25 @@ class ElementaryShapeTest extends AnyFunSuite with Matchers {
     val newColor = s"rgb ${Random.nextInt(255)} ${Random.nextInt(255)} ${Random.nextInt(255)}"
     circle change Color(newColor)
     circle.color shouldBe newColor
+  }
+
+  test("Change radius of circle via property") {
+    val circle = newCircle()
+    val newRadius = Random.nextInt(100)
+    circle change Radius(newRadius)
+    circle.radius shouldBe newRadius
+  }
+  test("Change width of rectangle via property") {
+    val rectangle = newRectangle()
+    val newWidth = Random.nextInt(100)
+    rectangle change Width(newWidth)
+    rectangle.width shouldBe newWidth
+  }
+  test("Change height of rectangle via property") {
+    val rectangle = newRectangle()
+    val newHeight = Random.nextInt(100)
+    rectangle change Height(newHeight)
+    rectangle.height shouldBe newHeight
   }
 
 }

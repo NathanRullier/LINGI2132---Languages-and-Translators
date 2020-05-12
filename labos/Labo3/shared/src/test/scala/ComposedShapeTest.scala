@@ -1,4 +1,4 @@
-import DSLDemo._
+import DSL._
 
 import common.Common._
 
@@ -16,7 +16,7 @@ class ComposedShapeTest extends AnyFunSuite with Matchers {
     val g = ComposedShape(l)
     val offSet = Random.nextInt(20)
     val expected = l.map(_.y - offSet)
-    g moveY(-offSet)
+    g moveY (-offSet)
     for (i <- l.indices)
       g(i).asInstanceOf[Rectangle].y shouldBe expected(i)
   }
@@ -42,4 +42,37 @@ class ComposedShapeTest extends AnyFunSuite with Matchers {
     }
   }
 
+  //TODO flatmap apply change ++ and
+
+  test("apply") {
+    val rect = newRectangle()
+    val g = ComposedShape(List(rect))
+    g(0) shouldBe rect
+
+  }
+
+  test("change") {
+    val rl = newCircleList(10)
+    val g = ComposedShape(rl)
+    g change Radius(10)
+    for (i <- rl.indices) {
+      g(i).radius shouldBe 10
+    }
+  }
+
+  test("++") {
+    val rl = newRectangleList(10)
+    val cl = newCircleList(10)
+    val expected = ComposedShape(rl ++ cl)
+    val newCS = ComposedShape(rl) ++ ComposedShape(cl)
+    newCS shouldBe expected
+  }
+
+  test("and") {
+    val rl = newRectangleList(10)
+    val cl = newCircleList(10)
+    val expected = ComposedShape(rl ++ cl)
+    val newCS = ComposedShape(rl) and ComposedShape(cl)
+    newCS shouldBe expected
+  }
 }

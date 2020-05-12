@@ -10,14 +10,14 @@ object MovementHandler extends Settings {
 
   def updateDirection(lastDirection: Direction.Value): Direction.Value = {
 
-   val direction =
-      if (UserInputs.holdLeftKey && (lastDirection != Direction.Right)) Direction.Left
-      else if (UserInputs.holdRightKey && (lastDirection != Direction.Left))
-        Direction.Right
-      else if (UserInputs.holdUpKey && (lastDirection != Direction.Down)) Direction.Up
-      else if (UserInputs.holdDownKey && (lastDirection != Direction.Up))
-        Direction.Down
-      else lastDirection
+   val direction = Direction.Down
+      //if (UserInputs.holdLeftKey && (lastDirection != Direction.Right)) Direction.Left
+      //else if (UserInputs.holdRightKey && (lastDirection != Direction.Left))
+      //  Direction.Right
+      //else if (UserInputs.holdUpKey && (lastDirection != Direction.Down)) Direction.Up
+      //else if (UserInputs.holdDownKey && (lastDirection != Direction.Up))
+      //  Direction.Down
+      //else lastDirection
 
     direction
   }

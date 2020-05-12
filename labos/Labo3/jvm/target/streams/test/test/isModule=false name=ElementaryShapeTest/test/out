@@ -3,3 +3,6 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- Move circle left[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Change color of rectangle via keyword[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- Change color of circle via property[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Change radius of circle via property[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Change width of rectangle via property[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Change height of rectangle via property[0m[0m

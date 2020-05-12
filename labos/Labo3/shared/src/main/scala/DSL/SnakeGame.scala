@@ -26,7 +26,7 @@ class SnakeGame(gameHeight: Int, gameWidth: Int) extends Game(gameHeight, gameWi
 
     //verif collision avec les cotes
     if (snake.posX <= -1 || snake.posX >= gameHeight || snake.posY >= gameHeight || snake.posY <= -1) {
-      println("COLLISION AVEC UN MUR")
+      println("COLLISION AVEC U N MUR")
       newGame()
     }
     //verif collision avec une pomme

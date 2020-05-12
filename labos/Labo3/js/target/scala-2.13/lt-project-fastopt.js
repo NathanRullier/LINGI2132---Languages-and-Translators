@@ -704,23 +704,13 @@ $c_O.prototype.$classData = $d_O;
 class $c_LDSL_GameObject extends $c_O {
 }
 class $c_LDSL_Loop extends $c_O {
-  constructor() {
-    super();
-    this.LDSL_Loop__f_then = 0.0;
-    this.LDSL_Loop__f_then = $uD(Date.now())
-  };
-  loop__F0__F0__F0(update, render) {
-    return new $c_sjsr_AnonFunction0(((this$1, update$1, render$1) => (() => {
-      window.requestAnimationFrame($m_sjs_js_Any$().fromFunction0__F0__sjs_js_Function0(this$1.loop__F0__F0__F0(update$1, render$1)));
-      const now = $uD(Date.now());
-      update$1.apply__O();
-      render$1.apply__O();
-      this$1.LDSL_Loop__f_then = now
-    }))(this, update, render))
-  };
-  start__F0__F0__V(update, render) {
-    const this$1 = this.loop__F0__F0__F0(update, render);
-    this$1.apply__O()
+  loop__F0__F0__V(update, render) {
+    $m_Lorg_scalajs_dom_package$().window__Lorg_scalajs_dom_raw_Window().requestAnimationFrame(((arg$outer, update$1, render$1) => ((arg1$2) => {
+      $uD(arg1$2);
+      arg$outer.loop__F0__F0__V(update$1, render$1)
+    }))(this, update, render));
+    update.apply__O();
+    render.apply__O()
   };
 }
 const $d_LDSL_Loop = new $TypeData().initClass({
@@ -839,18 +829,20 @@ class $c_LDSL_UserInputs$ extends $c_O {
     const elems = $m_sci_Nil$();
     this.LDSL_UserInputs$__f_keysDown = this$1.from__sc_IterableOnce__scm_HashMap(elems)
   };
-  initInputsListener__sjs_js_Dynamic() {
-    addEventListener("keydown", $m_sjs_js_Any$().fromFunction1__F1__sjs_js_Function1(new $c_sjsr_AnonFunction1(((this$2) => ((e$2) => {
-      const this$5 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_keysDown;
-      const self = $uI(e$2.keyCode);
-      $p_scm_HashMap__put0__O__O__Z__s_Some(this$5, self, true, false);
-      return this$5
-    }))(this))), false);
-    return addEventListener("keyup", $m_sjs_js_Any$().fromFunction1__F1__sjs_js_Function1(new $c_sjsr_AnonFunction1(((this$2$1) => ((e$3$2) => {
-      const this$8 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_keysDown;
-      const elem = $uI(e$3$2.keyCode);
-      return this$8.subtractOne__O__scm_HashMap(elem)
-    }))(this))), false)
+  initInputsListener__V() {
+    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("keydown", ((arg1$2) => $m_LDSL_UserInputs$().DSL$UserInputs$$$anonfun$initInputsListener$1__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(arg1$2)), false);
+    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("keyup", ((arg1$2$1) => $m_LDSL_UserInputs$().DSL$UserInputs$$$anonfun$initInputsListener$3__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(arg1$2$1)), false)
+  };
+  DSL$UserInputs$$$anonfun$initInputsListener$1__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(e) {
+    const this$3 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_keysDown;
+    const self = $uI(e.keyCode);
+    $p_scm_HashMap__put0__O__O__Z__s_Some(this$3, self, true, false);
+    return this$3
+  };
+  DSL$UserInputs$$$anonfun$initInputsListener$3__Lorg_scalajs_dom_raw_KeyboardEvent__scm_HashMap(e) {
+    const this$1 = $m_LDSL_UserInputs$().LDSL_UserInputs$__f_keysDown;
+    const elem = $uI(e.keyCode);
+    return this$1.subtractOne__O__scm_HashMap(elem)
   };
 }
 const $d_LDSL_UserInputs$ = new $TypeData().initClass({
@@ -3438,12 +3430,14 @@ class $c_Lwebapp_Main$ extends $c_O {
     };
     canvasy.initRender__V();
     const loop = new $c_LDSL_Loop();
-    $m_LDSL_UserInputs$().initInputsListener__sjs_js_Dynamic();
-    loop.start__F0__F0__V(new $c_sjsr_AnonFunction0(((this$2$1, snakeGame$1) => (() => {
+    $m_LDSL_UserInputs$().initInputsListener__V();
+    const update = new $c_sjsr_AnonFunction0(((this$2$1, snakeGame$1) => (() => {
       snakeGame$1.update__V()
-    }))(this, snakeGame)), new $c_sjsr_AnonFunction0(((this$3$1, canvasy$2) => (() => {
+    }))(this, snakeGame));
+    const render = new $c_sjsr_AnonFunction0(((this$3$1, canvasy$2) => (() => {
       canvasy$2.draw__V()
-    }))(this, canvasy)))
+    }))(this, canvasy));
+    loop.loop__F0__F0__V(update, render)
   };
 }
 const $d_Lwebapp_Main$ = new $TypeData().initClass({
@@ -3481,8 +3475,6 @@ const $ct_LDSL_Canvasy__Lorg_scalajs_dom_raw_HTMLCanvasElement__I__I__ = (functi
 class $c_LDSL_Canvasy extends $c_O {
   constructor() {
     super();
-    this.LDSL_Canvasy__f_windowHeight = null;
-    this.LDSL_Canvasy__f_windowWidth = null;
     this.LDSL_Canvasy__f_canvas = null;
     this.LDSL_Canvasy__f_height = 0;
     this.LDSL_Canvasy__f_width = 0;
@@ -3493,8 +3485,7 @@ class $c_LDSL_Canvasy extends $c_O {
     this.LDSL_Canvasy__f_NumberOfSquaresHeightSnake = 0;
     this.LDSL_Canvasy__f_BasicSnakeLength = 0;
     this.LDSL_Canvasy__f_pixelSize = 0;
-    this.LDSL_Canvasy__f_SnakeLengthToWin = 0;
-    this.LDSL_Canvasy__f_bitmap$0 = 0
+    this.LDSL_Canvasy__f_SnakeLengthToWin = 0
   };
   GameSpeed_$eq__I__V(x$1) {
     this.LDSL_Canvasy__f_GameSpeed = x$1
@@ -3805,56 +3796,7 @@ class $c_LDSL_MovementHandler$ extends $c_O {
     this.LDSL_MovementHandler$__f_SnakeLengthToWin = x$1
   };
   updateDirection__s_Enumeration$Value__s_Enumeration$Value(lastDirection) {
-    const this$1 = $m_LDSL_UserInputs$();
-    let $$x1;
-    if (this$1.LDSL_UserInputs$__f_keysDown.contains__O__Z(37)) {
-      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-      $$x1 = (!((lastDirection === null) ? (x$2 === null) : lastDirection.equals__O__Z(x$2)))
-    } else {
-      $$x1 = false
-    };
-    let direction;
-    if ($$x1) {
-      direction = $m_LDSL_Direction$().LDSL_Direction$__f_Left
-    } else {
-      const this$2 = $m_LDSL_UserInputs$();
-      let $$x2;
-      if (this$2.LDSL_UserInputs$__f_keysDown.contains__O__Z(39)) {
-        const x$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-        $$x2 = (!((lastDirection === null) ? (x$4 === null) : lastDirection.equals__O__Z(x$4)))
-      } else {
-        $$x2 = false
-      };
-      if ($$x2) {
-        direction = $m_LDSL_Direction$().LDSL_Direction$__f_Right
-      } else {
-        const this$3 = $m_LDSL_UserInputs$();
-        let $$x3;
-        if (this$3.LDSL_UserInputs$__f_keysDown.contains__O__Z(38)) {
-          const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-          $$x3 = (!((lastDirection === null) ? (x$6 === null) : lastDirection.equals__O__Z(x$6)))
-        } else {
-          $$x3 = false
-        };
-        if ($$x3) {
-          direction = $m_LDSL_Direction$().LDSL_Direction$__f_Up
-        } else {
-          const this$4 = $m_LDSL_UserInputs$();
-          let $$x4;
-          if (this$4.LDSL_UserInputs$__f_keysDown.contains__O__Z(40)) {
-            const x$8 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
-            $$x4 = (!((lastDirection === null) ? (x$8 === null) : lastDirection.equals__O__Z(x$8)))
-          } else {
-            $$x4 = false
-          };
-          if ($$x4) {
-            direction = $m_LDSL_Direction$().LDSL_Direction$__f_Down
-          } else {
-            direction = lastDirection
-          }
-        }
-      }
-    };
+    const direction = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
     return direction
   };
   getWidthVariation__s_Enumeration$Value__I(direction) {
@@ -7671,30 +7613,6 @@ const $d_sr_Nothing$ = new $TypeData().initClass({
   O: 1,
   Ljava_io_Serializable: 1
 });
-class $c_sjs_js_Any$ extends $c_O {
-  fromFunction0__F0__sjs_js_Function0(f) {
-    return ((f$1) => (() => f$1.apply__O()))(f)
-  };
-  fromFunction1__F1__sjs_js_Function1(f) {
-    return ((f$2) => ((arg1$2) => f$2.apply__O__O(arg1$2)))(f)
-  };
-}
-const $d_sjs_js_Any$ = new $TypeData().initClass({
-  sjs_js_Any$: 0
-}, false, "scala.scalajs.js.Any$", {
-  sjs_js_Any$: 1,
-  O: 1,
-  sjs_js_LowPrioAnyImplicits: 1,
-  sjs_js_LowestPrioAnyImplicits: 1
-});
-$c_sjs_js_Any$.prototype.$classData = $d_sjs_js_Any$;
-let $n_sjs_js_Any$ = (void 0);
-function $m_sjs_js_Any$() {
-  if ((!$n_sjs_js_Any$)) {
-    $n_sjs_js_Any$ = new $c_sjs_js_Any$()
-  };
-  return $n_sjs_js_Any$
-}
 class $c_sjsr_AnonFunction0 extends $c_sr_AbstractFunction0 {
   constructor(f) {
     super();
