@@ -22,10 +22,9 @@ object Main {
     val canvasy = new GridCanvasy(canvas, snakeGridHeight, snakeGridWidth, 40)
     snakeGame.board.map(x => canvasy += x.map(y => y.getSquare()))
     canvasy.initRender()
-    val loop = new Loop()
+    val loop = new Loop(0)
     UserInputs.initInputsListener()
     loop.start(snakeGame.update, () => canvasy.draw())
-
     //canvasy.render()
     //canvasy.initRender
     //aaboardSquareList[0].print()

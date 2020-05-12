@@ -3,18 +3,21 @@ package DSL
 import scala.scalajs.js
 import org.scalajs.dom.window
 
-//aucune caliss didee comme thread avec scala c rough, c du copy paste ce code la
-class Loop() {
+class Loop(var timeBetweenLoopMS: Int) {
+  timeBetweenLoopMS = timeBetweenLoopMS / 60
+  var timer: Int = 0
 
-  def loop (update: () => Unit, render: () => Unit): Unit ={
-        window.requestAnimationFrame((deltaTime: Double) => {
-          loop(update, render)
-        })
-      update()
-      render()
+  def loop (update: () => Unit, render: () => Unit): Unit = {
+    println("timer "+ timer)
+    window.requestAnimationFrame((deltaTime: Double) => {
+        loop(update, render)
+      })
+     if (timer == timeBetweenLoopMS) {
+       update()
+       render()
+     } else timer += 1
   }
   def start(update: () => Unit, render: () => Unit) = {
     loop(update, render)
   }
-
 }
