@@ -6,6 +6,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mLinker: 78097 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
 <<<<<<< HEAD
+<<<<<<< HEAD
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 6398 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 105 methods.[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 15148 us[0m
@@ -21,6 +22,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 71135 us[0m
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> codeTrash
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 8660 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 99 methods.[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 11841 us[0m
@@ -70,4 +73,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: 25805 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 59919 us[0m
 >>>>>>> codeTrash
+<<<<<<< HEAD
+>>>>>>> codeTrash
+=======
 >>>>>>> codeTrash
