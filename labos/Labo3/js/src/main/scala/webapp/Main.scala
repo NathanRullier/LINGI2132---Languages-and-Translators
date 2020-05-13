@@ -32,8 +32,6 @@ object Main {
     //init a new Food
     val newFoodPositionX = Random.nextInt(snakeGridWidth) * pixelSize
     val newFoodPositionY = Random.nextInt(snakeGridHeight) * pixelSize
-    println("x: " + newFoodPositionX)
-    println("y: " + newFoodPositionY)
     val food = new Square(newFoodPositionX, newFoodPositionY, pixelSize)
     food change Color("red")
     //init a new Snake
@@ -91,10 +89,8 @@ object Main {
         }
         if (CollisionHandler.collisionObjxBorders(snake(0).x, snake(0).y, 0, 0, snakeGridWidth * pixelSize, snakeGridWidth * pixelSize)) {
           println("pouf")
-          snake.foreach(x => {
-            x.asInstanceOf[Square].x = 0
-            x.asInstanceOf[Square].y = 0
-          })
+          snake.l = List.fill(3)(new Square(0, 0, pixelSize))
+          snake change Color("blue")
           direction = Direction.Right
         }
       }

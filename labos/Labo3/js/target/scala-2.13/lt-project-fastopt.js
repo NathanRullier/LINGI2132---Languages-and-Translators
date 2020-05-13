@@ -3258,14 +3258,6 @@ class $c_Lwebapp_Main$ extends $c_O {
     const newFoodPositionX = $imul(40, this$3.s_util_Random__f_self.nextInt__I__I(20));
     const this$4 = $m_s_util_Random$();
     const newFoodPositionY = $imul(40, this$4.s_util_Random__f_self.nextInt__I__I(20));
-    const x = ("x: " + newFoodPositionX);
-    const this$6 = $m_s_Console$();
-    const this$7 = this$6.out__Ljava_io_PrintStream();
-    this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-    const x$1 = ("y: " + newFoodPositionY);
-    const this$9 = $m_s_Console$();
-    const this$10 = this$9.out__Ljava_io_PrintStream();
-    this$10.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"));
     const food = new $c_LDSL_Square(newFoodPositionX, newFoodPositionY, 40);
     const property$1 = new $c_LDSL_Color("red");
     food.LDSL_Square__f_color = property$1.LDSL_Color__f_c;
@@ -3275,46 +3267,46 @@ class $c_Lwebapp_Main$ extends $c_O {
     const elem$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
     const direction = new $c_sr_ObjectRef(elem$1);
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onLeftKeyPressed = new $c_sjsr_AnonFunction0(((this$2$1, direction$1) => (() => {
-      const x$2 = $as_s_Enumeration$Value(direction$1.sr_ObjectRef__f_elem);
-      const x$2$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-      if ((!((x$2 === null) ? (x$2$1 === null) : x$2.equals__O__Z(x$2$1)))) {
+      const x = $as_s_Enumeration$Value(direction$1.sr_ObjectRef__f_elem);
+      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+      if ((!((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)))) {
         direction$1.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Left
       }
     }))(this, direction));
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onRightKeyPressed = new $c_sjsr_AnonFunction0(((this$3$1, direction$2) => (() => {
-      const x$3 = $as_s_Enumeration$Value(direction$2.sr_ObjectRef__f_elem);
-      const x$2$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-      if ((!((x$3 === null) ? (x$2$2 === null) : x$3.equals__O__Z(x$2$2)))) {
+      const x$1 = $as_s_Enumeration$Value(direction$2.sr_ObjectRef__f_elem);
+      const x$2$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if ((!((x$1 === null) ? (x$2$1 === null) : x$1.equals__O__Z(x$2$1)))) {
         direction$2.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
       }
     }))(this, direction));
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onUpKeyPressed = new $c_sjsr_AnonFunction0(((this$4$1, direction$3) => (() => {
-      const x$4 = $as_s_Enumeration$Value(direction$3.sr_ObjectRef__f_elem);
-      const x$2$3 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
-      if ((!((x$4 === null) ? (x$2$3 === null) : x$4.equals__O__Z(x$2$3)))) {
+      const x$3 = $as_s_Enumeration$Value(direction$3.sr_ObjectRef__f_elem);
+      const x$2$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+      if ((!((x$3 === null) ? (x$2$2 === null) : x$3.equals__O__Z(x$2$2)))) {
         direction$3.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Up
       }
     }))(this, direction));
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onDownKeyPressed = new $c_sjsr_AnonFunction0(((this$5$1, direction$4) => (() => {
-      const x$5 = $as_s_Enumeration$Value(direction$4.sr_ObjectRef__f_elem);
-      const x$2$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
-      if ((!((x$5 === null) ? (x$2$4 === null) : x$5.equals__O__Z(x$2$4)))) {
+      const x$4 = $as_s_Enumeration$Value(direction$4.sr_ObjectRef__f_elem);
+      const x$2$3 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+      if ((!((x$4 === null) ? (x$2$3 === null) : x$4.equals__O__Z(x$2$3)))) {
         direction$4.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Down
       }
     }))(this, direction));
     $m_LDSL_UserInputs$().initInputsListener__V();
-    const movement = new $c_sjsr_AnonFunction0(((this$6$1, snake$1, direction$5, pixelSize) => (() => {
-      const this$12 = snake$1.LDSL_ComposedShape__f_l;
-      const $$x2 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$12, 0))).LDSL_Square__f_x;
-      const this$13 = snake$1.LDSL_ComposedShape__f_l;
-      const $$x1 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$13, 0))).LDSL_Square__f_y;
-      const this$14 = snake$1.LDSL_ComposedShape__f_l;
-      const head = new $c_LDSL_Square($$x2, $$x1, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$14, 0))).LDSL_Square__f_side);
+    const movement = new $c_sjsr_AnonFunction0(((this$6, snake$1, direction$5, pixelSize) => (() => {
+      const this$7 = snake$1.LDSL_ComposedShape__f_l;
+      const $$x2 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$7, 0))).LDSL_Square__f_x;
+      const this$8 = snake$1.LDSL_ComposedShape__f_l;
+      const $$x1 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$8, 0))).LDSL_Square__f_y;
+      const this$9 = snake$1.LDSL_ComposedShape__f_l;
+      const head = new $c_LDSL_Square($$x2, $$x1, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$9, 0))).LDSL_Square__f_side);
       const property$2 = new $c_LDSL_Color("blue");
       head.LDSL_Square__f_color = property$2.LDSL_Color__f_c;
       const x1 = $as_s_Enumeration$Value(direction$5.sr_ObjectRef__f_elem);
-      const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-      if (((x$6 === null) ? (x1 === null) : x$6.equals__O__Z(x1))) {
+      const x$5 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if (((x$5 === null) ? (x1 === null) : x$5.equals__O__Z(x1))) {
         head.moveX__I__V(((-pixelSize) | 0))
       } else {
         const x$3$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
@@ -3344,54 +3336,43 @@ class $c_Lwebapp_Main$ extends $c_O {
       if (($intMod(compteur$1.sr_IntRef__f_elem, GameSpeed$1.sr_IntRef__f_elem) === 0)) {
         movement$1.apply__O();
         const $$x4 = $m_LDSL_CollisionHandler$();
-        const this$16 = snake$2.LDSL_ComposedShape__f_l;
-        const $$x3 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$16, 0))).LDSL_Square__f_x;
-        const this$17 = snake$2.LDSL_ComposedShape__f_l;
-        if ($$x4.perfectCollisionObjxObj__I__I__I__I__Z($$x3, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$17, 0))).LDSL_Square__f_y, food$1.LDSL_Square__f_x, food$1.LDSL_Square__f_y)) {
-          const this$19 = $m_s_Console$();
-          const this$20 = this$19.out__Ljava_io_PrintStream();
-          this$20.java$lang$JSConsoleBasedPrintStream$$printString__T__V("menoum\n");
-          const this$21 = $m_s_util_Random$();
-          food$1.LDSL_Square__f_x = $imul(this$21.s_util_Random__f_self.nextInt__I__I(snakeGridWidth), pixelSize$1);
-          const this$22 = $m_s_util_Random$();
-          food$1.LDSL_Square__f_y = $imul(this$22.s_util_Random__f_self.nextInt__I__I(snakeGridHeight), pixelSize$1);
-          const this$23 = snake$2.LDSL_ComposedShape__f_l;
-          const $$x5 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$23, 0))).LDSL_Square__f_x;
-          const this$24 = snake$2.LDSL_ComposedShape__f_l;
-          const tail = new $c_LDSL_Square($$x5, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$24, 0))).LDSL_Square__f_y, pixelSize$1);
+        const this$11 = snake$2.LDSL_ComposedShape__f_l;
+        const $$x3 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$11, 0))).LDSL_Square__f_x;
+        const this$12 = snake$2.LDSL_ComposedShape__f_l;
+        if ($$x4.perfectCollisionObjxObj__I__I__I__I__Z($$x3, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$12, 0))).LDSL_Square__f_y, food$1.LDSL_Square__f_x, food$1.LDSL_Square__f_y)) {
+          const this$14 = $m_s_Console$();
+          const this$15 = this$14.out__Ljava_io_PrintStream();
+          this$15.java$lang$JSConsoleBasedPrintStream$$printString__T__V("menoum\n");
+          const this$16 = $m_s_util_Random$();
+          food$1.LDSL_Square__f_x = $imul(this$16.s_util_Random__f_self.nextInt__I__I(snakeGridWidth), pixelSize$1);
+          const this$17 = $m_s_util_Random$();
+          food$1.LDSL_Square__f_y = $imul(this$17.s_util_Random__f_self.nextInt__I__I(snakeGridHeight), pixelSize$1);
+          const this$18 = snake$2.LDSL_ComposedShape__f_l;
+          const $$x5 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$18, 0))).LDSL_Square__f_x;
+          const this$19 = snake$2.LDSL_ComposedShape__f_l;
+          const tail = new $c_LDSL_Square($$x5, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$19, 0))).LDSL_Square__f_y, pixelSize$1);
           const property$3 = new $c_LDSL_Color("blue");
           tail.LDSL_Square__f_color = property$3.LDSL_Color__f_c;
           snake$2.addLast__LDSL_Shape__V(tail)
         };
         const $$x7 = $m_LDSL_CollisionHandler$();
-        const this$25 = snake$2.LDSL_ComposedShape__f_l;
-        const $$x6 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$25, 0))).LDSL_Square__f_x;
-        const this$26 = snake$2.LDSL_ComposedShape__f_l;
-        if ($$x7.collisionObjxBorders__I__I__I__I__I__I__Z($$x6, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$26, 0))).LDSL_Square__f_y, 0, 0, $imul(snakeGridWidth, pixelSize$1), $imul(snakeGridWidth, pixelSize$1))) {
-          const this$28 = $m_s_Console$();
-          const this$29 = this$28.out__Ljava_io_PrintStream();
-          this$29.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
-          const f = ((this$30) => ((x$2$5) => {
-            const x$8 = $as_LDSL_Shape(x$2$5);
-            $as_LDSL_Square(x$8).LDSL_Square__f_x = 0;
-            $as_LDSL_Square(x$8).LDSL_Square__f_y = 0
-          }))(this$7$1);
-          const this$31 = snake$2.LDSL_ComposedShape__f_l;
-          if ((this$31 === $m_sci_Nil$())) {
-            $m_sci_Nil$()
-          } else {
-            const arg1 = this$31.head__O();
-            const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-            let t = h;
-            let rest = $as_sci_List(this$31.tail__O());
-            while ((rest !== $m_sci_Nil$())) {
-              const arg1$1 = rest.head__O();
-              const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-              t.sci_$colon$colon__f_next = nx;
-              t = nx;
-              rest = $as_sci_List(rest.tail__O())
-            }
+        const this$20 = snake$2.LDSL_ComposedShape__f_l;
+        const $$x6 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$20, 0))).LDSL_Square__f_x;
+        const this$21 = snake$2.LDSL_ComposedShape__f_l;
+        if ($$x7.collisionObjxBorders__I__I__I__I__I__I__Z($$x6, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$21, 0))).LDSL_Square__f_y, 0, 0, $imul(snakeGridWidth, pixelSize$1), $imul(snakeGridWidth, pixelSize$1))) {
+          const this$23 = $m_s_Console$();
+          const this$24 = this$23.out__Ljava_io_PrintStream();
+          this$24.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
+          $m_sci_List$();
+          const b$1 = new $c_scm_ListBuffer();
+          let i$1 = 0;
+          while ((i$1 < 3)) {
+            const elem$2 = new $c_LDSL_Square(0, 0, pixelSize$1);
+            b$1.addOne__O__scm_ListBuffer(elem$2);
+            i$1 = ((1 + i$1) | 0)
           };
+          snake$2.LDSL_ComposedShape__f_l = b$1.toList__sci_List();
+          snake$2.change__LDSL_CanvasElementModifier__V(new $c_LDSL_Color("blue"));
           direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
         }
       }
