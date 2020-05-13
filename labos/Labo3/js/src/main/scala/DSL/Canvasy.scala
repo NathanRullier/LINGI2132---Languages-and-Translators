@@ -5,7 +5,7 @@ import org.scalajs.dom.html
 import scala.scalajs.js
 import org.scalajs.dom
 
-class Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {
+class Canvasy(canvas: html.Canvas, height: Int, width: Int) {
 
   private var shapes = Array[Shape]()
 

@@ -1,51 +1,9 @@
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\Canvasy.scala:8:69: not found: type Settings[0m
-[0m[[0m[31merror[0m] [0m[0mclass Canvasy(canvas: html.Canvas, height: Int, width: Int) extends Settings {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                    ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\Canvasy.scala:20:35: non-variable type argument DSL.Shape in type pattern DSL.ComposedShape[DSL.Shape] is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m              case composedShape: ComposedShape[Shape] => draw(composedShape)[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                  ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\Canvasy.scala:46:31: non-variable type argument DSL.Shape in type pattern DSL.ComposedShape[DSL.Shape] is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m          case composedShape: ComposedShape[Shape] => draw(composedShape)[0m
 [0m[[0m[33mwarn[0m] [0m[0m                              ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\GridCanvasy.scala:10:25: not found: value NumberOfSquaresWidthSnake[0m
-[0m[[0m[31merror[0m] [0m[0m    Array.ofDim[Square](NumberOfSquaresWidthSnake, NumberOfSquaresHeightSnake)[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\GridCanvasy.scala:10:52: not found: value NumberOfSquaresHeightSnake[0m
-[0m[[0m[31merror[0m] [0m[0m    Array.ofDim[Square](NumberOfSquaresWidthSnake, NumberOfSquaresHeightSnake)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:44:21: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m    var direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:46:53: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m      if (direction != Direction.Right) direction = Direction.Left[0m
-[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:49:52: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m      if (direction != Direction.Left) direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:52:52: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m      if (direction != Direction.Down) direction = Direction.Up[0m
-[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:55:50: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m      if (direction != Direction.Up) direction = Direction.Down[0m
-[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:63:14: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m        case Direction.Left => head moveX -pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:64:14: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m        case Direction.Right => head moveX pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:65:14: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m        case Direction.Up => head moveY -pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:66:14: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m        case Direction.Down => head moveY pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:84:23: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m          direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:90:27: not found: value Direction[0m
-[0m[[0m[31merror[0m] [0m[0m              direction = Direction.Right[0m
-[0m[[0m[31merror[0m] [0m[0m                          ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:7:23: abstract type A in type DSLDemo.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
@@ -55,21 +13,6 @@
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSLDemo\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:6:63: not found: type Settings[0m
-[0m[[0m[31merror[0m] [0m[0mabstract class Game( gameHeight: Int, gameWidth: Int) extends Settings {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:19:41: not found: value pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m        val square: Square = new Square(pixelSize * i, pixelSize * j, pixelSize)[0m
-[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:19:56: not found: value pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m        val square: Square = new Square(pixelSize * i, pixelSize * j, pixelSize)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:19:71: not found: value pixelSize[0m
-[0m[[0m[31merror[0m] [0m[0m        val square: Square = new Square(pixelSize * i, pixelSize * j, pixelSize)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Game.scala:61:22: not found: value GameSpeed[0m
-[0m[[0m[31merror[0m] [0m[0m      if (compteur % GameSpeed == 0) {[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:7:23: abstract type A in type DSL.ComposedShape[Shape.this.A] is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    if (s.isInstanceOf[ComposedShape[A]]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
@@ -79,5 +22,25 @@
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:104:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m8 warnings found[0m
-[0m[[0m[31merror[0m] [0m[0m19 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\DSL\Canvasy.scala:46:59: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m          case composedShape: ComposedShape[Shape] => draw(composedShape)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:7:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:15:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:24:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:33:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 5 deprecation warnings (since 2.13.0); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 7 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m15 warnings found[0m

@@ -20,7 +20,7 @@ object Main {
 
     val canvas = document.createElement("canvas").asInstanceOf[html.Canvas]
     document.body.appendChild(canvas)
-    val canvasy = new GridCanvasy(canvas, snakeGridHeight, snakeGridWidth, pixelSize)
+    val canvasy = new Canvasy(canvas, snakeGridHeight*pixelSize, snakeGridWidth*pixelSize)
     canvasy.initRender()
     //val snakeGame = new SnakeGame(snakeGridHeight, snakeGridWidth)
     //snakeGame.initGame()
