@@ -33,9 +33,8 @@ object Main {
     val newFoodPositionX = Random.nextInt(snakeGridWidth) * pixelSize
     val newFoodPositionY = Random.nextInt(snakeGridHeight) * pixelSize
     val food = new Square(newFoodPositionX, newFoodPositionY, pixelSize)
-    food change Color("red")
+    food change Color("blue")
     //init a new Snake
-    snake change Color("blue")
 
     canvasy += Array(snake)
     canvasy += Array(food)
@@ -58,7 +57,6 @@ object Main {
 
     val movement = () => {
       val head = new Square(snake(0).x, snake(0).y, snake(0).side)
-      head change Color("blue")
       direction match {
         case Direction.Left => head moveX -pixelSize
         case Direction.Right => head moveX pixelSize
@@ -79,19 +77,25 @@ object Main {
       if (compteur % GameSpeed == 0) {
         movement()
 
+        if (CollisionHandler.collisionObjxBorders(snake(0).x, snake(0).y, 0, 0, snakeGridWidth * pixelSize, snakeGridWidth * pixelSize)) {
+          println("pouf")
+          snake.l = List.fill(3)(new Square(0, 0, pixelSize))
+          direction = Direction.Right
+        }
+        snake.l.slice(1, snake.size()).foreach(x => {
+          x match {
+            case square: Square => if (CollisionHandler.perfectCollisionObjxObj(snake(0).x, snake(0).y, square.x, square.y)) {
+              snake.l = List.fill(3)(new Square(0, 0, pixelSize))
+              direction = Direction.Right
+            }
+          }
+        })
         if (CollisionHandler.perfectCollisionObjxObj(snake(0).x, snake(0).y, food.x, food.y)) {
           println("menoum")
           food.x = Random.nextInt(snakeGridWidth) * pixelSize
           food.y = Random.nextInt(snakeGridHeight) * pixelSize
           val tail = new Square(snake(0).x, snake(0).y, pixelSize)
-          tail change Color("blue")
           snake.addLast(tail)
-        }
-        if (CollisionHandler.collisionObjxBorders(snake(0).x, snake(0).y, 0, 0, snakeGridWidth * pixelSize, snakeGridWidth * pixelSize)) {
-          println("pouf")
-          snake.l = List.fill(3)(new Square(0, 0, pixelSize))
-          snake change Color("blue")
-          direction = Direction.Right
         }
       }
     }, () => canvasy.draw())
