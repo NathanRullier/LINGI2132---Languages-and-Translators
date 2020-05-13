@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:37:13: overloaded method value += with alternatives:[0m
 [0m[[0m[31merror[0m] [0m[0m  (composedShapes: Array[DSL.ComposedShape[DSL.Square]])Unit <and>[0m
 [0m[[0m[31merror[0m] [0m[0m  (squares: Array[DSL.Square])Unit <and>[0m
@@ -7,3 +8,26 @@
 [0m[[0m[31merror[0m] [0m[0m    canvasy += (Array(snake) ++ Array(food))[0m
 [0m[[0m[31merror[0m] [0m[0m            ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
+=======
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:95:11: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m          }[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+=======
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:7:77: '=' expected but 'if' found.[0m
+[0m[[0m[31merror[0m] [0m[0m  def perfectCollisionObjxObj(obj1X: Int, obj1Y: Int,obj2X: Int,obj2Y: Int) if((obj1X == obj2X) && (obj1Y == obj2Y)) true[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Desktop\transitors\LINGI2132---Languages-and-Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:9:1: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m  def collisionObjxBorders(objX: Int, objY: Int, borderMinX: Int, borderMinY: Int, borderMaxX: Int, borderMaxY: Int): Boolean ={[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+>>>>>>> Stashed changes
+=======
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:103:9: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m        collisions[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+>>>>>>> codeTrash
+>>>>>>> codeTrash
