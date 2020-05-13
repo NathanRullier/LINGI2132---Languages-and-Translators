@@ -3275,16 +3275,32 @@ class $c_Lwebapp_Main$ extends $c_O {
     const elem$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
     const direction = new $c_sr_ObjectRef(elem$1);
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onLeftKeyPressed = new $c_sjsr_AnonFunction0(((this$2$1, direction$1) => (() => {
-      direction$1.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Left
+      const x$2 = $as_s_Enumeration$Value(direction$1.sr_ObjectRef__f_elem);
+      const x$2$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+      if ((!((x$2 === null) ? (x$2$1 === null) : x$2.equals__O__Z(x$2$1)))) {
+        direction$1.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Left
+      }
     }))(this, direction));
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onRightKeyPressed = new $c_sjsr_AnonFunction0(((this$3$1, direction$2) => (() => {
-      direction$2.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+      const x$3 = $as_s_Enumeration$Value(direction$2.sr_ObjectRef__f_elem);
+      const x$2$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if ((!((x$3 === null) ? (x$2$2 === null) : x$3.equals__O__Z(x$2$2)))) {
+        direction$2.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
+      }
     }))(this, direction));
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onUpKeyPressed = new $c_sjsr_AnonFunction0(((this$4$1, direction$3) => (() => {
-      direction$3.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Up
+      const x$4 = $as_s_Enumeration$Value(direction$3.sr_ObjectRef__f_elem);
+      const x$2$3 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
+      if ((!((x$4 === null) ? (x$2$3 === null) : x$4.equals__O__Z(x$2$3)))) {
+        direction$3.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Up
+      }
     }))(this, direction));
     $m_LDSL_UserInputs$().LDSL_UserInputs$__f_onDownKeyPressed = new $c_sjsr_AnonFunction0(((this$5$1, direction$4) => (() => {
-      direction$4.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Down
+      const x$5 = $as_s_Enumeration$Value(direction$4.sr_ObjectRef__f_elem);
+      const x$2$4 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+      if ((!((x$5 === null) ? (x$2$4 === null) : x$5.equals__O__Z(x$2$4)))) {
+        direction$4.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Down
+      }
     }))(this, direction));
     $m_LDSL_UserInputs$().initInputsListener__V();
     const movement = new $c_sjsr_AnonFunction0(((this$6$1, snake$1, direction$5, pixelSize) => (() => {
@@ -3297,16 +3313,16 @@ class $c_Lwebapp_Main$ extends $c_O {
       const property$2 = new $c_LDSL_Color("blue");
       head.LDSL_Square__f_color = property$2.LDSL_Color__f_c;
       const x1 = $as_s_Enumeration$Value(direction$5.sr_ObjectRef__f_elem);
-      const x$2 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
-      if (((x$2 === null) ? (x1 === null) : x$2.equals__O__Z(x1))) {
+      const x$6 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
+      if (((x$6 === null) ? (x1 === null) : x$6.equals__O__Z(x1))) {
         head.moveX__I__V(((-pixelSize) | 0))
       } else {
-        const x$3 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
-        if (((x$3 === null) ? (x1 === null) : x$3.equals__O__Z(x1))) {
+        const x$3$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Right;
+        if (((x$3$1 === null) ? (x1 === null) : x$3$1.equals__O__Z(x1))) {
           head.moveX__I__V(pixelSize)
         } else {
-          const x$5 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
-          if (((x$5 === null) ? (x1 === null) : x$5.equals__O__Z(x1))) {
+          const x$5$1 = $m_LDSL_Direction$().LDSL_Direction$__f_Up;
+          if (((x$5$1 === null) ? (x1 === null) : x$5$1.equals__O__Z(x1))) {
             head.moveY__I__V(((-pixelSize) | 0))
           } else {
             const x$7 = $m_LDSL_Direction$().LDSL_Direction$__f_Down;
@@ -3345,7 +3361,7 @@ class $c_Lwebapp_Main$ extends $c_O {
           const tail = new $c_LDSL_Square($$x5, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$24, 0))).LDSL_Square__f_y, pixelSize$1);
           const property$3 = new $c_LDSL_Color("blue");
           tail.LDSL_Square__f_color = property$3.LDSL_Color__f_c;
-          snake$2.addFirst__LDSL_Shape__V(tail)
+          snake$2.addLast__LDSL_Shape__V(tail)
         };
         const $$x7 = $m_LDSL_CollisionHandler$();
         const this$25 = snake$2.LDSL_ComposedShape__f_l;
@@ -3355,10 +3371,27 @@ class $c_Lwebapp_Main$ extends $c_O {
           const this$28 = $m_s_Console$();
           const this$29 = this$28.out__Ljava_io_PrintStream();
           this$29.java$lang$JSConsoleBasedPrintStream$$printString__T__V("pouf\n");
-          const this$30 = snake$2.LDSL_ComposedShape__f_l;
-          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$30, 0))).LDSL_Square__f_x = 0;
+          const f = ((this$30) => ((x$2$5) => {
+            const x$8 = $as_LDSL_Shape(x$2$5);
+            $as_LDSL_Square(x$8).LDSL_Square__f_x = 0;
+            $as_LDSL_Square(x$8).LDSL_Square__f_y = 0
+          }))(this$7$1);
           const this$31 = snake$2.LDSL_ComposedShape__f_l;
-          $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$31, 0))).LDSL_Square__f_y = 0;
+          if ((this$31 === $m_sci_Nil$())) {
+            $m_sci_Nil$()
+          } else {
+            const arg1 = this$31.head__O();
+            const h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+            let t = h;
+            let rest = $as_sci_List(this$31.tail__O());
+            while ((rest !== $m_sci_Nil$())) {
+              const arg1$1 = rest.head__O();
+              const nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+              t.sci_$colon$colon__f_next = nx;
+              t = nx;
+              rest = $as_sci_List(rest.tail__O())
+            }
+          };
           direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
         }
       }
@@ -8134,6 +8167,14 @@ class $c_LDSL_ComposedShape extends $c_O {
     const elems = new $c_sjsr_WrappedVarArgs(array);
     const this$5 = this$4.from__sc_IterableOnce__sci_List(elems);
     const suffix = this.LDSL_ComposedShape__f_l;
+    this.LDSL_ComposedShape__f_l = this$5.appendedAll__sc_IterableOnce__sci_List(suffix)
+  };
+  addLast__LDSL_Shape__V(shape) {
+    const this$5 = this.LDSL_ComposedShape__f_l;
+    const this$4 = $m_sci_List$();
+    const array = [shape];
+    const elems = new $c_sjsr_WrappedVarArgs(array);
+    const suffix = this$4.from__sc_IterableOnce__sci_List(elems);
     this.LDSL_ComposedShape__f_l = this$5.appendedAll__sc_IterableOnce__sci_List(suffix)
   };
   change__LDSL_CanvasElementModifier__V(property) {

@@ -44,16 +44,16 @@ object Main {
 
     var direction = Direction.Right
     UserInputs.onLeftKeyPressed = () => {
-      direction = Direction.Left
+      if (direction != Direction.Right) direction = Direction.Left
     }
     UserInputs.onRightKeyPressed = () => {
-      direction = Direction.Right
+      if (direction != Direction.Left) direction = Direction.Right
     }
     UserInputs.onUpKeyPressed = () => {
-      direction = Direction.Up
+      if (direction != Direction.Down) direction = Direction.Up
     }
     UserInputs.onDownKeyPressed = () => {
-      direction = Direction.Down
+      if (direction != Direction.Up) direction = Direction.Down
     }
 
     UserInputs.initInputsListener()
@@ -86,13 +86,15 @@ object Main {
           food.x = Random.nextInt(snakeGridWidth) * pixelSize
           food.y = Random.nextInt(snakeGridHeight) * pixelSize
           val tail = new Square(snake(0).x, snake(0).y, pixelSize)
-            tail change Color ("blue")
-            snake.addFirst(tail)
+          tail change Color("blue")
+          snake.addLast(tail)
         }
         if (CollisionHandler.collisionObjxBorders(snake(0).x, snake(0).y, 0, 0, snakeGridWidth * pixelSize, snakeGridWidth * pixelSize)) {
           println("pouf")
-          snake(0).x = 0
-          snake(0).y = 0
+          snake.foreach(x => {
+            x.asInstanceOf[Square].x = 0
+            x.asInstanceOf[Square].y = 0
+          })
           direction = Direction.Right
         }
       }

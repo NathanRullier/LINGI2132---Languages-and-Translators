@@ -12,11 +12,11 @@ sealed trait Shape {
       println(2)
       ComposedShape[Shape](List(this) ::: List(s))
     }
-    else if(s.isInstanceOf[Shape]){
+    else if (s.isInstanceOf[Shape]) {
       println(3)
       ComposedShape(List(this) ::: List(s))
     }
-    else{
+    else {
       println(4)
       ComposedShape(List(this) ::: s.asInstanceOf[ComposedShape[A]].l)
     }
@@ -49,16 +49,20 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 
   type A = T
 
-  def size():Int={
+  def size(): Int = {
     l.size
   }
 
-  def removeLast():Unit={
-    l = l.take(size()-1)
+  def removeLast(): Unit = {
+    l = l.take(size() - 1)
   }
 
-  def addFirst(shape:T):Unit={
+  def addFirst(shape: T): Unit = {
     l = List(shape) ++ l
+  }
+
+  def addLast(shape: T): Unit = {
+    l = l ++ List(shape)
   }
 
   def map(f: Shape => Shape): ComposedShape[Shape] = {
@@ -100,10 +104,10 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
     else if (s.isInstanceOf[A]) {
       ComposedShape(l ::: List(s))
     }
-    else if(s.isInstanceOf[Shape]){
-      ComposedShape(l::: List(s))
+    else if (s.isInstanceOf[Shape]) {
+      ComposedShape(l ::: List(s))
     }
-    else{
+    else {
       ComposedShape(l ::: s.asInstanceOf[ComposedShape[A]].l)
     }
   }
@@ -111,7 +115,7 @@ case class ComposedShape[T <: Shape](var l: List[T]) extends Shape {
 }
 
 case class Rectangle(var x: Int, var y: Int, var width: Int, var height: Int) extends Shape with ShapeAttributes {
-  type  A = Rectangle
+  type A = Rectangle
 
   override def moveX(v: Int): Unit = {
     x += v
