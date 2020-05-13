@@ -28,7 +28,9 @@ object Main {
     background change Color("black")
     canvasy += Array(background)
 
-    val snake = ComposedShape(List.fill(3)(new Square(0, 0, pixelSize)))
+    val newSnake  = ()=> List.fill(3)(new Square(0, 0, pixelSize))
+
+    val snake = ComposedShape(newSnake())
     //init a new Food
     val newFoodPositionX = Random.nextInt(snakeGridWidth) * pixelSize
     val newFoodPositionY = Random.nextInt(snakeGridHeight) * pixelSize
@@ -77,15 +79,14 @@ object Main {
       if (compteur % GameSpeed == 0) {
         movement()
 
-        if (CollisionHandler.collisionObjxBorders(snake(0).x, snake(0).y, 0, 0, snakeGridWidth * pixelSize, snakeGridWidth * pixelSize)) {
-          println("pouf")
-          snake.l = List.fill(3)(new Square(0, 0, pixelSize))
+        if (CollisionHandler.collisionObjxBorders(snake(0), background)) {
+          snake.l = newSnake()
           direction = Direction.Right
         }
         snake.l.slice(1, snake.size()).foreach(x => {
           x match {
-            case square: Square => if (CollisionHandler.perfectCollisionObjxObj(snake(0).x, snake(0).y, square.x, square.y)) {
-              snake.l = List.fill(3)(new Square(0, 0, pixelSize))
+            case square: Square => if (CollisionHandler.perfectCollisionObjxObj(snake(0), square)) {
+              snake.l = newSnake()
               direction = Direction.Right
             }
           }
