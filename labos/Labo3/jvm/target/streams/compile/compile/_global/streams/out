@@ -13,8 +13,24 @@
 [0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:11:28: abstract type Shape.this.A is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:89:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\Shapes.scala:104:28: abstract type T (the underlying of ComposedShape.this.A) is unchecked since it is eliminated by erasure[0m
 [0m[[0m[33mwarn[0m] [0m[0m    else if (s.isInstanceOf[A]) {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mthere were 6 feature warnings; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0m7 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:7:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:15:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:24:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\shared\src\main\scala\DSL\CollisionHandler.scala:33:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ComposedShape(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    obj match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 7 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m11 warnings found[0m

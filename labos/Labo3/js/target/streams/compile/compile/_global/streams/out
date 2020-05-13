@@ -1,4 +1,9 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:103:9: a pure expression does nothing in statement position[0m
-[0m[[0m[33mwarn[0m] [0m[0m        collisions[0m
-[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:37:13: overloaded method value += with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (composedShapes: Array[DSL.ComposedShape[DSL.Square]])Unit <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (squares: Array[DSL.Square])Unit <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (rectangles: Array[DSL.Rectangle])Unit <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (circles: Array[DSL.Circle])Unit[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (Array[Product with DSL.Shape with java.io.Serializable{type A <: DSL.Square}])[0m
+[0m[[0m[31merror[0m] [0m[0m    canvasy += (Array(snake) ++ Array(food))[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

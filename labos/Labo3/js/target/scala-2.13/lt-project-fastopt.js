@@ -3481,10 +3481,9 @@ class $c_Lwebapp_Main$ extends $c_O {
     }))(this, 40));
     const snake = new $c_LDSL_ComposedShape($as_sci_List(newSnake.apply__O()));
     const this$4 = $m_s_util_Random$();
-    const newFoodPositionX = $imul(40, this$4.s_util_Random__f_self.nextInt__I__I(20));
+    const $$x1 = this$4.s_util_Random__f_self.nextInt__I__I(20);
     const this$5 = $m_s_util_Random$();
-    const newFoodPositionY = $imul(40, this$5.s_util_Random__f_self.nextInt__I__I(20));
-    const food = new $c_LDSL_Square(newFoodPositionX, newFoodPositionY, 40);
+    const food = new $c_LDSL_Square($imul(40, $$x1), $imul(40, this$5.s_util_Random__f_self.nextInt__I__I(20)), 40);
     const property$1 = new $c_LDSL_Color("blue");
     food.LDSL_Square__f_color = property$1.LDSL_Color__f_c;
     canvasy.$plus$eq__ALDSL_ComposedShape__V($makeNativeArrayWrapper($d_LDSL_ComposedShape.getArrayOf(), [snake]));
@@ -3522,11 +3521,11 @@ class $c_Lwebapp_Main$ extends $c_O {
     $m_LDSL_UserInputs$().initInputsListener__V();
     const movement = new $c_sjsr_AnonFunction0(((this$6$1, snake$1, direction$5, pixelSize$1) => (() => {
       const this$7 = snake$1.LDSL_ComposedShape__f_l;
-      const $$x2 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$7, 0))).LDSL_Square__f_x;
+      const $$x3 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$7, 0))).LDSL_Square__f_x;
       const this$8 = snake$1.LDSL_ComposedShape__f_l;
-      const $$x1 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$8, 0))).LDSL_Square__f_y;
+      const $$x2 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$8, 0))).LDSL_Square__f_y;
       const this$9 = snake$1.LDSL_ComposedShape__f_l;
-      const head = new $c_LDSL_Square($$x2, $$x1, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$9, 0))).LDSL_Square__f_side);
+      const head = new $c_LDSL_Square($$x3, $$x2, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$9, 0))).LDSL_Square__f_side);
       const x1 = $as_s_Enumeration$Value(direction$5.sr_ObjectRef__f_elem);
       const x$5 = $m_LDSL_Direction$().LDSL_Direction$__f_Left;
       if (((x$5 === null) ? (x1 === null) : x$5.equals__O__Z(x1))) {
@@ -3553,23 +3552,23 @@ class $c_Lwebapp_Main$ extends $c_O {
       snake$1.removeLast__V()
     }))(this, snake, direction, 40));
     const collisions = new $c_sjsr_AnonFunction0(((this$7$1, snake$2, background$1, newSnake$1, direction$6, food$1, snakeGridWidth, pixelSize$2, snakeGridHeight) => (() => {
-      const $$x3 = $m_LDSL_CollisionHandler$();
+      const $$x4 = $m_LDSL_CollisionHandler$();
       const this$10 = snake$2.LDSL_ComposedShape__f_l;
-      if ($$x3.collisionObjxBorders__LDSL_Shape__LDSL_Shape__Z($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0)), background$1)) {
+      if ($$x4.collisionObjxBorders__LDSL_Shape__LDSL_Shape__Z($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$10, 0)), background$1)) {
         snake$2.LDSL_ComposedShape__f_l = $as_sci_List(newSnake$1.apply__O());
         direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
       };
-      const $$x4 = snake$2.LDSL_ComposedShape__f_l;
+      const $$x5 = snake$2.LDSL_ComposedShape__f_l;
       const this$11 = snake$2.LDSL_ComposedShape__f_l;
-      const this$12 = $$x4.slice__I__I__sci_List(1, this$11.length__I());
+      const this$12 = $$x5.slice__I__I__sci_List(1, this$11.length__I());
       let these = this$12;
       while ((!these.isEmpty__Z())) {
         const arg1 = these.head__O();
         const x$6 = $as_LDSL_Square(arg1);
         if ((x$6 !== null)) {
-          const $$x5 = $m_LDSL_CollisionHandler$();
+          const $$x6 = $m_LDSL_CollisionHandler$();
           const this$13 = snake$2.LDSL_ComposedShape__f_l;
-          if ($$x5.perfectCollisionObjxObj__LDSL_Shape__LDSL_Shape__Z($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$13, 0)), x$6)) {
+          if ($$x6.perfectCollisionObjxObj__LDSL_Shape__LDSL_Shape__Z($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$13, 0)), x$6)) {
             snake$2.LDSL_ComposedShape__f_l = $as_sci_List(newSnake$1.apply__O());
             direction$6.sr_ObjectRef__f_elem = $m_LDSL_Direction$().LDSL_Direction$__f_Right
           }
@@ -3578,20 +3577,19 @@ class $c_Lwebapp_Main$ extends $c_O {
         };
         these = $as_sci_List(these.tail__O())
       };
-      const $$x7 = $m_LDSL_CollisionHandler$();
+      const $$x8 = $m_LDSL_CollisionHandler$();
       const this$14 = snake$2.LDSL_ComposedShape__f_l;
-      const $$x6 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$14, 0))).LDSL_Square__f_x;
+      const $$x7 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$14, 0))).LDSL_Square__f_x;
       const this$15 = snake$2.LDSL_ComposedShape__f_l;
-      if ($$x7.perfectCollisionObjxObj__I__I__I__I__Z($$x6, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$15, 0))).LDSL_Square__f_y, food$1.LDSL_Square__f_x, food$1.LDSL_Square__f_y)) {
+      if ($$x8.perfectCollisionObjxObj__I__I__I__I__Z($$x7, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$15, 0))).LDSL_Square__f_y, food$1.LDSL_Square__f_x, food$1.LDSL_Square__f_y)) {
         const this$16 = $m_s_util_Random$();
         food$1.LDSL_Square__f_x = $imul(this$16.s_util_Random__f_self.nextInt__I__I(snakeGridWidth), pixelSize$2);
         const this$17 = $m_s_util_Random$();
         food$1.LDSL_Square__f_y = $imul(this$17.s_util_Random__f_self.nextInt__I__I(snakeGridHeight), pixelSize$2);
         const this$18 = snake$2.LDSL_ComposedShape__f_l;
-        const $$x8 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$18, 0))).LDSL_Square__f_x;
+        const $$x9 = $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$18, 0))).LDSL_Square__f_x;
         const this$19 = snake$2.LDSL_ComposedShape__f_l;
-        const tail = new $c_LDSL_Square($$x8, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$19, 0))).LDSL_Square__f_y, pixelSize$2);
-        snake$2.addLast__LDSL_Shape__V(tail)
+        snake$2.addLast__LDSL_Shape__V(new $c_LDSL_Square($$x9, $as_LDSL_Square($as_LDSL_Shape($f_sc_LinearSeqOps__apply__I__O(this$19, 0))).LDSL_Square__f_y, pixelSize$2))
       }
     }))(this, snake, background, newSnake, direction, food, 20, 40, 20));
     const loop = new $c_LDSL_Loop(0);

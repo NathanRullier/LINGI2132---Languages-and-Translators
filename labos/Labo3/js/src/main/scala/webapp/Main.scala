@@ -22,37 +22,26 @@ object Main {
     document.body.appendChild(canvas)
     val canvasy = new Canvasy(canvas, snakeGridHeight * pixelSize, snakeGridWidth * pixelSize)
     canvasy.initRender()
-    
+
     val background = new Square(0, 0, pixelSize * snakeGridWidth)
     background change Color("black")
     canvasy += Array(background)
 
     val newSnake = () => List.fill(3)(new Square(0, 0, pixelSize))
-
+    //init new Snake
     val snake = ComposedShape(newSnake())
     //init a new Food
-    val newFoodPositionX = Random.nextInt(snakeGridWidth) * pixelSize
-    val newFoodPositionY = Random.nextInt(snakeGridHeight) * pixelSize
-    val food = new Square(newFoodPositionX, newFoodPositionY, pixelSize)
+    val food = new Square(Random.nextInt(snakeGridWidth) * pixelSize, Random.nextInt(snakeGridWidth) * pixelSize, pixelSize)
     food change Color("blue")
-    //init a new Snake
 
     canvasy += Array(snake)
     canvasy += Array(food)
 
     var direction = Direction.Right
-    UserInputs.onLeftKeyPressed = () => {
-      if (direction != Direction.Right) direction = Direction.Left
-    }
-    UserInputs.onRightKeyPressed = () => {
-      if (direction != Direction.Left) direction = Direction.Right
-    }
-    UserInputs.onUpKeyPressed = () => {
-      if (direction != Direction.Down) direction = Direction.Up
-    }
-    UserInputs.onDownKeyPressed = () => {
-      if (direction != Direction.Up) direction = Direction.Down
-    }
+    UserInputs.onLeftKeyPressed = () => { if (direction != Direction.Right) direction = Direction.Left }
+    UserInputs.onRightKeyPressed = () => { if (direction != Direction.Left) direction = Direction.Right }
+    UserInputs.onUpKeyPressed = () => { if (direction != Direction.Down) direction = Direction.Up }
+    UserInputs.onDownKeyPressed = () => { if (direction != Direction.Up) direction = Direction.Down }
 
     UserInputs.initInputsListener()
 
@@ -84,8 +73,7 @@ object Main {
       if (CollisionHandler.perfectCollisionObjxObj(snake(0).x, snake(0).y, food.x, food.y)) {
         food.x = Random.nextInt(snakeGridWidth) * pixelSize
         food.y = Random.nextInt(snakeGridHeight) * pixelSize
-        val tail = new Square(snake(0).x, snake(0).y, pixelSize)
-        snake.addLast(tail)
+        snake.addLast(new Square(snake(0).x, snake(0).y, pixelSize))
       }
     }
 
