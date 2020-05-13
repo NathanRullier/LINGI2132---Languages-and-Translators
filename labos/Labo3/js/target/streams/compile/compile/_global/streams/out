@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [0m[[0m[31merror[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:95:11: illegal start of simple expression[0m
 [0m[[0m[31merror[0m] [0m[0m          }[0m
@@ -12,3 +13,9 @@
 [0m[[0m[31merror[0m] [0m[0m^[0m
 [0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
 >>>>>>> Stashed changes
+=======
+[0m[[0m[33mwarn[0m] [0m[0mC:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\src\main\scala\webapp\Main.scala:103:9: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m        collisions[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+>>>>>>> codeTrash

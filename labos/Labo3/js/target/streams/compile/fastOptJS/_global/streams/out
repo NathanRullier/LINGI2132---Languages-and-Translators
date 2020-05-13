@@ -1,10 +1,11 @@
 <<<<<<< Updated upstream
 [0m[[0m[0minfo[0m] [0m[0mFast optimizing C:\MyShit\Ecole\Erasmus\LINGI2132 - Languages and Translators\labos\Labo3\js\target\scala-2.13\lt-project-fastopt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 32263 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 6326 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 29206 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: 90404 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 46110 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 6982 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Check IR: 57762 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: 142080 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Batch mode: false[0m
+<<<<<<< HEAD
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 8660 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 99 methods.[0m
 [0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 11841 us[0m
@@ -39,3 +40,18 @@
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: 4975 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 17153 us[0m
 >>>>>>> Stashed changes
+=======
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Incremental part: 7685 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizing 107 methods.[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: Optimizer part: 29607 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mOptimizer: 39453 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 17020 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 1449 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 22453 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Generate classes: 17800 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Write trees: 349 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 799 -- invalidated: 2[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: reused: 1503 -- invalidated: 65[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter: 25805 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasicBackend: Write result: 59919 us[0m
+>>>>>>> codeTrash
