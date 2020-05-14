@@ -8,7 +8,6 @@ class Loop(var timeBetweenLoopMS: Int) {
   var timer: Int = 0
 
   def loop (update: () => Unit, render: () => Unit): Unit = {
-    //println("timer "+ timer)
     window.requestAnimationFrame((deltaTime: Double) => {
         loop(update, render)
       })
