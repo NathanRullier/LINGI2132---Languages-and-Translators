@@ -55,23 +55,40 @@ object CollisionHandler {
   }
 
   /**
-   * 
+   *
+   * Function that check if theres a collision between 2 object coordonates
    * @param obj1X
    * @param obj1Y
    * @param obj2X
    * @param obj2Y
-   * @return
+   * @return true if theres a collision
    */
   def perfectCollisionObjxObj(obj1X: Int, obj1Y: Int, obj2X: Int, obj2Y: Int): Boolean = {
     if ((obj1X == obj2X) && (obj1Y == obj2Y)) true
     else false
   }
 
+  /**
+   *  Check if theres a collision between an object x and y and the borderws
+   * @param objX
+   * @param objY
+   * @param borderMinX
+   * @param borderMinY
+   * @param borderMaxX
+   * @param borderMaxY
+   * @return true if theres a collision
+   */
   def collisionObjxBorders(objX: Int, objY: Int, borderMinX: Int, borderMinY: Int, borderMaxX: Int, borderMaxY: Int): Boolean = {
     if ((objX < borderMinX) || (objX >= borderMaxX) || (objY < borderMinY) || (objY >= borderMaxY)) true
     else false
   }
 
+  /**
+   * Check if theres a collision between an object and an objectBorded
+   * @param objContained
+   * @param objBorder
+   * @return
+   */
   def collisionObjxBorders(objContained: Shape, objBorder: Shape): Boolean = {
     val xBorder = getXOfShape(objBorder)
     val yBorder = getYOfShape(objBorder)

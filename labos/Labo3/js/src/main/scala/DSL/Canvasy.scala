@@ -117,6 +117,6 @@ class Canvasy(canvas: html.Canvas, canvasMaxHeight: Int, canvasMaxWidth: Int) {
    */
   def resetGame(): Unit = {
     val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-    ctx.clearRect(0, 0, width, height)
+    ctx.clearRect(0, 0, canvasMaxWidth, canvasMaxHeight)
   }
 }
