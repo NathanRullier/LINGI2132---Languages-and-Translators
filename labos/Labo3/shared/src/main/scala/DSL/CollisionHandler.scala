@@ -56,7 +56,10 @@ object CollisionHandler {
 
   /**
    *
+<<<<<<< Updated upstream
    * Function that check if theres a collision between 2 object coordonates
+=======
+>>>>>>> Stashed changes
    * @param obj1X
    * @param obj1Y
    * @param obj2X

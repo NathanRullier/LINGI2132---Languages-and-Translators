@@ -13,6 +13,7 @@ object Main {
   }
 
   def initSnakeGame(): Unit = {
+
     val snakeGridHeight: Int = 20
     val snakeGridWidth: Int = 20
     val pixelSize = 40
