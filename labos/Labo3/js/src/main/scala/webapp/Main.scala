@@ -17,7 +17,6 @@ object Main {
     val snakeGridHeight: Int = 20
     val snakeGridWidth: Int = 20
     val pixelSize = 40
-    var GameSpeed = 8
 
     val canvas = document.createElement("canvas").asInstanceOf[html.Canvas]
     document.body.appendChild(canvas)
@@ -78,17 +77,11 @@ object Main {
       }
     }
 
-    val loop = new Loop(0)
-    var compteur = 0
+    val loop = new Loop(8)
 
     loop.start(() => {
-      compteur += 1
-      if (compteur % GameSpeed == 0) {
         movement()
         collisions()
-      }
     }, () => canvasy.draw())
-
   }
-
 }

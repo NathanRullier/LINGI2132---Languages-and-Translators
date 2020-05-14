@@ -42,8 +42,6 @@ class ComposedShapeTest extends AnyFunSuite with Matchers {
     }
   }
 
-  //TODO flatmap apply change ++ and
-
   test("apply") {
     val rect = newRectangle()
     val g = ComposedShape(List(rect))
