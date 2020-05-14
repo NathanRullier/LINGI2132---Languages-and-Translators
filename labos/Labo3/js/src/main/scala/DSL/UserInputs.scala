@@ -5,6 +5,9 @@ import scala.scalajs.js
 import org.scalajs.dom
 import scala.collection.mutable.HashMap
 
+/**
+ * This object handles everything about the user inputs
+ */
 object UserInputs {
 
   private val keysDown = HashMap[Int, Boolean]()
@@ -14,7 +17,11 @@ object UserInputs {
   var onRightKeyPressed: () => Unit = () => {}
   var onDownKeyPressed: () => Unit = () => {}
 
-  def initInputsListener(): Unit = {
+  /**
+   * This function initiate the input listeners with the dom. The up,down,left and right key
+   * are assigned to their respective function.
+   */
+  def initInputListener(): Unit = {
     dom.document.addEventListener("keydown", (e: dom.KeyboardEvent) => {
       e.keyCode match {
         case 37 => onLeftKeyPressed()

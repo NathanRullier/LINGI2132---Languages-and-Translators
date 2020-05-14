@@ -8,11 +8,11 @@ import scala.util.Random
 object Main {
 
   def main(args: Array[String]): Unit = {
-    initGame()
+    initSnakeGame()
 
   }
 
-  def initGame(): Unit = {
+  def initSnakeGame(): Unit = {
     val snakeGridHeight: Int = 20
     val snakeGridWidth: Int = 20
     val pixelSize = 40
@@ -43,7 +43,7 @@ object Main {
     UserInputs.onUpKeyPressed = () => { if (direction != Direction.Down) direction = Direction.Up }
     UserInputs.onDownKeyPressed = () => { if (direction != Direction.Up) direction = Direction.Down }
 
-    UserInputs.initInputsListener()
+    UserInputs.initInputListener()
 
     val movement = () => {
       val head = new Square(snake(0).x, snake(0).y, snake(0).side)
